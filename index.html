@@ -1,0 +1,2066 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Stay Alive</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Creepster&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./css/style.css" />
+		<link rel="icon" href="./img/favicon.png" />
+	</head>
+	<body>
+		<div class="menu">
+			<h1 class="title-menu">Stay Alive</h1>
+			<h3 class="character-selection-text">Wybierz postać</h3>
+			<div class="character-selection">
+				<img
+					src="./img/char2.png"
+					class="char-img-1 char-img"
+					id="./img/char2.png"
+				/>
+				<img
+					src="./img/char3.png"
+					class="char-img-2 char-img"
+					id="./img/char3.png"
+				/>
+				<img
+					src="./img/char4.png"
+					class="char-img-3 char-img"
+					id="./img/char4.png"
+				/>
+				<img
+					src="./img/char5.png"
+					class="char-img-4 char-img"
+					id="./img/char5.png"
+				/>
+				<img
+					src="./img/char6.png"
+					class="char-img-5 char-img"
+					id="./img/char6.png"
+				/>
+			</div>
+			<button class="start-btn" id="start-button">Start!</button>
+			<div class="copyright-container">
+				<span class="alert-reso"
+					>If your game crashed, you've probably changed your window size</span
+				>
+				<span class="alert-reso"
+					>DO NOT CHANGE YOUR SCREEN RESOLUTION DURING THE GAME! Adjust it
+					before you start.</span
+				>
+				<span class="copyright-text"
+					>2022 Jakub Rezler || &copf; All rights reserved</span
+				>
+			</div>
+		</div>
+		<!-- Instrukcja -->
+		<div class="instruction-container" id="instruction-container">
+			<h1 class="instruction-header">Przewodnik po Stay Alive</h1>
+			<div class="instruction-container-small">
+				<div class="instruction-content-left">
+					<div class="inst-1">
+						<h2>Ruch</h2>
+						<span
+							>Możesz poruszać się tylko o jedno pole na raz kosztem 1 punktu
+							energii. Zadbaj o to by nie zabrało ci jej do walki z
+							potworami.</span
+						>
+					</div>
+					<div class="inst-2">
+						<h2>Biomy</h2>
+						<span
+							>Wiekszość biomów zmniejsza lub zwiększe twoje statystyki gdy
+							kończysz na nich turę. Poszczególne opisy oddziaływań znajdziesz
+							na brzegach planszy.</span
+						>
+						<ul>
+							<li>
+								<span class="rubiez">Rubież</span> Temperatura zbliżana do 5 o 1
+								pkt.
+							</li>
+							<li>
+								<span class="knieja">Knieja</span> Temperatura zbliżana do 5 o 1
+								pkt.
+							</li>
+							<li>
+								<span class="pustynia">Pustynia</span> Głód -1, Temperatura +1
+							</li>
+							<li>
+								<span class="lodowagran">Lodowa Grań</span> Psychika -1,
+								Temperatura -1
+							</li>
+							<li>
+								<span class="krater">Krater</span> Psychika -1, Temperatura +1
+							</li>
+							<li>
+								<span class="skalistyfjord">Skalisty Fjord</span> Nie oddziałuje
+								w żaden sposób
+							</li>
+						</ul>
+					</div>
+					<div class="inst-3">
+						<h2><img src="./img/siekiera.png" width="20px" /> Przedmioty</h2>
+						<span
+							>Twórz przedmioty z pozyskanych surowców, by przetrwać. Każdy
+							przedmiot to 2 pkt. na koniec gry.</span
+						>
+						<p>
+							<br />
+							<img src="./img/sejmitar.png" width="30px" /><span
+								class="ognistysejmitar"
+							>
+								Samonaprowadzający Ognisty Sejmitar Zagłady</span
+							>
+							- Od razu powala jednego potwora i psuje się nieodwracalnie.
+							Przedmiot da się pozyskać wyłącznie rozpalając ognisko. Szansa:
+							20%.
+						</p>
+						<p>
+							<br />
+							<img src="./img/lodowa korona.png" width="30px" /><span
+								class="lodowakorona"
+							>
+								Lodowa Korona</span
+							>
+							- Nie tracisz psychiki. Przedmiot da się pozyskać wyłącznie
+							zabijając Lodowego Golema na Lodowej Grani.
+						</p>
+					</div>
+					<div class="inst-4">
+						<h2>
+							<img src="./img/jaskinia.png" width="30px" />
+							Jaskinia Wróżbiarstwa
+						</h2>
+						<span>Możesz użyć jaskini tylko raz.</span>
+						<ul>
+							<li>Energia +10 / Psychika +1</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="instruction-content-right">
+					<div class="inst-5">
+						<h2><img src="./img/ognisko.png" width="20px" /> Ognisko</h2>
+						<span>Ognisko rozpalić można wyłącznie przy użyciu krzesiwa.</span>
+						<ul>
+							<li>
+								Energia +3 / Psychika +1 / Temperatura +1 (jeśli jest poniżej 5)
+							</li>
+							<li>Karta Ogniska (Kiełbaski lub Czerwony Byk) szansa 80%</li>
+							<li>Ognisty Sejmitar szansa 20%</li>
+						</ul>
+					</div>
+
+					<div class="inst-6">
+						<h2><img src="./img/namiot.png" width="40px" /> Namiot Skrzata</h2>
+						<ul>
+							<li>Energia +6 / Głód +1</li>
+							<li>
+								<img src="./img/Topór obosieczny obrys.png" width="10px" />
+								Skrzat daje ci Securis - broń zdolną pokonać Tanatosa w
+								Czeluściach krateru. Możesz ponownie wejść do Namiotu dopiero po
+								utracie Securisa.
+							</li>
+						</ul>
+					</div>
+					<div class="inst-7">
+						<h2><img src="./img/czeluście.png" width="30px" /> Czeluść</h2>
+						<p>
+							Siedziba Tanatosa. Możesz go pokonać wyłącznie Securisem. Zarówno
+							po przegranej jak i wygranej walce Securis ulega zniszczeniu. Jest
+							brany pod uwagę również bonus z posiadania miecza. Po nieudanym
+							ataku tracisz 4 punkty życia. Każdy rzut kością kosztuje 1 pkt
+							psychiki i 1 pkt energii. Jeśli pokonasz Tanatosa, zyskujesz 5 pkt
+							psychiki, 5 pkt życia, 5 pkt energii i 5 pkt głodu.
+						</p>
+					</div>
+					<div class="inst-8">
+						<h2>Tipy</h2>
+						<br />
+						<ul>
+							<li>
+								<img src="./img/oaza.png" width="30px" /> Oaza zwiększy twoje
+								szanse na przetrwanie. Możesz użyć jej tylko raz.
+							</li>
+							<br />
+							<li>
+								Statystyki 1/2/3 na kartach wydarzeń oznaczają siłę działania
+								karty w zależności od poziomu trudności ustalonego na planszy
+								tur.
+								<img
+									src="./img/instruction1.jpg"
+									width="140px"
+									class="img-inst-1"
+								/>
+							</li>
+							<li>Za dnia tracisz 1 punkt głodu, w nocy 1 punkt psychiki.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<button class="close-instruction">Zamknij</button>
+		</div>
+		<!-- ekran GameOver -->
+		<div class="gameover-container">
+			<h1>Game Over</h1>
+			<p>
+				Rozszarpują cię psiapaki na zlecenie eleganckiego orangutana z wąsem.
+				<br />
+				Spoko to nic, spróbuj jeszcze raz.
+			</p>
+			<button class="try-again-btn">Zagraj ponownie</button>
+		</div>
+		<!-- ekran Końcowy -->
+		<div class="end-game-container">
+			<h1>Gratulacje!</h1>
+			<p>Udało ci się przeżyć!</p>
+			<h3>Twój wynik</h3>
+			<table>
+				<tr class="summary-first-row summary-row">
+					<td>
+						<span>Życie</span>
+					</td>
+					<td>
+						<span>Głód</span>
+					</td>
+					<td>
+						<span>Psychika</span>
+					</td>
+					<td>
+						<span>Przedmioty</span>
+					</td>
+					<td class="last-summary">
+						<span>Wynik</span>
+					</td>
+				</tr>
+				<tr class="summary-second-row summary-row">
+					<td><span class="life-summary"></span></td>
+					<td><span class="starvation-summary"></span></td>
+					<td><span class="sanity-summary"></span></td>
+					<td><span class="items-summary"></span></td>
+					<td class="last-summary"><span class="points-summary"></span></td>
+				</tr>
+			</table>
+			<button class="play-again-btn">Zagraj ponownie</button>
+		</div>
+		<div class="game">
+			<!-- umieść postać -->
+			<div class="click-start-hex">
+				<h2>Umieść bohatera na planszy by rozpocząć grę</h2>
+			</div>
+
+			<!-- karta walki z potworem -->
+			<div class="monster-fight-card">
+				<h1 class="monster-name"></h1>
+				<img src="./img/swords.png" class="swords" />
+				<h2>Walcz!</h2>
+				<p id="when-do-i-win-fight">
+					Wygrywasz wyrzucając 4,5 lub 6 (z mieczem 3)
+				</p>
+				<div class="cube-container">
+					<button class="cubes-active cubes">
+						<img src="./img/cubes.png" />
+					</button>
+					<div class="cube-result"></div>
+				</div>
+				<div class="fight-sum-span"></div>
+				<div class="use-sejmitar-btn-container">
+					<button class="use-sejmitar-btn">Użyj Sejmitaru</button>
+				</div>
+				<button class="end-loose-fight">Zakończ</button>
+			</div>
+			<!-- karta wyboru - Orangutan - event 14 -->
+			<div class="orangutan-choice-card">
+				<h1 class="orangutan-name"></h1>
+				<h2>Wybierz jedno</h2>
+				<img src="./img/choice.png" />
+				<div class="choice-container">
+					<div class="choice-a">
+						<p>A)</p>
+						<span>Ukradnij orangutanowi bagietę.</span>
+						<span>Głód +1 / Psychika -1</span>
+						<button class="steal-orangutan-btn btn-choice">
+							Ukradnij bagietę
+						</button>
+					</div>
+					<div class="choice-b">
+						<p>B)</p>
+						<span>Pokonaj orangutana w walce.</span>
+						<span>Energia +8 (jeśli wygrasz)</span>
+						<button class="fight-orangutan-btn btn-choice">
+							Walcz z orangutanem
+						</button>
+					</div>
+				</div>
+			</div>
+			<!-- lewy kontener -->
+			<div class="left-container">
+				<header class="header">
+					<span class="stay-alive-text">Stay Alive</span>
+				</header>
+				<div class="stats-container">
+					<div class="stats-bars">
+						<div class="life stat-bar">
+							<div class="life-bar"></div>
+							<span class="life-value"></span>
+						</div>
+						<div class="energy stat-bar">
+							<div class="energy-bar"></div>
+							<span class="energy-value"></span>
+						</div>
+						<div class="starvation stat-bar">
+							<div class="starvation-bar"></div>
+							<span class="starvation-value"></span>
+						</div>
+						<div class="sanity stat-bar">
+							<div class="sanity-bar"></div>
+							<span class="sanity-value"></span>
+						</div>
+						<div class="temperature stat-bar">
+							<div class="temperature-bar"></div>
+							<span class="temperature-value"></span>
+						</div>
+					</div>
+					<div class="stats-name">
+						<span class="life-text stat-text">Życie</span>
+						<span class="energy-text stat-text">Energia</span>
+						<span class="starving-text stat-text">Głód</span>
+						<span class="sanity-text stat-text">Psychika</span>
+						<span class="temperature-text stat-text">Temp.</span>
+					</div>
+					<!-- <label>Staty</label> -->
+				</div>
+				<div class="items-container">
+					<div class="items-inboard-container">
+						<div class="resources-container">
+							<div class="resources-icons">
+								<div class="stone">
+									<div class="stone-anim" title="kamień"></div>
+								</div>
+								<div class="wood">
+									<div class="wood-anim" title="drewno"></div>
+								</div>
+								<div class="grass">
+									<div class="grass-anim" title="trawa"></div>
+								</div>
+								<div class="flint">
+									<div class="flint-anim" title="krzesiwo"></div>
+								</div>
+								<div class="lotos">
+									<div class="lotos-anim" title="lotos"></div>
+								</div>
+							</div>
+							<div class="resources-text">
+								<span class="stone-count">x0</span>
+								<span class="wood-count">x0</span>
+								<span class="grass-count">x0</span>
+								<span class="flint-count">x0</span>
+								<span class="lotos-count">x0</span>
+							</div>
+							<div class="items-inventory">
+								<div class="" id="axe-container">
+									<div class="" id="axe-anim">
+										<div
+											class="item-description-left axe-description-left description-left"
+										>
+											<h1>Siekiera</h1>
+											<img src="./img/siekiera.png" alt="" class="src" />
+											<p>Zostań prawdziwym rębajłą</p>
+											<span
+												>Nie tracisz energii podczas pozyskiwania surowców</span
+											>
+											<div class="axe-price">
+												<span>x1</span><img src="./img/kamień.png" /><span
+													>x1</span
+												><img src="./img/drewno.png" />
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="" id="shoes-container">
+									<div class="" id="shoes-anim">
+										<div
+											class="item-description-left shoes-description-left description-left"
+										>
+											<h1>Lacie</h1>
+											<img src="./img/lacie.png" />
+											<p>Nie uraź stopy o kamień</p>
+											<span
+												>Na koniec tury odzyskujesz 3 punkty energii zamiast
+												2.</span
+											>
+											<div class="shoes-price">
+												<span>x2</span><img src="./img/trawa.png" />
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="" id="torch-container">
+									<div class="" id="torch-anim">
+										<div
+											class="item-description-left torch-description-left description-left"
+										>
+											<h1>Pochodnia</h1>
+											<img src="./img/pochodnia.png" />
+											<p>Przegoń niedobre ciemności</p>
+											<span
+												>W nocy (i w sytuacjach gdy jest ciemno) nie trać
+												psychiki. Tracisz pochodnię, gdy zakończysz turę na
+												lodowej grani.</span
+											>
+											<div class="torch-price">
+												<span>x1</span><img src="./img/drewno.png" /><span
+													>x1</span
+												><img src="./img/krzesiwo.png" />
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="" id="sword-container">
+									<div class="" id="sword-anim">
+										<div
+											class="item-description-left sword-description-left description-left"
+										>
+											<h1>Miecz</h1>
+											<img src="./img/miecz.png" />
+											<p>Siekaj wrogów jak ogóra</p>
+											<span
+												>Podczas walki z wrogiem zwyciężasz wyrzucając 3.</span
+											>
+											<div class="sword-price">
+												<span>x2</span><img src="./img/kamień.png" /><span
+													>x1</span
+												><img src="./img/drewno.png" />
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="" id="food-container">
+									<div class="" id="food-anim">
+										<div
+											class="item-description-left food-description-left description-left"
+										>
+											<h1>Leczo</h1>
+											<img src="./img/leczo.png" alt="" class="src" />
+											<p>Leczy</p>
+											<span
+												>Leczo przywraca ci 5 punktów zdrowia i 2 punkty
+												głodu.</span
+											>
+											<div class="food-price">
+												<span>x1</span><img src="./img/drewno.png" /><span
+													>x1</span
+												><img src="./img/krzesiwo.png" /><span>x1</span
+												><img src="./img/lotos.png" />
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="" id="coat-container">
+									<div class="" id="coat-anim">
+										<div
+											class="item-description-left coat-description-left description-left"
+										>
+											<h1>Ponczo</h1>
+											<img src="./img//ponczo.png" />
+											<p>Żadna dzida ci nie straszna</p>
+											<span
+												>Otrzymujesz 1 mniej obrażeń w przypadku przegranej
+												walki z potworem.</span
+											>
+											<div class="coat-price">
+												<span>x2</span><img src="./img/trawa.png" />
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="" id="sejmitar-container">
+									<div class="" id="sejmitar-anim">
+										<div
+											class="item-description-left sejmitar-description-left description-left"
+										>
+											<h1>Samonaprowadzający ognisty sejmitar zagłady</h1>
+											<img src="./img/sejmitar.png" alt="" class="src" />
+											<p>Badź niezwyciężony! Ale tylko raz...</p>
+											<span
+												>Pojawia się ognisty duszek i daje ci samonaprowadzający
+												ognisty sejmitar zagłady. Od razu powala jednego potwora
+												i psuje się nieodwracalnie. Podczasz ataku nie tracisz
+												energii.</span
+											>
+											<div class="sejmitar-price">
+												<img src="./img/ognisko.png" />
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="" id="frozenCrown-container">
+									<div class="" id="frozenCrown-anim">
+										<div
+											class="item-description-left frozenCrown-description-left description-left"
+										>
+											<h1>Lodowa Korona</h1>
+											<img src="./img/lodowa korona.png" class="src" />
+											<p>Zamróź sobie mózg</p>
+											<span
+												>Nie tracisz psychiki w żadnym przypadku. Lodowa Korona
+												roztapia się gdy skończysz ruch na pustyni lub w
+												kraterze.</span
+											>
+										</div>
+									</div>
+								</div>
+								<div class="" id="securis-container">
+									<div class="" id="securis-anim">
+										<div
+											class="item-description-left securis-description-left description-left"
+										>
+											<h1>Securis</h1>
+											<img
+												src="./img/Topór obosieczny obrys2.png"
+												class="src"
+											/>
+											<p>Wypraw Tanatosa na tamten świat</p>
+											<span
+												>Tym toporem możesz pokonać Tanatosa zamieszkującego
+												czeluście krateru. Po wygranej walce lub kiedy skończy
+												ci się energia i przegrasz, Securis psuje się
+												nieodwracalnie.</span
+											>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="left-buttons-container">
+					<div class="left-buttons-container-top">
+						<button class="btn-eat-1-grass" id="btn-eat-1-grass">
+							Zjedz 1 trawę
+							<div><p>Energia +2</p></div>
+						</button>
+						<button class="btn-eat-2-grass" id="btn-eat-2-grass">
+							Zjedz 2 trawy
+							<div><p>Energia +4 Głód +1</p></div>
+						</button>
+						<button class="btn-eat-food" id="btn-eat-food">Zjedz Leczo</button>
+					</div>
+					<div class="left-buttons-container-bottom">
+						<button class="btn-drink-red-bull" id="btn-drink-red-bull">
+							Wypij czerwonego byka
+							<div><p>Energia +8</p></div>
+						</button>
+						<div class="fire-place-container">
+							<div class="fire-place-icon-false" id="fire-place-icon"></div>
+							<span class="fire-place-span">x0</span>
+						</div>
+						<button class="btn-eat-sasuage" id="btn-eat-sasuage">
+							Zjedz kiełbaski
+							<div><p>Głód +4</p></div>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="middle-container">
+				<div class="game-board" id="game-board">
+					<div class="board-bg"></div>
+					<!-- powiadomienia z gry -->
+					<!-- komunikaty postaci -->
+					<div class="char-notification-container">
+						<div class="char-notification"></div>
+					</div>
+					<!-- komunikaty o zmianie statystyk -->
+					<div class="stats-notification-container">
+						<div class="life-notification"></div>
+						<div class="energy-notification"></div>
+						<div class="starvation-notification"></div>
+						<div class="sanity-notification"></div>
+						<div class="temperature-notification"></div>
+					</div>
+					<div class="row16-container" id="row16" title="16" data-value="16">
+						<button
+							type="button"
+							class="btn1 btn-line16 cave"
+							id="165"
+							title="fjord"
+							value="1"
+						></button>
+						<button
+							type="button"
+							class="btn2 btn-line16"
+							id="166"
+							title="fjord"
+							value="2"
+						></button>
+						<button
+							type="button"
+							class="btn3 btn-line16"
+							id="167"
+							title="fjord"
+							value="3"
+						></button>
+						<button
+							type="button"
+							class="btn4 btn-line16"
+							id="168"
+							title="fjord"
+							value="4"
+						></button>
+						<button
+							type="button"
+							class="btn5 btn-line16 grass"
+							id="169"
+							title="fjord"
+							value="5"
+						></button>
+						<button
+							type="button"
+							class="btn6 btn-line16"
+							id="170"
+							title="crater"
+							value="6"
+						></button>
+						<button
+							type="button"
+							class="btn7 btn-line16 lotos"
+							id="171"
+							title="crater"
+							value="7"
+						></button>
+						<button
+							type="button"
+							class="btn8 btn-line16"
+							id="172"
+							title="crater"
+							value="8"
+						></button>
+						<button
+							type="button"
+							class="btn9 btn-line16"
+							id="173"
+							title="crater"
+							value="9"
+						></button>
+						<button
+							type="button"
+							class="btn10 btn-line16 boss"
+							id="174"
+							title="crater"
+							value="10"
+						></button>
+					</div>
+					<div class="row15-container" id="row15" title="15" data-value="15">
+						<button
+							type="button"
+							class="btn1 btn-line15"
+							id="154"
+							title="fjord"
+							value="1"
+						></button>
+						<button
+							type="button"
+							class="btn2 btn-line15"
+							id="155"
+							title="fjord"
+							value="2"
+						></button>
+						<button
+							type="button"
+							class="btn3 btn-line15 wood"
+							id="156"
+							title="fjord"
+							value="3"
+						></button>
+						<button
+							type="button"
+							class="btn4 btn-line15"
+							id="157"
+							title="fjord"
+							value="4"
+						></button>
+						<button
+							type="button"
+							class="btn5 btn-line15"
+							id="158"
+							title="fjord"
+							value="5"
+						></button>
+						<button
+							type="button"
+							class="btn6 btn-line15"
+							id="159"
+							title="crater"
+							value="6"
+						></button>
+						<button
+							type="button"
+							class="btn7 btn-line15"
+							id="160"
+							title="crater"
+							value="7"
+						></button>
+						<button
+							type="button"
+							class="btn8 btn-line15"
+							id="161"
+							title="crater"
+							value="8"
+						></button>
+						<button
+							type="button"
+							class="btn9 btn-line15 stone"
+							id="162"
+							title="crater"
+							value="9"
+						></button>
+						<button
+							type="button"
+							class="btn10 btn-line15"
+							id="163"
+							title="crater"
+							value="10"
+						></button>
+						<button
+							type="button"
+							class="btn11 btn-line15"
+							id="164"
+							title="crater"
+							value="11"
+						></button>
+					</div>
+					<div class="row14-container" id="row14" title="14" data-value="14">
+						<button
+							type="button"
+							class="btn1 btn-line14 stone"
+							id="144"
+							title="fjord"
+							value="1"
+						></button>
+						<button
+							type="button"
+							class="btn2 btn-line14"
+							id="145"
+							title="fjord"
+							value="2"
+						></button>
+						<button
+							type="button"
+							class="btn3 btn-line14"
+							id="146"
+							title="fjord"
+							value="3"
+						></button>
+						<button
+							type="button"
+							class="btn4 btn-line14 fire"
+							id="147"
+							title="fjord"
+							value="4"
+						></button>
+						<button
+							type="button"
+							class="btn5 btn-line14"
+							id="148"
+							title="fjord"
+							value="5"
+						></button>
+						<button
+							type="button"
+							class="btn6 btn-line14"
+							id="149"
+							title="crater"
+							value="6"
+						></button>
+						<button
+							type="button"
+							class="btn7 btn-line14"
+							id="150"
+							title="crater"
+							value="7"
+						></button>
+						<button
+							type="button"
+							class="btn8 btn-line14"
+							id="151"
+							title="crater"
+							value="8"
+						></button>
+						<button
+							type="button"
+							class="btn9 btn-line14"
+							id="152"
+							title="crater"
+							value="9"
+						></button>
+						<button
+							type="button"
+							class="btn10 btn-line14"
+							id="153"
+							title="crater"
+							value="10"
+						></button>
+					</div>
+					<div class="row13-container" id="row13" title="13" data-value="13">
+						<button
+							type="button"
+							class="btn1 btn-line13"
+							id="133"
+							title="fjord"
+							value="1"
+						></button>
+						<button
+							type="button"
+							class="btn2 btn-line13"
+							id="134"
+							title="northrend"
+							value="2"
+						></button>
+						<button
+							type="button"
+							class="btn3 btn-line13"
+							id="135"
+							title="fjord"
+							value="3"
+						></button>
+						<button
+							type="button"
+							class="btn4 btn-line13"
+							id="136"
+							title="fjord"
+							value="4"
+						></button>
+						<button
+							type="button"
+							class="btn5 btn-line13"
+							id="137"
+							title="fjord"
+							value="5"
+						></button>
+						<button
+							type="button"
+							class="btn6 btn-line13"
+							id="138"
+							title="crater"
+							value="6"
+						></button>
+						<button
+							type="button"
+							class="btn7 btn-line13 stone"
+							id="139"
+							title="crater"
+							value="7"
+						></button>
+						<button
+							type="button"
+							class="btn8 btn-line13"
+							id="140"
+							title="crater"
+							value="8"
+						></button>
+						<button
+							type="button"
+							class="btn9 btn-line13"
+							id="141"
+							title="crater"
+							value="9"
+						></button>
+						<button
+							type="button"
+							class="btn10 btn-line13"
+							id="142"
+							title="crater"
+							value="10"
+						></button>
+						<button
+							type="button"
+							class="btn11 btn-line13"
+							id="143"
+							title="crater"
+							value="11"
+						></button>
+					</div>
+					<div class="row12-container" id="row12" title="12" data-value="12">
+						<button
+							type="button"
+							class="btn1 btn-line12"
+							id="122"
+							title="northrend"
+							value="1"
+						></button>
+						<button
+							type="button"
+							class="btn2 btn-line12"
+							id="123"
+							title="northrend"
+							value="2"
+						></button>
+						<button
+							type="button"
+							class="btn3 btn-line12"
+							id="124"
+							title="northrend"
+							value="3"
+						></button>
+						<button
+							type="button"
+							class="btn4 btn-line12"
+							id="125"
+							title="fjord"
+							value="4"
+						></button>
+						<button
+							type="button"
+							class="btn5 btn-line12"
+							id="126"
+							title="crater"
+							value="5"
+						></button>
+						<button
+							type="button"
+							class="btn6 btn-line12"
+							id="127"
+							title="crater"
+							value="6"
+						></button>
+						<button
+							type="button"
+							class="btn7 btn-line12"
+							id="128"
+							title="crater"
+							value="7"
+						></button>
+						<button
+							type="button"
+							class="btn8 btn-line12"
+							id="129"
+							title="desert"
+							value="8"
+						></button>
+						<button
+							type="button"
+							class="btn9 btn-line12"
+							id="130"
+							title="desert"
+							value="9"
+						></button>
+						<button
+							type="button"
+							class="btn10 btn-line12"
+							id="131"
+							title="crater"
+							value="10"
+						></button>
+					</div>
+					<div class="row11-container" id="row11" title="11" data-value="11">
+						<button
+							type="button"
+							class="btn1 btn-line11"
+							id="111"
+							title="northrend"
+							value="1"
+						></button>
+						<button
+							type="button"
+							class="btn2 btn-line11"
+							id="112"
+							title="northrend"
+							value="2"
+						></button>
+						<button
+							type="button"
+							class="btn3 btn-line11"
+							id="113"
+							title="northrend"
+							value="3"
+						></button>
+						<button
+							type="button"
+							class="btn4 btn-line11"
+							id="114"
+							title="northrend"
+							value="4"
+						></button>
+						<button
+							type="button"
+							class="btn5 btn-line11"
+							id="115"
+							title="northrend"
+							value="5"
+						></button>
+						<button
+							type="button"
+							class="btn6 btn-line11"
+							id="116"
+							title="northrend"
+							value="6"
+						></button>
+						<button
+							type="button"
+							class="btn7 btn-line11"
+							id="117"
+							title="desert"
+							value="7"
+						></button>
+						<button
+							type="button"
+							class="btn8 btn-line11"
+							id="118"
+							title="desert"
+							value="8"
+						></button>
+						<button
+							type="button"
+							class="btn9 btn-line11"
+							id="119"
+							title="desert"
+							value="9"
+						></button>
+						<button
+							type="button"
+							class="btn10 btn-line11"
+							id="120"
+							title="desert"
+							value="10"
+						></button>
+						<button
+							type="button"
+							class="btn11 btn-line11 flint"
+							id="121"
+							title="crater"
+							value="11"
+						></button>
+					</div>
+					<div class="row10-container" id="row10" title="10" data-value="10">
+						<button
+							type="button"
+							class="btn1 btn-line10"
+							id="100"
+							title="northrend"
+							value="1"
+						></button>
+						<button
+							type="button"
+							class="btn2 btn-line10"
+							id="101"
+							title="northrend"
+							value="2"
+						></button>
+						<button
+							type="button"
+							class="btn3 btn-line10 frozen-crown"
+							id="102"
+							title="northrend"
+							value="3"
+						></button>
+						<button
+							type="button"
+							class="btn4 btn-line10"
+							id="103"
+							title="northrend"
+							value="4"
+						></button>
+						<button
+							type="button"
+							class="btn5 btn-line10 flint"
+							id="104"
+							title="northrend"
+							value="5"
+						></button>
+						<button
+							type="button"
+							class="btn6 btn-line10"
+							id="105"
+							title="northrend"
+							value="6"
+						></button>
+						<button
+							type="button"
+							class="btn7 btn-line10"
+							id="106"
+							title="desert"
+							value="7"
+						></button>
+						<button
+							type="button"
+							class="btn8 btn-line10"
+							id="107"
+							title="desert"
+							value="8"
+						></button>
+						<button
+							type="button"
+							class="btn9 btn-line10 wood"
+							id="108"
+							title="desert"
+							value="9"
+						></button>
+						<button
+							type="button"
+							class="btn10 btn-line10"
+							id="109"
+							title="desert"
+							value="10"
+						></button>
+					</div>
+					<div class="row9-container" id="row9" title="9" data-value="9">
+						<button
+							type="button"
+							class="btn1 btn-line9"
+							id="89"
+							title="northrend"
+							value="1"
+						></button>
+						<button
+							type="button"
+							class="btn2 btn-line9 stone"
+							id="90"
+							title="northrend"
+							value="2"
+						></button>
+						<button
+							type="button"
+							class="btn3 btn-line9"
+							id="91"
+							title="northrend"
+							value="3"
+						></button>
+						<button
+							type="button"
+							class="btn4 btn-line9"
+							id="92"
+							title="northrend"
+							value="4"
+						></button>
+						<button
+							type="button"
+							class="btn5 btn-line9"
+							id="93"
+							title="northrend"
+							value="5"
+						></button>
+						<button
+							type="button"
+							class="btn6 btn-line9"
+							id="94"
+							title="northrend"
+							value="6"
+						></button>
+						<button
+							type="button"
+							class="btn7 btn-line9"
+							id="95"
+							title="desert"
+							value="7"
+						></button>
+						<button
+							type="button"
+							class="btn8 btn-line9 grass"
+							id="96"
+							title="desert"
+							value="8"
+						></button>
+						<button
+							type="button"
+							class="btn9 btn-line9 oasis"
+							id="97"
+							title="desert"
+							value="9"
+						></button>
+						<button
+							type="button"
+							class="btn10 btn-line9"
+							id="98"
+							title="desert"
+							value="10"
+						></button>
+						<button
+							type="button"
+							class="btn11 btn-line9"
+							id="99"
+							title="desert"
+							value="11"
+						></button>
+					</div>
+					<div class="row8-container" id="row8" title="8" data-value="8">
+						<button
+							type="button"
+							class="btn1 btn-line8"
+							id="78"
+							title="northrend"
+							value="1"
+						></button>
+						<button
+							type="button"
+							class="btn2 btn-line8"
+							id="79"
+							title="northrend"
+							value="2"
+						></button>
+						<button
+							type="button"
+							class="btn3 btn-line8"
+							id="80"
+							title="northrend"
+							value="3"
+						></button>
+						<button
+							type="button"
+							class="btn4 btn-line8"
+							id="81"
+							title="northrend"
+							value="4"
+						></button>
+						<button
+							type="button"
+							class="btn5 btn-line8"
+							id="82"
+							title="northrend"
+							value="5"
+						></button>
+						<button
+							type="button"
+							class="btn6 btn-line8"
+							id="83"
+							title="desert"
+							value="6"
+						></button>
+						<button
+							type="button"
+							class="btn7 btn-line8"
+							id="84"
+							title="desert"
+							value="7"
+						></button>
+						<button
+							type="button"
+							class="btn8 btn-line8"
+							id="85"
+							title="desert"
+							value="8"
+						></button>
+						<button
+							type="button"
+							class="btn9 btn-line8"
+							id="86"
+							title="desert"
+							value="9"
+						></button>
+						<button
+							type="button"
+							class="btn10 btn-line8 lotos"
+							id="87"
+							title="desert"
+							value="10"
+						></button>
+					</div>
+					<div class="row7-container" id="row7" title="7" data-value="7">
+						<button
+							type="button"
+							class="btn1 btn-line7"
+							id="67"
+							title="northrend"
+							value="1"
+						></button>
+						<button
+							type="button"
+							class="btn2 btn-line7"
+							id="68"
+							title="northrend"
+							value="2"
+						></button>
+						<button
+							type="button"
+							class="btn3 btn-line7"
+							id="69"
+							title="northrend"
+							value="3"
+						></button>
+						<button
+							type="button"
+							class="btn4 btn-line7"
+							id="70"
+							title="northrend"
+							value="4"
+						></button>
+						<button
+							type="button"
+							class="btn5 btn-line7"
+							id="71"
+							title="northrend"
+							value="5"
+						></button>
+						<button
+							type="button"
+							class="btn6 btn-line7"
+							id="72"
+							title="northrend"
+							value="6"
+						></button>
+						<button
+							type="button"
+							class="btn7 btn-line7"
+							id="73"
+							title="desert"
+							value="7"
+						></button>
+						<button
+							type="button"
+							class="btn8 btn-line7"
+							id="74"
+							title="desert"
+							value="8"
+						></button>
+						<button
+							type="button"
+							class="btn9 btn-line7"
+							id="75"
+							title="desert"
+							value="9"
+						></button>
+						<button
+							type="button"
+							class="btn10 btn-line7"
+							id="76"
+							title="desert"
+							value="10"
+						></button>
+						<button
+							type="button"
+							class="btn11 btn-line7"
+							id="77"
+							title="desert"
+							value="11"
+						></button>
+					</div>
+					<div class="row6-container" id="row6" title="6" data-value="6">
+						<button
+							type="button"
+							class="btn1 btn-line6"
+							id="56"
+							title="jungle"
+							value="1"
+						></button>
+						<button
+							type="button"
+							class="btn2 btn-line6"
+							id="57"
+							title="jungle"
+							value="2"
+						></button>
+						<button
+							type="button"
+							class="btn3 btn-line6 grass"
+							id="58"
+							title="jungle"
+							value="3"
+						></button>
+						<button
+							type="button"
+							class="btn4 btn-line6"
+							id="59"
+							title="northrend"
+							value="4"
+						></button>
+						<button
+							type="button"
+							class="btn5 btn-line6"
+							id="60"
+							title="outland"
+							value="5"
+						></button>
+						<button
+							type="button"
+							class="btn6 btn-line6"
+							id="61"
+							title="outland"
+							value="6"
+						></button>
+						<button
+							type="button"
+							class="btn7 btn-line6 wood"
+							id="62"
+							title="outland"
+							value="7"
+						></button>
+						<button
+							type="button"
+							class="btn8 btn-line6"
+							id="63"
+							title="desert"
+							value="8"
+						></button>
+						<button
+							type="button"
+							class="btn9 btn-line6"
+							id="64"
+							title="desert"
+							value="9"
+						></button>
+						<button
+							type="button"
+							class="btn10 btn-line6 flint"
+							id="65"
+							title="desert"
+							value="10"
+						></button>
+					</div>
+					<div class="row5-container" id="row5" title="5" data-value="5">
+						<button
+							type="button"
+							class="btn1 btn-line5 flint"
+							id="45"
+							title="jungle"
+							value="1"
+						></button>
+						<button
+							type="button"
+							class="btn2 btn-line5"
+							id="46"
+							title="jungle"
+							value="2"
+						></button>
+						<button
+							type="button"
+							class="btn3 btn-line5"
+							id="47"
+							title="jungle"
+							value="3"
+						></button>
+						<button
+							type="button"
+							class="btn4 btn-line5"
+							id="48"
+							title="jungle"
+							value="4"
+						></button>
+						<button
+							type="button"
+							class="btn5 btn-line5"
+							id="49"
+							title="outland"
+							value="5"
+						></button>
+						<button
+							type="button"
+							class="btn6 btn-line5 fire"
+							id="50"
+							title="outland"
+							value="6"
+						></button>
+						<button
+							type="button"
+							class="btn7 btn-line5"
+							id="51"
+							title="outland"
+							value="7"
+						></button>
+						<button
+							type="button"
+							class="btn8 btn-line5"
+							id="52"
+							title="outland"
+							value="8"
+						></button>
+						<button
+							type="button"
+							class="btn9 btn-line5"
+							id="53"
+							title="desert"
+							value="9"
+						></button>
+						<button
+							type="button"
+							class="btn10 btn-line5"
+							id="54"
+							title="desert"
+							value="10"
+						></button>
+						<button
+							type="button"
+							class="btn11 btn-line5"
+							id="55"
+							title="desert"
+							value="11"
+						></button>
+					</div>
+					<div class="row4-container" id="row4" title="4" data-value="4">
+						<button
+							type="button"
+							class="btn1 btn-line4"
+							id="34"
+							title="jungle"
+							value="1"
+						></button>
+						<button
+							type="button"
+							class="btn2 btn-line4 stone"
+							id="35"
+							title="jungle"
+							value="2"
+						></button>
+						<button
+							type="button"
+							class="btn3 btn-line4"
+							id="36"
+							title="jungle"
+							value="3"
+						></button>
+						<button
+							type="button"
+							class="btn4 btn-line4"
+							id="37"
+							title="jungle"
+							value="4"
+						></button>
+						<button
+							type="button"
+							class="btn5 btn-line4"
+							id="38"
+							title="outland"
+							value="5"
+						></button>
+						<button
+							type="button"
+							class="btn6 btn-line4"
+							id="39"
+							title="outland"
+							value="6"
+						></button>
+						<button
+							type="button"
+							class="btn7 btn-line4"
+							id="40"
+							title="outland"
+							value="7"
+						></button>
+						<button
+							type="button"
+							class="btn8 btn-line4 grass"
+							id="41"
+							title="outland"
+							value="8"
+						></button>
+						<button
+							type="button"
+							class="btn9 btn-line4"
+							id="42"
+							title="outland"
+							value="9"
+						></button>
+						<button
+							type="button"
+							class="btn10 btn-line4"
+							id="43"
+							title="outland"
+							value="10"
+						></button>
+					</div>
+					<div class="row3-container" id="row3" title="3" data-value="3">
+						<button
+							type="button"
+							class="btn1 btn-line3"
+							id="23"
+							title="jungle"
+							value="1"
+						></button>
+						<button
+							type="button"
+							class="btn2 btn-line3"
+							id="24"
+							title="jungle"
+							value="2"
+						></button>
+						<button
+							type="button"
+							class="btn3 btn-line3"
+							id="25"
+							title="jungle"
+							value="3"
+						></button>
+						<button
+							type="button"
+							class="btn4 btn-line3 wood"
+							id="26"
+							title="jungle"
+							value="4"
+						></button>
+						<button
+							type="button"
+							class="btn5 btn-line3"
+							id="27"
+							title="jungle"
+							value="5"
+						></button>
+						<button
+							type="button"
+							class="btn6 btn-line3"
+							id="28"
+							title="outland"
+							value="6"
+						></button>
+						<button
+							type="button"
+							class="btn7 btn-line3"
+							id="29"
+							title="outland"
+							value="7"
+						></button>
+						<button
+							type="button"
+							class="btn8 btn-line3"
+							id="30"
+							title="outland"
+							value="8"
+						></button>
+						<button
+							type="button"
+							class="btn9 btn-line3"
+							id="31"
+							title="outland"
+							value="9"
+						></button>
+						<button
+							type="button"
+							class="btn10 btn-line3"
+							id="32"
+							title="outland"
+							value="10"
+						></button>
+						<button
+							type="button"
+							class="btn11 btn-line3"
+							id="33"
+							title="outland"
+							value="11"
+						></button>
+					</div>
+					<div class="row2-container" id="row2" title="2" data-value="2">
+						<button
+							type="button"
+							class="btn1 btn-line2 tent"
+							id="12"
+							title="jungle"
+							value="1"
+						></button>
+						<button
+							type="button"
+							class="btn2 btn-line2"
+							id="13"
+							title="jungle"
+							value="2"
+						></button>
+						<button
+							type="button"
+							class="btn3 btn-line2"
+							id="14"
+							title="jungle"
+							value="3"
+						></button>
+						<button
+							type="button"
+							class="btn4 btn-line2"
+							id="15"
+							title="jungle"
+							value="4"
+						></button>
+						<button
+							type="button"
+							class="btn5 btn-line2 grass"
+							id="16"
+							title="outland"
+							value="5"
+						></button>
+						<button
+							type="button"
+							class="btn6 btn-line2"
+							id="17"
+							title="outland"
+							value="6"
+						></button>
+						<button
+							type="button"
+							class="btn7 btn-line2 stone"
+							id="18"
+							title="outland"
+							value="7"
+						></button>
+						<button
+							type="button"
+							class="btn8 btn-line2"
+							id="19"
+							title="outland"
+							value="8"
+						></button>
+						<button
+							type="button"
+							class="btn9 btn-line2"
+							id="20"
+							title="outland"
+							value="9"
+						></button>
+						<button
+							type="button"
+							class="btn10 btn-line2"
+							id="21"
+							title="outland"
+							value="10"
+						></button>
+					</div>
+					<div class="row1-container" id="row1" title="1" data-value="1">
+						<button
+							type="button"
+							class="btn1 btn-line1"
+							id="1"
+							title="jungle"
+							value="1"
+						></button>
+						<button
+							type="button"
+							class="btn2 btn-line1"
+							id="2"
+							title="jungle"
+							value="2"
+						></button>
+						<button
+							type="button"
+							class="btn3 btn-line1 wood"
+							id="3"
+							title="jungle"
+							value="3"
+						></button>
+						<button
+							type="button"
+							class="btn4 btn-line1"
+							id="4"
+							title="jungle"
+							value="4"
+						></button>
+						<button
+							type="button"
+							class="btn5 btn-line1"
+							id="5"
+							title="jungle"
+							value="5"
+						></button>
+						<button
+							type="button"
+							class="btn6 btn-line1"
+							id="6"
+							title="outland"
+							value="6"
+						></button>
+						<button
+							type="button"
+							class="btn7 btn-line1"
+							id="7"
+							title="outland"
+							value="7"
+						></button>
+						<button
+							type="button"
+							class="btn8 btn-line1"
+							id="8"
+							title="outland"
+							value="8"
+						></button>
+						<button
+							type="button"
+							class="btn9 btn-line1"
+							id="9"
+							title="outland"
+							value="9"
+						></button>
+						<button
+							type="button"
+							class="btn10 btn-line1"
+							id="10"
+							title="outland"
+							value="10"
+						></button>
+						<button
+							type="button"
+							class="btn11 btn-line1 arrow-button animation"
+							id="11"
+							title="outland"
+							value="11"
+						>
+							<div class="character"></div>
+						</button>
+					</div>
+					<div class="fire-roll-container">
+						<div class="" id="sasuage-and-redbull-roll">
+							<h1>Wybierz jedno:</h1>
+							<h2>Czerwony Byk</h2>
+							<img src="./img/czerwony_byk.png" class="redbull-img" />
+							<h2>Kiełbaski</h2>
+							<img src="./img/kiełbaski.png" class="sasuages-img" />
+						</div>
+						<div class="" id="sejmitar">
+							<h1>Samonaprowadzający ognisty sejmitar zagłady</h1>
+							<img src="./img/sejmitar.png" alt="" class="src" />
+							<p>Badź niezwyciężony! Ale tylko raz...</p>
+							<span
+								>Pojawia się ognisty duszek i daje ci samonaprowadzający ognisty
+								sejmitar zagłady. Od razu powala jednego potwora i psuje się
+								nieodwracalnie. Podczasz ataku nie tracisz energii.</span
+							>
+							<div class="sejmitar-price">
+								<img src="./img/ognisko.png" />
+							</div>
+						</div>
+						<div class="" id="frozenCrown">
+							<h1>Lodowa Korona</h1>
+							<img src="./img/lodowa korona.png" class="src" />
+							<p>Zamróź sobie mózg</p>
+							<span
+								>Nie tracisz psychiki w żadnym przypadku. Lodowa Korona roztapia
+								się gdy skończysz ruch na pustyni lub w kraterze.</span
+							>
+						</div>
+						<div class="" id="securis">
+							<h1>Securis</h1>
+							<img src="./img/Topór obosieczny obrys2.png" class="src" />
+							<p>Wypraw Tanatosa na tamten świat</p>
+							<span
+								>Tym toporem możesz pokonać Tanatosa zamieszkującego czeluście
+								krateru. Po wygranej walce lub kiedy skończy ci się energia i
+								przegrasz, Securis psuje się nieodwracalnie.</span
+							>
+						</div>
+					</div>
+				</div>
+
+				<div class="copyright-container">
+					<span class="alert-reso"
+						>If your game crashed, you've probably changed your window
+						size</span
+					>
+					<span class="alert-reso"
+						>DO NOT CHANGE YOUR SCREEN RESOLUTION DURING THE GAME! Adjust it
+						before you start.</span
+					>
+					<span class="copyright-text"
+						>2022 Jakub Rezler || &copf; All rights reserved</span
+					>
+				</div>
+			</div>
+			<div class="right-container">
+				<h2 class="tura">Tura</h2>
+				<div class="difficulties">
+					<span class="easy-span">Łatwy</span>
+					<span class="mid-span">Średni</span>
+					<span class="hard-span">Trudny</span>
+				</div>
+				<div class="rounds-container">
+					<div class="sun-moon-icons-container">
+						<div class="sun-icon" title="dzień"></div>
+						<div class="moon-icon" title="noc"></div>
+					</div>
+					<table>
+						<tr class="table-row-day">
+							<td class="round1 diff-easy"><span>1</span></td>
+							<td class="round3 diff-easy"><span>3</span></td>
+							<td class="round5 diff-easy"><span>5</span></td>
+							<td class="round7 diff-easy"><span>7</span></td>
+							<td class="round9 diff-mid"><span>9</span></td>
+							<td class="round11 diff-mid"><span>11</span></td>
+							<td class="round13 diff-mid"><span>13</span></td>
+							<td class="round15 diff-mid"><span>15</span></td>
+							<td class="round17 diff-hard"><span>17</span></td>
+							<td class="round19 diff-hard"><span>19</span></td>
+							<td class="round21 diff-hard"><span>21</span></td>
+							<td class="round23 diff-hard"><span>23</span></td>
+						</tr>
+						<tr class="table-row-night">
+							<td class="round2 diff-easy"><span>2</span></td>
+							<td class="round4 diff-easy"><span>4</span></td>
+							<td class="round6 diff-easy"><span>6</span></td>
+							<td class="round8 diff-easy"><span>8</span></td>
+							<td class="round10 diff-mid"><span>10</span></td>
+							<td class="round12 diff-mid"><span>12</span></td>
+							<td class="round14 diff-mid"><span>14</span></td>
+							<td class="round16 diff-mid"><span>16</span></td>
+							<td class="round18 diff-hard"><span>18</span></td>
+							<td class="round20 diff-hard"><span>20</span></td>
+							<td class="round22 diff-hard"><span>22</span></td>
+							<td class="round24 diff-hard"><span>24</span></td>
+						</tr>
+					</table>
+				</div>
+				<div class="right-container-action-buttons">
+					<button class="use-spot">Aktywuj pole</button>
+					<button class="end-round">Zakończ turę</button>
+					<button class="instruction">Przewodnik</button>
+				</div>
+
+				<div class="event-cards-and-items-container">
+					<!-- ------------------------------------------------------------------ -->
+					<div class="event-cards-container">
+						<div class="event-card-container">
+							<div class="" id="card1"></div>
+							<div class="" id="card2"></div>
+						</div>
+						<div class="event-card-reverse">
+							<div
+								class="event-card-reverse-anim"
+								id="event-card-reverse-anim"
+							></div>
+						</div>
+					</div>
+					<!-- ------------------------------------------------------------- -->
+					<div class="item-list-container">
+						<span class="item-list-span">Co muszę mieć by przetrwać?</span>
+						<div class="item-list-container2">
+							<div class="item-list-column-left">
+								<button class="axe div">
+									<div class="axe-shadow shadow">
+										<div
+											class="item-description-right axe-description-right description-right"
+										>
+											<h1>Siekiera</h1>
+											<img src="./img/siekiera.png" alt="" class="src" />
+											<p>Zostań prawdziwym rębajłą</p>
+											<span
+												>Nie tracisz energii podczas pozyskiwania surowców</span
+											>
+											<div class="axe-price">
+												<span>x1</span><img src="./img/kamień.png" /><span
+													>x1</span
+												><img src="./img/drewno.png" />
+											</div>
+										</div>
+									</div>
+								</button>
+								<button class="shoes div">
+									<div class="shoes-shadow shadow">
+										<div
+											class="item-description-right shoes-description-right description-right"
+										>
+											<h1>Lacie</h1>
+											<img src="./img/lacie.png" />
+											<p>Nie uraź stopy o kamień</p>
+											<span
+												>Na koniec tury odzyskujesz 3 punkty energii zamiast
+												2.</span
+											>
+											<div class="shoes-price">
+												<span>x2</span><img src="./img/trawa.png" />
+											</div>
+										</div>
+									</div>
+								</button>
+								<button class="torch div">
+									<div class="torch-shadow shadow">
+										<div
+											class="item-description-right torch-description-right description-right"
+										>
+											<h1>Pochodnia</h1>
+											<img src="./img/pochodnia.png" />
+											<p>Przegoń niedobre ciemności</p>
+											<span
+												>W nocy (i w sytuacjach gdy jest ciemno) nie trać
+												psychiki. Tracisz pochodnię, gdy zakończysz turę na
+												lodowej grani.</span
+											>
+											<div class="torch-price">
+												<span>x1</span><img src="./img/drewno.png" /><span
+													>x1</span
+												><img src="./img/krzesiwo.png" />
+											</div>
+										</div>
+									</div>
+								</button>
+							</div>
+							<div class="item-list-column-right">
+								<button class="sword div">
+									<div class="sword-shadow shadow">
+										<div
+											class="item-description-right sword-description-right description-right"
+										>
+											<h1>Miecz</h1>
+											<img src="./img/miecz.png" />
+											<p>Siekaj wrogów jak ogóra</p>
+											<span
+												>Podczas walki z wrogiem zwyciężasz wyrzucając 3.</span
+											>
+											<div class="sword-price">
+												<span>x2</span><img src="./img/kamień.png" /><span
+													>x1</span
+												><img src="./img/drewno.png" />
+											</div>
+										</div>
+									</div>
+								</button>
+								<button class="food div">
+									<div class="food-shadow shadow">
+										<div
+											class="item-description-right food-description-right description-right"
+										>
+											<h1>Leczo</h1>
+											<img src="./img/leczo.png" alt="" class="src" />
+											<p>Leczy</p>
+											<span
+												>Leczo przywraca ci 5 punktów zdrowia i 2 punkty
+												głodu.</span
+											>
+											<div class="food-price">
+												<span>x1</span><img src="./img/drewno.png" /><span
+													>x1</span
+												><img src="./img/krzesiwo.png" /><span>x1</span
+												><img src="./img/lotos.png" />
+											</div>
+										</div>
+									</div>
+								</button>
+								<button class="coat div">
+									<div class="coat-shadow shadow">
+										<div
+											class="item-description-right coat-description-right description-right"
+										>
+											<h1>Ponczo</h1>
+											<img src="./img//ponczo.png" />
+											<p>Żadna dzida ci nie straszna</p>
+											<span
+												>Otrzymujesz 1 mniej obrażeń w przypadku przegranej
+												walki z potworem.</span
+											>
+											<div class="coat-price">
+												<span>x2</span><img src="./img/trawa.png" />
+											</div>
+										</div>
+									</div>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="./engine4.js"></script>
+	</body>
+</html>

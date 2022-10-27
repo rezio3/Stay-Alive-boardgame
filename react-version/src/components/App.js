@@ -1,14 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import Char from "./context/CharContext";
 import Start from "./start-game-components/Start";
-
+import Game from "./game/Game";
 import "../style/css/App.css";
 
 function App() {
+	const [started, setStarted] = useState(false);
+	console.log(started);
+
+	const handleStartButton = () => {
+		setStarted({
+			started: true,
+		});
+	};
+
 	return (
 		<Char>
 			<div className="App">
-				<Start />
+				{started ? <Game /> : <Start value={handleStartButton} />}
 			</div>
 		</Char>
 	);

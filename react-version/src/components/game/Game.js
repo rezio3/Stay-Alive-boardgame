@@ -3,20 +3,24 @@ import "../../style/css/Game.css";
 
 const Game = () => {
 	const [arrowBtnActive, setArrowBtnActive] = useState(true);
+	const [characterSet, setCharacterSet] = useState(false);
 
-	const removeArrowButton = () => {
+	const handleArrowButton = () => {
 		setArrowBtnActive(false);
+		setCharacterSet(true);
 	};
 
 	return (
 		<div>
 			<div className="game">
-				<div className="click-start-hex">
-					<h2>Umieść bohatera na planszy by rozpocząć grę</h2>
-				</div>
+				{characterSet ? null : (
+					<div className="click-start-hex">
+						<h2>Umieść bohatera na planszy by rozpocząć grę</h2>
+					</div>
+				)}
 				<div className="middle-container">
 					<div className="game-board" id="game-board">
-						<div className="board-bg"></div>
+						{characterSet ? null : <div className="board-bg"></div>}
 						<div
 							className="row16-container"
 							id="row16"
@@ -1260,7 +1264,7 @@ const Game = () => {
 								id="11"
 								title="outland"
 								value="11"
-								onClick={removeArrowButton}
+								onClick={handleArrowButton}
 							>
 								<div className="character"></div>
 							</button>

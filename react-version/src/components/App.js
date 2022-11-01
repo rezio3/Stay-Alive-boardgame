@@ -9,9 +9,7 @@ function App() {
 	console.log(started);
 
 	const handleStartButton = () => {
-		setStarted({
-			started: true,
-		});
+		setStarted(true);
 	};
 
 	return (

@@ -21,7 +21,10 @@ const Game = () => {
 			<div className="middle-container">
 				<div className="game-board" id="game-board">
 					{characterSet ? null : <div className="board-bg"></div>}
-					<BoardButtons />
+					<BoardButtons
+						arrowBtnActive={arrowBtnActive}
+						handleArrowButton={handleArrowButton}
+					/>
 					<div className="character"></div>
 				</div>
 			</div>

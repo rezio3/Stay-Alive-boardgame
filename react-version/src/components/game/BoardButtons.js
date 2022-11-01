@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 
-const BoardButtons = () => {
+const BoardButtons = (props) => {
 	return (
 		<Fragment>
 			<div className="row16-container" id="row16" title="16" data-value="16">
@@ -1206,12 +1206,12 @@ const BoardButtons = () => {
 				<button
 					type="button"
 					className={`btn11 btn-line1 arrow-button ${
-						arrowBtnActive === true ? "animation" : null
+						props.arrowBtnActive === true ? "animation" : null
 					}`}
 					id="11"
 					title="outland"
 					value="11"
-					onClick={handleArrowButton}
+					onClick={props.handleArrowButton}
 				></button>
 			</div>
 		</Fragment>

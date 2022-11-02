@@ -1,4 +1,6 @@
 import React, { Fragment } from "react";
+import ButtonsRow1 from "./buttons/ButtonsRow1";
+import buttonsData from "./buttons/buttonsData/buttonsData";
 
 const BoardButtons = (props) => {
 	return (
@@ -1133,76 +1135,9 @@ const BoardButtons = (props) => {
 				></button>
 			</div>
 			<div className="row1-container" id="row1" title="1" data-value="1">
-				<button
-					type="button"
-					className="btn1 btn-line1"
-					id="1"
-					title="jungle"
-					value="1"
-				></button>
-				<button
-					type="button"
-					className="btn2 btn-line1"
-					id="2"
-					title="jungle"
-					value="2"
-				></button>
-				<button
-					type="button"
-					className="btn3 btn-line1 wood"
-					id="3"
-					title="jungle"
-					value="3"
-				></button>
-				<button
-					type="button"
-					className="btn4 btn-line1"
-					id="4"
-					title="jungle"
-					value="4"
-				></button>
-				<button
-					type="button"
-					className="btn5 btn-line1"
-					id="5"
-					title="jungle"
-					value="5"
-				></button>
-				<button
-					type="button"
-					className="btn6 btn-line1"
-					id="6"
-					title="outland"
-					value="6"
-				></button>
-				<button
-					type="button"
-					className="btn7 btn-line1"
-					id="7"
-					title="outland"
-					value="7"
-				></button>
-				<button
-					type="button"
-					className="btn8 btn-line1"
-					id="8"
-					title="outland"
-					value="8"
-				></button>
-				<button
-					type="button"
-					className="btn9 btn-line1"
-					id="9"
-					title="outland"
-					value="9"
-				></button>
-				<button
-					type="button"
-					className="btn10 btn-line1"
-					id="10"
-					title="outland"
-					value="10"
-				></button>
+				{buttonsData.buttonsRow1.map((e) => (
+					<ButtonsRow1 id={e.id} className={e.className} value={e.value} />
+				))}
 				<button
 					type="button"
 					className={`btn11 btn-line1 arrow-button ${

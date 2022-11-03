@@ -25,7 +25,7 @@ const Game = () => {
 						arrowBtnActive={arrowBtnActive}
 						handleArrowButton={handleArrowButton}
 					/>
-					<div className="character"></div>
+					<div className="character" />
 				</div>
 			</div>
 		</div>

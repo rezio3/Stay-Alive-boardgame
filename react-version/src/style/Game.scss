@@ -95,26 +95,14 @@
 			}
 		}
 
-		.row3-container,
-		.row5-container,
-		.row7-container,
-		.row9-container,
-		.row11-container,
-		.row13-container,
-		.row15-container {
+		.odd-row-container {
 			display: flex;
 			justify-content: flex-end;
 			align-items: flex-end;
 			height: 48px;
 			width: 682px;
 
-			.btn-line3,
-			.btn-line5,
-			.btn-line7,
-			.btn-line9,
-			.btn-line11,
-			.btn-line13,
-			.btn-line15 {
+			.btn-line-odd {
 				width: 54px;
 				height: 54px;
 				margin-left: 1.35px;
@@ -126,41 +114,22 @@
 				margin-right: 37.5px;
 			}
 
-			.btn-line3:hover,
-			.btn-line5:hover,
-			.btn-line7:hover,
-			.btn-line9:hover,
-			.btn-line11:hover,
-			.btn-line13:hover,
-			.btn-line15:hover {
+			.btn-line-odd:hover {
 				opacity: 30%;
 				background-color: #fff;
 				box-shadow: 0 0 10px 5px white;
 				border-radius: 50px;
 			}
 		}
-		.row2-container,
-		.row4-container,
-		.row6-container,
-		.row8-container,
-		.row10-container,
-		.row12-container,
-		.row14-container,
-		.row16-container {
+
+		.even-row-container {
 			display: flex;
 			justify-content: flex-start;
 			align-items: flex-end;
 			height: 48px;
 			width: 682px;
 
-			.btn-line2,
-			.btn-line4,
-			.btn-line6,
-			.btn-line8,
-			.btn-line10,
-			.btn-line12,
-			.btn-line14,
-			.btn-line16 {
+			.btn-line-even {
 				width: 54px;
 				height: 54px;
 				margin-left: 1.35px;
@@ -172,14 +141,7 @@
 				margin-left: 65px;
 			}
 
-			.btn-line2:hover,
-			.btn-line4:hover,
-			.btn-line6:hover,
-			.btn-line8:hover,
-			.btn-line10:hover,
-			.btn-line12:hover,
-			.btn-line14:hover,
-			.btn-line16:hover {
+			.btn-line-even:hover {
 				opacity: 30%;
 				background-color: #fff;
 				border-radius: 50px;

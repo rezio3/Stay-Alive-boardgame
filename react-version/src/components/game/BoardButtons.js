@@ -20,7 +20,7 @@ import buttonsData from "./buttons/buttonsData/buttonsData";
 const BoardButtons = (props) => {
 	return (
 		<Fragment>
-			<div className="row16-container" id="row16" title="16" data-value="16">
+			<div className="even-row-container" id="row16" title="16" data-value="16">
 				{buttonsData.buttonsRow16.map((e) => (
 					<ButtonsRow16
 						id={e.id}
@@ -30,7 +30,7 @@ const BoardButtons = (props) => {
 					/>
 				))}
 			</div>
-			<div className="row15-container" id="row15" title="15" data-value="15">
+			<div className="odd-row-container" id="row15" title="15" data-value="15">
 				{buttonsData.buttonsRow15.map((e) => (
 					<ButtonsRow15
 						id={e.id}
@@ -40,7 +40,7 @@ const BoardButtons = (props) => {
 					/>
 				))}
 			</div>
-			<div className="row14-container" id="row14" title="14" data-value="14">
+			<div className="even-row-container" id="row14" title="14" data-value="14">
 				{buttonsData.buttonsRow14.map((e) => (
 					<ButtonsRow14
 						id={e.id}
@@ -50,7 +50,7 @@ const BoardButtons = (props) => {
 					/>
 				))}
 			</div>
-			<div className="row13-container" id="row13" title="13" data-value="13">
+			<div className="odd-row-container" id="row13" title="13" data-value="13">
 				{buttonsData.buttonsRow13.map((e) => (
 					<ButtonsRow13
 						id={e.id}
@@ -60,7 +60,7 @@ const BoardButtons = (props) => {
 					/>
 				))}
 			</div>
-			<div className="row12-container" id="row12" title="12" data-value="12">
+			<div className="even-row-container" id="row12" title="12" data-value="12">
 				{buttonsData.buttonsRow12.map((e) => (
 					<ButtonsRow12
 						id={e.id}
@@ -70,7 +70,7 @@ const BoardButtons = (props) => {
 					/>
 				))}
 			</div>
-			<div className="row11-container" id="row11" title="11" data-value="11">
+			<div className="odd-row-container" id="row11" title="11" data-value="11">
 				{buttonsData.buttonsRow11.map((e) => (
 					<ButtonsRow11
 						id={e.id}
@@ -80,7 +80,7 @@ const BoardButtons = (props) => {
 					/>
 				))}
 			</div>
-			<div className="row10-container" id="row10" title="10" data-value="10">
+			<div className="even-row-container" id="row10" title="10" data-value="10">
 				{buttonsData.buttonsRow10.map((e) => (
 					<ButtonsRow10
 						id={e.id}
@@ -90,7 +90,7 @@ const BoardButtons = (props) => {
 					/>
 				))}
 			</div>
-			<div className="row9-container" id="row9" title="9" data-value="9">
+			<div className="odd-row-container" id="row9" title="9" data-value="9">
 				{buttonsData.buttonsRow9.map((e) => (
 					<ButtonsRow9
 						id={e.id}
@@ -100,7 +100,7 @@ const BoardButtons = (props) => {
 					/>
 				))}
 			</div>
-			<div className="row8-container" id="row8" title="8" data-value="8">
+			<div className="even-row-container" id="row8" title="8" data-value="8">
 				{buttonsData.buttonsRow8.map((e) => (
 					<ButtonsRow8
 						id={e.id}
@@ -110,7 +110,7 @@ const BoardButtons = (props) => {
 					/>
 				))}
 			</div>
-			<div className="row7-container" id="row7" title="7" data-value="7">
+			<div className="odd-row-container" id="row7" title="7" data-value="7">
 				{buttonsData.buttonsRow7.map((e) => (
 					<ButtonsRow7
 						id={e.id}
@@ -120,7 +120,7 @@ const BoardButtons = (props) => {
 					/>
 				))}
 			</div>
-			<div className="row6-container" id="row6" title="6" data-value="6">
+			<div className="even-row-container" id="row6" title="6" data-value="6">
 				{buttonsData.buttonsRow6.map((e) => (
 					<ButtonsRow6
 						id={e.id}
@@ -130,7 +130,7 @@ const BoardButtons = (props) => {
 					/>
 				))}
 			</div>
-			<div className="row5-container" id="row5" title="5" data-value="5">
+			<div className="odd-row-container" id="row5" title="5" data-value="5">
 				{buttonsData.buttonsRow5.map((e) => (
 					<ButtonsRow5
 						id={e.id}
@@ -140,7 +140,7 @@ const BoardButtons = (props) => {
 					/>
 				))}
 			</div>
-			<div className="row4-container" id="row4" title="4" data-value="4">
+			<div className="even-row-container" id="row4" title="4" data-value="4">
 				{buttonsData.buttonsRow4.map((e) => (
 					<ButtonsRow4
 						id={e.id}
@@ -150,7 +150,7 @@ const BoardButtons = (props) => {
 					/>
 				))}
 			</div>
-			<div className="row3-container" id="row3" title="3" data-value="3">
+			<div className="odd-row-container" id="row3" title="3" data-value="3">
 				{buttonsData.buttonsRow3.map((e) => (
 					<ButtonsRow3
 						id={e.id}
@@ -160,7 +160,7 @@ const BoardButtons = (props) => {
 					/>
 				))}
 			</div>
-			<div className="row2-container" id="row2" title="2" data-value="2">
+			<div className="even-row-container" id="row2" title="2" data-value="2">
 				{buttonsData.buttonsRow2.map((e) => (
 					<ButtonsRow2
 						id={e.id}

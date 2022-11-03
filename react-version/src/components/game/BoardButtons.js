@@ -187,7 +187,7 @@ const BoardButtons = (props) => {
 					id="11"
 					title="outland"
 					value="11"
-					onClick={props.handleArrowButton}
+					onClick={props.onArrowButton}
 				></button>
 			</div>
 		</Fragment>

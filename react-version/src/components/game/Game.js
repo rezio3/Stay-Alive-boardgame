@@ -23,7 +23,7 @@ const Game = () => {
 					{characterSet ? null : <div className="board-bg"></div>}
 					<BoardButtons
 						arrowBtnActive={arrowBtnActive}
-						handleArrowButton={handleArrowButton}
+						onArrowButton={handleArrowButton}
 					/>
 					<div className="character" />
 				</div>

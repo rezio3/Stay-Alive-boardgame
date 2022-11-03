@@ -6,7 +6,6 @@ import "../style/css/App.css";
 
 function App() {
 	const [started, setStarted] = useState(false);
-	console.log(started);
 
 	const handleStartButton = () => {
 		setStarted(true);

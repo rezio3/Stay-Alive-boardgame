@@ -1,0 +1,222 @@
+.game {
+	display: flex;
+	justify-content: center;
+	padding: 20px 0 0 0;
+	transition: 1s;
+
+	.click-start-hex {
+		position: absolute;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		top: 50%;
+		height: 200px;
+		width: 400px;
+		background-color: #fff;
+		border: 2px solid black;
+		border-radius: 15px;
+		text-align: center;
+		z-index: 1;
+
+		h2 {
+			position: absolute;
+		}
+	}
+}
+
+// board
+
+.board-bg {
+	position: absolute;
+	background-image: url("../../../src/img/Stay Alive 2bg.png");
+	background-size: cover;
+	height: 850px;
+	width: 682px;
+}
+
+.middle-container {
+	background-image: url("../../../src/img/Stay Alive 3.png");
+	background-size: cover;
+	height: 850px;
+	width: 682px;
+
+	.copyright-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+
+		span {
+			font-size: 15px;
+		}
+
+		.copyright-text {
+			letter-spacing: 2px;
+		}
+	}
+
+	button {
+		cursor: pointer;
+	}
+
+	.game-board {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		height: 850px;
+		width: 682px;
+
+		.row1-container {
+			display: flex;
+			justify-content: flex-end;
+			align-items: flex-end;
+			height: 85px;
+			width: 682px;
+
+			.btn-line1 {
+				width: 54px;
+				height: 54px;
+				margin-left: 1.35px;
+				margin-bottom: 37.5px;
+				border: none;
+				background: none;
+			}
+
+			.btn11 {
+				margin-right: 37.5px;
+			}
+
+			.btn-line1:hover {
+				opacity: 30%;
+				background-color: #fff;
+				border-radius: 50px;
+				box-shadow: 0 0 10px 5px white;
+				animation: none;
+			}
+		}
+
+		.odd-row-container {
+			display: flex;
+			justify-content: flex-end;
+			align-items: flex-end;
+			height: 48px;
+			width: 682px;
+
+			.btn-line-odd {
+				width: 54px;
+				height: 54px;
+				margin-left: 1.35px;
+				border: none;
+				background: none;
+			}
+
+			.btn11 {
+				margin-right: 37.5px;
+			}
+
+			.btn-line-odd:hover {
+				opacity: 30%;
+				background-color: #fff;
+				box-shadow: 0 0 10px 5px white;
+				border-radius: 50px;
+			}
+		}
+
+		.even-row-container {
+			display: flex;
+			justify-content: flex-start;
+			align-items: flex-end;
+			height: 48px;
+			width: 682px;
+
+			.btn-line-even {
+				width: 54px;
+				height: 54px;
+				margin-left: 1.35px;
+				border: none;
+				background: none;
+			}
+
+			.btn1 {
+				margin-left: 65px;
+			}
+
+			.btn-line-even:hover {
+				opacity: 30%;
+				background-color: #fff;
+				border-radius: 50px;
+				box-shadow: 0 0 10px 5px white;
+			}
+		}
+	}
+}
+
+.character {
+	display: none;
+	position: absolute;
+	height: 48px;
+	width: 30px;
+	background-image: url("../../../src/img/char2.png");
+	background-size: cover;
+	transform: translate(38%, -52%);
+}
+
+.character-animation {
+	animation: char-anim 0.5s cubic-bezier(0.81, 0.2, 0.18, 1.03);
+}
+
+@keyframes char-anim {
+	0% {
+		height: 48px;
+		width: 30px;
+	}
+	10% {
+		transform: translate(38%, -52%);
+		height: 52px;
+		width: 32px;
+	}
+	20% {
+		transform: translate(10%, -52%);
+	}
+	40% {
+		transform: translate(60%, -52%);
+	}
+	60% {
+		transform: translate(10%, -52%);
+	}
+	80% {
+		transform: translate(60%, -52%);
+	}
+	90% {
+		transform: translate(38%, -52%);
+		height: 52px;
+		width: 32px;
+	}
+	100% {
+		height: 48px;
+		width: 30px;
+	}
+}
+
+.animation {
+	box-shadow: 0 0 20px 15px white;
+	border-radius: 50%;
+	animation: animation 1.5s ease-in-out infinite;
+}
+
+@keyframes animation {
+	0% {
+		opacity: 30%;
+		background-color: #fff;
+	}
+
+	50% {
+		opacity: 80%;
+		background-color: #fff;
+	}
+
+	100% {
+		opacity: 30%;
+		background-color: #fff;
+	}
+}

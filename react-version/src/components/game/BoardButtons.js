@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useContext } from "react";
 import ButtonsRow1 from "./buttons/ButtonsRow1";
 import ButtonsRow2 from "./buttons/ButtonsRow2";
 import ButtonsRow3 from "./buttons/ButtonsRow3";
@@ -16,8 +16,21 @@ import ButtonsRow14 from "./buttons/ButtonsRow14";
 import ButtonsRow15 from "./buttons/ButtonsRow15";
 import ButtonsRow16 from "./buttons/ButtonsRow16";
 import buttonsData from "./buttons/buttonsData/buttonsData";
+import { BoardContext } from "../context/BoardContext";
 
 const BoardButtons = (props) => {
+	const [board, setBoard] = useContext(BoardContext);
+	const handleArrowButton = (event) => {
+		console.log(event);
+		props.onArrowButton();
+		const handleBtnId = (e) => {
+			setBoard({
+				...board,
+				btnId: e.target.id,
+			});
+		};
+		handleBtnId(event);
+	};
 	return (
 		<Fragment>
 			<div className="even-row-container" id="row16" title="16" data-value="16">
@@ -187,7 +200,7 @@ const BoardButtons = (props) => {
 					id="11"
 					title="outland"
 					value="11"
-					onClick={props.onArrowButton}
+					onClick={handleArrowButton}
 				></button>
 			</div>
 		</Fragment>

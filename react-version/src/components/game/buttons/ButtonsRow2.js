@@ -4,7 +4,6 @@ import { BoardContext } from "../../context/BoardContext";
 const ButtonsRow2 = (props) => {
 	const [board, setBoard] = useContext(BoardContext);
 	const handleBoardBtn = (e) => {
-		console.log(e);
 		setBoard({
 			...board,
 			btnId: e.target.id,

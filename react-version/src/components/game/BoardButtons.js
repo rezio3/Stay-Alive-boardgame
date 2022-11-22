@@ -21,7 +21,6 @@ import { BoardContext } from "../context/BoardContext";
 const BoardButtons = (props) => {
 	const [board, setBoard] = useContext(BoardContext);
 	const handleArrowButton = (event) => {
-		console.log(event);
 		props.onArrowButton();
 		const handleBtnId = (e) => {
 			setBoard({

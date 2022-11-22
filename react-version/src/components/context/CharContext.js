@@ -1,7 +1,7 @@
 import React, { createContext, useState } from "react";
 
 const charSelected = {
-	selectedChar: "",
+	selectedChar: null,
 };
 
 export const CharaterContext = createContext();

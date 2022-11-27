@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../../style/css/Game.css";
 import BoardButtons from "./BoardButtons";
 import Copyright from "./Copyright";
+import SelectedCharacter from "./SelectedCharacterMove";
 
 const Game = () => {
 	const [arrowBtnActive, setArrowBtnActive] = useState(true);
@@ -26,7 +27,7 @@ const Game = () => {
 						arrowBtnActive={arrowBtnActive}
 						onArrowButton={handleArrowButton}
 					/>
-					<div className="character" />
+					<SelectedCharacter />
 				</div>
 				<Copyright />
 			</div>

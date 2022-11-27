@@ -1,17 +1,23 @@
 import React, { createContext, useState } from "react";
 
 const charSelected = {
+	life: 20,
+	energy: 10,
+	starvation: 10,
+	sanity: 10,
+	temperature: 5,
+
 	selectedChar: null,
 };
 
-export const CharaterContext = createContext();
+export const CharacterContext = createContext();
 
 const Char = ({ children }) => {
 	const [char, setChar] = useState(charSelected);
 	return (
-		<CharaterContext.Provider value={[char, setChar]}>
+		<CharacterContext.Provider value={[char, setChar]}>
 			{children}
-		</CharaterContext.Provider>
+		</CharacterContext.Provider>
 	);
 };
 

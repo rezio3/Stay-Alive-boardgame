@@ -7,6 +7,7 @@ const ButtonsRow2 = (props) => {
 		setBoard({
 			...board,
 			btnId: e.target.id,
+			prevBtnId: board.btnId,
 		});
 	};
 	let title;

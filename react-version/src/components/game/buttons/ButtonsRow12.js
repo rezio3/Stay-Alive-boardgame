@@ -1,6 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import { BoardContext } from "../../context/BoardContext";
 
 const ButtonsRow12 = (props) => {
+	const [board, setBoard] = useContext(BoardContext);
+	const handleBoardBtn = (e) => {
+		console.log(e);
+		setBoard({
+			...board,
+			btnId: e.target.id,
+		});
+	};
 	let title;
 	if (props.id < 125) {
 		title = "northrend";
@@ -19,6 +28,7 @@ const ButtonsRow12 = (props) => {
 			id={props.id}
 			value={props.value}
 			title={title}
+			onClick={handleBoardBtn}
 		/>
 	);
 };

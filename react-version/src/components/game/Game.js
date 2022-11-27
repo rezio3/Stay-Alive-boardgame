@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../../style/css/Game.css";
 import BoardButtons from "./BoardButtons";
+import Copyright from "./Copyright";
 
 const Game = () => {
 	const [arrowBtnActive, setArrowBtnActive] = useState(true);
@@ -27,6 +28,7 @@ const Game = () => {
 					/>
 					<div className="character" />
 				</div>
+				<Copyright />
 			</div>
 		</div>
 	);

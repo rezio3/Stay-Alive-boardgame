@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
+import { BoardContext } from "../../context/BoardContext";
 
 const ButtonsRow2 = (props) => {
+	const [board, setBoard] = useContext(BoardContext);
+	const handleBoardBtn = (e) => {
+		setBoard({
+			...board,
+			btnId: e.target.id,
+		});
+	};
 	let title;
 	if (props.id < 16) {
 		title = "jungle";
@@ -15,6 +23,7 @@ const ButtonsRow2 = (props) => {
 			id={props.id}
 			value={props.value}
 			title={title}
+			onClick={handleBoardBtn}
 		/>
 	);
 };

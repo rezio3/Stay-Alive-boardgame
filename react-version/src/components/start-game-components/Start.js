@@ -1,6 +1,7 @@
 import React from "react";
 import "../../style/css/Start.css";
 import Characters from "./Characters";
+import Copyright from "../game/Copyright";
 
 const Start = (props) => {
 	return (
@@ -11,18 +12,7 @@ const Start = (props) => {
 			<button className="start-btn" id="start-button" onClick={props.value}>
 				Start!
 			</button>
-			<div className="copyright-container">
-				<span className="alert-reso">
-					If your game crashed, you've probably changed your window size
-				</span>
-				<span className="alert-reso">
-					DO NOT CHANGE YOUR SCREEN RESOLUTION DURING THE GAME! Adjust it before
-					you start.
-				</span>
-				<span className="copyright-text">
-					2022 Jakub Rezler || &copy; All rights reserved
-				</span>
-			</div>
+			<Copyright />
 		</div>
 	);
 };

@@ -26,31 +26,31 @@ const Characters = () => {
 			<img
 				src={char1}
 				className="char-img-1 char-img"
-				id="./img/char2.png"
+				id="0"
 				onClick={selectCharacterHandler}
 			/>
 			<img
 				src={char2}
 				className="char-img-2 char-img"
-				id="./img/char3.png"
+				id="1"
 				onClick={selectCharacterHandler}
 			/>
 			<img
 				src={char3}
 				className="char-img-3 char-img"
-				id="./img/char4.png"
+				id="2"
 				onClick={selectCharacterHandler}
 			/>
 			<img
 				src={char4}
 				className="char-img-4 char-img"
-				id="./img/char5.png"
+				id="3"
 				onClick={selectCharacterHandler}
 			/>
 			<img
 				src={char5}
 				className="char-img-5 char-img"
-				id="./img/char6.png"
+				id="4"
 				onClick={selectCharacterHandler}
 			/>
 		</div>

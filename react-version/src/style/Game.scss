@@ -159,6 +159,21 @@
 	background-image: url("../../../src/img/char2.png");
 	background-size: cover;
 	transform: translate(24%, -52%);
+	&.__1 {
+		background-image: url("../../../src/img/char2.png");
+	}
+	&.__2 {
+		background-image: url("../../../src/img/char3.png");
+	}
+	&.__3 {
+		background-image: url("../../../src/img/char4.png");
+	}
+	&.__4 {
+		background-image: url("../../../src/img/char5.png");
+	}
+	&.__5 {
+		background-image: url("../../../src/img/char6.png");
+	}
 }
 
 .character-animation {

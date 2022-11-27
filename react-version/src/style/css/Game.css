@@ -139,6 +139,21 @@
   background-size: cover;
   transform: translate(24%, -52%);
 }
+.character.__1 {
+  background-image: url("../../../src/img/char2.png");
+}
+.character.__2 {
+  background-image: url("../../../src/img/char3.png");
+}
+.character.__3 {
+  background-image: url("../../../src/img/char4.png");
+}
+.character.__4 {
+  background-image: url("../../../src/img/char5.png");
+}
+.character.__5 {
+  background-image: url("../../../src/img/char6.png");
+}
 
 .character-animation {
   animation: char-anim 0.5s cubic-bezier(0.81, 0.2, 0.18, 1.03);

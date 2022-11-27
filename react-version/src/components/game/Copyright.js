@@ -2,7 +2,7 @@ import React from "react";
 
 const Copyright = () => {
 	return (
-		<div className="copyright-container">
+		<footer className="copyright-container">
 			<span className="alert-reso">
 				If your game crashed, you've probably changed your window size
 			</span>
@@ -13,7 +13,7 @@ const Copyright = () => {
 			<span className="copyright-text">
 				2022 Jakub Rezler || &copy; All rights reserved
 			</span>
-		</div>
+		</footer>
 	);
 };
 

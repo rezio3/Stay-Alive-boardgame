@@ -23,10 +23,13 @@ const BoardButtons = (props) => {
 	const handleArrowButton = (event) => {
 		props.onArrowButton();
 		const handleBtnId = (e) => {
-			setBoard({
-				...board,
-				btnId: e.target.id,
-			});
+			if (board.btnId !== e.target.id) {
+				setBoard({
+					...board,
+					btnId: e.target.id,
+					prevBtnId: board.btnId,
+				});
+			}
 		};
 		handleBtnId(event);
 	};

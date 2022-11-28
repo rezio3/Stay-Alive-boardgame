@@ -4,11 +4,13 @@ import { BoardContext } from "../../context/BoardContext";
 const ButtonsRow4 = (props) => {
 	const [board, setBoard] = useContext(BoardContext);
 	const handleBoardBtn = (e) => {
-		setBoard({
-			...board,
-			btnId: e.target.id,
-			prevBtnId: board.btnId,
-		});
+		if (board.btnId !== e.target.id) {
+			setBoard({
+				...board,
+				btnId: e.target.id,
+				prevBtnId: board.btnId,
+			});
+		}
 	};
 	let title;
 	if (props.id < 38) {

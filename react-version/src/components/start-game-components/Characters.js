@@ -17,6 +17,7 @@ const Characters = () => {
 		const charSelected = document.getElementById(e.target.id);
 		charSelected.style.backgroundColor = "rgb(253, 234, 173)";
 		setChar({
+			...char,
 			selectedChar: e.target.id,
 		});
 	};

@@ -1,8 +1,11 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useState } from "react";
 
 const boardData = {
+	arrowBtnActive: false,
+	charSetOnBoard: false,
 	btnId: null,
-	prevBtnId: null,
+	prevRow: 1,
+	prevColumn: 11,
 };
 
 export const BoardContext = createContext();

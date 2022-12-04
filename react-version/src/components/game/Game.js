@@ -3,6 +3,7 @@ import "../../style/css/Game.css";
 import Copyright from "./Copyright";
 import Character from "./SelectedCharacterMove";
 import BoardRows from "./buttons/BoardRows";
+import LeftContent from "./left container/LeftContent";
 import { BoardContext } from "../context/BoardContext";
 
 const Game = () => {
@@ -31,6 +32,7 @@ const Game = () => {
 
 	return (
 		<div className="game">
+			<LeftContent />
 			{board.charSetOnBoard ? null : (
 				<div className="click-start-hex">
 					<h2>Umieść bohatera na planszy by rozpocząć grę</h2>

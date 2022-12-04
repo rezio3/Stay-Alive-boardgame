@@ -1,30 +1,20 @@
 import React from "react";
 import "../../../style/css/Statistics.css";
+import Life from "./specific statistics/Life";
+import Energy from "./specific statistics/Energy";
+import Starvation from "./specific statistics/Starvation";
+import Sanity from "./specific statistics/Sanity";
+import Temperature from "./specific statistics/Temperature";
 
 const Statistics = () => {
 	return (
 		<div className="stats-container">
 			<div className="stats-bars">
-				<div className="life stat-bar">
-					<div className="life-bar"></div>
-					<span className="life-value"></span>
-				</div>
-				<div className="energy stat-bar">
-					<div className="energy-bar"></div>
-					<span className="energy-value"></span>
-				</div>
-				<div className="starvation stat-bar">
-					<div className="starvation-bar"></div>
-					<span className="starvation-value"></span>
-				</div>
-				<div className="sanity stat-bar">
-					<div className="sanity-bar"></div>
-					<span className="sanity-value"></span>
-				</div>
-				<div className="temperature stat-bar">
-					<div className="temperature-bar"></div>
-					<span className="temperature-value"></span>
-				</div>
+				<Life />
+				<Energy />
+				<Starvation />
+				<Sanity />
+				<Temperature />
 			</div>
 			<div className="stats-name">
 				<span className="life-text stat-text">Życie</span>

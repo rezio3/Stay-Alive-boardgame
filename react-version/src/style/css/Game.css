@@ -58,6 +58,14 @@
   height: 850px;
   width: 682px;
 }
+.middle-container .game-board .field-rows {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  width: 100%;
+  height: 100%;
+  margin-top: 45px;
+}
 .middle-container .game-board .row1-container {
   display: flex;
   justify-content: flex-end;

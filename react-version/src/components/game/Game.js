@@ -5,11 +5,13 @@ import Character from "./SelectedCharacterMove";
 import BoardRows from "./buttons/BoardRows";
 import LeftContent from "./left container/LeftContent";
 import { BoardContext } from "../context/BoardContext";
+import { CharacterContext } from "../context/CharContext";
 
 const Game = () => {
 	const [board, setBoard] = useContext(BoardContext);
-
+	const [char, setChar] = useContext(CharacterContext);
 	const handleArrowButton = () => {
+		console.log("Działa arrow butn");
 		setBoard({
 			...board,
 			btnId: 11,
@@ -17,6 +19,20 @@ const Game = () => {
 			clickedColumn: 11,
 			charSetOnBoard: true,
 			arrowBtnActive: true,
+		});
+
+		setChar({
+			...char,
+			life: 20,
+			energy: 10,
+			starvation: 10,
+			sanity: 10,
+			temperature: 5,
+			prevLife: char.life,
+			prevEnergy: char.energy,
+			prevStarvation: char.starvation,
+			prevSanity: char.sanity,
+			prevTemperature: char.temperature,
 		});
 	};
 

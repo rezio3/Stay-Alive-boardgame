@@ -1,11 +1,17 @@
 import React, { createContext, useState } from "react";
 
 const charSelected = {
-	life: 20,
-	energy: 10,
-	starvation: 10,
-	sanity: 10,
-	temperature: 5,
+	life: 0,
+	energy: 0,
+	starvation: 0,
+	sanity: 0,
+	temperature: 0,
+
+	prevLife: 0,
+	prevEnergy: 0,
+	prevStarvation: 0,
+	prevSanity: 0,
+	prevTemperature: 0,
 
 	selectedChar: null,
 };

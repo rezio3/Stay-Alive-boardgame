@@ -4,6 +4,7 @@ const boardData = {
 	arrowBtnActive: false,
 	charSetOnBoard: false,
 	btnId: null,
+	prevBtnId: 20,
 	prevRow: 1,
 	prevColumn: 11,
 };

@@ -4,7 +4,7 @@ import { CharacterContext } from "../context/CharContext";
 
 const Character = () => {
 	const [char, setChar] = useContext(CharacterContext);
-	const [board] = useContext(BoardContext);
+	const [board, setBoard] = useContext(BoardContext);
 
 	const characterMove = () => {
 		const destinationHex = document.getElementById(`${board.btnId}`);
@@ -12,9 +12,24 @@ const Character = () => {
 		const characterLink = document.querySelector(`#selected-character`);
 		characterLink.style.display = "block";
 		destinationHex.appendChild(characterLink);
+		console.log(`energy: ${char.energy}, prevEnergy: ${char.prevEnergy}`);
+
+		setBoard({
+			...board,
+			prevBtnId: board.btnId,
+		});
+		setChar({
+			...char,
+			energy: char.energy - 1,
+			prevEnergy: char.energy,
+		});
 	};
 
-	if (board.btnId !== null && char.energy > 0) {
+	if (
+		board.btnId !== null &&
+		char.energy > 0 &&
+		board.prevBtnId !== board.btnId
+	) {
 		characterMove();
 	}
 

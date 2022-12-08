@@ -15,8 +15,6 @@ const Game = () => {
 		setBoard({
 			...board,
 			btnId: 11,
-			clickedRow: 1,
-			clickedColumn: 11,
 			charSetOnBoard: true,
 			arrowBtnActive: true,
 		});
@@ -24,12 +22,11 @@ const Game = () => {
 		setChar({
 			...char,
 			life: 20,
-			energy: 10,
+			energy: 11,
 			starvation: 10,
 			sanity: 10,
 			temperature: 5,
 			prevLife: char.life,
-			prevEnergy: char.energy,
 			prevStarvation: char.starvation,
 			prevSanity: char.sanity,
 			prevTemperature: char.temperature,

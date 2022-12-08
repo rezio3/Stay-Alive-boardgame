@@ -6,7 +6,6 @@ const Sanity = () => {
 
 	const sanityChange = () => {
 		const sanityBar = document.querySelector(`.sanity-bar`);
-		const sanityValue = document.querySelector(`.sanity-value`);
 		// setTimeout(function () {
 		// 	const sanityChangeSpan = document.querySelector(`.sanity-notification`);
 		// 	sanityChangeSpan.style.display = `flex`;
@@ -22,15 +21,14 @@ const Sanity = () => {
 		// }, 100);
 
 		sanityBar.style.height = char.sanity * 10 + "%";
-		sanityValue.innerHTML = `${char.sanity}/10`;
 	};
 
 	if (char.prevSanity !== char.sanity) sanityChange();
 
 	return (
 		<div className="sanity stat-bar">
-			<div className="sanity-bar"></div>
-			<span className="sanity-value"></span>
+			<div className="sanity-bar" />
+			<span className="sanity-value">{char.sanity}/10</span>
 		</div>
 	);
 };

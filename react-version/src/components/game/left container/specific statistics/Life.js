@@ -6,7 +6,6 @@ const Life = () => {
 
 	const lifeChange = () => {
 		const lifeBar = document.querySelector(`.life-bar`);
-		const lifeValue = document.querySelector(`.life-value`);
 		// setTimeout(function () {
 		// 	const lifeChangeSpan = document.querySelector(`.life-notification`);
 		// 	lifeChangeSpan.style.display = `flex`;
@@ -22,7 +21,6 @@ const Life = () => {
 		// }, 100);
 
 		lifeBar.style.height = char.life * 5 + "%";
-		lifeValue.innerHTML = `${char.life}/20`;
 		if (char.life < 1) {
 			// gameOver();
 			console.log("You loose");
@@ -33,8 +31,8 @@ const Life = () => {
 
 	return (
 		<div className="life stat-bar">
-			<div className="life-bar"></div>
-			<span className="life-value"></span>
+			<div className="life-bar" />
+			<span className="life-value">{char.life}/20</span>
 		</div>
 	);
 };

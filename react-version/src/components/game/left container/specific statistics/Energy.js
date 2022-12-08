@@ -3,9 +3,10 @@ import { CharacterContext } from "../../../context/CharContext";
 
 const Energy = () => {
 	const [char, setChar] = useContext(CharacterContext);
+
 	const energyChange = () => {
 		const energyBar = document.querySelector(`.energy-bar`);
-		const energyValue = document.querySelector(`.energy-value`);
+		energyBar.style.height = char.energy * 10 + "%";
 		// setTimeout(function () {
 		// 	const energyChangeSpan = document.querySelector(`.energy-notification`);
 		// 	energyChangeSpan.style.display = `flex`;
@@ -20,16 +21,15 @@ const Energy = () => {
 		// 	prevEnergy = energy;
 		// }, 100);
 
-		energyBar.style.height = char.energy * 10 + "%";
-		energyValue.innerHTML = `${char.energy}/10`;
+		// energyValue.innerHTML = `${char.energy}/10`;
 	};
 
-	if (char.prevEnergy !== char.energy) energyChange();
+	if (char.energy || char.energy === 0) energyChange();
 
 	return (
 		<div className="energy stat-bar">
-			<div className="energy-bar"></div>
-			<span className="energy-value"></span>
+			<div className="energy-bar" />
+			<span className="energy-value">{char.energy}/10</span>
 		</div>
 	);
 };

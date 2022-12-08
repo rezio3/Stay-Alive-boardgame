@@ -6,7 +6,6 @@ const Temperature = () => {
 
 	const temperatureChange = () => {
 		const temperatureBar = document.querySelector(`.temperature-bar`);
-		const temperatureValue = document.querySelector(`.temperature-value`);
 		// setTimeout(function () {
 		// 	const temperatureChangeSpan = document.querySelector(
 		// 		`.temperature-notification`
@@ -28,13 +27,12 @@ const Temperature = () => {
 		// }, 100);
 
 		temperatureBar.style.height = char.temperature * 10 + "%";
-		temperatureValue.innerHTML = `${char.temperature}/10`;
 	};
 	if (char.prevTemperature !== char.temperature) temperatureChange();
 	return (
 		<div className="temperature stat-bar">
-			<div className="temperature-bar"></div>
-			<span className="temperature-value"></span>
+			<div className="temperature-bar" />
+			<span className="temperature-value">{char.temperature}/10</span>
 		</div>
 	);
 };

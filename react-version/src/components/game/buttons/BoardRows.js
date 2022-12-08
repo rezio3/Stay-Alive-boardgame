@@ -4,7 +4,7 @@ import buttonsData from "./buttonsData/buttonsData";
 
 const BoardRows = (props) => {
 	return (
-		<div className={props.className} id={props.id}>
+		<div className={props.className} id={`row${props.id}`}>
 			{buttonsData[`buttonsRow${props.id}`].map((e) => (
 				<BoardFields
 					id={e.id}

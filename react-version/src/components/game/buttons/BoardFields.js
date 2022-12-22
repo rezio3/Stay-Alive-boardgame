@@ -8,6 +8,7 @@ const BoardFields = (props) => {
 			setBoard({
 				...board,
 				btnId: e.target.id,
+				// btnData: e.target,
 				prevRow: e.target.getAttribute("row"),
 				prevColumn: e.target.getAttribute("column"),
 			});

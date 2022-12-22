@@ -4,17 +4,23 @@ import Copyright from "./Copyright";
 import Character from "./SelectedCharacterMove";
 import BoardRows from "./buttons/BoardRows";
 import LeftContent from "./stats-and-items/LeftContent";
+import RightContent from "./rounds-and-event-cards/RightContent";
 import { BoardContext } from "../context/BoardContext";
 import { CharacterContext } from "../context/CharContext";
 
 const Game = () => {
 	const [board, setBoard] = useContext(BoardContext);
 	const [char, setChar] = useContext(CharacterContext);
+
 	const handleArrowButton = () => {
-		console.log("Działa arrow butn");
+		console.log("Działa arrow btn");
+		// const arrowButtonObject = document.getElementById("11");
+		// console.log(e.target);
+
 		setBoard({
 			...board,
 			btnId: 11,
+			// btnData: arrowButtonObject,
 			charSetOnBoard: true,
 			arrowBtnActive: true,
 		});
@@ -68,6 +74,7 @@ const Game = () => {
 				</div>
 				<Copyright />
 			</div>
+			<RightContent />
 		</div>
 	);
 };

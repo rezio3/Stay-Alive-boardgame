@@ -1,0 +1,393 @@
+.right-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-left: 15px;
+}
+.right-container .tura {
+  margin-left: 220px;
+  font-family: "Creepster", cursive;
+  font-size: 50px;
+  letter-spacing: 10px;
+}
+.right-container .difficulties {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  width: 540px;
+  height: 40px;
+  margin-left: 30px;
+  margin-top: 10px;
+}
+.right-container .difficulties span {
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.right-container .right-container-action-buttons {
+  display: flex;
+  justify-content: space-around;
+  width: 540px;
+  margin-bottom: 20px;
+}
+.right-container .right-container-action-buttons .use-spot {
+  height: 50px;
+  width: 150px;
+  background-color: rgb(156, 156, 156);
+  border: 3px solid black;
+  border-radius: 15px;
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.right-container .right-container-action-buttons .use-spot-active {
+  background-color: rgb(184, 165, 102);
+  cursor: pointer;
+}
+.right-container .right-container-action-buttons .end-round {
+  height: 50px;
+  width: 150px;
+  background-color: rgb(184, 165, 102);
+  border: 3px solid black;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.right-container .use-spot-active:hover {
+  background-color: rgb(255, 234, 166);
+}
+.right-container .end-round:hover {
+  background-color: rgb(255, 234, 166);
+}
+.right-container .event-cards-and-items-container {
+  display: flex;
+  justify-content: center;
+  height: 400px;
+  width: 540px;
+}
+.right-container .event-cards-and-items-container .item-list-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-image: url(../../img/paper.png);
+  background-size: cover;
+  width: 55%;
+  height: 390px;
+}
+.right-container .event-cards-and-items-container .item-list-container .item-list-span {
+  font-size: 13.5px;
+  margin-top: 30px;
+  font-family: "Patrick Hand", cursive;
+}
+.right-container .event-cards-and-items-container .item-list-container .item-list-container2 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: 80%;
+}
+.right-container .event-cards-and-items-container .item-list-container .item-list-container2 h1 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+.right-container .event-cards-and-items-container .item-list-container .item-list-container2 p {
+  font-size: 15px;
+  font-style: italic;
+  margin-top: 10px;
+}
+.right-container .event-cards-and-items-container .item-list-container .item-list-container2 span {
+  font-size: 15px;
+  margin-top: 10px;
+}
+.right-container .event-cards-and-items-container .item-list-container .item-description-right {
+  position: absolute;
+  height: 0px;
+  width: 200px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  transition: 0.2s;
+}
+.right-container .event-cards-and-items-container .item-list-container .description-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  color: black;
+}
+.right-container .event-cards-and-items-container .item-list-container .axe-description-right {
+  left: -120px;
+  top: -370px;
+}
+.right-container .event-cards-and-items-container .item-list-container .axe-description-right img {
+  width: 75px;
+  margin-top: 10px;
+}
+.right-container .event-cards-and-items-container .item-list-container .axe-description-right .axe-price {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.right-container .event-cards-and-items-container .item-list-container .axe-description-right .axe-price img {
+  width: 60px;
+}
+.right-container .event-cards-and-items-container .item-list-container .shoes-description-right {
+  left: -220px;
+  top: -130px;
+}
+.right-container .event-cards-and-items-container .item-list-container .shoes-description-right img {
+  width: 105px;
+  margin-top: 20px;
+}
+.right-container .event-cards-and-items-container .item-list-container .shoes-description-right .shoes-price {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+.right-container .event-cards-and-items-container .item-list-container .shoes-description-right .shoes-price img {
+  width: 60px;
+}
+.right-container .event-cards-and-items-container .item-list-container .torch-description-right {
+  left: -260px;
+  top: -120px;
+}
+.right-container .event-cards-and-items-container .item-list-container .torch-description-right img {
+  width: 25px;
+  margin-top: 10px;
+}
+.right-container .event-cards-and-items-container .item-list-container .torch-description-right .torch-price {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+.right-container .event-cards-and-items-container .item-list-container .torch-description-right .torch-price img {
+  width: 60px;
+}
+.right-container .event-cards-and-items-container .item-list-container .sword-description-right {
+  left: -120px;
+  top: -365px;
+}
+.right-container .event-cards-and-items-container .item-list-container .sword-description-right img {
+  width: 75px;
+  margin-top: 10px;
+}
+.right-container .event-cards-and-items-container .item-list-container .sword-description-right .sword-price {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.right-container .event-cards-and-items-container .item-list-container .sword-description-right .sword-price img {
+  width: 60px;
+}
+.right-container .event-cards-and-items-container .item-list-container .food-description-right {
+  left: -260px;
+  top: -120px;
+}
+.right-container .event-cards-and-items-container .item-list-container .food-description-right img {
+  width: 75px;
+  margin-top: 10px;
+}
+.right-container .event-cards-and-items-container .item-list-container .food-description-right .food-price {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.right-container .event-cards-and-items-container .item-list-container .food-description-right .food-price img {
+  width: 45px;
+}
+.right-container .event-cards-and-items-container .item-list-container .coat-description-right {
+  left: -265px;
+  top: -120px;
+}
+.right-container .event-cards-and-items-container .item-list-container .coat-description-right img {
+  width: 75px;
+  margin-top: 10px;
+}
+.right-container .event-cards-and-items-container .item-list-container .coat-description-right .coat-price {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.right-container .event-cards-and-items-container .item-list-container .coat-description-right .coat-price img {
+  width: 60px;
+}
+.right-container .event-cards-and-items-container .item-list-container .item-list-column-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.right-container .event-cards-and-items-container .item-list-container .item-list-column-left .item-clickable {
+  cursor: pointer;
+}
+.right-container .event-cards-and-items-container .item-list-container .item-list-column-left .item-clickable:hover {
+  background-color: rgb(255, 207, 161);
+  border-radius: 10%;
+  box-shadow: 0 0 10px 10px rgb(255, 207, 161);
+}
+.right-container .event-cards-and-items-container .item-list-container .item-list-column-left .right-img-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  border: none;
+  background: none;
+  width: 90px;
+  height: 100px;
+  padding: 0;
+}
+.right-container .event-cards-and-items-container .item-list-container .item-list-column-left .axe {
+  position: relative;
+  background-image: url(../../img/siekiera.png);
+  background-size: cover;
+  width: 82px;
+  height: 95px;
+}
+.right-container .event-cards-and-items-container .item-list-container .item-list-column-left .axe .shadow {
+  background-color: rgba(116, 0, 0, 0.5);
+  width: 84px;
+  height: 97px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgb(119, 0, 0);
+}
+.right-container .event-cards-and-items-container .item-list-container .item-list-column-left .axe:hover .item-description-right {
+  height: 350px;
+  border: 3px solid black;
+}
+.right-container .event-cards-and-items-container .item-list-container .item-list-column-left .shoes {
+  position: relative;
+  background-image: url(../../img/lacie.png);
+  background-size: cover;
+  width: 111px;
+  height: 70px;
+}
+.right-container .event-cards-and-items-container .item-list-container .item-list-column-left .shoes .shadow {
+  background-color: rgba(116, 0, 0, 0.5);
+  width: 111px;
+  height: 70px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgb(119, 0, 0);
+}
+.right-container .event-cards-and-items-container .item-list-container .item-list-column-left .shoes:hover .item-description-right {
+  height: 350px;
+  border: 3px solid black;
+}
+.right-container .event-cards-and-items-container .item-list-container .item-list-column-left .torch {
+  position: relative;
+  background-image: url(../../img/pochodnia.png);
+  background-size: cover;
+  width: 29px;
+  height: 90px;
+}
+.right-container .event-cards-and-items-container .item-list-container .item-list-column-left .torch .shadow {
+  background-color: rgba(116, 0, 0, 0.5);
+  width: 29px;
+  height: 90px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgb(119, 0, 0);
+}
+.right-container .event-cards-and-items-container .item-list-container .item-list-column-left .torch:hover .item-description-right {
+  height: 350px;
+  border: 3px solid black;
+}
+.right-container .event-cards-and-items-container .item-list-container .item-list-column-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.right-container .event-cards-and-items-container .item-list-container .item-list-column-right .item-clickable {
+  cursor: pointer;
+}
+.right-container .event-cards-and-items-container .item-list-container .item-list-column-right .item-clickable:hover {
+  background-color: rgb(255, 207, 161);
+  border-radius: 10%;
+  box-shadow: 0 0 10px 10px rgb(255, 207, 161);
+}
+.right-container .event-cards-and-items-container .item-list-container .item-list-column-right .right-img-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 5px;
+  border: none;
+  background: none;
+  width: 90px;
+  height: 100px;
+  padding: 0;
+}
+.right-container .event-cards-and-items-container .item-list-container .item-list-column-right .sword {
+  position: relative;
+  background-image: url(../../img/miecz.png);
+  background-size: cover;
+  width: 75px;
+  height: 95px;
+}
+.right-container .event-cards-and-items-container .item-list-container .item-list-column-right .sword .shadow {
+  background-color: rgba(116, 0, 0, 0.5);
+  width: 82px;
+  height: 95px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgb(119, 0, 0);
+}
+.right-container .event-cards-and-items-container .item-list-container .item-list-column-right .sword:hover .item-description-right {
+  height: 350px;
+  border: 3px solid black;
+}
+.right-container .event-cards-and-items-container .item-list-container .item-list-column-right .food {
+  position: relative;
+  background-image: url(../../img/leczo.png);
+  background-size: cover;
+  width: 88px;
+  height: 70px;
+}
+.right-container .event-cards-and-items-container .item-list-container .item-list-column-right .food .shadow {
+  background-color: rgba(116, 0, 0, 0.5);
+  width: 88px;
+  height: 70px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgb(119, 0, 0);
+}
+.right-container .event-cards-and-items-container .item-list-container .item-list-column-right .food:hover .item-description-right {
+  height: 350px;
+  border: 3px solid black;
+}
+.right-container .event-cards-and-items-container .item-list-container .item-list-column-right .coat {
+  position: relative;
+  background-image: url(../../img/ponczo.png);
+  background-size: cover;
+  width: 90px;
+  height: 70px;
+}
+.right-container .event-cards-and-items-container .item-list-container .item-list-column-right .coat .shadow {
+  background-color: rgba(116, 0, 0, 0.5);
+  width: 90px;
+  height: 70px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgb(119, 0, 0);
+}
+.right-container .event-cards-and-items-container .item-list-container .item-list-column-right .coat:hover .item-description-right {
+  height: 350px;
+  border: 3px solid black;
+}
+
+.instruction {
+  height: 50px;
+  width: 150px;
+  background-color: rgb(184, 165, 102);
+  border: 3px solid black;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.instruction:hover {
+  background-color: rgb(255, 234, 166);
+}

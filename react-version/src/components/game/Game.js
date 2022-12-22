@@ -3,7 +3,7 @@ import "../../style/css/Game.css";
 import Copyright from "./Copyright";
 import Character from "./SelectedCharacterMove";
 import BoardRows from "./buttons/BoardRows";
-import LeftContent from "./left container/LeftContent";
+import LeftContent from "./stats-and-items/LeftContent";
 import { BoardContext } from "../context/BoardContext";
 import { CharacterContext } from "../context/CharContext";
 

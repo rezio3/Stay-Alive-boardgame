@@ -1,17 +1,24 @@
 import React, { useContext } from "react";
 import { BoardContext } from "../../context/BoardContext";
+import { CharacterContext } from "../../context/CharContext";
+import Character from "../SelectedCharacterMove";
 
 const BoardFields = (props) => {
 	const [board, setBoard] = useContext(BoardContext);
+	const [char, setChar] = useContext(CharacterContext);
 	const handleBoardBtn = (e) => {
 		if (board.btnId !== e.target.id) {
-			setBoard({
-				...board,
-				btnId: e.target.id,
-				// btnData: e.target,
-				prevRow: e.target.getAttribute("row"),
-				prevColumn: e.target.getAttribute("column"),
-			});
+			if (char.energy > 0) {
+				setBoard({
+					...board,
+					btnId: e.target.id,
+					// btnData: e.target,
+					prevRow: e.target.getAttribute("row"),
+					prevColumn: e.target.getAttribute("column"),
+				});
+			} else if (char.energy === 0) {
+				console.log("Za mało energii");
+			}
 		}
 	};
 	const checkDistance = (e) => {
@@ -80,7 +87,9 @@ const BoardFields = (props) => {
 					? props.dataArrowBtnHandler
 					: checkDistance
 			}
-		/>
+		>
+			{Number(board.btnId) === props.id ? <Character /> : null}
+		</button>
 	);
 };
 

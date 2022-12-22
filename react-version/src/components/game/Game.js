@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import "../../style/css/Game.css";
 import Copyright from "./Copyright";
-import Character from "./SelectedCharacterMove";
 import BoardRows from "./buttons/BoardRows";
 import LeftContent from "./stats-and-items/LeftContent";
 import RightContent from "./rounds-and-event-cards/RightContent";
@@ -70,7 +69,6 @@ const Game = () => {
 							/>
 						))}
 					</div>
-					<Character />
 				</div>
 				<Copyright />
 			</div>

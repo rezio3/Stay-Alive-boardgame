@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { BoardContext } from "../context/BoardContext";
 import { CharacterContext } from "../context/CharContext";
 
@@ -7,13 +7,6 @@ const Character = () => {
 	const [board, setBoard] = useContext(BoardContext);
 
 	const characterMove = () => {
-		const destinationHex = document.getElementById(`${board.btnId}`);
-		// move character image onto clicked hex
-		const characterLink = document.querySelector(`#selected-character`);
-		characterLink.style.display = "block";
-		destinationHex.appendChild(characterLink);
-		console.log(`energy: ${char.energy}, prevEnergy: ${char.prevEnergy}`);
-
 		setBoard({
 			...board,
 			prevBtnId: board.btnId,
@@ -24,19 +17,16 @@ const Character = () => {
 			prevEnergy: char.energy,
 		});
 	};
-
-	if (
-		board.btnId !== null &&
-		char.energy > 0 &&
-		board.prevBtnId !== board.btnId
-	) {
-		characterMove();
-	}
+	useEffect(() => {
+		if (board.btnId !== null && board.prevBtnId !== board.btnId)
+			characterMove();
+	}, [board.btnId]);
 
 	return (
 		<div
 			className={"character __" + char.selectedChar}
 			id="selected-character"
+			style={board.charSetOnBoard && { display: "block" }}
 		/>
 	);
 };

@@ -13,87 +13,7 @@ body {
   justify-content: center;
 }
 
-.left-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-end;
-  padding-right: 20px;
-}
-.left-container .stay-alive-text {
-  font-family: "Creepster", cursive;
-  font-size: 80px;
-  margin-right: 70px;
-  letter-spacing: 5px;
-}
-.left-container .stats-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-top: 35px;
-  background-color: rgb(0, 0, 0);
-  height: 300px;
-  width: 500px;
-}
-.left-container .stats-container .stats-bars {
-  display: flex;
-  justify-content: space-evenly;
-  height: 230px;
-  width: 500px;
-}
-.left-container .stats-container .stats-bars .stat-bar {
-  display: flex;
-  align-items: flex-end;
-  width: 75px;
-  height: 230px;
-  background-color: rgb(185, 185, 185);
-  border: 2px solid black;
-}
-.left-container .stats-container .stats-bars .stat-bar .life-bar,
-.left-container .stats-container .stats-bars .stat-bar .energy-bar,
-.left-container .stats-container .stats-bars .stat-bar .starvation-bar,
-.left-container .stats-container .stats-bars .stat-bar .sanity-bar,
-.left-container .stats-container .stats-bars .stat-bar .temperature-bar {
-  width: 75px;
-  height: 230px;
-}
-.left-container .stats-container .stats-bars .stat-bar .life-bar {
-  background-color: rgb(221, 77, 77);
-}
-.left-container .stats-container .stats-bars .stat-bar .energy-bar {
-  background-color: rgb(77, 133, 236);
-}
-.left-container .stats-container .stats-bars .stat-bar .starvation-bar {
-  background-color: rgb(216, 224, 104);
-}
-.left-container .stats-container .stats-bars .stat-bar .sanity-bar {
-  background-color: rgb(107, 228, 117);
-}
-.left-container .stats-container .stats-bars .stat-bar .temperature-bar {
-  background-color: rgb(255, 200, 97);
-}
-.left-container .stats-container .stats-bars .stat-bar span {
-  position: absolute;
-  margin-bottom: 90px;
-  width: 75px;
-  height: 40px;
-  text-align: center;
-  font-size: 20px;
-  color: rgb(0, 0, 0);
-}
-.left-container .stats-container .stats-name {
-  display: flex;
-  justify-content: space-evenly;
-  text-align: center;
-}
-.left-container .stats-container .stats-name .stat-text {
-  width: 75px;
-  height: 40px;
-  background-color: rgb(141, 141, 141);
-  padding: 5px;
-  border: 2px solid black;
-}
-.left-container .items-container {
+.items-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -103,13 +23,13 @@ body {
   height: 244px;
   width: 500px;
 }
-.left-container .items-container .items-inboard-container {
+.items-container .items-inboard-container {
   display: flex;
   justify-content: flex-start;
   height: 235px;
   width: 490px;
 }
-.left-container .items-container .items-inboard-container .resources-container {
+.items-container .items-inboard-container .resources-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -118,20 +38,20 @@ body {
   height: 100%;
   margin-top: 15px;
 }
-.left-container .items-container .items-inboard-container .resources-container .resources-icons {
+.items-container .items-inboard-container .resources-container .resources-icons {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
   height: 20%;
 }
-.left-container .items-container .items-inboard-container .resources-container .resources-icons .stone {
+.items-container .items-inboard-container .resources-container .resources-icons .stone {
   background-image: url(../img/kamień.png);
   background-size: cover;
   width: 72px;
   height: 50px;
 }
-.left-container .items-container .items-inboard-container .resources-container .resources-icons .stone .stone-anim {
+.items-container .items-inboard-container .resources-container .resources-icons .stone .stone-anim {
   opacity: 0%;
   position: absolute;
   background-image: url(../img/kamień.png);
@@ -139,13 +59,13 @@ body {
   width: 72px;
   height: 50px;
 }
-.left-container .items-container .items-inboard-container .resources-container .resources-icons .wood {
+.items-container .items-inboard-container .resources-container .resources-icons .wood {
   background-image: url(../img/drewno.png);
   background-size: cover;
   width: 72px;
   height: 50px;
 }
-.left-container .items-container .items-inboard-container .resources-container .resources-icons .wood .wood-anim {
+.items-container .items-inboard-container .resources-container .resources-icons .wood .wood-anim {
   opacity: 0%;
   position: absolute;
   background-image: url(../img/drewno.png);
@@ -153,14 +73,14 @@ body {
   width: 72px;
   height: 50px;
 }
-.left-container .items-container .items-inboard-container .resources-container .resources-icons .grass {
+.items-container .items-inboard-container .resources-container .resources-icons .grass {
   background-image: url(../img/trawa.png);
   background-size: cover;
   width: 74px;
   height: 60px;
   margin-bottom: 20px;
 }
-.left-container .items-container .items-inboard-container .resources-container .resources-icons .grass .grass-anim {
+.items-container .items-inboard-container .resources-container .resources-icons .grass .grass-anim {
   opacity: 0%;
   position: absolute;
   background-image: url(../img/trawa.png);
@@ -169,13 +89,13 @@ body {
   height: 60px;
   margin-bottom: 20px;
 }
-.left-container .items-container .items-inboard-container .resources-container .resources-icons .flint {
+.items-container .items-inboard-container .resources-container .resources-icons .flint {
   background-image: url(../img/krzesiwo.png);
   background-size: cover;
   width: 72px;
   height: 50px;
 }
-.left-container .items-container .items-inboard-container .resources-container .resources-icons .flint .flint-anim {
+.items-container .items-inboard-container .resources-container .resources-icons .flint .flint-anim {
   opacity: 0%;
   position: absolute;
   background-image: url(../img/krzesiwo.png);
@@ -183,14 +103,14 @@ body {
   width: 72px;
   height: 50px;
 }
-.left-container .items-container .items-inboard-container .resources-container .resources-icons .lotos {
+.items-container .items-inboard-container .resources-container .resources-icons .lotos {
   background-image: url(../img/lotos.png);
   background-size: cover;
   width: 72px;
   height: 50px;
   margin: 10px;
 }
-.left-container .items-container .items-inboard-container .resources-container .resources-icons .lotos .lotos-anim {
+.items-container .items-inboard-container .resources-container .resources-icons .lotos .lotos-anim {
   opacity: 0%;
   position: absolute;
   background-image: url(../img/lotos.png);
@@ -198,7 +118,7 @@ body {
   width: 72px;
   height: 50px;
 }
-.left-container .items-container .items-inboard-container .resources-container .resources-text {
+.items-container .items-inboard-container .resources-container .resources-text {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -206,17 +126,17 @@ body {
   height: 20%;
   margin-left: 20px;
 }
-.left-container .items-container .items-inboard-container .resources-container .resources-text span {
+.items-container .items-inboard-container .resources-container .resources-text span {
   font-size: 30px;
   font-weight: bold;
   padding: 0 31px;
   color: white;
 }
-.left-container .items-container .item-size {
+.items-container .item-size {
   width: 72px;
   height: 50px;
 }
-.left-container .items-container .stone-animation {
+.items-container .stone-animation {
   animation: stoneAnim 0.9s ease-in-out;
 }
 @keyframes stoneAnim {
@@ -238,7 +158,7 @@ body {
     height: 50px;
   }
 }
-.left-container .items-container .wood-animation {
+.items-container .wood-animation {
   animation: woodAnim 0.9s ease-in-out;
 }
 @keyframes woodAnim {
@@ -260,7 +180,7 @@ body {
     height: 50px;
   }
 }
-.left-container .items-container .grass-animation {
+.items-container .grass-animation {
   animation: grassAnim 0.9s ease-in-out;
 }
 @keyframes grassAnim {
@@ -282,7 +202,7 @@ body {
     height: 50px;
   }
 }
-.left-container .items-container .flint-animation {
+.items-container .flint-animation {
   animation: flintAnim 0.9s ease-in-out;
 }
 @keyframes flintAnim {
@@ -304,7 +224,7 @@ body {
     height: 50px;
   }
 }
-.left-container .items-container .lotos-animation {
+.items-container .lotos-animation {
   animation: lotosAnim 0.9s ease-in-out;
 }
 @keyframes lotosAnim {
@@ -326,7 +246,8 @@ body {
     height: 50px;
   }
 }
-.left-container .items-inventory {
+
+.items-inventory {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -334,42 +255,43 @@ body {
   height: 110px;
   border-top: 5px solid black;
 }
-.left-container .items-inventory .axe-container {
+.items-inventory .axe-container {
   width: 52px;
   height: 60px;
   margin-left: 5px;
 }
-.left-container .items-inventory .shoes-container {
+.items-inventory .shoes-container {
   width: 62px;
   height: 39px;
   margin-left: 5px;
 }
-.left-container .items-inventory .torch-container {
+.items-inventory .torch-container {
   width: 24px;
   height: 75px;
   margin-left: 5px;
 }
-.left-container .items-inventory .sword-container {
+.items-inventory .sword-container {
   width: 55px;
   height: 70px;
   margin-left: 5px;
 }
-.left-container .items-inventory .food-container {
+.items-inventory .food-container {
   width: 75px;
   height: 60px;
   margin-left: 5px;
 }
-.left-container .items-inventory .coat-container {
+.items-inventory .coat-container {
   width: 84px;
   height: 65px;
   margin-left: 5px;
 }
-.left-container .items-inventory .sejmitar-container {
+.items-inventory .sejmitar-container {
   width: 84px;
   height: 65px;
   margin-left: 5px;
 }
-.left-container .item-description-left {
+
+.item-description-left {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -383,21 +305,22 @@ body {
   border-radius: 20px;
   transition: 0.2s;
 }
-.left-container .item-description-left h1 {
+.item-description-left h1 {
   font-size: 20px;
   font-weight: bold;
   margin-top: 10px;
 }
-.left-container .item-description-left p {
+.item-description-left p {
   font-size: 15px;
   font-style: italic;
   margin-top: 10px;
 }
-.left-container .item-description-left span {
+.item-description-left span {
   font-size: 15px;
   margin-top: 10px;
 }
-.left-container .description-left {
+
+.description-left {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -405,202 +328,231 @@ body {
   overflow: hidden;
   color: black;
 }
-.left-container .axe-description-left img {
+
+.axe-description-left img {
   width: 75px;
   margin-top: 10px;
 }
-.left-container .axe-description-left .axe-price {
+.axe-description-left .axe-price {
   display: flex;
   justify-content: center;
   margin-top: 50px;
 }
-.left-container .axe-description-left .axe-price img {
+.axe-description-left .axe-price img {
   width: 60px;
 }
-.left-container .shoes-description-left img {
+
+.shoes-description-left img {
   width: 105px;
   margin-top: 20px;
 }
-.left-container .shoes-description-left .shoes-price {
+.shoes-description-left .shoes-price {
   display: flex;
   justify-content: center;
   margin-top: 30px;
 }
-.left-container .shoes-description-left .shoes-price img {
+.shoes-description-left .shoes-price img {
   width: 60px;
 }
-.left-container .torch-description-left img {
+
+.torch-description-left img {
   width: 25px;
   margin-top: 10px;
 }
-.left-container .torch-description-left .torch-price {
+.torch-description-left .torch-price {
   display: flex;
   justify-content: center;
   margin-top: 30px;
 }
-.left-container .torch-description-left .torch-price img {
+.torch-description-left .torch-price img {
   width: 60px;
 }
-.left-container .sword-description-left img {
+
+.sword-description-left img {
   width: 75px;
   margin-top: 10px;
 }
-.left-container .sword-description-left .sword-price {
+.sword-description-left .sword-price {
   display: flex;
   justify-content: center;
   margin-top: 50px;
 }
-.left-container .sword-description-left .sword-price img {
+.sword-description-left .sword-price img {
   width: 60px;
 }
-.left-container .food-description-left img {
+
+.food-description-left img {
   width: 75px;
   margin-top: 10px;
 }
-.left-container .food-description-left .food-price {
+.food-description-left .food-price {
   display: flex;
   justify-content: center;
   margin-top: 50px;
 }
-.left-container .food-description-left .food-price img {
+.food-description-left .food-price img {
   width: 45px;
 }
-.left-container .coat-description-left img {
+
+.coat-description-left img {
   width: 75px;
   margin-top: 10px;
 }
-.left-container .coat-description-left .coat-price {
+.coat-description-left .coat-price {
   display: flex;
   justify-content: center;
   margin-top: 50px;
 }
-.left-container .coat-description-left .coat-price img {
+.coat-description-left .coat-price img {
   width: 60px;
 }
-.left-container .sejmitar-description-left {
+
+.sejmitar-description-left {
   width: 250px;
 }
-.left-container .sejmitar-description-left img {
+.sejmitar-description-left img {
   width: 100px;
 }
-.left-container .sejmitar-description-left .sejmitar-price {
+.sejmitar-description-left .sejmitar-price {
   margin-top: 10px;
 }
-.left-container .sejmitar-description-left .sejmitar-price img {
+.sejmitar-description-left .sejmitar-price img {
   width: 40px;
 }
-.left-container #axe-anim {
+
+#axe-anim {
   opacity: 100%;
   position: relative;
   background-image: url(../img/siekiera.png);
   background-size: cover;
 }
-.left-container #axe-anim:hover .item-description-left {
+
+#axe-anim:hover .item-description-left {
   height: 350px;
   border: 3px solid black;
 }
-.left-container #shoes-anim {
+
+#shoes-anim {
   opacity: 100%;
   position: relative;
   background-image: url(../img/lacie.png);
   background-size: cover;
 }
-.left-container #shoes-anim:hover .item-description-left {
+
+#shoes-anim:hover .item-description-left {
   height: 350px;
   border: 3px solid black;
 }
-.left-container #torch-anim {
+
+#torch-anim {
   opacity: 100%;
   position: relative;
   background-image: url(../img/pochodnia.png);
   background-size: cover;
 }
-.left-container #torch-anim:hover .item-description-left {
+
+#torch-anim:hover .item-description-left {
   height: 350px;
   border: 3px solid black;
 }
-.left-container #sword-anim {
+
+#sword-anim {
   opacity: 100%;
   position: relative;
   background-image: url(../img/miecz.png);
   background-size: cover;
 }
-.left-container #sword-anim:hover .item-description-left {
+
+#sword-anim:hover .item-description-left {
   height: 350px;
   border: 3px solid black;
 }
-.left-container #food-anim {
+
+#food-anim {
   opacity: 100%;
   position: relative;
   background-image: url(../img/leczo.png);
   background-size: cover;
 }
-.left-container #food-anim:hover .item-description-left {
+
+#food-anim:hover .item-description-left {
   height: 350px;
   border: 3px solid black;
 }
-.left-container #coat-anim {
+
+#coat-anim {
   opacity: 100%;
   position: relative;
   background-image: url(../img/ponczo.png);
   background-size: cover;
 }
-.left-container #coat-anim:hover .item-description-left {
+
+#coat-anim:hover .item-description-left {
   height: 350px;
   border: 3px solid black;
 }
-.left-container #sejmitar-anim {
+
+#sejmitar-anim {
   opacity: 100%;
   position: relative;
   background-image: url(../img/sejmitar.png);
   background-size: cover;
 }
-.left-container #sejmitar-anim:hover .item-description-left {
+
+#sejmitar-anim:hover .item-description-left {
   height: 350px;
   border: 3px solid black;
 }
-.left-container .axe-animation {
+
+.axe-animation {
   width: 52px;
   height: 60px;
   animation: axeAnim 0.9s ease-in-out;
   animation-fill-mode: forwards;
 }
-.left-container .shoes-animation {
+
+.shoes-animation {
   width: 62px;
   height: 39px;
   animation: shoesAnim 0.9s ease-in-out;
   animation-fill-mode: forwards;
 }
-.left-container .torch-animation {
+
+.torch-animation {
   width: 24px;
   height: 75px;
   animation: torchAnim 0.9s ease-in-out;
   animation-fill-mode: forwards;
 }
-.left-container .sword-animation {
+
+.sword-animation {
   width: 55px;
   height: 70px;
   animation: swordAnim 0.9s ease-in-out;
   animation-fill-mode: forwards;
 }
-.left-container .food-animation {
+
+.food-animation {
   width: 52px;
   height: 60px;
   animation: foodAnim 0.9s ease-in-out;
   animation-fill-mode: forwards;
 }
-.left-container .coat-animation {
+
+.coat-animation {
   width: 52px;
   height: 60px;
   animation: coatAnim 0.9s ease-in-out;
   animation-fill-mode: forwards;
 }
-.left-container .sejmitar-animation {
+
+.sejmitar-animation {
   width: 80px;
   height: 60px;
   animation: sejmitarAnim 0.9s ease-in-out;
   animation-fill-mode: forwards;
 }
+
 @keyframes axeAnim {
   0% {
     opacity: 0%;
@@ -762,7 +714,7 @@ body {
     left: 0;
   }
 }
-.left-container .left-buttons-container {
+.left-buttons-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -770,14 +722,14 @@ body {
   width: 500px;
   height: 150px;
 }
-.left-container .left-buttons-container .left-buttons-container-top {
+.left-buttons-container .left-buttons-container-top {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 500px;
   height: 70px;
 }
-.left-container .left-buttons-container .left-buttons-container-bottom {
+.left-buttons-container .left-buttons-container-bottom {
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -785,11 +737,11 @@ body {
   height: 90px;
   margin-top: 5px;
 }
-.left-container .left-buttons-container .btn-eat-food,
-.left-container .left-buttons-container .btn-eat-1-grass,
-.left-container .left-buttons-container .btn-eat-2-grass,
-.left-container .left-buttons-container .btn-drink-red-bull,
-.left-container .left-buttons-container .btn-eat-sasuage {
+.left-buttons-container .btn-eat-food,
+.left-buttons-container .btn-eat-1-grass,
+.left-buttons-container .btn-eat-2-grass,
+.left-buttons-container .btn-drink-red-bull,
+.left-buttons-container .btn-eat-sasuage {
   height: 50px;
   width: 150px;
   background-color: rgb(156, 156, 156);
@@ -800,73 +752,73 @@ body {
   font-weight: bold;
   text-transform: uppercase;
 }
-.left-container .left-buttons-container .btn-eat-1-grass div {
+.left-buttons-container .btn-eat-1-grass div {
   position: absolute;
   width: 0;
   height: 0;
   overflow: hidden;
 }
-.left-container .left-buttons-container .btn-eat-2-grass div {
+.left-buttons-container .btn-eat-2-grass div {
   position: absolute;
   width: 0;
   height: 0;
   overflow: hidden;
 }
-.left-container .left-buttons-container .btn-drink-red-bull div {
+.left-buttons-container .btn-drink-red-bull div {
   position: absolute;
   width: 0;
   height: 0;
   overflow: hidden;
 }
-.left-container .left-buttons-container .btn-eat-sasuage div {
+.left-buttons-container .btn-eat-sasuage div {
   position: absolute;
   width: 0;
   height: 0;
   overflow: hidden;
 }
-.left-container .left-buttons-container .btn-eat-1-grass,
-.left-container .left-buttons-container .btn-eat-2-grass,
-.left-container .left-buttons-container .btn-drink-red-bull,
-.left-container .left-buttons-container .btn-eat-sasuage {
+.left-buttons-container .btn-eat-1-grass,
+.left-buttons-container .btn-eat-2-grass,
+.left-buttons-container .btn-drink-red-bull,
+.left-buttons-container .btn-eat-sasuage {
   font-size: 13px;
   padding: 3px;
   margin: 0px 20px;
 }
-.left-container .left-buttons-container .fire-place-container {
+.left-buttons-container .fire-place-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100% px;
   height: 100%;
 }
-.left-container .left-buttons-container .fire-place-container .fire-place-icon-false {
+.left-buttons-container .fire-place-container .fire-place-icon-false {
   background-image: url(../img/ogniskofalse.png);
   background-size: cover;
   width: 31px;
   height: 45px;
 }
-.left-container .left-buttons-container .fire-place-container .fire-place-icon-true {
+.left-buttons-container .fire-place-container .fire-place-icon-true {
   background-image: url(../img/ognisko.png);
   background-size: cover;
   width: 31px;
   height: 45px;
 }
-.left-container .left-buttons-container .fire-place-container .fire-place-span {
+.left-buttons-container .fire-place-container .fire-place-span {
   font-weight: bold;
   font-size: 20px;
 }
-.left-container .left-buttons-container .btn-eat-food-active,
-.left-container .left-buttons-container .btn-eat-1-grass-active,
-.left-container .left-buttons-container .btn-eat-2-grass-active,
-.left-container .left-buttons-container .btn-drink-red-bull-active,
-.left-container .left-buttons-container .btn-eat-sasuage-active {
+.left-buttons-container .btn-eat-food-active,
+.left-buttons-container .btn-eat-1-grass-active,
+.left-buttons-container .btn-eat-2-grass-active,
+.left-buttons-container .btn-drink-red-bull-active,
+.left-buttons-container .btn-eat-sasuage-active {
   background-color: rgb(184, 165, 102);
   cursor: pointer;
 }
-.left-container .left-buttons-container .btn-eat-1-grass-active:hover div,
-.left-container .left-buttons-container .btn-eat-2-grass-active:hover div,
-.left-container .left-buttons-container .btn-eat-sasuage-active:hover div,
-.left-container .left-buttons-container .btn-drink-red-bull-active:hover div {
+.left-buttons-container .btn-eat-1-grass-active:hover div,
+.left-buttons-container .btn-eat-2-grass-active:hover div,
+.left-buttons-container .btn-eat-sasuage-active:hover div,
+.left-buttons-container .btn-drink-red-bull-active:hover div {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -877,459 +829,18 @@ body {
   border: 2px solid black;
   border-radius: 10px;
 }
-.left-container .left-buttons-container .btn-drink-red-bull-active:hover div {
+.left-buttons-container .btn-drink-red-bull-active:hover div {
   margin-top: 12px;
 }
-.left-container .left-buttons-container .btn-eat-2-grass-active:hover div {
+.left-buttons-container .btn-eat-2-grass-active:hover div {
   height: 40px;
 }
-.left-container .left-buttons-container .btn-eat-food-active:hover,
-.left-container .left-buttons-container .btn-eat-1-grass-active:hover,
-.left-container .left-buttons-container .btn-eat-2-grass-active:hover,
-.left-container .left-buttons-container .btn-drink-red-bull-active:hover,
-.left-container .left-buttons-container .btn-eat-sasuage-active:hover {
+.left-buttons-container .btn-eat-food-active:hover,
+.left-buttons-container .btn-eat-1-grass-active:hover,
+.left-buttons-container .btn-eat-2-grass-active:hover,
+.left-buttons-container .btn-drink-red-bull-active:hover,
+.left-buttons-container .btn-eat-sasuage-active:hover {
   background-color: rgb(255, 234, 166);
-}
-
-.right-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding-left: 15px;
-}
-.right-container .tura {
-  margin-left: 220px;
-  font-family: "Creepster", cursive;
-  font-size: 50px;
-  letter-spacing: 10px;
-}
-.right-container .difficulties {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: flex-end;
-  width: 540px;
-  height: 40px;
-  margin-left: 30px;
-  margin-top: 10px;
-}
-.right-container .difficulties span {
-  font-size: 20px;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-.right-container .rounds-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 540px;
-  height: 200px;
-  margin-bottom: 20px;
-}
-.right-container .rounds-container .sun-moon-icons-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  width: 50px;
-  height: 200px;
-}
-.right-container .rounds-container .sun-moon-icons-container .sun-icon {
-  background-image: url(../img/sun1.png);
-  background-size: cover;
-  background-color: rgb(172, 155, 101);
-  width: 50px;
-  height: 50px;
-  box-shadow: 0 0 10px black;
-  border-radius: 50%;
-}
-.right-container .rounds-container .sun-moon-icons-container .sun-icon:hover {
-  background-color: rgb(211, 191, 121);
-}
-.right-container .rounds-container .sun-moon-icons-container .moon-icon {
-  background-image: url(../img/moon1.png);
-  background-size: cover;
-  background-color: rgb(172, 155, 101);
-  width: 50px;
-  height: 50px;
-  box-shadow: 0 0 10px black;
-  border-radius: 50%;
-}
-.right-container .rounds-container .sun-moon-icons-container .moon-icon:hover {
-  background-color: rgb(211, 191, 121);
-}
-.right-container .rounds-container table {
-  border-spacing: 0;
-  width: 480px;
-  height: 180px;
-  border: 2px solid black;
-}
-.right-container .rounds-container table .diff-easy {
-  background-color: rgba(0, 0, 0, 0);
-}
-.right-container .rounds-container table .diff-mid {
-  background-color: rgba(0, 0, 0, 0.2);
-}
-.right-container .rounds-container table .diff-hard {
-  background-color: rgba(0, 0, 0, 0.4);
-}
-.right-container .rounds-container table .table-row-day {
-  background-color: rgb(255, 220, 104);
-}
-.right-container .rounds-container table .table-row-night {
-  background-color: rgb(95, 118, 136);
-}
-.right-container .rounds-container table td {
-  width: 8.33%;
-  border: 2px solid black;
-  text-align: center;
-}
-.right-container .rounds-container table td span {
-  font-size: 15px;
-  font-weight: bold;
-  padding: 30px 10px;
-}
-.right-container .round-highlight {
-  background-color: rgb(255, 241, 212) !important;
-  box-shadow: 0 0 5px 5px rgb(255, 255, 255);
-  z-index: 3;
-}
-.right-container .right-container-action-buttons {
-  display: flex;
-  justify-content: space-around;
-  width: 540px;
-  margin-bottom: 20px;
-}
-.right-container .right-container-action-buttons .use-spot {
-  height: 50px;
-  width: 150px;
-  background-color: rgb(156, 156, 156);
-  border: 3px solid black;
-  border-radius: 15px;
-  font-size: 15px;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-.right-container .right-container-action-buttons .use-spot-active {
-  background-color: rgb(184, 165, 102);
-  cursor: pointer;
-}
-.right-container .right-container-action-buttons .end-round {
-  height: 50px;
-  width: 150px;
-  background-color: rgb(184, 165, 102);
-  border: 3px solid black;
-  border-radius: 15px;
-  cursor: pointer;
-  font-size: 15px;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-.right-container .use-spot-active:hover {
-  background-color: rgb(255, 234, 166);
-}
-.right-container .end-round:hover {
-  background-color: rgb(255, 234, 166);
-}
-.right-container .event-cards-and-items-container {
-  display: flex;
-  justify-content: center;
-  height: 400px;
-  width: 540px;
-}
-.right-container .event-cards-and-items-container .item-list-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  background-image: url(../img/paper.png);
-  background-size: cover;
-  width: 55%;
-  height: 390px;
-}
-.right-container .event-cards-and-items-container .item-list-container .item-list-span {
-  font-size: 17px;
-  margin-top: 30px;
-  font-family: "Patrick Hand", cursive;
-}
-.right-container .event-cards-and-items-container .item-list-container .item-list-container2 {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  width: 100%;
-  height: 80%;
-}
-.right-container .event-cards-and-items-container .item-list-container .item-list-container2 h1 {
-  font-size: 20px;
-  font-weight: bold;
-  margin-top: 10px;
-}
-.right-container .event-cards-and-items-container .item-list-container .item-list-container2 p {
-  font-size: 15px;
-  font-style: italic;
-  margin-top: 10px;
-}
-.right-container .event-cards-and-items-container .item-list-container .item-list-container2 span {
-  font-size: 15px;
-  margin-top: 10px;
-}
-.right-container .event-cards-and-items-container .item-list-container .item-description-right {
-  position: absolute;
-  height: 0px;
-  width: 200px;
-  background-color: rgb(255, 255, 255);
-  border-radius: 20px;
-  transition: 0.2s;
-}
-.right-container .event-cards-and-items-container .item-list-container .description-right {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  overflow: hidden;
-  color: black;
-}
-.right-container .event-cards-and-items-container .item-list-container .axe-description-right {
-  left: -120px;
-  top: -370px;
-}
-.right-container .event-cards-and-items-container .item-list-container .axe-description-right img {
-  width: 75px;
-  margin-top: 10px;
-}
-.right-container .event-cards-and-items-container .item-list-container .axe-description-right .axe-price {
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
-}
-.right-container .event-cards-and-items-container .item-list-container .axe-description-right .axe-price img {
-  width: 60px;
-}
-.right-container .event-cards-and-items-container .item-list-container .shoes-description-right {
-  left: -220px;
-  top: -130px;
-}
-.right-container .event-cards-and-items-container .item-list-container .shoes-description-right img {
-  width: 105px;
-  margin-top: 20px;
-}
-.right-container .event-cards-and-items-container .item-list-container .shoes-description-right .shoes-price {
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-}
-.right-container .event-cards-and-items-container .item-list-container .shoes-description-right .shoes-price img {
-  width: 60px;
-}
-.right-container .event-cards-and-items-container .item-list-container .torch-description-right {
-  left: -260px;
-  top: -120px;
-}
-.right-container .event-cards-and-items-container .item-list-container .torch-description-right img {
-  width: 25px;
-  margin-top: 10px;
-}
-.right-container .event-cards-and-items-container .item-list-container .torch-description-right .torch-price {
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-}
-.right-container .event-cards-and-items-container .item-list-container .torch-description-right .torch-price img {
-  width: 60px;
-}
-.right-container .event-cards-and-items-container .item-list-container .sword-description-right {
-  left: -120px;
-  top: -365px;
-}
-.right-container .event-cards-and-items-container .item-list-container .sword-description-right img {
-  width: 75px;
-  margin-top: 10px;
-}
-.right-container .event-cards-and-items-container .item-list-container .sword-description-right .sword-price {
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
-}
-.right-container .event-cards-and-items-container .item-list-container .sword-description-right .sword-price img {
-  width: 60px;
-}
-.right-container .event-cards-and-items-container .item-list-container .food-description-right {
-  left: -260px;
-  top: -120px;
-}
-.right-container .event-cards-and-items-container .item-list-container .food-description-right img {
-  width: 75px;
-  margin-top: 10px;
-}
-.right-container .event-cards-and-items-container .item-list-container .food-description-right .food-price {
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
-}
-.right-container .event-cards-and-items-container .item-list-container .food-description-right .food-price img {
-  width: 45px;
-}
-.right-container .event-cards-and-items-container .item-list-container .coat-description-right {
-  left: -265px;
-  top: -120px;
-}
-.right-container .event-cards-and-items-container .item-list-container .coat-description-right img {
-  width: 75px;
-  margin-top: 10px;
-}
-.right-container .event-cards-and-items-container .item-list-container .coat-description-right .coat-price {
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
-}
-.right-container .event-cards-and-items-container .item-list-container .coat-description-right .coat-price img {
-  width: 60px;
-}
-.right-container .event-cards-and-items-container .item-list-container .item-list-column-left {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10px;
-}
-.right-container .event-cards-and-items-container .item-list-container .item-list-column-left .item-clickable {
-  cursor: pointer;
-}
-.right-container .event-cards-and-items-container .item-list-container .item-list-column-left .item-clickable:hover {
-  background-color: rgb(255, 207, 161);
-  border-radius: 10%;
-  box-shadow: 0 0 10px 10px rgb(255, 207, 161);
-}
-.right-container .event-cards-and-items-container .item-list-container .item-list-column-left .div {
-  margin: 5px;
-  border: none;
-  background: none;
-}
-.right-container .event-cards-and-items-container .item-list-container .item-list-column-left .axe {
-  position: relative;
-  background-image: url(../img/siekiera.png);
-  background-size: cover;
-  width: 82px;
-  height: 95px;
-}
-.right-container .event-cards-and-items-container .item-list-container .item-list-column-left .axe .shadow {
-  background-color: rgba(116, 0, 0, 0.5);
-  width: 84px;
-  height: 97px;
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgb(119, 0, 0);
-}
-.right-container .event-cards-and-items-container .item-list-container .item-list-column-left .axe:hover .item-description-right {
-  height: 350px;
-  border: 3px solid black;
-}
-.right-container .event-cards-and-items-container .item-list-container .item-list-column-left .shoes {
-  position: relative;
-  background-image: url(../img/lacie.png);
-  background-size: cover;
-  width: 111px;
-  height: 70px;
-}
-.right-container .event-cards-and-items-container .item-list-container .item-list-column-left .shoes .shadow {
-  background-color: rgba(116, 0, 0, 0.5);
-  width: 111px;
-  height: 70px;
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgb(119, 0, 0);
-}
-.right-container .event-cards-and-items-container .item-list-container .item-list-column-left .shoes:hover .item-description-right {
-  height: 350px;
-  border: 3px solid black;
-}
-.right-container .event-cards-and-items-container .item-list-container .item-list-column-left .torch {
-  position: relative;
-  background-image: url(../img/pochodnia.png);
-  background-size: cover;
-  width: 29px;
-  height: 90px;
-}
-.right-container .event-cards-and-items-container .item-list-container .item-list-column-left .torch .shadow {
-  background-color: rgba(116, 0, 0, 0.5);
-  width: 29px;
-  height: 90px;
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgb(119, 0, 0);
-}
-.right-container .event-cards-and-items-container .item-list-container .item-list-column-left .torch:hover .item-description-right {
-  height: 350px;
-  border: 3px solid black;
-}
-.right-container .event-cards-and-items-container .item-list-container .item-list-column-right {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.right-container .event-cards-and-items-container .item-list-container .item-list-column-right .item-clickable {
-  cursor: pointer;
-}
-.right-container .event-cards-and-items-container .item-list-container .item-list-column-right .item-clickable:hover {
-  background-color: rgb(255, 207, 161);
-  border-radius: 10%;
-  box-shadow: 0 0 10px 10px rgb(255, 207, 161);
-}
-.right-container .event-cards-and-items-container .item-list-container .item-list-column-right .div {
-  margin: 10px 5px;
-  border: none;
-  background: none;
-}
-.right-container .event-cards-and-items-container .item-list-container .item-list-column-right .sword {
-  position: relative;
-  background-image: url(../img/miecz.png);
-  background-size: cover;
-  width: 75px;
-  height: 95px;
-}
-.right-container .event-cards-and-items-container .item-list-container .item-list-column-right .sword .shadow {
-  background-color: rgba(116, 0, 0, 0.5);
-  width: 82px;
-  height: 95px;
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgb(119, 0, 0);
-}
-.right-container .event-cards-and-items-container .item-list-container .item-list-column-right .sword:hover .item-description-right {
-  height: 350px;
-  border: 3px solid black;
-}
-.right-container .event-cards-and-items-container .item-list-container .item-list-column-right .food {
-  position: relative;
-  background-image: url(../img/leczo.png);
-  background-size: cover;
-  width: 88px;
-  height: 70px;
-}
-.right-container .event-cards-and-items-container .item-list-container .item-list-column-right .food .shadow {
-  background-color: rgba(116, 0, 0, 0.5);
-  width: 88px;
-  height: 70px;
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgb(119, 0, 0);
-}
-.right-container .event-cards-and-items-container .item-list-container .item-list-column-right .food:hover .item-description-right {
-  height: 350px;
-  border: 3px solid black;
-}
-.right-container .event-cards-and-items-container .item-list-container .item-list-column-right .coat {
-  position: relative;
-  background-image: url(../img/ponczo.png);
-  background-size: cover;
-  width: 90px;
-  height: 70px;
-}
-.right-container .event-cards-and-items-container .item-list-container .item-list-column-right .coat .shadow {
-  background-color: rgba(116, 0, 0, 0.5);
-  width: 90px;
-  height: 70px;
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgb(119, 0, 0);
-}
-.right-container .event-cards-and-items-container .item-list-container .item-list-column-right .coat:hover .item-description-right {
-  height: 350px;
-  border: 3px solid black;
 }
 
 #sejmitar,
@@ -2336,22 +1847,6 @@ body {
   border-radius: 3px;
   box-shadow: 0 0 2px 2px rgb(100, 100, 100);
   margin-top: 6px;
-}
-
-.instruction {
-  height: 50px;
-  width: 150px;
-  background-color: rgb(184, 165, 102);
-  border: 3px solid black;
-  border-radius: 15px;
-  cursor: pointer;
-  font-size: 15px;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.instruction:hover {
-  background-color: rgb(255, 234, 166);
 }
 
 .close-instruction {

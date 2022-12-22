@@ -17,7 +17,7 @@
   justify-content: center;
   margin-top: 35px;
   background-color: rgb(0, 0, 0);
-  height: 300px;
+  height: 310px;
   width: 500px;
 }
 .left-container .stats-container .stats-bars {
@@ -72,9 +72,12 @@
   text-align: center;
 }
 .left-container .stats-container .stats-name .stat-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 75px;
   height: 40px;
   background-color: rgb(141, 141, 141);
-  padding: 5px;
+  margin-top: 5px;
   border: 2px solid black;
 }

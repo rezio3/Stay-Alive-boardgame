@@ -18,9 +18,22 @@ const Character = () => {
 			characterMove();
 	}, [board.btnId]);
 
+	if (char.cantMove) {
+		setTimeout(() => {
+			setChar({
+				...char,
+				cantMove: false,
+			});
+		}, 500);
+	}
+
 	return (
 		<div
-			className={"character __" + char.selectedChar}
+			className={
+				"character __" +
+				char.selectedChar +
+				(char.cantMove ? " character-animation" : " ")
+			}
 			id="selected-character"
 			style={board.charSetOnBoard && { display: "block" }}
 		/>

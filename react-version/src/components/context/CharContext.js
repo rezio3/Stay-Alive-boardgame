@@ -14,6 +14,7 @@ const charSelected = {
 	prevTemperature: 0,
 
 	selectedChar: null,
+	cantMove: false,
 };
 
 export const CharacterContext = createContext();

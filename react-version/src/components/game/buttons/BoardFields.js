@@ -18,6 +18,11 @@ const BoardFields = (props) => {
 				prevRow: e.target.getAttribute("row"),
 				prevColumn: e.target.getAttribute("column"),
 			});
+		} else {
+			setChar({
+				...char,
+				cantMove: true,
+			});
 		}
 	};
 

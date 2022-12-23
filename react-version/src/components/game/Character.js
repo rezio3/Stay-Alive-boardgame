@@ -7,10 +7,6 @@ const Character = () => {
 	const [board, setBoard] = useContext(BoardContext);
 
 	const characterMove = () => {
-		setBoard({
-			...board,
-			prevBtnId: board.btnId,
-		});
 		setChar({
 			...char,
 			energy: char.energy - 1,

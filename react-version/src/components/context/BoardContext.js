@@ -5,7 +5,6 @@ const boardData = {
 	charSetOnBoard: false,
 	btnId: null,
 	// btnData: null,
-	prevBtnId: 20,
 	prevRow: 1,
 	prevColumn: 11,
 };

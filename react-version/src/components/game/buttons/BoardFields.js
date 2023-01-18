@@ -3,10 +3,12 @@ import { BoardContext } from "../../context/BoardContext";
 import { CharacterContext } from "../../context/CharContext";
 import Character from "../Character";
 import { checkDistance } from "../functions/Character-movement";
+import { ButtonsContext } from "../../context/ButtonsContext";
 
 const BoardFields = (props) => {
 	const [board, setBoard] = useContext(BoardContext);
 	const [char, setChar] = useContext(CharacterContext);
+	const [buttons, setButtons] = useContext(ButtonsContext);
 
 	const handleFieldClick = (e) => {
 		const moveApproved = checkDistance(e, board, char);
@@ -14,10 +16,29 @@ const BoardFields = (props) => {
 			setBoard({
 				...board,
 				btnId: e.target.id,
-				// btnData: e.target,
+				btnData: e.target,
 				prevRow: e.target.getAttribute("row"),
 				prevColumn: e.target.getAttribute("column"),
 			});
+			if (e.target.classList.contains("wood")) {
+				setButtons({ useHexButton: true });
+				let source;
+				if (e.target.classList.contains("wood")) source = "wood";
+				if (e.target.classList.contains("stone")) source = "stone";
+				if (e.target.classList.contains("grass")) source = "grass";
+				if (e.target.classList.contains("flint")) source = "flint";
+				if (e.target.classList.contains("lotos")) source = "lotos";
+				setBoard({
+					...board,
+					btnId: e.target.id,
+					btnData: e.target,
+					prevRow: e.target.getAttribute("row"),
+					prevColumn: e.target.getAttribute("column"),
+					sourcePlayerStandsOn: source,
+				});
+			} else {
+				setButtons({ useHexButton: false });
+			}
 		} else {
 			setChar({
 				...char,

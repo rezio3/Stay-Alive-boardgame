@@ -4,9 +4,10 @@ const boardData = {
 	arrowBtnActive: false,
 	charSetOnBoard: false,
 	btnId: null,
-	// btnData: null,
+	btnData: "",
 	prevRow: 1,
 	prevColumn: 11,
+	sourcePlayerStandsOn: null,
 };
 
 export const BoardContext = createContext();

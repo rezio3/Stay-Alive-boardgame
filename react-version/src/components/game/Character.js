@@ -19,21 +19,28 @@ const Character = () => {
 		}
 	}, [board.btnId]);
 
-	if (char.cantMove) {
+	if (char.cantMoveAnimation) {
 		setTimeout(() => {
 			setChar({
 				...char,
-				cantMove: false,
+				cantMoveAnimation: false,
 			});
 		}, 500);
 	}
 
+	// check if statistics are over-peaked
+	if (char.energy > 10) {
+		setChar({
+			...char,
+			energy: 10,
+		});
+	}
 	return (
 		<div
 			className={
 				"character __" +
 				char.selectedChar +
-				(char.cantMove ? " character-animation" : " ")
+				(char.cantMoveAnimation ? " character-animation" : " ")
 			}
 			id="selected-character"
 			style={board.charSetOnBoard && { display: "block" }}

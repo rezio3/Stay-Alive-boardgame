@@ -13,21 +13,21 @@ const BoardFields = (props) => {
 	const handleFieldClick = (e) => {
 		const moveApproved = checkDistance(e, board, char);
 		if (moveApproved) {
-			setBoard({
-				...board,
-				btnId: e.target.id,
-				btnData: e.target,
-				prevRow: e.target.getAttribute("row"),
-				prevColumn: e.target.getAttribute("column"),
-			});
-			if (e.target.classList.contains("wood")) {
-				setButtons({ useHexButton: true });
+			const { classList } = e.target;
+			if (
+				classList.contains("wood") ||
+				classList.contains("stone") ||
+				classList.contains("grass") ||
+				classList.contains("flint") ||
+				classList.contains("lotos")
+			) {
+				setButtons({ ...buttons, useHexButton: true });
 				let source;
-				if (e.target.classList.contains("wood")) source = "wood";
-				if (e.target.classList.contains("stone")) source = "stone";
-				if (e.target.classList.contains("grass")) source = "grass";
-				if (e.target.classList.contains("flint")) source = "flint";
-				if (e.target.classList.contains("lotos")) source = "lotos";
+				if (classList.contains("wood")) source = "wood";
+				if (classList.contains("stone")) source = "stone";
+				if (classList.contains("grass")) source = "grass";
+				if (classList.contains("flint")) source = "flint";
+				if (classList.contains("lotos")) source = "lotos";
 				setBoard({
 					...board,
 					btnId: e.target.id,
@@ -37,12 +37,20 @@ const BoardFields = (props) => {
 					sourcePlayerStandsOn: source,
 				});
 			} else {
-				setButtons({ useHexButton: false });
+				setButtons({ ...buttons, useHexButton: false });
+				setBoard({
+					...board,
+					btnId: e.target.id,
+					btnData: e.target,
+					prevRow: e.target.getAttribute("row"),
+					prevColumn: e.target.getAttribute("column"),
+					sourcePlayerStandsOn: null,
+				});
 			}
 		} else {
 			setChar({
 				...char,
-				cantMove: true,
+				cantMoveAnimation: true,
 			});
 		}
 	};

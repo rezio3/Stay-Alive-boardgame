@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../../../style/css/Items.css";
+import { CharacterContext } from "../../context/CharContext";
 
 const Items = () => {
+	const [char, setChar] = useContext(CharacterContext);
+
+	const { wood, stone, grass, flint, lotos } = char.inventory;
 	return (
 		<div className="items-container">
 			<div className="items-inboard-container">
@@ -24,11 +28,11 @@ const Items = () => {
 						</div>
 					</div>
 					<div className="resources-text">
-						<span className="stone-count">x0</span>
-						<span className="wood-count">x0</span>
-						<span className="grass-count">x0</span>
-						<span className="flint-count">x0</span>
-						<span className="lotos-count">x0</span>
+						<span className="stone-count">x{stone}</span>
+						<span className="wood-count">x{wood}</span>
+						<span className="grass-count">x{grass}</span>
+						<span className="flint-count">x{flint}</span>
+						<span className="lotos-count">x{lotos}</span>
 					</div>
 					<div className="items-inventory">
 						<div className="" id="axe-container">

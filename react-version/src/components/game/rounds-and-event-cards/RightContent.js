@@ -17,8 +17,34 @@ const RightContent = () => {
 				...buttons,
 				useHexButton: false,
 			});
+			let addItem = char.inventory[board.sourcePlayerStandsOn] + 1;
+			setChar({
+				...char,
+				energy: char.energy - 1,
+				cantMove: true,
+				inventory: {
+					...char.inventory,
+					[board.sourcePlayerStandsOn]: addItem,
+				},
+			});
 		} else if (char.energy === 0 && char.inventory.axe === 0) {
 			console.log("za mało energii na zebranie surowca");
+		}
+	};
+
+	const handleEndTurn = () => {
+		let addEnergy;
+		char.inventory.shoes === 1 ? (addEnergy = 3) : (addEnergy = 2);
+		setChar({
+			...char,
+			cantMove: false,
+			energy: char.energy + addEnergy,
+		});
+		if (board.sourcePlayerStandsOn !== null) {
+			setButtons({
+				...buttons,
+				useHexButton: true,
+			});
 		}
 	};
 
@@ -41,7 +67,9 @@ const RightContent = () => {
 				>
 					Aktywuj pole
 				</button>
-				<button className="end-round">Zakończ turę</button>
+				<button className="end-round" onClick={handleEndTurn}>
+					Zakończ turę
+				</button>
 				<button className="instruction">Przewodnik</button>
 			</div>
 

@@ -3,12 +3,24 @@ import "../../../style/css/RightContent.css";
 import Rounds from "./Rounds";
 import ItemList from "./ItemList";
 import { BoardContext } from "../../context/BoardContext";
+import { ButtonsContext } from "../../context/ButtonsContext";
+import { CharacterContext } from "../../context/CharContext";
 
 const RightContent = () => {
-	const [buttons, setButtons] = useState({ useHexButton: true });
+	const [buttons, setButtons] = useContext(ButtonsContext);
 	const [board, setBoard] = useContext(BoardContext);
+	const [char, setChar] = useContext(CharacterContext);
 
-	// console.log(board.btnData.classList.contains("wood"));
+	const handleUseHexButton = () => {
+		if (char.energy > 0 || char.inventory.axe === 1) {
+			setButtons({
+				...buttons,
+				useHexButton: false,
+			});
+		} else if (char.energy === 0 && char.inventory.axe === 0) {
+			console.log("za mało energii na zebranie surowca");
+		}
+	};
 
 	return (
 		<div className="right-container">
@@ -20,7 +32,13 @@ const RightContent = () => {
 			</div>
 			<Rounds />
 			<div className="right-container-action-buttons">
-				<button className="use-spot" disabled={!buttons.useHexButton}>
+				<button
+					className={
+						!buttons.useHexButton ? "use-spot" : "use-spot use-spot-active"
+					}
+					disabled={!buttons.useHexButton}
+					onClick={handleUseHexButton}
+				>
 					Aktywuj pole
 				</button>
 				<button className="end-round">Zakończ turę</button>

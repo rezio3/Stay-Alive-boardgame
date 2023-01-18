@@ -11,15 +11,11 @@ const Game = () => {
 	const [board, setBoard] = useContext(BoardContext);
 	const [char, setChar] = useContext(CharacterContext);
 
-	const handleArrowButton = () => {
-		console.log("Działa arrow btn");
-		// const arrowButtonObject = document.getElementById("11");
-		// console.log(e.target);
-
+	const handleArrowButton = (e) => {
 		setBoard({
 			...board,
 			btnId: 11,
-			// btnData: arrowButtonObject,
+			btnData: e.target,
 			charSetOnBoard: true,
 			arrowBtnActive: true,
 		});

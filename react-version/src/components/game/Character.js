@@ -14,8 +14,9 @@ const Character = () => {
 		});
 	};
 	useEffect(() => {
-		if (board.btnId !== null && board.prevBtnId !== board.btnId)
+		if (board.btnId !== null && board.prevBtnId !== board.btnId) {
 			characterMove();
+		}
 	}, [board.btnId]);
 
 	if (char.cantMove) {

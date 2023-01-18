@@ -5,8 +5,6 @@ export const checkDistance = (e, board, char) => {
 	let prevRowNum = Number(prevRow);
 	let clickedColumnNum = Number(e.target.getAttribute("column"));
 	let prevColumnNum = Number(prevColumn);
-	console.log(e.target.id);
-	console.log(board.btnId);
 	if (board.btnId === e.target.id || e.target.id === "selected-character") {
 		console.log("Stoisz w miejscu");
 	} else if (prevRow % 2 === 1) {

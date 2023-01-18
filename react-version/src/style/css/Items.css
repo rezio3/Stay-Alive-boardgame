@@ -1,0 +1,702 @@
+@charset "UTF-8";
+.items-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 35px;
+  background-image: url(../../img/wooden-board.png);
+  background-size: cover;
+  height: 244px;
+  width: 500px;
+}
+.items-container .items-inboard-container {
+  display: flex;
+  justify-content: flex-start;
+  height: 235px;
+  width: 490px;
+}
+.items-container .items-inboard-container .resources-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 490px;
+  height: 100%;
+  margin-top: 15px;
+}
+.items-container .items-inboard-container .resources-container .resources-icons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 20%;
+}
+.items-container .items-inboard-container .resources-container .resources-icons .stone {
+  background-image: url(../../img/kamień.png);
+  background-size: cover;
+  width: 72px;
+  height: 50px;
+}
+.items-container .items-inboard-container .resources-container .resources-icons .stone .stone-anim {
+  opacity: 0%;
+  position: absolute;
+  background-image: url(../../img/kamień.png);
+  background-size: cover;
+  width: 72px;
+  height: 50px;
+}
+.items-container .items-inboard-container .resources-container .resources-icons .wood {
+  background-image: url(../../img/drewno.png);
+  background-size: cover;
+  width: 72px;
+  height: 50px;
+}
+.items-container .items-inboard-container .resources-container .resources-icons .wood .wood-anim {
+  opacity: 0%;
+  position: absolute;
+  background-image: url(../../img/drewno.png);
+  background-size: cover;
+  width: 72px;
+  height: 50px;
+}
+.items-container .items-inboard-container .resources-container .resources-icons .grass {
+  background-image: url(../../img/trawa.png);
+  background-size: cover;
+  width: 74px;
+  height: 60px;
+  margin-bottom: 20px;
+}
+.items-container .items-inboard-container .resources-container .resources-icons .grass .grass-anim {
+  opacity: 0%;
+  position: absolute;
+  background-image: url(../../img/trawa.png);
+  background-size: cover;
+  width: 74px;
+  height: 60px;
+  margin-bottom: 20px;
+}
+.items-container .items-inboard-container .resources-container .resources-icons .flint {
+  background-image: url(../../img/krzesiwo.png);
+  background-size: cover;
+  width: 72px;
+  height: 50px;
+}
+.items-container .items-inboard-container .resources-container .resources-icons .flint .flint-anim {
+  opacity: 0%;
+  position: absolute;
+  background-image: url(../../img/krzesiwo.png);
+  background-size: cover;
+  width: 72px;
+  height: 50px;
+}
+.items-container .items-inboard-container .resources-container .resources-icons .lotos {
+  background-image: url(../../img/lotos.png);
+  background-size: cover;
+  width: 72px;
+  height: 50px;
+  margin: 10px;
+}
+.items-container .items-inboard-container .resources-container .resources-icons .lotos .lotos-anim {
+  opacity: 0%;
+  position: absolute;
+  background-image: url(../../img/lotos.png);
+  background-size: cover;
+  width: 72px;
+  height: 50px;
+}
+.items-container .items-inboard-container .resources-container .resources-text {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 20%;
+  margin-left: 20px;
+}
+.items-container .items-inboard-container .resources-container .resources-text span {
+  font-size: 30px;
+  font-weight: bold;
+  padding: 0 31px;
+  color: white;
+}
+.items-container .item-size {
+  width: 72px;
+  height: 50px;
+}
+.items-container .stone-animation {
+  animation: stoneAnim 0.9s ease-in-out;
+}
+@keyframes stoneAnim {
+  0% {
+    opacity: 0%;
+    width: 100px;
+    height: 69px;
+    margin: 0 0 0 800px;
+  }
+  50% {
+    opacity: 100%;
+    width: 400px;
+    height: 277px;
+    margin: 0 0 0 350px;
+  }
+  100% {
+    opacity: 90%;
+    width: 72px;
+    height: 50px;
+  }
+}
+.items-container .wood-animation {
+  animation: woodAnim 0.9s ease-in-out;
+}
+@keyframes woodAnim {
+  0% {
+    opacity: 0%;
+    width: 100px;
+    height: 69px;
+    margin: 0 0 0 740px;
+  }
+  50% {
+    opacity: 100%;
+    width: 400px;
+    height: 277px;
+    margin: 0 0 0 300px;
+  }
+  100% {
+    opacity: 90%;
+    width: 72px;
+    height: 50px;
+  }
+}
+.items-container .grass-animation {
+  animation: grassAnim 0.9s ease-in-out;
+}
+@keyframes grassAnim {
+  0% {
+    opacity: 0%;
+    width: 100px;
+    height: 69px;
+    margin: 0 0 0 680px;
+  }
+  50% {
+    opacity: 100%;
+    width: 400px;
+    height: 277px;
+    margin: 0 0 0 250px;
+  }
+  100% {
+    opacity: 90%;
+    width: 72px;
+    height: 50px;
+  }
+}
+.items-container .flint-animation {
+  animation: flintAnim 0.9s ease-in-out;
+}
+@keyframes flintAnim {
+  0% {
+    opacity: 0%;
+    width: 100px;
+    height: 69px;
+    margin: 0 0 0 620px;
+  }
+  50% {
+    opacity: 100%;
+    width: 400px;
+    height: 277px;
+    margin: 0 0 0 200px;
+  }
+  100% {
+    opacity: 90%;
+    width: 72px;
+    height: 50px;
+  }
+}
+.items-container .lotos-animation {
+  animation: lotosAnim 0.9s ease-in-out;
+}
+@keyframes lotosAnim {
+  0% {
+    opacity: 0%;
+    width: 100px;
+    height: 69px;
+    margin: 0 0 0 550px;
+  }
+  50% {
+    opacity: 100%;
+    width: 400px;
+    height: 277px;
+    margin: 0 0 0 130px;
+  }
+  100% {
+    opacity: 90%;
+    width: 72px;
+    height: 50px;
+  }
+}
+
+.items-inventory {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 420px;
+  height: 110px;
+  border-top: 5px solid black;
+}
+.items-inventory .axe-container {
+  width: 52px;
+  height: 60px;
+  margin-left: 5px;
+}
+.items-inventory .shoes-container {
+  width: 62px;
+  height: 39px;
+  margin-left: 5px;
+}
+.items-inventory .torch-container {
+  width: 24px;
+  height: 75px;
+  margin-left: 5px;
+}
+.items-inventory .sword-container {
+  width: 55px;
+  height: 70px;
+  margin-left: 5px;
+}
+.items-inventory .food-container {
+  width: 75px;
+  height: 60px;
+  margin-left: 5px;
+}
+.items-inventory .coat-container {
+  width: 84px;
+  height: 65px;
+  margin-left: 5px;
+}
+.items-inventory .sejmitar-container {
+  width: 84px;
+  height: 65px;
+  margin-left: 5px;
+}
+
+.item-description-left {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  height: 0px;
+  width: 200px;
+  background-color: rgb(255, 255, 255);
+  bottom: 70px;
+  border-radius: 20px;
+  transition: 0.2s;
+}
+.item-description-left h1 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+.item-description-left p {
+  font-size: 15px;
+  font-style: italic;
+  margin-top: 10px;
+}
+.item-description-left span {
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+.description-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  color: black;
+}
+
+.axe-description-left img {
+  width: 75px;
+  margin-top: 10px;
+}
+.axe-description-left .axe-price {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.axe-description-left .axe-price img {
+  width: 60px;
+}
+
+.shoes-description-left img {
+  width: 105px;
+  margin-top: 20px;
+}
+.shoes-description-left .shoes-price {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+.shoes-description-left .shoes-price img {
+  width: 60px;
+}
+
+.torch-description-left img {
+  width: 25px;
+  margin-top: 10px;
+}
+.torch-description-left .torch-price {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+.torch-description-left .torch-price img {
+  width: 60px;
+}
+
+.sword-description-left img {
+  width: 75px;
+  margin-top: 10px;
+}
+.sword-description-left .sword-price {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.sword-description-left .sword-price img {
+  width: 60px;
+}
+
+.food-description-left img {
+  width: 75px;
+  margin-top: 10px;
+}
+.food-description-left .food-price {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.food-description-left .food-price img {
+  width: 45px;
+}
+
+.coat-description-left img {
+  width: 75px;
+  margin-top: 10px;
+}
+.coat-description-left .coat-price {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.coat-description-left .coat-price img {
+  width: 60px;
+}
+
+.sejmitar-description-left {
+  width: 250px;
+}
+.sejmitar-description-left img {
+  width: 100px;
+}
+.sejmitar-description-left .sejmitar-price {
+  margin-top: 10px;
+}
+.sejmitar-description-left .sejmitar-price img {
+  width: 40px;
+}
+
+#axe-anim {
+  opacity: 100%;
+  position: relative;
+  background-image: url(../../img/siekiera.png);
+  background-size: cover;
+}
+
+#axe-anim:hover .item-description-left {
+  height: 350px;
+  border: 3px solid black;
+}
+
+#shoes-anim {
+  opacity: 100%;
+  position: relative;
+  background-image: url(../../img/lacie.png);
+  background-size: cover;
+}
+
+#shoes-anim:hover .item-description-left {
+  height: 350px;
+  border: 3px solid black;
+}
+
+#torch-anim {
+  opacity: 100%;
+  position: relative;
+  background-image: url(../../img/pochodnia.png);
+  background-size: cover;
+}
+
+#torch-anim:hover .item-description-left {
+  height: 350px;
+  border: 3px solid black;
+}
+
+#sword-anim {
+  opacity: 100%;
+  position: relative;
+  background-image: url(../../img/miecz.png);
+  background-size: cover;
+}
+
+#sword-anim:hover .item-description-left {
+  height: 350px;
+  border: 3px solid black;
+}
+
+#food-anim {
+  opacity: 100%;
+  position: relative;
+  background-image: url(../../img/leczo.png);
+  background-size: cover;
+}
+
+#food-anim:hover .item-description-left {
+  height: 350px;
+  border: 3px solid black;
+}
+
+#coat-anim {
+  opacity: 100%;
+  position: relative;
+  background-image: url(../../img/ponczo.png);
+  background-size: cover;
+}
+
+#coat-anim:hover .item-description-left {
+  height: 350px;
+  border: 3px solid black;
+}
+
+#sejmitar-anim {
+  opacity: 100%;
+  position: relative;
+  background-image: url(../../img/sejmitar.png);
+  background-size: cover;
+}
+
+#sejmitar-anim:hover .item-description-left {
+  height: 350px;
+  border: 3px solid black;
+}
+
+.axe-animation {
+  width: 52px;
+  height: 60px;
+  animation: axeAnim 0.9s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.shoes-animation {
+  width: 62px;
+  height: 39px;
+  animation: shoesAnim 0.9s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.torch-animation {
+  width: 24px;
+  height: 75px;
+  animation: torchAnim 0.9s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.sword-animation {
+  width: 55px;
+  height: 70px;
+  animation: swordAnim 0.9s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.food-animation {
+  width: 52px;
+  height: 60px;
+  animation: foodAnim 0.9s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.coat-animation {
+  width: 52px;
+  height: 60px;
+  animation: coatAnim 0.9s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.sejmitar-animation {
+  width: 80px;
+  height: 60px;
+  animation: sejmitarAnim 0.9s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes axeAnim {
+  0% {
+    opacity: 0%;
+    width: 100px;
+    height: 115px;
+    top: -150px;
+    left: 1200px;
+  }
+  50% {
+    opacity: 100%;
+    width: 400px;
+    height: 462px;
+    top: -150px;
+    left: 700px;
+  }
+  100% {
+    opacity: 100%;
+    width: 52px;
+    height: 60px;
+    top: 0px;
+    left: 0px;
+  }
+}
+@keyframes shoesAnim {
+  0% {
+    opacity: 0%;
+    width: 100px;
+    height: 63px;
+    top: -150px;
+    left: 1200px;
+  }
+  50% {
+    opacity: 100%;
+    width: 400px;
+    height: 252px;
+    top: -150px;
+    left: 700px;
+  }
+  100% {
+    opacity: 100%;
+    width: 62px;
+    height: 39px;
+    top: 0;
+    left: 0;
+  }
+}
+@keyframes torchAnim {
+  0% {
+    opacity: 0%;
+    width: 48px;
+    height: 150px;
+    top: -150px;
+    left: 1200px;
+  }
+  50% {
+    opacity: 100%;
+    width: 129px;
+    height: 400px;
+    top: -150px;
+    left: 700px;
+  }
+  100% {
+    opacity: 100%;
+    width: 24px;
+    height: 75px;
+    top: 0;
+    left: 0;
+  }
+}
+@keyframes swordAnim {
+  0% {
+    opacity: 0%;
+    width: 79px;
+    height: 100px;
+    top: -150px;
+    left: 1300px;
+  }
+  50% {
+    opacity: 100%;
+    width: 350px;
+    height: 443px;
+    top: -150px;
+    left: 700px;
+  }
+  100% {
+    opacity: 100%;
+    width: 55px;
+    height: 70px;
+    top: 0;
+    left: 0;
+  }
+}
+@keyframes foodAnim {
+  0% {
+    opacity: 0%;
+    width: 126px;
+    height: 100px;
+    top: -150px;
+    left: 1300px;
+  }
+  50% {
+    opacity: 100%;
+    width: 478px;
+    height: 380px;
+    top: -150px;
+    left: 700px;
+  }
+  100% {
+    opacity: 100%;
+    width: 75px;
+    height: 60px;
+    top: 0;
+    left: 0;
+  }
+}
+@keyframes coatAnim {
+  0% {
+    opacity: 0%;
+    width: 129px;
+    height: 100px;
+    top: -150px;
+    left: 1300px;
+  }
+  50% {
+    opacity: 100%;
+    width: 489px;
+    height: 380px;
+    top: -150px;
+    left: 700px;
+  }
+  100% {
+    opacity: 100%;
+    width: 70px;
+    height: 54px;
+    top: 0;
+    left: 0;
+  }
+}
+@keyframes sejmitarAnim {
+  0% {
+    opacity: 0%;
+    width: 230px;
+    height: 173px;
+    top: -450px;
+    left: 450px;
+  }
+  50% {
+    opacity: 100%;
+    width: 500px;
+    height: 375px;
+    top: -450px;
+    left: 450px;
+  }
+  100% {
+    opacity: 100%;
+    width: 80px;
+    height: 60px;
+    top: 0;
+    left: 0;
+  }
+}

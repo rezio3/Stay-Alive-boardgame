@@ -4,6 +4,7 @@ import Start from "./start-game-components/Start";
 import Game from "./game/Game";
 import "../style/css/App.css";
 import Board from "./context/BoardContext";
+import Buttons from "./context/ButtonsContext";
 
 function App() {
 	const [started, setStarted] = useState(false);
@@ -15,9 +16,11 @@ function App() {
 	return (
 		<Char>
 			<Board>
-				<div className="App">
-					{started ? <Game /> : <Start value={handleStartButton} />}
-				</div>
+				<Buttons>
+					<div className="App">
+						{started ? <Game /> : <Start value={handleStartButton} />}
+					</div>
+				</Buttons>
 			</Board>
 		</Char>
 	);

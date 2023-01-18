@@ -228,14 +228,14 @@ const buttonsData = {
 			className: "btn9 btn-line-even wood",
 			value: 9,
 			row: 10,
-			column: 10,
+			column: 9,
 		},
 		{
 			id: 109,
 			className: "btn10 btn-line-even",
 			value: 10,
 			row: 10,
-			column: 11,
+			column: 10,
 		},
 	],
 	buttonsRow11: [

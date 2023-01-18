@@ -12,6 +12,7 @@
   justify-content: space-evenly;
   width: 50px;
   height: 200px;
+  margin-right: 10px;
 }
 .rounds-container .sun-moon-icons-container .sun-icon {
   background-image: url(../../img/sun1.png);

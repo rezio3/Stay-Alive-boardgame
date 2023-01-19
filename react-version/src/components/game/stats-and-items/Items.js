@@ -1,30 +1,65 @@
 import React, { useContext } from "react";
 import "../../../style/css/Items.css";
+import { AnimationContext } from "../../context/AnimationContext";
+import { BoardContext } from "../../context/BoardContext";
 import { CharacterContext } from "../../context/CharContext";
 
 const Items = () => {
+	const [anim, setAnim] = useContext(AnimationContext);
 	const [char, setChar] = useContext(CharacterContext);
-
+	const [board, setBoard] = useContext(BoardContext);
 	const { wood, stone, grass, flint, lotos } = char.inventory;
+	if (anim[board.resourcePlayerStandsOn] === true) {
+		setTimeout(() => {
+			setAnim({
+				...anim,
+				[board.resourcePlayerStandsOn]: false,
+			});
+		}, 900);
+	}
+
 	return (
 		<div className="items-container">
 			<div className="items-inboard-container">
 				<div className="resources-container">
 					<div className="resources-icons">
 						<div className="stone">
-							<div className="stone-anim" title="kamień"></div>
+							<div
+								className={
+									anim.stone ? "stone-anim stone-animation" : "stone-anim"
+								}
+								title="kamień"
+							></div>
 						</div>
 						<div className="wood">
-							<div className="wood-anim" title="drewno"></div>
+							<div
+								className={anim.wood ? "wood-anim wood-animation" : "wood-anim"}
+								title="drewno"
+							></div>
 						</div>
 						<div className="grass">
-							<div className="grass-anim" title="trawa"></div>
+							<div
+								className={
+									anim.grass ? "grass-anim grass-animation" : "grass-anim"
+								}
+								title="trawa"
+							></div>
 						</div>
 						<div className="flint">
-							<div className="flint-anim" title="krzesiwo"></div>
+							<div
+								className={
+									anim.flint ? "flint-anim flint-animation" : "flint-anim"
+								}
+								title="krzesiwo"
+							></div>
 						</div>
 						<div className="lotos">
-							<div className="lotos-anim" title="lotos"></div>
+							<div
+								className={
+									anim.lotos ? "lotos-anim lotos-animation" : "lotos-anim"
+								}
+								title="lotos"
+							></div>
 						</div>
 					</div>
 					<div className="resources-text">

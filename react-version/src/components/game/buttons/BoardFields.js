@@ -34,7 +34,7 @@ const BoardFields = (props) => {
 					btnData: e.target,
 					prevRow: e.target.getAttribute("row"),
 					prevColumn: e.target.getAttribute("column"),
-					sourcePlayerStandsOn: source,
+					resourcePlayerStandsOn: source,
 				});
 			} else {
 				setButtons({ ...buttons, useHexButton: false });
@@ -44,7 +44,7 @@ const BoardFields = (props) => {
 					btnData: e.target,
 					prevRow: e.target.getAttribute("row"),
 					prevColumn: e.target.getAttribute("column"),
-					sourcePlayerStandsOn: null,
+					resourcePlayerStandsOn: null,
 				});
 			}
 		} else {

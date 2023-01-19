@@ -7,7 +7,7 @@ const boardData = {
 	btnData: "",
 	prevRow: 1,
 	prevColumn: 11,
-	sourcePlayerStandsOn: null,
+	resourcePlayerStandsOn: null,
 };
 
 export const BoardContext = createContext();

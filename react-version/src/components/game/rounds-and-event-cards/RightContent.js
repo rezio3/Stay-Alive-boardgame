@@ -5,11 +5,13 @@ import ItemList from "./ItemList";
 import { BoardContext } from "../../context/BoardContext";
 import { ButtonsContext } from "../../context/ButtonsContext";
 import { CharacterContext } from "../../context/CharContext";
+import { AnimationContext } from "../../context/AnimationContext";
 
 const RightContent = () => {
 	const [buttons, setButtons] = useContext(ButtonsContext);
 	const [board, setBoard] = useContext(BoardContext);
 	const [char, setChar] = useContext(CharacterContext);
+	const [anim, setAnim] = useContext(AnimationContext);
 
 	const handleUseHexButton = () => {
 		if (char.energy > 0 || char.inventory.axe === 1) {
@@ -17,18 +19,26 @@ const RightContent = () => {
 				...buttons,
 				useHexButton: false,
 			});
-			let addItem = char.inventory[board.sourcePlayerStandsOn] + 1;
+			let addItem = char.inventory[board.resourcePlayerStandsOn] + 1;
 			setChar({
 				...char,
 				energy: char.energy - 1,
 				cantMove: true,
 				inventory: {
 					...char.inventory,
-					[board.sourcePlayerStandsOn]: addItem,
+					[board.resourcePlayerStandsOn]: addItem,
 				},
+			});
+			setAnim({
+				...anim,
+				[board.resourcePlayerStandsOn]: true,
 			});
 		} else if (char.energy === 0 && char.inventory.axe === 0) {
 			console.log("za mało energii na zebranie surowca");
+			setChar({
+				...char,
+				cantMoveAnimation: true,
+			});
 		}
 	};
 
@@ -40,7 +50,7 @@ const RightContent = () => {
 			cantMove: false,
 			energy: char.energy + addEnergy,
 		});
-		if (board.sourcePlayerStandsOn !== null) {
+		if (board.resourcePlayerStandsOn !== null) {
 			setButtons({
 				...buttons,
 				useHexButton: true,

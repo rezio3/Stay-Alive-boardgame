@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { CharacterContext } from "../../context/CharContext";
 import Statistics from "./Statistics";
-import Items from "./Items";
+import Items from "./items/Items";
 import LeftButtons from "./LeftButtons";
 
 const LeftContent = () => {

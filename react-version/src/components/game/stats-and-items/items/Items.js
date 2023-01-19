@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import "../../../style/css/Items.css";
-import { AnimationContext } from "../../context/AnimationContext";
-import { BoardContext } from "../../context/BoardContext";
-import { CharacterContext } from "../../context/CharContext";
+import "../../../../style/css/Items.css";
+import { AnimationContext } from "../../../context/AnimationContext";
+import { BoardContext } from "../../../context/BoardContext";
+import { CharacterContext } from "../../../context/CharContext";
 
 const Items = () => {
 	const [anim, setAnim] = useContext(AnimationContext);

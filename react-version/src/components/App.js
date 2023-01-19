@@ -5,6 +5,7 @@ import Game from "./game/Game";
 import "../style/css/App.css";
 import Board from "./context/BoardContext";
 import Buttons from "./context/ButtonsContext";
+import Animation from "./context/AnimationContext";
 
 function App() {
 	const [started, setStarted] = useState(false);
@@ -17,9 +18,11 @@ function App() {
 		<Char>
 			<Board>
 				<Buttons>
-					<div className="App">
-						{started ? <Game /> : <Start value={handleStartButton} />}
-					</div>
+					<Animation>
+						<div className="App">
+							{started ? <Game /> : <Start value={handleStartButton} />}
+						</div>
+					</Animation>
 				</Buttons>
 			</Board>
 		</Char>

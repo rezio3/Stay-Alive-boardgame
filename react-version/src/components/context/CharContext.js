@@ -2,7 +2,7 @@ import React, { createContext, useState } from "react";
 
 const player = {
 	life: 0,
-	energy: null,
+	energy: 0,
 	starvation: 0,
 	sanity: 0,
 	temperature: 0,
@@ -17,18 +17,32 @@ const player = {
 	cantMoveAnimation: false,
 	cantMove: false,
 
-	inventory: {
+	inventoryResources: {
 		wood: 0,
 		stone: 0,
 		grass: 0,
 		flint: 0,
 		lotos: 0,
+	},
+
+	inventoryItems: {
 		axe: 0,
 		sword: 0,
 		shoes: 0,
 		coat: 0,
 		torch: 0,
 		food: 0,
+		fireCard: 0,
+		sejmitar: 0,
+	},
+
+	unlockedItems: {
+		axeUnl: false,
+		shoesUnl: false,
+		swordUnl: false,
+		foodUnl: false,
+		torchUnl: false,
+		coatUnl: false,
 	},
 };
 

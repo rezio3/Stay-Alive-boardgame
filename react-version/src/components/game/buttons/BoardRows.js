@@ -14,6 +14,7 @@ const BoardRows = (props) => {
 					row={e.row}
 					column={e.column}
 					dataArrowBtnHandler={props.dataArrowBtnHandler}
+					title={e.title}
 				/>
 			))}
 		</div>

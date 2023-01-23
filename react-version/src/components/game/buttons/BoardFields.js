@@ -13,13 +13,15 @@ const BoardFields = (props) => {
 	const handleFieldClick = (e) => {
 		const moveApproved = checkDistance(e, board, char);
 		if (moveApproved) {
+			const biom = e.target.title;
 			const { classList } = e.target;
 			if (
 				classList.contains("wood") ||
 				classList.contains("stone") ||
 				classList.contains("grass") ||
 				classList.contains("flint") ||
-				classList.contains("lotos")
+				classList.contains("lotos") ||
+				classList.contains("fire")
 			) {
 				setButtons({ ...buttons, useHexButton: true });
 				let source;
@@ -28,6 +30,7 @@ const BoardFields = (props) => {
 				if (classList.contains("grass")) source = "grass";
 				if (classList.contains("flint")) source = "flint";
 				if (classList.contains("lotos")) source = "lotos";
+				if (classList.contains("fire")) source = "fire";
 				setBoard({
 					...board,
 					btnId: e.target.id,
@@ -35,6 +38,7 @@ const BoardFields = (props) => {
 					prevRow: e.target.getAttribute("row"),
 					prevColumn: e.target.getAttribute("column"),
 					resourcePlayerStandsOn: source,
+					biomPlayerStandsOn: biom,
 				});
 			} else {
 				setButtons({ ...buttons, useHexButton: false });
@@ -45,6 +49,7 @@ const BoardFields = (props) => {
 					prevRow: e.target.getAttribute("row"),
 					prevColumn: e.target.getAttribute("column"),
 					resourcePlayerStandsOn: null,
+					biomPlayerStandsOn: biom,
 				});
 			}
 		} else {
@@ -69,8 +74,7 @@ const BoardFields = (props) => {
 			}`}
 			id={props.id}
 			value={props.value}
-			// title={title}
-
+			title={props.title}
 			onClick={
 				props.id === 11 && board.charSetOnBoard === false
 					? props.dataArrowBtnHandler

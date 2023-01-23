@@ -6,6 +6,7 @@ import LeftContent from "./stats-and-items/LeftContent";
 import RightContent from "./rounds-and-event-cards/RightContent";
 import { BoardContext } from "../context/BoardContext";
 import { CharacterContext } from "../context/CharContext";
+import Cards from "./cards/Cards";
 
 const Game = () => {
 	const [board, setBoard] = useContext(BoardContext);
@@ -53,6 +54,7 @@ const Game = () => {
 				</div>
 			)}
 			<div className="middle-container">
+				<Cards />
 				<div className="game-board" id="game-board">
 					{board.charSetOnBoard ? null : <div className="board-bg"></div>}
 					<div className="field-rows">
@@ -74,3 +76,6 @@ const Game = () => {
 };
 
 export default Game;
+
+// popover - do pop-upów
+// popper.js

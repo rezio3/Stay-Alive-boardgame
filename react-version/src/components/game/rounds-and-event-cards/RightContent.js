@@ -17,7 +17,16 @@ const RightContent = () => {
 	const [anim, setAnim] = useContext(AnimationContext);
 
 	const handleUseHexButton = () => {
-		buttonUseHex(buttons, setButtons, char, setChar, board, anim, setAnim);
+		buttonUseHex(
+			buttons,
+			setButtons,
+			char,
+			setChar,
+			board,
+			setBoard,
+			anim,
+			setAnim
+		);
 	};
 
 	const handleEndTurn = () => {

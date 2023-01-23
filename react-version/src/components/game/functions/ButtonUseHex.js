@@ -4,23 +4,28 @@ export const buttonUseHex = (
 	char,
 	setChar,
 	board,
+	setBoard,
 	anim,
 	setAnim
 ) => {
+	const { energy, starvation, sanity, temperature } = char;
+	const { flint } = char.inventoryResources;
+	const { axe, sejmitar, fireCard } = char.inventoryItems;
+	// FIREPLACE
 	if (board.resourcePlayerStandsOn === "fire") {
-		if (char.inventoryResources.flint > 0) {
+		if (flint > 0) {
 			let fireRoll = Math.floor(Math.random() * 5);
-			let addTemperature = char.temperature < 5 ? 1 : 0;
-			if (char.inventoryItems.sejmitar === 0 && fireRoll === 0) {
+			let addTemperature = temperature < 5 ? 1 : 0;
+			if (sejmitar === 0 && fireRoll === 0) {
 				setChar({
 					...char,
-					energy: char.energy + 3,
-					sanity: char.sanity + 1,
-					temperature: char.temperature + addTemperature,
+					energy: energy + 3,
+					sanity: sanity + 1,
+					temperature: temperature + addTemperature,
 					cantMove: true,
 					inventoryResources: {
 						...char.inventoryResources,
-						flint: char.inventoryResources.flint - 1,
+						flint: flint - 1,
 					},
 				});
 				setAnim({
@@ -34,13 +39,13 @@ export const buttonUseHex = (
 					});
 					setChar({
 						...char,
-						energy: char.energy + 3,
-						sanity: char.sanity + 1,
-						temperature: char.temperature + addTemperature,
+						energy: energy + 3,
+						sanity: sanity + 1,
+						temperature: temperature + addTemperature,
 						cantMove: true,
 						inventoryResources: {
 							...char.inventoryResources,
-							flint: char.inventoryResources.flint - 1,
+							flint: flint - 1,
 						},
 						inventoryItems: {
 							...char.inventoryItems,
@@ -56,13 +61,13 @@ export const buttonUseHex = (
 
 				setChar({
 					...char,
-					energy: char.energy + 3,
-					sanity: char.sanity + 1,
-					temperature: char.temperature + addTemperature,
+					energy: energy + 3,
+					sanity: sanity + 1,
+					temperature: temperature + addTemperature,
 					cantMove: true,
 					inventoryResources: {
 						...char.inventoryResources,
-						flint: char.inventoryResources.flint - 1,
+						flint: flint - 1,
 					},
 				});
 
@@ -73,17 +78,17 @@ export const buttonUseHex = (
 					});
 					setChar({
 						...char,
-						energy: char.energy + 3,
-						sanity: char.sanity + 1,
-						temperature: char.temperature + addTemperature,
+						energy: energy + 3,
+						sanity: sanity + 1,
+						temperature: temperature + addTemperature,
 						cantMove: true,
 						inventoryResources: {
 							...char.inventoryResources,
-							flint: char.inventoryResources.flint - 1,
+							flint: flint - 1,
 						},
 						inventoryItems: {
 							...char.inventoryItems,
-							fireCard: char.inventoryItems.fireCard + 1,
+							fireCard: fireCard + 1,
 						},
 					});
 				}, 2800);
@@ -91,29 +96,51 @@ export const buttonUseHex = (
 					useHexButton: false,
 				});
 			}
-		} else if (char.inventoryResources.flint === 0) {
+		} else if (flint === 0) {
 			console.log("Nie masz krzesiwa!");
 			setChar({
 				...char,
 				cantMoveAnimation: true,
 			});
 		}
-	} else if (char.inventoryItems.axe === 1) {
-		setButtons({
-			...buttons,
-			useHexButton: false,
-		});
-		let addItem = char.inventoryResources[board.resourcePlayerStandsOn] + 1;
-		setChar({
-			...char,
-			cantMove: true,
-			inventoryResources: {
-				...char.inventoryResources,
-				[board.resourcePlayerStandsOn]: addItem,
-			},
-		});
-	} else if (char.inventoryItems.axe === 0) {
-		if (char.energy > 0) {
+		// OASIS
+	} else if (board.resourcePlayerStandsOn === "oasis") {
+		if (board.oasisUsed === false) {
+			let temp;
+			if (temperature > 5) {
+				temp = -1;
+			} else if (temperature < 5) {
+				temp = 1;
+			} else {
+				temp = 0;
+			}
+			setChar({
+				...char,
+				energy: energy + 3,
+				sanity: sanity + 1,
+				starvation: starvation + 1,
+				temperature: temperature + temp,
+			});
+			setBoard({
+				...board,
+				oasisUsed: true,
+			});
+		} else if (board.oasisUsed === true) {
+			console.log("Oaza została już raz użyta");
+			setChar({
+				...char,
+				cantMoveAnimation: true,
+			});
+		}
+		// RESOURCE FIELD
+	} else if (
+		board.resourcePlayerStandsOn === "wood" ||
+		board.resourcePlayerStandsOn === "stone" ||
+		board.resourcePlayerStandsOn === "lotos" ||
+		board.resourcePlayerStandsOn === "flint" ||
+		board.resourcePlayerStandsOn === "grass"
+	) {
+		if (axe === 1) {
 			setButtons({
 				...buttons,
 				useHexButton: false,
@@ -121,19 +148,35 @@ export const buttonUseHex = (
 			let addItem = char.inventoryResources[board.resourcePlayerStandsOn] + 1;
 			setChar({
 				...char,
-				energy: char.energy - 1,
 				cantMove: true,
 				inventoryResources: {
 					...char.inventoryResources,
 					[board.resourcePlayerStandsOn]: addItem,
 				},
 			});
-		} else if (char.energy === 0) {
-			console.log("za mało energii na zebranie surowca");
-			setChar({
-				...char,
-				cantMoveAnimation: true,
-			});
+		} else if (axe === 0) {
+			if (char.energy > 0) {
+				setButtons({
+					...buttons,
+					useHexButton: false,
+				});
+				let addItem = char.inventoryResources[board.resourcePlayerStandsOn] + 1;
+				setChar({
+					...char,
+					energy: char.energy - 1,
+					cantMove: true,
+					inventoryResources: {
+						...char.inventoryResources,
+						[board.resourcePlayerStandsOn]: addItem,
+					},
+				});
+			} else if (char.energy === 0) {
+				console.log("za mało energii na zebranie surowca");
+				setChar({
+					...char,
+					cantMoveAnimation: true,
+				});
+			}
 		}
 	}
 };

@@ -1,11 +1,13 @@
 import React, { createContext, useState } from "react";
 
 const animationData = {
-	wood: false,
-	stone: false,
-	grass: false,
-	flint: false,
-	lotos: false,
+	// wood: false,
+	// stone: false,
+	// grass: false,
+	// flint: false,
+	// lotos: false,
+	firePlaceCard: false,
+	sejmitar: false,
 };
 
 export const AnimationContext = createContext();

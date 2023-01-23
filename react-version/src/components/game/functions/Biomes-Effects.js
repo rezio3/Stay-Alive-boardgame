@@ -1,4 +1,4 @@
-export const biomesEffects = (biom, char) => {
+export const biomesEffects = (biom, char, resource) => {
 	let temp;
 	if (char.temperature > 5) {
 		temp = -1;
@@ -14,7 +14,11 @@ export const biomesEffects = (biom, char) => {
 		case "jungle":
 			return { starvation: 0, sanity: 0, temperature: temp };
 		case "desert":
-			return { starvation: -1, sanity: 0, temperature: 1 };
+			if (resource === "oasis") {
+				return { starvation: 0, sanity: 0, temperature: 0 };
+			} else {
+				return { starvation: -1, sanity: 0, temperature: 1 };
+			}
 		case "northrend":
 			return { starvation: 0, sanity: -1, temperature: -1 };
 		case "crater":

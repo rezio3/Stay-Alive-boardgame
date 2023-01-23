@@ -1,18 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../../../style/css/LeftButtons.css";
+import { CharacterContext } from "../../context/CharContext";
+import { eatButtons } from "../functions/EatButtons";
 
 const LeftButtons = () => {
-	const handler = () => {
-		console.log("elo");
+	const [char, setChar] = useContext(CharacterContext);
+	const handleEatButton = (e) => {
+		eatButtons(e, char, setChar);
 	};
 	return (
 		<div className="left-buttons-container">
 			<div className="left-buttons-container-top">
 				<button
-					className="btn-eat-1-grass"
+					name="eat1grass"
+					className={
+						char.inventoryResources.grass >= 1
+							? "btn-eat-1-grass btn-eat-1-grass-active"
+							: "btn-eat-1-grass"
+					}
 					id="btn-eat-1-grass"
-					onClick={handler}
-					disabled={true}
+					disabled={char.inventoryResources.grass >= 1 ? false : true}
+					onClick={handleEatButton}
 				>
 					Zjedz 1 trawę
 					<div>
@@ -20,24 +28,46 @@ const LeftButtons = () => {
 					</div>
 				</button>
 				<button
-					className="btn-eat-2-grass"
+					name="eat2grass"
+					className={
+						char.inventoryResources.grass >= 2
+							? "btn-eat-2-grass btn-eat-2-grass-active"
+							: "btn-eat-2-grass"
+					}
 					id="btn-eat-2-grass"
-					disabled={true}
+					disabled={char.inventoryResources.grass >= 2 ? false : true}
+					onClick={handleEatButton}
 				>
 					Zjedz 2 trawy
 					<div>
 						<p>Energia +4 Głód +1</p>
 					</div>
 				</button>
-				<button className="btn-eat-food" id="btn-eat-food" disabled={true}>
+				<button
+					name="eatfood"
+					className={
+						char.inventoryItems.food === 1
+							? "btn-eat-food btn-eat-food-active"
+							: "btn-eat-food"
+					}
+					id="btn-eat-food"
+					disabled={char.inventoryItems.food === 1 ? false : true}
+					onClick={handleEatButton}
+				>
 					Zjedz Leczo
 				</button>
 			</div>
 			<div className="left-buttons-container-bottom">
 				<button
-					className="btn-drink-red-bull"
+					name="redbull"
+					className={
+						char.inventoryItems.fireCard > 0
+							? "btn-drink-red-bull btn-drink-red-bull-active"
+							: "btn-drink-red-bull"
+					}
 					id="btn-drink-red-bull"
-					disabled={true}
+					disabled={char.inventoryItems.fireCard > 0 ? false : true}
+					onClick={handleEatButton}
 				>
 					Wypij czerwonego byka
 					<div>
@@ -45,13 +75,28 @@ const LeftButtons = () => {
 					</div>
 				</button>
 				<div className="fire-place-container">
-					<div className="fire-place-icon-false" id="fire-place-icon"></div>
-					<span className="fire-place-span">x0</span>
+					<div
+						className={
+							char.inventoryItems.fireCard > 0
+								? "fire-place-icon-true"
+								: "fire-place-icon-false"
+						}
+						id="fire-place-icon"
+					></div>
+					<span className="fire-place-span">
+						x{char.inventoryItems.fireCard}
+					</span>
 				</div>
 				<button
-					className="btn-eat-sasuage"
+					name="sasuages"
+					className={
+						char.inventoryItems.fireCard > 0
+							? "btn-eat-sasuage btn-eat-sasuage-active"
+							: "btn-eat-sasuage"
+					}
 					id="btn-eat-sasuage"
-					disabled={true}
+					disabled={char.inventoryItems.fireCard > 0 ? false : true}
+					onClick={handleEatButton}
 				>
 					Zjedz kiełbaski
 					<div>

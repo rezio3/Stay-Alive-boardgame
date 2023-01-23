@@ -28,13 +28,6 @@ const Character = () => {
 		}, 500);
 	}
 
-	// check if statistics are over-peaked
-	if (char.energy > 10) {
-		setChar({
-			...char,
-			energy: 10,
-		});
-	}
 	return (
 		<div
 			className={

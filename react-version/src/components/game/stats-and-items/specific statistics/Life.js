@@ -3,35 +3,17 @@ import { CharacterContext } from "../../../context/CharContext";
 
 const Life = () => {
 	const [char, setChar] = useContext(CharacterContext);
-
-	const lifeChange = () => {
-		const lifeBar = document.querySelector(`.life-bar`);
-		// setTimeout(function () {
-		// 	const lifeChangeSpan = document.querySelector(`.life-notification`);
-		// 	lifeChangeSpan.style.display = `flex`;
-		// 	if (prevLife > life) {
-		// 		lifeChangeSpan.innerHTML = `<p>Życie -${prevLife - life}`;
-		// 	} else if (prevLife < life) {
-		// 		lifeChangeSpan.innerHTML = `<p>Życie +${life - prevLife}`;
-		// 	}
-		// 	setTimeout(function () {
-		// 		lifeChangeSpan.style.display = `none`;
-		// 	}, 800);
-		// 	prevLife = life;
-		// }, 100);
-
-		lifeBar.style.height = char.life * 5 + "%";
-		if (char.life < 1) {
-			// gameOver();
-			console.log("You loose");
-		}
-	};
-
-	if (char.prevLife !== char.life) lifeChange();
+	// check if statistic are over-peaked
+	if (char.life > 20) {
+		setChar({
+			...char,
+			life: 20,
+		});
+	}
 
 	return (
 		<div className="life stat-bar">
-			<div className="life-bar" />
+			<div className="life-bar" style={{ height: char.life * 5 + "%" }} />
 			<span className="life-value">{char.life}/20</span>
 		</div>
 	);

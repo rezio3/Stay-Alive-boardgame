@@ -3,35 +3,27 @@ import { CharacterContext } from "../../../context/CharContext";
 
 const Temperature = () => {
 	const [char, setChar] = useContext(CharacterContext);
-
-	const temperatureChange = () => {
-		const temperatureBar = document.querySelector(`.temperature-bar`);
-		// setTimeout(function () {
-		// 	const temperatureChangeSpan = document.querySelector(
-		// 		`.temperature-notification`
-		// 	);
-		// 	temperatureChangeSpan.style.display = `flex`;
-		// 	if (prevTemperature > temperature) {
-		// 		temperatureChangeSpan.innerHTML = `<p>Temperatura -${
-		// 			prevTemperature - temperature
-		// 		}`;
-		// 	} else if (prevTemperature < temperature) {
-		// 		temperatureChangeSpan.innerHTML = `<p>Temperatura +${
-		// 			temperature - prevTemperature
-		// 		}`;
-		// 	}
-		// 	setTimeout(function () {
-		// 		temperatureChangeSpan.style.display = `none`;
-		// 	}, 800);
-		// 	prevTemperature = temperature;
-		// }, 100);
-
-		temperatureBar.style.height = char.temperature * 10 + "%";
-	};
-	if (char.prevTemperature !== char.temperature) temperatureChange();
+	let overload = char.temperature;
+	if (char.temperature > 10) {
+		let upperOverload = overload - 10;
+		setChar({
+			...char,
+			temperature: 10,
+			life: char.life - upperOverload,
+		});
+	} else if (char.temperature < 0) {
+		setChar({
+			...char,
+			temperature: 0,
+			life: char.life + overload,
+		});
+	}
 	return (
 		<div className="temperature stat-bar">
-			<div className="temperature-bar" />
+			<div
+				className="temperature-bar"
+				style={{ height: char.temperature * 10 + "%" }}
+			/>
 			<span className="temperature-value">{char.temperature}/10</span>
 		</div>
 	);

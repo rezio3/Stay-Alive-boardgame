@@ -30,7 +30,11 @@ const RightContent = () => {
 	};
 
 	const handleEndTurn = () => {
-		const biomEffectData = biomesEffects(board.biomPlayerStandsOn, char);
+		const biomEffectData = biomesEffects(
+			board.biomPlayerStandsOn,
+			char,
+			board.resourcePlayerStandsOn
+		);
 		const torchUpdate = torchLosing(board.biomPlayerStandsOn, char);
 		let addEnergy;
 		char.inventoryItems.shoes === 1 ? (addEnergy = 3) : (addEnergy = 2);
@@ -42,10 +46,6 @@ const RightContent = () => {
 			starvation: char.starvation + biomEffectData.starvation,
 			sanity: char.sanity + biomEffectData.sanity,
 			temperature: char.temperature + biomEffectData.temperature,
-			prevEnergy: char.energy,
-			prevStarvation: char.starvation,
-			prevSanity: char.sanity,
-			prevTemperature: char.temperature,
 			inventoryItems: {
 				...char.inventoryItems,
 				torch: torchUpdate,

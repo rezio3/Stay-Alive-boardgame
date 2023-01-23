@@ -6,6 +6,9 @@ import { BoardContext } from "../../context/BoardContext";
 import { ButtonsContext } from "../../context/ButtonsContext";
 import { CharacterContext } from "../../context/CharContext";
 import { AnimationContext } from "../../context/AnimationContext";
+import { biomesEffects } from "../functions/Biomes-Effects";
+import { torchLosing } from "../functions/losingItems/TorchLosing";
+import { buttonUseHex } from "../functions/ButtonUseHex";
 
 const RightContent = () => {
 	const [buttons, setButtons] = useContext(ButtonsContext);
@@ -14,41 +17,30 @@ const RightContent = () => {
 	const [anim, setAnim] = useContext(AnimationContext);
 
 	const handleUseHexButton = () => {
-		if (char.energy > 0 || char.inventory.axe === 1) {
-			setButtons({
-				...buttons,
-				useHexButton: false,
-			});
-			let addItem = char.inventory[board.resourcePlayerStandsOn] + 1;
-			setChar({
-				...char,
-				energy: char.energy - 1,
-				cantMove: true,
-				inventory: {
-					...char.inventory,
-					[board.resourcePlayerStandsOn]: addItem,
-				},
-			});
-			setAnim({
-				...anim,
-				[board.resourcePlayerStandsOn]: true,
-			});
-		} else if (char.energy === 0 && char.inventory.axe === 0) {
-			console.log("za mało energii na zebranie surowca");
-			setChar({
-				...char,
-				cantMoveAnimation: true,
-			});
-		}
+		buttonUseHex(buttons, setButtons, char, setChar, board, anim, setAnim);
 	};
 
 	const handleEndTurn = () => {
+		const biomEffectData = biomesEffects(board.biomPlayerStandsOn, char);
+		const torchUpdate = torchLosing(board.biomPlayerStandsOn, char);
 		let addEnergy;
-		char.inventory.shoes === 1 ? (addEnergy = 3) : (addEnergy = 2);
+		char.inventoryItems.shoes === 1 ? (addEnergy = 3) : (addEnergy = 2);
+
 		setChar({
 			...char,
 			cantMove: false,
 			energy: char.energy + addEnergy,
+			starvation: char.starvation + biomEffectData.starvation,
+			sanity: char.sanity + biomEffectData.sanity,
+			temperature: char.temperature + biomEffectData.temperature,
+			prevEnergy: char.energy,
+			prevStarvation: char.starvation,
+			prevSanity: char.sanity,
+			prevTemperature: char.temperature,
+			inventoryItems: {
+				...char.inventoryItems,
+				torch: torchUpdate,
+			},
 		});
 		if (board.resourcePlayerStandsOn !== null) {
 			setButtons({

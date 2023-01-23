@@ -6,7 +6,7 @@
   padding-left: 15px;
 }
 .right-container .tura {
-  margin: 50px 0px 0px 220px;
+  margin: 10px 0px 0px 220px;
   font-family: "Creepster", cursive;
   font-size: 50px;
   letter-spacing: 10px;
@@ -235,11 +235,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 5px;
+  margin: 5px 5px;
   border: none;
   background: none;
-  width: 90px;
-  height: 100px;
+  width: auto;
+  height: 70px;
   padding: 0;
 }
 .right-container .event-cards-and-items-container .item-list-container .item-list-column-left .axe {
@@ -317,8 +317,8 @@
   margin: 10px 5px;
   border: none;
   background: none;
-  width: 90px;
-  height: 100px;
+  width: auto;
+  height: 70px;
   padding: 0;
 }
 .right-container .event-cards-and-items-container .item-list-container .item-list-column-right .sword {

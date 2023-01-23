@@ -1,0 +1,75 @@
+#sejmitar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  width: 0;
+  height: 0;
+  background-color: #fff;
+  border-radius: 15px;
+  top: 250px;
+  margin-left: 220px;
+  overflow: hidden;
+  text-align: center;
+  z-index: 10;
+}
+#sejmitar h1 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+#sejmitar h2 {
+  font-size: 18px;
+  margin-top: 30px;
+}
+#sejmitar p {
+  font-size: 15px;
+  font-style: italic;
+  margin-top: 10px;
+}
+#sejmitar span {
+  font-size: 15px;
+  margin-top: 10px;
+}
+#sejmitar img {
+  width: 100px;
+}
+#sejmitar .sejmitar-price {
+  margin-top: 10px;
+}
+#sejmitar .sejmitar-price img {
+  width: 40px;
+}
+
+.sejmitar-anim {
+  animation: sejmitarAnimation 2.1s ease-in-out;
+  animation-fill-mode: forwards;
+  border: 3px solid black;
+}
+
+@keyframes sejmitarAnimation {
+  0% {
+    width: 0;
+    height: 0;
+    rotate: -800deg;
+    opacity: 0%;
+  }
+  20% {
+    width: 250px;
+    height: 400px;
+    rotate: 0deg;
+    opacity: 100%;
+  }
+  80% {
+    width: 250px;
+    height: 400px;
+    rotate: 0deg;
+    opacity: 100%;
+  }
+  100% {
+    width: 0;
+    height: 0;
+    rotate: -800deg;
+    opacity: 0%;
+  }
+}

@@ -44,11 +44,12 @@
   background-size: cover;
   width: 72px;
   height: 50px;
+  z-index: 10;
 }
 .items-container .items-inboard-container .resources-container .resources-icons .wood {
   background-image: url(../../img/drewno.png);
   background-size: cover;
-  width: 72px;
+  width: 75px;
   height: 50px;
 }
 .items-container .items-inboard-container .resources-container .resources-icons .wood .wood-anim {
@@ -58,6 +59,7 @@
   background-size: cover;
   width: 72px;
   height: 50px;
+  z-index: 10;
 }
 .items-container .items-inboard-container .resources-container .resources-icons .grass {
   background-image: url(../../img/trawa.png);
@@ -74,6 +76,7 @@
   width: 74px;
   height: 60px;
   margin-bottom: 20px;
+  z-index: 10;
 }
 .items-container .items-inboard-container .resources-container .resources-icons .flint {
   background-image: url(../../img/krzesiwo.png);
@@ -88,6 +91,7 @@
   background-size: cover;
   width: 72px;
   height: 50px;
+  z-index: 10;
 }
 .items-container .items-inboard-container .resources-container .resources-icons .lotos {
   background-image: url(../../img/lotos.png);
@@ -103,6 +107,7 @@
   background-size: cover;
   width: 72px;
   height: 50px;
+  z-index: 10;
 }
 .items-container .items-inboard-container .resources-container .resources-text {
   display: flex;
@@ -124,6 +129,7 @@
 }
 .items-container .stone-animation {
   animation: stoneAnim 0.9s ease-in-out;
+  z-index: 10;
 }
 @keyframes stoneAnim {
   0% {
@@ -146,6 +152,7 @@
 }
 .items-container .wood-animation {
   animation: woodAnim 0.9s ease-in-out;
+  z-index: 10;
 }
 @keyframes woodAnim {
   0% {
@@ -156,7 +163,7 @@
   }
   50% {
     opacity: 100%;
-    width: 400px;
+    width: 420px;
     height: 277px;
     margin: 0 0 0 300px;
   }
@@ -168,6 +175,7 @@
 }
 .items-container .grass-animation {
   animation: grassAnim 0.9s ease-in-out;
+  z-index: 10;
 }
 @keyframes grassAnim {
   0% {
@@ -190,6 +198,7 @@
 }
 .items-container .flint-animation {
   animation: flintAnim 0.9s ease-in-out;
+  z-index: 10;
 }
 @keyframes flintAnim {
   0% {
@@ -212,6 +221,7 @@
 }
 .items-container .lotos-animation {
   animation: lotosAnim 0.9s ease-in-out;
+  z-index: 10;
 }
 @keyframes lotosAnim {
   0% {
@@ -486,7 +496,7 @@
 }
 
 #sejmitar-anim:hover .item-description-left {
-  height: 350px;
+  height: 400px;
   border: 3px solid black;
 }
 
@@ -495,6 +505,7 @@
   height: 60px;
   animation: axeAnim 0.9s ease-in-out;
   animation-fill-mode: forwards;
+  z-index: 10;
 }
 
 .shoes-animation {
@@ -502,6 +513,7 @@
   height: 39px;
   animation: shoesAnim 0.9s ease-in-out;
   animation-fill-mode: forwards;
+  z-index: 10;
 }
 
 .torch-animation {
@@ -509,6 +521,7 @@
   height: 75px;
   animation: torchAnim 0.9s ease-in-out;
   animation-fill-mode: forwards;
+  z-index: 10;
 }
 
 .sword-animation {
@@ -516,6 +529,7 @@
   height: 70px;
   animation: swordAnim 0.9s ease-in-out;
   animation-fill-mode: forwards;
+  z-index: 10;
 }
 
 .food-animation {
@@ -523,6 +537,7 @@
   height: 60px;
   animation: foodAnim 0.9s ease-in-out;
   animation-fill-mode: forwards;
+  z-index: 10;
 }
 
 .coat-animation {
@@ -530,13 +545,7 @@
   height: 60px;
   animation: coatAnim 0.9s ease-in-out;
   animation-fill-mode: forwards;
-}
-
-.sejmitar-animation {
-  width: 80px;
-  height: 60px;
-  animation: sejmitarAnim 0.9s ease-in-out;
-  animation-fill-mode: forwards;
+  z-index: 10;
 }
 
 @keyframes axeAnim {
@@ -546,13 +555,15 @@
     height: 115px;
     top: -150px;
     left: 1200px;
+    pointer-events: none;
   }
   50% {
     opacity: 100%;
     width: 400px;
     height: 462px;
     top: -150px;
-    left: 700px;
+    left: 500px;
+    pointer-events: none;
   }
   100% {
     opacity: 100%;
@@ -560,6 +571,7 @@
     height: 60px;
     top: 0px;
     left: 0px;
+    pointer-events: all;
   }
 }
 @keyframes shoesAnim {
@@ -569,13 +581,15 @@
     height: 63px;
     top: -150px;
     left: 1200px;
+    pointer-events: none;
   }
   50% {
     opacity: 100%;
     width: 400px;
     height: 252px;
     top: -150px;
-    left: 700px;
+    left: 500px;
+    pointer-events: none;
   }
   100% {
     opacity: 100%;
@@ -583,6 +597,7 @@
     height: 39px;
     top: 0;
     left: 0;
+    pointer-events: all;
   }
 }
 @keyframes torchAnim {
@@ -592,13 +607,15 @@
     height: 150px;
     top: -150px;
     left: 1200px;
+    pointer-events: none;
   }
   50% {
     opacity: 100%;
     width: 129px;
     height: 400px;
     top: -150px;
-    left: 700px;
+    left: 500px;
+    pointer-events: none;
   }
   100% {
     opacity: 100%;
@@ -606,6 +623,7 @@
     height: 75px;
     top: 0;
     left: 0;
+    pointer-events: all;
   }
 }
 @keyframes swordAnim {
@@ -615,13 +633,15 @@
     height: 100px;
     top: -150px;
     left: 1300px;
+    pointer-events: none;
   }
   50% {
     opacity: 100%;
     width: 350px;
     height: 443px;
     top: -150px;
-    left: 700px;
+    left: 500px;
+    pointer-events: none;
   }
   100% {
     opacity: 100%;
@@ -629,6 +649,7 @@
     height: 70px;
     top: 0;
     left: 0;
+    pointer-events: all;
   }
 }
 @keyframes foodAnim {
@@ -638,13 +659,15 @@
     height: 100px;
     top: -150px;
     left: 1300px;
+    pointer-events: none;
   }
   50% {
     opacity: 100%;
     width: 478px;
     height: 380px;
     top: -150px;
-    left: 700px;
+    left: 500px;
+    pointer-events: none;
   }
   100% {
     opacity: 100%;
@@ -652,6 +675,7 @@
     height: 60px;
     top: 0;
     left: 0;
+    pointer-events: all;
   }
 }
 @keyframes coatAnim {
@@ -661,13 +685,15 @@
     height: 100px;
     top: -150px;
     left: 1300px;
+    pointer-events: none;
   }
   50% {
     opacity: 100%;
     width: 489px;
     height: 380px;
     top: -150px;
-    left: 700px;
+    left: 500px;
+    pointer-events: none;
   }
   100% {
     opacity: 100%;
@@ -675,8 +701,17 @@
     height: 54px;
     top: 0;
     left: 0;
+    pointer-events: all;
   }
 }
+.sejmitar-animation {
+  width: 80px;
+  height: 60px;
+  animation: sejmitarAnim 0.9s ease-in-out;
+  animation-fill-mode: forwards;
+  z-index: 10;
+}
+
 @keyframes sejmitarAnim {
   0% {
     opacity: 0%;
@@ -684,6 +719,7 @@
     height: 173px;
     top: -450px;
     left: 450px;
+    pointer-events: none;
   }
   50% {
     opacity: 100%;
@@ -691,6 +727,7 @@
     height: 375px;
     top: -450px;
     left: 450px;
+    pointer-events: none;
   }
   100% {
     opacity: 100%;
@@ -698,5 +735,6 @@
     height: 60px;
     top: 0;
     left: 0;
+    pointer-events: all;
   }
 }

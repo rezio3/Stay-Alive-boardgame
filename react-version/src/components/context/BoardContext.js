@@ -8,6 +8,7 @@ const boardData = {
 	prevRow: 1,
 	prevColumn: 11,
 	resourcePlayerStandsOn: null,
+	oasisUsed: false,
 };
 
 export const BoardContext = createContext();

@@ -1,22 +1,51 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import "../../../../style/css/Items.css";
 import { AnimationContext } from "../../../context/AnimationContext";
 import { BoardContext } from "../../../context/BoardContext";
 import { CharacterContext } from "../../../context/CharContext";
+import { resourcesAnimation } from "../../functions/ResourcesAnimation";
+import axeImg from "../../../../img/siekiera.png";
+import swordImg from "../../../../img/miecz.png";
+import shoesImg from "../../../../img/lacie.png";
+import foodImg from "../../../../img/leczo.png";
+import coatImg from "../../../../img/ponczo.png";
+import torchImg from "../../../../img/pochodnia.png";
+import grassImg from "../../../../img/trawa.png";
+import stoneImg from "../../../../img/kamień.png";
+import woodImg from "../../../../img/drewno.png";
+import flintImg from "../../../../img/krzesiwo.png";
+import lotosImg from "../../../../img/lotos.png";
+import sejmitarImg from "../../../../img/sejmitar.png";
+import ogniskoImg from "../../../../img/ognisko.png";
+
+const usePrevious = (value) => {
+	const ref = React.useRef();
+	React.useEffect(() => {
+		ref.current =
+			value.wood + value.stone + value.grass + value.flint + value.lotos;
+	});
+	return ref.current;
+};
 
 const Items = () => {
 	const [anim, setAnim] = useContext(AnimationContext);
 	const [char, setChar] = useContext(CharacterContext);
 	const [board, setBoard] = useContext(BoardContext);
-	const { wood, stone, grass, flint, lotos } = char.inventory;
-	if (anim[board.resourcePlayerStandsOn] === true) {
-		setTimeout(() => {
-			setAnim({
-				...anim,
-				[board.resourcePlayerStandsOn]: false,
+	const { wood, stone, grass, flint, lotos } = char.inventoryResources;
+	const { axe, sword, shoes, coat, torch, food } = char.inventoryItems;
+
+	const prevResourcesState = usePrevious(char.inventoryResources);
+	const currentResourcesState = wood + stone + grass + flint + lotos;
+
+	useEffect(() => {
+		if (prevResourcesState < currentResourcesState)
+			resourcesAnimation({
+				setter: setAnim,
+				resourceType: board.resourcePlayerStandsOn,
+				anim: anim,
 			});
-		}, 900);
-	}
+		// arguments
+	}, [char.inventoryResources]);
 
 	return (
 		<div className="items-container">
@@ -70,43 +99,49 @@ const Items = () => {
 						<span className="lotos-count">x{lotos}</span>
 					</div>
 					<div className="items-inventory">
-						<div className="" id="axe-container">
-							<div className="" id="axe-anim">
+						<div className={axe ? "axe-container" : ""} id="axe-container">
+							<div className={axe ? "axe-animation" : ""} id="axe-anim">
 								<div className="item-description-left axe-description-left description-left">
 									<h1>Siekiera</h1>
-									<img src="./img/siekiera.png" alt="" className="src" />
+									<img src={axeImg} alt="siekiera" className="src" />
 									<p>Zostań prawdziwym rębajłą</p>
 									<span>Nie tracisz energii podczas pozyskiwania surowców</span>
 									<div className="axe-price">
 										<span>x1</span>
-										<img src="./img/kamień.png" />
+										<img src={stoneImg} />
 										<span>x1</span>
-										<img src="./img/drewno.png" />
+										<img src={woodImg} />
 									</div>
 								</div>
 							</div>
 						</div>
-						<div className="" id="shoes-container">
-							<div className="" id="shoes-anim">
+						<div
+							className={shoes ? "shoes-container" : ""}
+							id="shoes-container"
+						>
+							<div className={shoes ? "shoes-animation" : ""} id="shoes-anim">
 								<div className="item-description-left shoes-description-left description-left">
 									<h1>Lacie</h1>
-									<img src="./img/lacie.png" />
+									<img src={shoesImg} />
 									<p>Nie uraź stopy o kamień</p>
 									<span>
 										Na koniec tury odzyskujesz 3 punkty energii zamiast 2.
 									</span>
 									<div className="shoes-price">
 										<span>x2</span>
-										<img src="./img/trawa.png" />
+										<img src={grassImg} />
 									</div>
 								</div>
 							</div>
 						</div>
-						<div className="" id="torch-container">
-							<div className="" id="torch-anim">
+						<div
+							className={torch ? "torch-container" : ""}
+							id="torch-container"
+						>
+							<div className={torch ? "torch-animation" : ""} id="torch-anim">
 								<div className="item-description-left torch-description-left description-left">
 									<h1>Pochodnia</h1>
-									<img src="./img/pochodnia.png" />
+									<img src={torchImg} />
 									<p>Przegoń niedobre ciemności</p>
 									<span>
 										W nocy (i w sytuacjach gdy jest ciemno) nie trać psychiki.
@@ -114,54 +149,57 @@ const Items = () => {
 									</span>
 									<div className="torch-price">
 										<span>x1</span>
-										<img src="./img/drewno.png" />
+										<img src={woodImg} />
 										<span>x1</span>
-										<img src="./img/krzesiwo.png" />
+										<img src={flintImg} />
 									</div>
 								</div>
 							</div>
 						</div>
-						<div className="" id="sword-container">
-							<div className="" id="sword-anim">
+						<div
+							className={sword ? "sword-container" : ""}
+							id="sword-container"
+						>
+							<div className={sword ? "sword-animation" : ""} id="sword-anim">
 								<div className="item-description-left sword-description-left description-left">
 									<h1>Miecz</h1>
-									<img src="./img/miecz.png" />
+									<img src={swordImg} />
 									<p>Siekaj wrogów jak ogóra</p>
 									<span>Podczas walki z wrogiem zwyciężasz wyrzucając 3.</span>
 									<div className="sword-price">
 										<span>x2</span>
-										<img src="./img/kamień.png" />
+										<img src={stoneImg} />
 										<span>x1</span>
-										<img src="./img/drewno.png" />
+										<img src={woodImg} />
 									</div>
 								</div>
 							</div>
 						</div>
-						<div className="" id="food-container">
-							<div className="" id="food-anim">
+						<div className={food ? "food-container" : ""} id="food-container">
+							<div className={food ? "food-animation" : ""} id="food-anim">
 								<div className="item-description-left food-description-left description-left">
 									<h1>Leczo</h1>
-									<img src="./img/leczo.png" alt="" className="src" />
+									<img src={foodImg} alt="leczo" className="src" />
 									<p>Leczy</p>
 									<span>
 										Leczo przywraca ci 5 punktów zdrowia i 2 punkty głodu.
 									</span>
 									<div className="food-price">
 										<span>x1</span>
-										<img src="./img/drewno.png" />
+										<img src={woodImg} />
 										<span>x1</span>
-										<img src="./img/krzesiwo.png" />
+										<img src={flintImg} />
 										<span>x1</span>
-										<img src="./img/lotos.png" />
+										<img src={lotosImg} />
 									</div>
 								</div>
 							</div>
 						</div>
-						<div className="" id="coat-container">
-							<div className="" id="coat-anim">
+						<div className={coat ? "coat-container" : ""} id="coat-container">
+							<div className={coat ? "coat-animation" : ""} id="coat-anim">
 								<div className="item-description-left coat-description-left description-left">
 									<h1>Ponczo</h1>
-									<img src="./img//ponczo.png" />
+									<img src={coatImg} />
 									<p>Żadna dzida ci nie straszna</p>
 									<span>
 										Otrzymujesz 1 mniej obrażeń w przypadku przegranej walki z
@@ -169,16 +207,26 @@ const Items = () => {
 									</span>
 									<div className="coat-price">
 										<span>x2</span>
-										<img src="./img/trawa.png" />
+										<img src={grassImg} />
 									</div>
 								</div>
 							</div>
 						</div>
-						<div className="" id="sejmitar-container">
-							<div className="" id="sejmitar-anim">
+						<div
+							className={
+								char.inventoryItems.sejmitar === 1 ? "sejmitar-container" : ""
+							}
+							id="sejmitar-container"
+						>
+							<div
+								className={
+									char.inventoryItems.sejmitar === 1 ? "sejmitar-animation" : ""
+								}
+								id="sejmitar-anim"
+							>
 								<div className="item-description-left sejmitar-description-left description-left">
 									<h1>Samonaprowadzający ognisty sejmitar zagłady</h1>
-									<img src="./img/sejmitar.png" alt="" className="src" />
+									<img src={sejmitarImg} alt="sejmitar" className="src" />
 									<p>Badź niezwyciężony! Ale tylko raz...</p>
 									<span>
 										Pojawia się ognisty duszek i daje ci samonaprowadzający
@@ -187,7 +235,7 @@ const Items = () => {
 										energii.
 									</span>
 									<div className="sejmitar-price">
-										<img src="./img/ognisko.png" />
+										<img src={ogniskoImg} />
 									</div>
 								</div>
 							</div>

@@ -7,7 +7,7 @@ const FrozenCrown = () => {
 	return (
 		<div
 			className={
-				char.inventoryItems.frozenCrown ? "frozenCrown-cotainer" : null
+				char.inventoryItems.frozenCrown ? "frozenCrown-container" : null
 			}
 			id="frozenCrown-container"
 		>

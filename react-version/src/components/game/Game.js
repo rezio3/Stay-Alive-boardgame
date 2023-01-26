@@ -7,6 +7,7 @@ import RightContent from "./rounds-and-event-cards/RightContent";
 import { BoardContext } from "../context/BoardContext";
 import { CharacterContext } from "../context/CharContext";
 import Cards from "./cards/Cards";
+import FightCards from "./FightCards/FightCards";
 
 const Game = () => {
 	const [board, setBoard] = useContext(BoardContext);
@@ -55,6 +56,7 @@ const Game = () => {
 			)}
 			<div className="middle-container">
 				<Cards />
+				<FightCards />
 				<div className="game-board" id="game-board">
 					{board.charSetOnBoard ? null : <div className="board-bg"></div>}
 					<div className="field-rows">
@@ -79,3 +81,16 @@ export default Game;
 
 // popover - do pop-upów
 // popper.js
+
+// po kliknięciu ogniska robi się animacja karty ogniska
+// w tym momencie jesli klikne Zakończ turę
+// stan możliwości chodzenia jest nadpisywany momencie zaokńczenia animacji karty
+// i dalej nie moge się ruszać!!!!!
+
+// podczas animacji ogniska jeśli chce się isc dalej, nie dodaje 1 karty do
+// ekwipunku - animacja postaci ustawia state na poprzednią wartość.
+
+// dwukrotne klikniecie za daleko i potem wykonanie ruchu nie odbiera energii.
+// znowu przez animacje, która przywraca poprzedni stan energii
+
+// animacja korony rozsuwa wszystkie inne itemy

@@ -22,7 +22,12 @@ export const frozenCrownUse = (
 			});
 			setButtons({
 				...buttons,
+				useHexButton: false,
 				endTurnButton: false,
+			});
+			setChar({
+				...char,
+				cantMove: true,
 			});
 		} else {
 			const textValue = "Masz już lodową koronę!";

@@ -1,6 +1,13 @@
 import { cantMoveAnimation } from "../CantMoveAnimation";
 
-export const oasisUse = (board, setBoard, char, setChar) => {
+export const oasisUse = (
+	board,
+	setBoard,
+	char,
+	setChar,
+	buttons,
+	setButtons
+) => {
 	const { energy, starvation, sanity, temperature } = char;
 	if (board.oasisUsed === false) {
 		let temp;
@@ -17,10 +24,15 @@ export const oasisUse = (board, setBoard, char, setChar) => {
 			sanity: sanity + 1,
 			starvation: starvation + 1,
 			temperature: temperature + temp,
+			cantMove: true,
 		});
 		setBoard({
 			...board,
 			oasisUsed: true,
+		});
+		setButtons({
+			...buttons,
+			useHexButton: false,
 		});
 	} else if (board.oasisUsed === true) {
 		const textValue = "Oaza została już raz użyta";

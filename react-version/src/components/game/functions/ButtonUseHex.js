@@ -18,7 +18,7 @@ export const buttonUseHex = (
 	if (board.resourcePlayerStandsOn === "fire") {
 		firePlaceUse(char, setChar, anim, setAnim, buttons, setButtons);
 	} else if (board.resourcePlayerStandsOn === "oasis") {
-		oasisUse(board, setBoard, char, setChar);
+		oasisUse(board, setBoard, char, setChar, buttons, setButtons);
 	} else if (board.resourcePlayerStandsOn === "frozenCrown") {
 		frozenCrownUse(
 			fight,

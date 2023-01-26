@@ -92,5 +92,3 @@ export default Game;
 
 // dwukrotne klikniecie za daleko i potem wykonanie ruchu nie odbiera energii.
 // znowu przez animacje, która przywraca poprzedni stan energii
-
-// animacja korony rozsuwa wszystkie inne itemy

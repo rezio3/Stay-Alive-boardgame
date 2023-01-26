@@ -6,10 +6,12 @@ export const checkDistance = (e, board, char) => {
 	let clickedColumnNum = Number(e.target.getAttribute("column"));
 	let prevColumnNum = Number(prevColumn);
 	if (char.cantMove) {
-		console.log("Aktywowałeś już pole, nie możesz iść dalej");
+		const textValue = "Aktywowałeś już pole, nie możesz iść dalej";
+		return { appropved: false, textValue: textValue };
 	} else {
 		if (board.btnId === e.target.id || e.target.id === "selected-character") {
 			console.log("Stoisz w miejscu");
+			return { approved: false };
 		} else if (prevRow % 2 === 1) {
 			if (
 				(prevRowNum === clickedRowNum + 1 &&
@@ -26,15 +28,15 @@ export const checkDistance = (e, board, char) => {
 			) {
 				if (board.btnId !== e.target.id) {
 					if (char.energy > 0) {
-						return true;
+						return { approved: true };
 					} else if (char.energy === 0) {
-						console.log("Za mało energii");
-						return false;
+						const textValue = "Za mało energii";
+						return { approved: false, textValue: textValue };
 					}
 				}
 			} else {
-				console.log("Za daleko! Stoisz na rzędzie nieparzystym");
-				return false;
+				const textValue = "Za daleko! Stoisz na rzędzie nieparzystym";
+				return { approved: false, textValue: textValue };
 			}
 		} else if (prevRow % 2 === 0) {
 			if (
@@ -51,14 +53,14 @@ export const checkDistance = (e, board, char) => {
 				(prevRowNum === clickedRowNum && prevColumnNum + 1 === clickedColumnNum)
 			) {
 				if (char.energy > 0) {
-					return true;
+					return { approved: true };
 				} else if (char.energy === 0) {
-					console.log("Za mało energii");
-					return false;
+					const textValue = "Za mało energii";
+					return { approved: false, textValue: textValue };
 				}
 			} else {
-				console.log("Za daleko! Stoisz na rzędzie parzystym");
-				return false;
+				const textValue = "Za daleko! Stoisz na rzędzie parzystym";
+				return { approved: false, textValue: textValue };
 			}
 		}
 	}

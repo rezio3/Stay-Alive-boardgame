@@ -1,3 +1,5 @@
+import { cantMoveAnimation } from "../CantMoveAnimation";
+
 export const oasisUse = (board, setBoard, char, setChar) => {
 	const { energy, starvation, sanity, temperature } = char;
 	if (board.oasisUsed === false) {
@@ -21,10 +23,7 @@ export const oasisUse = (board, setBoard, char, setChar) => {
 			oasisUsed: true,
 		});
 	} else if (board.oasisUsed === true) {
-		console.log("Oaza została już raz użyta");
-		setChar({
-			...char,
-			cantMoveAnimation: true,
-		});
+		const textValue = "Oaza została już raz użyta";
+		cantMoveAnimation(char, setChar, textValue);
 	}
 };

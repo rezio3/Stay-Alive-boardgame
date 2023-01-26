@@ -1,3 +1,5 @@
+import { cantMoveAnimation } from "../CantMoveAnimation";
+
 export const firePlaceUse = (
 	char,
 	setChar,
@@ -28,6 +30,12 @@ export const firePlaceUse = (
 				...anim,
 				sejmitar: true,
 			});
+			setButtons({
+				...buttons,
+				useHexButton: false,
+				endTurnButton: false,
+			});
+
 			setTimeout(() => {
 				setAnim({
 					...anim,
@@ -48,6 +56,11 @@ export const firePlaceUse = (
 						sejmitar: 1,
 					},
 				});
+				setButtons({
+					...buttons,
+					useHexButton: false,
+					endTurnButton: true,
+				});
 			}, 1900);
 		} else {
 			setAnim({
@@ -65,6 +78,11 @@ export const firePlaceUse = (
 					...char.inventoryResources,
 					flint: flint - 1,
 				},
+			});
+			setButtons({
+				...buttons,
+				useHexButton: false,
+				endTurnButton: false,
 			});
 
 			setTimeout(() => {
@@ -87,17 +105,15 @@ export const firePlaceUse = (
 						fireCard: fireCard + 1,
 					},
 				});
+				setButtons({
+					...buttons,
+					useHexButton: false,
+					endTurnButton: true,
+				});
 			}, 2800);
-			setButtons({
-				...buttons,
-				useHexButton: false,
-			});
 		}
 	} else if (flint === 0) {
-		console.log("Nie masz krzesiwa!");
-		setChar({
-			...char,
-			cantMoveAnimation: true,
-		});
+		const textValue = "Nie masz krzesiwa";
+		cantMoveAnimation(char, setChar, textValue);
 	}
 };

@@ -4,6 +4,7 @@ import { CharacterContext } from "../../context/CharContext";
 import Character from "../Character";
 import { checkDistance } from "../functions/Character-movement";
 import { ButtonsContext } from "../../context/ButtonsContext";
+import { cantMoveAnimation } from "../functions/CantMoveAnimation";
 
 const BoardFields = (props) => {
 	const [board, setBoard] = useContext(BoardContext);
@@ -12,7 +13,7 @@ const BoardFields = (props) => {
 
 	const handleFieldClick = (e) => {
 		const moveApproved = checkDistance(e, board, char);
-		if (moveApproved) {
+		if (moveApproved.approved) {
 			const biom = e.target.title;
 			const { classList } = e.target;
 			if (
@@ -22,7 +23,8 @@ const BoardFields = (props) => {
 				classList.contains("flint") ||
 				classList.contains("lotos") ||
 				classList.contains("fire") ||
-				classList.contains("oasis")
+				classList.contains("oasis") ||
+				classList.contains("frozenCrown")
 			) {
 				setButtons({ ...buttons, useHexButton: true });
 				let source;
@@ -33,6 +35,7 @@ const BoardFields = (props) => {
 				if (classList.contains("lotos")) source = "lotos";
 				if (classList.contains("fire")) source = "fire";
 				if (classList.contains("oasis")) source = "oasis";
+				if (classList.contains("frozenCrown")) source = "frozenCrown";
 				setBoard({
 					...board,
 					btnId: e.target.id,
@@ -55,10 +58,7 @@ const BoardFields = (props) => {
 				});
 			}
 		} else {
-			setChar({
-				...char,
-				cantMoveAnimation: true,
-			});
+			cantMoveAnimation(char, setChar, moveApproved.textValue);
 		}
 	};
 

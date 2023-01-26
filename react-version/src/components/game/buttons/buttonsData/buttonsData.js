@@ -789,7 +789,7 @@ const buttonsData = {
 		},
 		{
 			id: 102,
-			className: "btn3 btn-line-even frozen-crown",
+			className: "btn3 btn-line-even frozenCrown",
 			value: 3,
 			row: 10,
 			column: 3,

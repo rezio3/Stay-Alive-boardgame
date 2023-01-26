@@ -101,9 +101,9 @@ const Items = () => {
 						{torch ? <Torch /> : null}
 						{sword ? <Sword /> : null}
 						{food ? <Food /> : null}
-						{frozenCrown ? <FrozenCrown /> : null}
-						{sejmitar ? <Sejmitar /> : null}
 						{coat ? <Coat /> : null}
+						{sejmitar ? <Sejmitar /> : null}
+						{frozenCrown ? <FrozenCrown /> : null}
 
 						<div className="" id="securis-container">
 							<div className="" id="securis-anim">

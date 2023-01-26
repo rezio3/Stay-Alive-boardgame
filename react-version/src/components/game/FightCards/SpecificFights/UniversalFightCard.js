@@ -18,40 +18,54 @@ const UniversalFightCard = () => {
 		fightProcess(fight, setFight, char, setChar);
 	};
 	const handleEndFightButton = () => {
-		setFight({
-			...fight,
-			fightActive: false,
-			cubeRandomNumber: "",
-			fightWin: false,
-		});
-
-		setTimeout(() => {
-			setAnim({
-				...anim,
-				fight: false,
-				frozenCrown: true,
+		if (fight.addFrozenCrownAfterFight) {
+			setFight({
+				...fight,
+				fightActive: false,
+				cubeRandomNumber: "",
+				fightEnd: false,
 			});
-		}, 500);
 
-		setTimeout(() => {
-			setChar({
-				...char,
-				inventoryItems: {
-					...char.inventoryItems,
-					frozenCrown: 1,
-				},
-			});
-			setAnim({
-				...anim,
-				fight: false,
-				frozenCrown: false,
+			setTimeout(() => {
+				setAnim({
+					...anim,
+					fight: false,
+					frozenCrown: true,
+				});
+			}, 500);
+
+			setTimeout(() => {
+				setChar({
+					...char,
+					inventoryItems: {
+						...char.inventoryItems,
+						frozenCrown: 1,
+					},
+				});
+				setAnim({
+					...anim,
+					fight: false,
+					frozenCrown: false,
+				});
+				setButtons({
+					...buttons,
+					endTurnButton: true,
+				});
+			}, 2600);
+		} else {
+			setFight({
+				...fight,
+				fightActive: false,
+				cubeRandomNumber: "",
+				fightEnd: false,
 			});
 			setButtons({
 				...buttons,
 				endTurnButton: true,
 			});
-		}, 2600);
+		}
 	};
+
 	return (
 		<div
 			className={
@@ -69,9 +83,9 @@ const UniversalFightCard = () => {
 			</p>
 			<div className="cube-container">
 				<button
-					className={fight.fightWin ? "cubes" : "cubes-active cubes"}
+					className={fight.fightEnd ? "cubes" : "cubes-active cubes"}
+					disabled={fight.fightEnd}
 					onClick={handleCubes}
-					disabled={fight.fightWin}
 				>
 					<img src={cubesImg} />
 				</button>
@@ -80,23 +94,31 @@ const UniversalFightCard = () => {
 			<div className="fight-sum-span">
 				<p>
 					{(() => {
-						if (fight.cubeRandomNumber === "") {
-							return null;
-						} else if (fight.cubeRandomNumber <= 3) {
-							return "Porażka, spróbuje ponownie";
-						} else if (fight.cubeRandomNumber >= 4) {
-							return "Zwycięstwo!";
+						if (char.energy === 0 && fight.cubeRandomNumber <= 3) {
+							return "Przegrałeś walkę padając z wyczerpania";
+						} else {
+							if (fight.cubeRandomNumber === "") {
+								return null;
+							} else if (fight.cubeRandomNumber <= 3) {
+								return "Porażka, spróbuje ponownie";
+							} else if (fight.cubeRandomNumber >= 4) {
+								return "Zwycięstwo!";
+							}
 						}
 					})()}
 				</p>
 				<span>
 					{(() => {
-						if (fight.cubeRandomNumber === "") {
-							return null;
-						} else if (fight.cubeRandomNumber <= 3) {
-							return "energia -1 / życie -2";
-						} else if (fight.cubeRandomNumber >= 4) {
-							return "energia -1";
+						if (char.energy === 0 && fight.cubeRandomNumber <= 3) {
+							return "życie -6";
+						} else {
+							if (fight.cubeRandomNumber === "") {
+								return null;
+							} else if (fight.cubeRandomNumber <= 3) {
+								return "energia -1 / życie -2";
+							} else if (fight.cubeRandomNumber >= 4) {
+								return "energia -1";
+							}
 						}
 					})()}
 				</span>
@@ -106,11 +128,11 @@ const UniversalFightCard = () => {
 			</div>
 			<button
 				className={
-					fight.fightWin
+					fight.fightEnd
 						? "end-loose-fight-active end-loose-fight"
 						: "end-loose-fight"
 				}
-				disabled={fight.fightWin ? false : true}
+				disabled={fight.fightEnd ? false : true}
 				onClick={handleEndFightButton}
 			>
 				Zakończ

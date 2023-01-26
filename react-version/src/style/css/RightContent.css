@@ -158,15 +158,19 @@
 }
 .right-container .event-cards-and-items-container .item-list-container .torch-description-right img {
   width: 25px;
-  margin-top: 10px;
+  margin-top: 5px;
+}
+.right-container .event-cards-and-items-container .item-list-container .torch-description-right span {
+  margin: 0 3px;
 }
 .right-container .event-cards-and-items-container .item-list-container .torch-description-right .torch-price {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 .right-container .event-cards-and-items-container .item-list-container .torch-description-right .torch-price img {
-  width: 60px;
+  width: 50px;
+  margin-left: 3px;
 }
 .right-container .event-cards-and-items-container .item-list-container .sword-description-right {
   left: -120px;

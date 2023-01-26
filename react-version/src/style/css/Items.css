@@ -358,7 +358,10 @@
 
 .torch-description-left img {
   width: 25px;
-  margin-top: 10px;
+  margin-top: 0px;
+}
+.torch-description-left span {
+  margin: 0 3px;
 }
 .torch-description-left .torch-price {
   display: flex;
@@ -366,7 +369,8 @@
   margin-top: 30px;
 }
 .torch-description-left .torch-price img {
-  width: 60px;
+  width: 50px;
+  margin-left: 3px;
 }
 
 .sword-description-left img {

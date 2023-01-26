@@ -4,14 +4,15 @@ import { AnimationContext } from "../../../context/AnimationContext";
 import { BoardContext } from "../../../context/BoardContext";
 import { CharacterContext } from "../../../context/CharContext";
 import { resourcesAnimation } from "../../functions/ResourcesAnimation";
-import sejmitarImg from "../../../../img/sejmitar.png";
-import ogniskoImg from "../../../../img/ognisko.png";
+
 import Axe from "./Axe";
 import Shoes from "./Shoes";
 import Torch from "./Torch";
 import Sword from "./Sword";
 import Food from "./Food";
 import Coat from "./Coat";
+import Sejmitar from "./Sejmitar";
+import FrozenCrown from "./FrozenCrown";
 
 const usePrevious = (value) => {
 	const ref = React.useRef();
@@ -27,7 +28,8 @@ const Items = () => {
 	const [char, setChar] = useContext(CharacterContext);
 	const [board, setBoard] = useContext(BoardContext);
 	const { wood, stone, grass, flint, lotos } = char.inventoryResources;
-	const { axe, sword, shoes, coat, torch, food } = char.inventoryItems;
+	const { axe, sword, shoes, coat, torch, food, sejmitar, frozenCrown } =
+		char.inventoryItems;
 
 	const prevResourcesState = usePrevious(char.inventoryResources);
 	const currentResourcesState = wood + stone + grass + flint + lotos;
@@ -94,53 +96,15 @@ const Items = () => {
 						<span className="lotos-count">x{lotos}</span>
 					</div>
 					<div className="items-inventory">
-						<Axe />
-						<Shoes />
-						<Torch />
-						<Sword />
-						<Food />
-						<Coat />
-						<div
-							className={
-								char.inventoryItems.sejmitar === 1 ? "sejmitar-container" : ""
-							}
-							id="sejmitar-container"
-						>
-							<div
-								className={
-									char.inventoryItems.sejmitar === 1 ? "sejmitar-animation" : ""
-								}
-								id="sejmitar-anim"
-							>
-								<div className="item-description-left sejmitar-description-left description-left">
-									<h1>Samonaprowadzający ognisty sejmitar zagłady</h1>
-									<img src={sejmitarImg} alt="sejmitar" className="src" />
-									<p>Badź niezwyciężony! Ale tylko raz...</p>
-									<span>
-										Pojawia się ognisty duszek i daje ci samonaprowadzający
-										ognisty sejmitar zagłady. Od razu powala jednego potwora i
-										psuje się nieodwracalnie. Podczasz ataku nie tracisz
-										energii.
-									</span>
-									<div className="sejmitar-price">
-										<img src={ogniskoImg} />
-									</div>
-								</div>
-							</div>
-						</div>
-						<div className="" id="frozenCrown-container">
-							<div className="" id="frozenCrown-anim">
-								<div className="item-description-left frozenCrown-description-left description-left">
-									<h1>Lodowa Korona</h1>
-									<img src="./img/lodowa korona.png" className="src" />
-									<p>Zamróź sobie mózg</p>
-									<span>
-										Nie tracisz psychiki w żadnym przypadku. Lodowa Korona
-										roztapia się gdy skończysz ruch na pustyni lub w kraterze.
-									</span>
-								</div>
-							</div>
-						</div>
+						{axe ? <Axe /> : null}
+						{shoes ? <Shoes /> : null}
+						{torch ? <Torch /> : null}
+						{sword ? <Sword /> : null}
+						{food ? <Food /> : null}
+						{frozenCrown ? <FrozenCrown /> : null}
+						{sejmitar ? <Sejmitar /> : null}
+						{coat ? <Coat /> : null}
+
 						<div className="" id="securis-container">
 							<div className="" id="securis-anim">
 								<div className="item-description-left securis-description-left description-left">

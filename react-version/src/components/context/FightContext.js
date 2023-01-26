@@ -4,7 +4,8 @@ const fightData = {
 	fightActive: false,
 	monsterName: "Lodowy Golem",
 	cubeRandomNumber: "",
-	fightWin: false,
+	addFrozenCrownAfterFight: null,
+	fightEnd: false,
 };
 
 export const FightContext = createContext();

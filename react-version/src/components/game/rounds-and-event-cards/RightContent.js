@@ -9,12 +9,14 @@ import { AnimationContext } from "../../context/AnimationContext";
 import { biomesEffects } from "../functions/Biomes-Effects";
 import { torchLosing } from "../functions/losingItems/TorchLosing";
 import { buttonUseHex } from "../functions/ButtonUseHex";
+import { FightContext } from "../../context/FightContext";
 
 const RightContent = () => {
 	const [buttons, setButtons] = useContext(ButtonsContext);
 	const [board, setBoard] = useContext(BoardContext);
 	const [char, setChar] = useContext(CharacterContext);
 	const [anim, setAnim] = useContext(AnimationContext);
+	const [fight, setFight] = useContext(FightContext);
 
 	const handleUseHexButton = () => {
 		buttonUseHex(
@@ -25,7 +27,9 @@ const RightContent = () => {
 			board,
 			setBoard,
 			anim,
-			setAnim
+			setAnim,
+			fight,
+			setFight
 		);
 	};
 
@@ -78,7 +82,11 @@ const RightContent = () => {
 				>
 					Aktywuj pole
 				</button>
-				<button className="end-round" onClick={handleEndTurn}>
+				<button
+					className="end-round"
+					onClick={handleEndTurn}
+					disabled={!buttons.endTurnButton}
+				>
 					Zakończ turę
 				</button>
 				<button className="instruction">Przewodnik</button>

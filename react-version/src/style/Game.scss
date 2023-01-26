@@ -55,16 +55,16 @@
 		}
 	}
 
-	button {
-		cursor: pointer;
-	}
-
 	.game-board {
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-end;
 		height: 850px;
 		width: 682px;
+
+		button {
+			cursor: pointer;
+		}
 
 		.field-rows {
 			display: flex;

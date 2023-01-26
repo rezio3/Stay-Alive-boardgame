@@ -48,15 +48,15 @@
 .middle-container .copyright-container .copyright-text {
   letter-spacing: 2px;
 }
-.middle-container button {
-  cursor: pointer;
-}
 .middle-container .game-board {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   height: 850px;
   width: 682px;
+}
+.middle-container .game-board button {
+  cursor: pointer;
 }
 .middle-container .game-board .field-rows {
   display: flex;

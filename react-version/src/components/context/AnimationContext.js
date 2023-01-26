@@ -8,6 +8,8 @@ const animationData = {
 	// lotos: false,
 	firePlaceCard: false,
 	sejmitar: false,
+	frozenCrown: false,
+	fight: false,
 };
 
 export const AnimationContext = createContext();

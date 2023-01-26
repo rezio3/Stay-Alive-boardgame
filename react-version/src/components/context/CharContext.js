@@ -34,6 +34,7 @@ const player = {
 		food: 0,
 		fireCard: 0,
 		sejmitar: 0,
+		frozenCrown: 0,
 	},
 
 	unlockedItems: {

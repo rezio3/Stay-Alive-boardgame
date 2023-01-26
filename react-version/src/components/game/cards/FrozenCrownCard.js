@@ -5,7 +5,6 @@ import { AnimationContext } from "../../context/AnimationContext";
 
 const FrozenCrownCard = () => {
 	const [anim, setAnim] = useContext(AnimationContext);
-	console.log(anim);
 	return (
 		<div
 			className={anim.frozenCrown ? "frozenCrown-anim" : "null"}

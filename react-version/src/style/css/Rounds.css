@@ -86,5 +86,6 @@
 .round-highlight {
   background-color: rgb(255, 241, 212) !important;
   box-shadow: 0 0 5px 5px rgb(255, 255, 255);
+  border: 2px solid rgb(255, 241, 212) !important;
   z-index: 3;
 }

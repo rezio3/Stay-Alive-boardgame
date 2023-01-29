@@ -81,14 +81,3 @@ export default Game;
 
 // popover - do pop-upów
 // popper.js
-
-// po kliknięciu ogniska robi się animacja karty ogniska
-// w tym momencie jesli klikne Zakończ turę
-// stan możliwości chodzenia jest nadpisywany momencie zaokńczenia animacji karty
-// i dalej nie moge się ruszać!!!!!
-
-// podczas animacji ogniska jeśli chce się isc dalej, nie dodaje 1 karty do
-// ekwipunku - animacja postaci ustawia state na poprzednią wartość.
-
-// dwukrotne klikniecie za daleko i potem wykonanie ruchu nie odbiera energii.
-// znowu przez animacje, która przywraca poprzedni stan energii

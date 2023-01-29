@@ -7,6 +7,8 @@ import Board from "./context/BoardContext";
 import Buttons from "./context/ButtonsContext";
 import Animation from "./context/AnimationContext";
 import Fight from "./context/FightContext";
+import Rounds from "./context/RoundsContext";
+import CantMoveAnimation from "./context/CantMoveAnimation";
 
 function App() {
 	const [started, setStarted] = useState(false);
@@ -17,17 +19,21 @@ function App() {
 
 	return (
 		<Char>
-			<Board>
-				<Buttons>
-					<Animation>
-						<Fight>
-							<div className="App">
-								{started ? <Game /> : <Start value={handleStartButton} />}
-							</div>
-						</Fight>
-					</Animation>
-				</Buttons>
-			</Board>
+			<Rounds>
+				<Board>
+					<Buttons>
+						<Animation>
+							<CantMoveAnimation>
+								<Fight>
+									<div className="App">
+										{started ? <Game /> : <Start value={handleStartButton} />}
+									</div>
+								</Fight>
+							</CantMoveAnimation>
+						</Animation>
+					</Buttons>
+				</Board>
+			</Rounds>
 		</Char>
 	);
 }

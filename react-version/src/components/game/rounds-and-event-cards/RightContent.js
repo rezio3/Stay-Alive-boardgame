@@ -10,6 +10,8 @@ import { biomesEffects } from "../functions/Biomes-Effects";
 import { torchLosing } from "../functions/losingItems/TorchLosing";
 import { buttonUseHex } from "../functions/ButtonUseHex";
 import { FightContext } from "../../context/FightContext";
+import { RoundsContext } from "../../context/RoundsContext";
+import { CantMovieAnimationContext } from "../../context/CantMoveAnimation";
 
 const RightContent = () => {
 	const [buttons, setButtons] = useContext(ButtonsContext);
@@ -17,6 +19,8 @@ const RightContent = () => {
 	const [char, setChar] = useContext(CharacterContext);
 	const [anim, setAnim] = useContext(AnimationContext);
 	const [fight, setFight] = useContext(FightContext);
+	const [rounds, setRounds] = useContext(RoundsContext);
+	const [charAnim, setCharAnim] = useContext(CantMovieAnimationContext);
 
 	const handleUseHexButton = () => {
 		buttonUseHex(
@@ -29,7 +33,9 @@ const RightContent = () => {
 			anim,
 			setAnim,
 			fight,
-			setFight
+			setFight,
+			charAnim,
+			setCharAnim
 		);
 	};
 
@@ -61,6 +67,10 @@ const RightContent = () => {
 				useHexButton: true,
 			});
 		}
+		setRounds({
+			...rounds,
+			round: rounds.round + 1,
+		});
 	};
 
 	return (

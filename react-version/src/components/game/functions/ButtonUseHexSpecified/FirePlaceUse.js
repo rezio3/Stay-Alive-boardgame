@@ -6,7 +6,9 @@ export const firePlaceUse = (
 	anim,
 	setAnim,
 	buttons,
-	setButtons
+	setButtons,
+	charAnim,
+	setCharAnim
 ) => {
 	const { energy, sanity, temperature } = char;
 	const { flint } = char.inventoryResources;
@@ -114,6 +116,6 @@ export const firePlaceUse = (
 		}
 	} else if (flint === 0) {
 		const textValue = "Nie masz krzesiwa";
-		cantMoveAnimation(char, setChar, textValue);
+		cantMoveAnimation(charAnim, setCharAnim, textValue);
 	}
 };

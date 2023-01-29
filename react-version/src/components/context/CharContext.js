@@ -14,7 +14,7 @@ const player = {
 	prevTemperature: 0,
 
 	selectedChar: null,
-	cantMoveAnimation: false,
+
 	cantMove: false,
 
 	inventoryResources: {

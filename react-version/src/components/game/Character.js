@@ -1,10 +1,12 @@
 import React, { useContext, useEffect } from "react";
 import { BoardContext } from "../context/BoardContext";
 import { CharacterContext } from "../context/CharContext";
+import { CantMovieAnimationContext } from "../context/CantMoveAnimation";
 
 const Character = () => {
 	const [char, setChar] = useContext(CharacterContext);
 	const [board, setBoard] = useContext(BoardContext);
+	const [charAnim, setCharAnim] = useContext(CantMovieAnimationContext);
 
 	const characterMove = () => {
 		setChar({
@@ -19,12 +21,10 @@ const Character = () => {
 		}
 	}, [board.btnId]);
 
-	if (char.cantMoveAnimation) {
+	if (charAnim) {
 		setTimeout(() => {
-			setChar({
-				...char,
-				cantMoveAnimation: false,
-			});
+			console.log("halo");
+			setCharAnim(false);
 		}, 500);
 	}
 
@@ -33,7 +33,7 @@ const Character = () => {
 			className={
 				"character __" +
 				char.selectedChar +
-				(char.cantMoveAnimation ? " character-animation" : " ")
+				(charAnim ? " character-animation" : " ")
 			}
 			id="selected-character"
 			style={board.charSetOnBoard && { display: "block" }}

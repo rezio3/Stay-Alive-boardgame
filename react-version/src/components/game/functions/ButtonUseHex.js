@@ -13,10 +13,21 @@ export const buttonUseHex = (
 	anim,
 	setAnim,
 	fight,
-	setFight
+	setFight,
+	charAnim,
+	setCharAnim
 ) => {
 	if (board.resourcePlayerStandsOn === "fire") {
-		firePlaceUse(char, setChar, anim, setAnim, buttons, setButtons);
+		firePlaceUse(
+			char,
+			setChar,
+			anim,
+			setAnim,
+			buttons,
+			setButtons,
+			charAnim,
+			setCharAnim
+		);
 	} else if (board.resourcePlayerStandsOn === "oasis") {
 		oasisUse(board, setBoard, char, setChar, buttons, setButtons);
 	} else if (board.resourcePlayerStandsOn === "frozenCrown") {

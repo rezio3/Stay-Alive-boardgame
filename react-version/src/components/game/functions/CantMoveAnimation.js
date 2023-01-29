@@ -1,7 +1,4 @@
-export const cantMoveAnimation = (char, setChar, textValue) => {
+export const cantMoveAnimation = (charAnim, setCharAnim, textValue) => {
 	console.log(textValue);
-	setChar({
-		...char,
-		cantMoveAnimation: true,
-	});
+	setCharAnim(true);
 };

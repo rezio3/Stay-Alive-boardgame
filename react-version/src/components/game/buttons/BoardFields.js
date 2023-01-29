@@ -5,11 +5,13 @@ import Character from "../Character";
 import { checkDistance } from "../functions/Character-movement";
 import { ButtonsContext } from "../../context/ButtonsContext";
 import { cantMoveAnimation } from "../functions/CantMoveAnimation";
+import { CantMovieAnimationContext } from "../../context/CantMoveAnimation";
 
 const BoardFields = (props) => {
 	const [board, setBoard] = useContext(BoardContext);
 	const [char, setChar] = useContext(CharacterContext);
 	const [buttons, setButtons] = useContext(ButtonsContext);
+	const [charAnim, setCharAnim] = useContext(CantMovieAnimationContext);
 
 	const handleFieldClick = (e) => {
 		const moveApproved = checkDistance(e, board, char);
@@ -58,7 +60,7 @@ const BoardFields = (props) => {
 				});
 			}
 		} else {
-			cantMoveAnimation(char, setChar, moveApproved.textValue);
+			cantMoveAnimation(charAnim, setCharAnim, moveApproved.textValue);
 		}
 	};
 

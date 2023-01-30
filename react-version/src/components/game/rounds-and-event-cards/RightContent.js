@@ -46,6 +46,10 @@ const RightContent = () => {
 			board.resourcePlayerStandsOn
 		);
 		const torchUpdate = torchLosing(board.biomPlayerStandsOn, char);
+
+		let starvationReduce = char.starvation + biomEffectData.starvation;
+		let sanityReduce = char.sanity + biomEffectData.sanity;
+		rounds.round % 2 === 0 ? (starvationReduce -= 1) : (sanityReduce -= 1);
 		let addEnergy;
 		char.inventoryItems.shoes === 1 ? (addEnergy = 3) : (addEnergy = 2);
 
@@ -53,8 +57,8 @@ const RightContent = () => {
 			...char,
 			cantMove: false,
 			energy: char.energy + addEnergy,
-			starvation: char.starvation + biomEffectData.starvation,
-			sanity: char.sanity + biomEffectData.sanity,
+			starvation: starvationReduce,
+			sanity: sanityReduce,
 			temperature: char.temperature + biomEffectData.temperature,
 			inventoryItems: {
 				...char.inventoryItems,

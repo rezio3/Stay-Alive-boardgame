@@ -1,6 +1,14 @@
 import { cantMoveAnimation } from "../CantMoveAnimation";
 
-export const resourcesUse = (char, setChar, buttons, setButtons, board) => {
+export const resourcesUse = (
+	char,
+	setChar,
+	buttons,
+	setButtons,
+	board,
+	charAnim,
+	setCharAnim
+) => {
 	const { energy } = char;
 	const { axe } = char.inventoryItems;
 	if (axe === 1) {
@@ -35,7 +43,7 @@ export const resourcesUse = (char, setChar, buttons, setButtons, board) => {
 			});
 		} else if (char.energy === 0) {
 			const textValue = "Za mało energii na zebranie surowca";
-			cantMoveAnimation(char, setChar, textValue);
+			cantMoveAnimation(charAnim, setCharAnim, textValue);
 		}
 	}
 };

@@ -29,7 +29,16 @@ export const buttonUseHex = (
 			setCharAnim
 		);
 	} else if (board.resourcePlayerStandsOn === "oasis") {
-		oasisUse(board, setBoard, char, setChar, buttons, setButtons);
+		oasisUse(
+			board,
+			setBoard,
+			char,
+			setChar,
+			buttons,
+			setButtons,
+			charAnim,
+			setCharAnim
+		);
 	} else if (board.resourcePlayerStandsOn === "frozenCrown") {
 		frozenCrownUse(
 			fight,
@@ -39,7 +48,9 @@ export const buttonUseHex = (
 			buttons,
 			setButtons,
 			char,
-			setChar
+			setChar,
+			charAnim,
+			setCharAnim
 		);
 	} else if (
 		board.resourcePlayerStandsOn === "wood" ||
@@ -48,6 +59,14 @@ export const buttonUseHex = (
 		board.resourcePlayerStandsOn === "flint" ||
 		board.resourcePlayerStandsOn === "grass"
 	) {
-		resourcesUse(char, setChar, buttons, setButtons, board);
+		resourcesUse(
+			char,
+			setChar,
+			buttons,
+			setButtons,
+			board,
+			charAnim,
+			setCharAnim
+		);
 	}
 };

@@ -8,7 +8,9 @@ export const frozenCrownUse = (
 	buttons,
 	setButtons,
 	char,
-	setChar
+	setChar,
+	charAnim,
+	setCharAnim
 ) => {
 	if (char.energy > 0) {
 		if (!char.inventoryItems.frozenCrown) {
@@ -32,10 +34,10 @@ export const frozenCrownUse = (
 		} else {
 			const textValue = "Masz już lodową koronę!";
 			console.log(textValue);
-			cantMoveAnimation(char, setChar, textValue);
+			cantMoveAnimation(charAnim, setCharAnim, textValue);
 		}
 	} else {
 		const textValue = "Nie masz energii na walkę z lodowym golemem";
-		cantMoveAnimation(char, setChar, textValue);
+		cantMoveAnimation(charAnim, setCharAnim, textValue);
 	}
 };

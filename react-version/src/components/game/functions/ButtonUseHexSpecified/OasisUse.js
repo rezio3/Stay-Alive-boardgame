@@ -6,7 +6,9 @@ export const oasisUse = (
 	char,
 	setChar,
 	buttons,
-	setButtons
+	setButtons,
+	charAnim,
+	setCharAnim
 ) => {
 	const { energy, starvation, sanity, temperature } = char;
 	if (board.oasisUsed === false) {
@@ -36,6 +38,6 @@ export const oasisUse = (
 		});
 	} else if (board.oasisUsed === true) {
 		const textValue = "Oaza została już raz użyta";
-		cantMoveAnimation(char, setChar, textValue);
+		cantMoveAnimation(charAnim, setCharAnim, textValue);
 	}
 };

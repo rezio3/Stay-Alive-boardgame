@@ -680,68 +680,6 @@ body {
   width: 50%;
 }
 
-.frozenCrown-container {
-  width: 84px;
-  height: 65px;
-  margin-left: 5px;
-}
-
-#frozenCrown-anim {
-  opacity: 100%;
-  position: relative;
-  background-image: url(../img/lodowa\ korona.png);
-  background-size: cover;
-}
-
-#frozenCrown-anim:hover .item-description-left {
-  height: 350px;
-  border: 3px solid black;
-}
-
-.frozenCrown-description-left {
-  width: 230px;
-}
-.frozenCrown-description-left img {
-  width: 100px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-.frozenCrown-description-left span {
-  width: 200px;
-  padding: 15px 10px;
-}
-
-.frozenCrown-animation {
-  position: relative;
-  width: 75px;
-  height: 54px;
-  animation: frozenCrownAnim 0.9s ease-in-out;
-  animation-fill-mode: forwards;
-}
-
-@keyframes frozenCrownAnim {
-  0% {
-    opacity: 0%;
-    width: 230px;
-    height: 173px;
-    top: -450px;
-    left: 450px;
-  }
-  50% {
-    opacity: 100%;
-    width: 500px;
-    height: 375px;
-    top: -450px;
-    left: 450px;
-  }
-  100% {
-    opacity: 100%;
-    width: 75px;
-    height: 54px;
-    top: 0;
-    left: 0;
-  }
-}
 .securis-container {
   width: 84px;
   height: 65px;

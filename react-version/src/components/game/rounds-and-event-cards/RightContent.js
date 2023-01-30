@@ -8,6 +8,7 @@ import { CharacterContext } from "../../context/CharContext";
 import { AnimationContext } from "../../context/AnimationContext";
 import { biomesEffects } from "../functions/Biomes-Effects";
 import { torchLosing } from "../functions/losingItems/TorchLosing";
+import { frozenCrownLosing } from "../functions/losingItems/FrozenCrownLosing";
 import { buttonUseHex } from "../functions/ButtonUseHex";
 import { FightContext } from "../../context/FightContext";
 import { RoundsContext } from "../../context/RoundsContext";
@@ -46,10 +47,12 @@ const RightContent = () => {
 			board.resourcePlayerStandsOn
 		);
 		const torchUpdate = torchLosing(board.biomPlayerStandsOn, char);
+		const frozenCrownUpdate = frozenCrownLosing(board.biomPlayerStandsOn, char);
 
 		let starvationReduce = char.starvation + biomEffectData.starvation;
 		let sanityReduce = char.sanity + biomEffectData.sanity;
 		rounds.round % 2 === 0 ? (starvationReduce -= 1) : (sanityReduce -= 1);
+		if (char.inventoryItems.frozenCrown === 1) sanityReduce = char.sanity;
 		let addEnergy;
 		char.inventoryItems.shoes === 1 ? (addEnergy = 3) : (addEnergy = 2);
 
@@ -63,6 +66,7 @@ const RightContent = () => {
 			inventoryItems: {
 				...char.inventoryItems,
 				torch: torchUpdate,
+				frozenCrown: frozenCrownUpdate,
 			},
 		});
 		if (board.resourcePlayerStandsOn !== null) {

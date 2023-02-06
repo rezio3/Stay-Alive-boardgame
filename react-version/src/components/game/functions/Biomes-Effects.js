@@ -24,6 +24,8 @@ export const biomesEffects = (biom, char, resource) => {
 		case "crater":
 			return { starvation: 0, sanity: -1, temperature: 1 };
 		case "fjord":
-			return { starvation: 0, sanity: -1, temperature: 1 };
+			return { starvation: 0, sanity: 0, temperature: 0 };
+		default:
+			return { starvation: 0, sanity: 0, temperature: 0 };
 	}
 };

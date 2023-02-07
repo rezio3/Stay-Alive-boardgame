@@ -26,7 +26,8 @@ const BoardFields = (props) => {
 				classList.contains("lotos") ||
 				classList.contains("fire") ||
 				classList.contains("oasis") ||
-				classList.contains("frozenCrown")
+				classList.contains("frozenCrown") ||
+				classList.contains("cave")
 			) {
 				setButtons({ ...buttons, useHexButton: true });
 				let source;
@@ -38,6 +39,7 @@ const BoardFields = (props) => {
 				if (classList.contains("fire")) source = "fire";
 				if (classList.contains("oasis")) source = "oasis";
 				if (classList.contains("frozenCrown")) source = "frozenCrown";
+				if (classList.contains("cave")) source = "cave";
 				setBoard({
 					...board,
 					btnId: e.target.id,

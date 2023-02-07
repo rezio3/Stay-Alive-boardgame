@@ -54,7 +54,16 @@ export const buttonUseHex = (
 			setCharAnim
 		);
 	} else if (board.resourcePlayerStandsOn === "cave") {
-		caveUse();
+		caveUse(
+			board,
+			setBoard,
+			char,
+			setChar,
+			buttons,
+			setButtons,
+			charAnim,
+			setCharAnim
+		);
 	} else if (
 		board.resourcePlayerStandsOn === "wood" ||
 		board.resourcePlayerStandsOn === "stone" ||

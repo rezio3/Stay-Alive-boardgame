@@ -13,6 +13,7 @@ import { buttonUseHex } from "../functions/ButtonUseHex";
 import { FightContext } from "../../context/FightContext";
 import { RoundsContext } from "../../context/RoundsContext";
 import { CantMovieAnimationContext } from "../../context/CantMoveAnimation";
+import Events from "./game-events/Events";
 
 const RightContent = () => {
 	const [buttons, setButtons] = useContext(ButtonsContext);
@@ -119,18 +120,7 @@ const RightContent = () => {
 			</div>
 
 			<div className="event-cards-and-items-container">
-				<div className="event-cards-container">
-					<div className="event-card-container">
-						<div className="" id="card1"></div>
-						<div className="" id="card2"></div>
-					</div>
-					<div className="event-card-reverse">
-						<div
-							className="event-card-reverse-anim"
-							id="event-card-reverse-anim"
-						></div>
-					</div>
-				</div>
+				<Events />
 				<ItemList />
 			</div>
 		</div>

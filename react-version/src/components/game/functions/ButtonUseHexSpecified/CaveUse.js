@@ -1,3 +1,5 @@
+import { cantMoveAnimation } from "../CantMoveAnimation";
+
 export const caveUse = (
 	board,
 	setBoard,
@@ -8,12 +10,17 @@ export const caveUse = (
 	charAnim,
 	setCharAnim
 ) => {
-	setChar({
-		...char,
-		energy: 10,
-	});
-	setBoard({
-		...board,
-		caveUsed: true,
-	});
+	if (!board.caveUsed) {
+		setChar({
+			...char,
+			energy: 10,
+		});
+		setBoard({
+			...board,
+			caveUsed: true,
+		});
+	} else {
+		const textValue = "Jaskinia została już raz użyta";
+		cantMoveAnimation(charAnim, setCharAnim, textValue);
+	}
 };

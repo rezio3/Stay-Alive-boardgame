@@ -23,7 +23,6 @@ const Character = () => {
 
 	if (charAnim) {
 		setTimeout(() => {
-			console.log("halo");
 			setCharAnim(false);
 		}, 500);
 	}

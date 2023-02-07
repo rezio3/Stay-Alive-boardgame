@@ -65,7 +65,16 @@ const UniversalFightCard = () => {
 			});
 		}
 	};
-
+	let swordModifierDefeat;
+	let swordModifierWin;
+	const { sword } = char.inventoryItems;
+	if (sword) {
+		swordModifierDefeat = 2;
+		swordModifierWin = 3;
+	} else if (!sword) {
+		swordModifierDefeat = 3;
+		swordModifierWin = 4;
+	}
 	return (
 		<div
 			className={
@@ -94,14 +103,17 @@ const UniversalFightCard = () => {
 			<div className="fight-sum-span">
 				<p>
 					{(() => {
-						if (char.energy === 0 && fight.cubeRandomNumber <= 3) {
+						if (
+							char.energy === 0 &&
+							fight.cubeRandomNumber <= swordModifierDefeat
+						) {
 							return "Przegrałeś walkę padając z wyczerpania";
 						} else {
 							if (fight.cubeRandomNumber === "") {
 								return null;
-							} else if (fight.cubeRandomNumber <= 3) {
+							} else if (fight.cubeRandomNumber <= swordModifierDefeat) {
 								return "Porażka, spróbuje ponownie";
-							} else if (fight.cubeRandomNumber >= 4) {
+							} else if (fight.cubeRandomNumber >= swordModifierWin) {
 								return "Zwycięstwo!";
 							}
 						}
@@ -109,14 +121,17 @@ const UniversalFightCard = () => {
 				</p>
 				<span>
 					{(() => {
-						if (char.energy === 0 && fight.cubeRandomNumber <= 3) {
+						if (
+							char.energy === 0 &&
+							fight.cubeRandomNumber <= swordModifierDefeat
+						) {
 							return "życie -6";
 						} else {
 							if (fight.cubeRandomNumber === "") {
 								return null;
-							} else if (fight.cubeRandomNumber <= 3) {
+							} else if (fight.cubeRandomNumber <= swordModifierDefeat) {
 								return "energia -1 / życie -2";
-							} else if (fight.cubeRandomNumber >= 4) {
+							} else if (fight.cubeRandomNumber >= swordModifierWin) {
 								return "energia -1";
 							}
 						}

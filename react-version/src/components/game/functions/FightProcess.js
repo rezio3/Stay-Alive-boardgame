@@ -1,6 +1,16 @@
 export const fightProcess = (fight, setFight, char, setChar) => {
 	const number = Math.ceil(Math.random() * 6);
-	if (char.energy === 1 && number <= 3) {
+	let swordModifierDefeat;
+	let swordModifierWin;
+	const { sword } = char.inventoryItems;
+	if (sword) {
+		swordModifierDefeat = 2;
+		swordModifierWin = 3;
+	} else if (!sword) {
+		swordModifierDefeat = 3;
+		swordModifierWin = 4;
+	}
+	if (char.energy === 1 && number <= swordModifierDefeat) {
 		setFight({
 			...fight,
 			fightEnd: true,
@@ -20,7 +30,7 @@ export const fightProcess = (fight, setFight, char, setChar) => {
 			});
 		}, 100);
 	} else {
-		if (number >= 4) {
+		if (number >= swordModifierWin) {
 			setFight({
 				...fight,
 				fightEnd: true,

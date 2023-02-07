@@ -52,6 +52,7 @@ export const buttonUseHex = (
 			charAnim,
 			setCharAnim
 		);
+	} else if (board.resourcePlayerStandsOn === "cave") {
 	} else if (
 		board.resourcePlayerStandsOn === "wood" ||
 		board.resourcePlayerStandsOn === "stone" ||

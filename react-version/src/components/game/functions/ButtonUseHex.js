@@ -2,7 +2,7 @@ import { firePlaceUse } from "./ButtonUseHexSpecified/FirePlaceUse";
 import { frozenCrownUse } from "./ButtonUseHexSpecified/FrozenCrownUse";
 import { oasisUse } from "./ButtonUseHexSpecified/OasisUse";
 import { resourcesUse } from "./ButtonUseHexSpecified/ResourcesUse";
-import { caveUse } from "./ButtonUseHexSpecified/CaseUse";
+import { caveUse } from "./ButtonUseHexSpecified/CaveUse";
 
 export const buttonUseHex = (
 	buttons,

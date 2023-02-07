@@ -9,7 +9,7 @@
 .event-cards-container .event-card-reverse,
 .event-cards-container .event-card-reverse-anim {
   transform-origin: 80% 50%;
-  background-image: url(../img/gimp/cardreverse.png);
+  background-image: url(../../img/event-cards/cardreverse.png);
   background-size: cover;
   width: 226px;
   height: 162px;

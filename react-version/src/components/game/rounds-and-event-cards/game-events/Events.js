@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../../../../style/css/Events.css";
 const Events = () => {
 	return (
 		<div className="event-cards-container">

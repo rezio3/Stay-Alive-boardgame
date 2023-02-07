@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import "../../../style/css/RightContent.css";
 import Rounds from "./Rounds";
 import ItemList from "./ItemList";
@@ -51,8 +51,16 @@ const RightContent = () => {
 
 		let starvationReduce = char.starvation + biomEffectData.starvation;
 		let sanityReduce = char.sanity + biomEffectData.sanity;
-		rounds.round % 2 === 0 ? (starvationReduce -= 1) : (sanityReduce -= 1);
+		// check if torch is true
+		let sanityReduceTorch = 1;
+		if (char.inventoryItems.torch) sanityReduceTorch = 0;
+		// reduce starvation and sanity depending on the rounds
+		rounds.round % 2 === 0
+			? (starvationReduce -= 1)
+			: (sanityReduce -= sanityReduceTorch);
+		// fix sanity reducer if frozen crown is true
 		if (char.inventoryItems.frozenCrown === 1) sanityReduce = char.sanity;
+		// add energy depending on shoes
 		let addEnergy;
 		char.inventoryItems.shoes === 1 ? (addEnergy = 3) : (addEnergy = 2);
 

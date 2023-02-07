@@ -2,6 +2,7 @@ import { firePlaceUse } from "./ButtonUseHexSpecified/FirePlaceUse";
 import { frozenCrownUse } from "./ButtonUseHexSpecified/FrozenCrownUse";
 import { oasisUse } from "./ButtonUseHexSpecified/OasisUse";
 import { resourcesUse } from "./ButtonUseHexSpecified/ResourcesUse";
+import { caveUse } from "./ButtonUseHexSpecified/CaseUse";
 
 export const buttonUseHex = (
 	buttons,
@@ -53,6 +54,7 @@ export const buttonUseHex = (
 			setCharAnim
 		);
 	} else if (board.resourcePlayerStandsOn === "cave") {
+		caveUse();
 	} else if (
 		board.resourcePlayerStandsOn === "wood" ||
 		board.resourcePlayerStandsOn === "stone" ||

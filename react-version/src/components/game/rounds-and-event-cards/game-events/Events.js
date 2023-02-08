@@ -1,52 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { RoundsContext } from "../../../context/RoundsContext";
 import "../../../../style/css/Events.css";
-import event1img from "../../../../img/event-cards/event1.png";
-import event2img from "../../../../img/event-cards/event2.png";
-import event3img from "../../../../img/event-cards/event3.png";
-import event4img from "../../../../img/event-cards/event4.png";
-import event5img from "../../../../img/event-cards/event5.png";
-import event6img from "../../../../img/event-cards/event6.png";
-import event7img from "../../../../img/event-cards/event7.png";
-import event8img from "../../../../img/event-cards/event8.png";
-import event9img from "../../../../img/event-cards/event9.png";
-import event10img from "../../../../img/event-cards/event10.png";
-import event11img from "../../../../img/event-cards/event11.png";
-import event12img from "../../../../img/event-cards/event12.png";
-import event13img from "../../../../img/event-cards/event13.png";
-import event14img from "../../../../img/event-cards/event14.png";
-import event15img from "../../../../img/event-cards/event15.png";
-import event16img from "../../../../img/event-cards/event16.png";
-import event17img from "../../../../img/event-cards/event17.png";
-import event18img from "../../../../img/event-cards/event18.png";
-import event19img from "../../../../img/event-cards/event19.png";
-import event20img from "../../../../img/event-cards/event20.png";
+import * as images from "../../../../img/event-cards/";
 import { EventsContext } from "../../../context/EventsContext";
 import { arrayShuffle } from "../../functions/EventsArrayShuffle";
 
 const Events = () => {
-	const allEvents = [
-		event1img,
-		event2img,
-		event3img,
-		event4img,
-		event5img,
-		event6img,
-		event7img,
-		event8img,
-		event9img,
-		event10img,
-		event11img,
-		event12img,
-		event13img,
-		event14img,
-		event15img,
-		event16img,
-		event17img,
-		event18img,
-		event19img,
-		event20img,
-	];
+	console.log(images.event1img);
 
 	const [rounds, setRounds] = useContext(RoundsContext);
 	const [event, setEvent] = useContext(EventsContext);
@@ -54,17 +14,26 @@ const Events = () => {
 	if (rounds.round === 2 && !event.eventsArray) {
 		arrayShuffle(event, setEvent);
 	}
-	if (rounds.round % 2 === 1 && rounds.round > 2) {
-		let a = event.eventsArray;
-		console.log(a);
-		a.shift(); // renders few times
-		// setEvent({
-		// 	...event,
-		// 	eventsArray: newEventArr,
-		// });
-	}
-	console.log(event.eventsArray);
+	console.log("runda", rounds.round);
+	useEffect(() => {
+		if (rounds.round % 2 === 1 && rounds.round > 2) {
+			const a = [...event.eventsArray];
+			a.shift();
+			console.log("a", a);
+			setEvent({
+				...event,
+				eventsArray: a,
+			});
+		}
+	}, [rounds.round]);
+
+	// console.log(event.eventsArray);
 	// console.log(event.eventsArray.length);
+	console.log(
+		"`event${event.eventsArray?.[0]}image`",
+		`event${event.eventsArray?.[0]}image`
+	);
+
 	return (
 		<div className="event-cards-container">
 			<div className="event-card-container">
@@ -72,7 +41,17 @@ const Events = () => {
 					className="event-card-1"
 					id="card1"
 					style={{
-						backgroundImage: `url(${event1img})`,
+						// array = [7, 19, 4, 8, 14, 17, 20, 2]
+						// images.event7img
+						// 								images.event7img
+						// ? optional chaining
+						// foo.bar.wat
+						// foo.bar = undefined => {}
+						// foo?.bar?.wat?.inner?.object => cannot read properites of underfined (reading wat)
+						//
+						backgroundImage: `url(${
+							images[`event${event.eventsArray?.[0]}img`]
+						})`,
 					}}
 				></div>
 				<div className="" id="card2"></div>

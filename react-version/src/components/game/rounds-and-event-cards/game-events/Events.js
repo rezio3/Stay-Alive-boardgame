@@ -25,8 +25,11 @@ const Events = () => {
 				currentEvent: images[`event${event.eventsArray?.[0]}img`],
 				currentEventNumber: event.eventsArray?.[0],
 			});
+			const eventName = eventList[`event${event.eventsArray[0]}`];
+			eventName();
 		}
 	}, [rounds.round]);
+
 	return (
 		<div className="event-cards-container">
 			<div className="event-card-container">

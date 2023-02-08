@@ -25,7 +25,8 @@ const Events = () => {
 				currentEvent: images[`event${event.eventsArray?.[0]}img`],
 				currentEventNumber: event.eventsArray?.[0],
 			});
-			const eventName = eventList[`event${event.eventsArray[0]}`];
+			// const eventName = eventList[`event${event.eventsArray[0]}`];
+			const eventName = eventList.event1;
 			eventName();
 		}
 	}, [rounds.round]);

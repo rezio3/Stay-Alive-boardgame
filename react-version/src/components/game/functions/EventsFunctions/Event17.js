@@ -1,3 +1,3 @@
 export const event17 = () => {
-	consol.log("event17 function");
+	console.log("event17 function");
 };

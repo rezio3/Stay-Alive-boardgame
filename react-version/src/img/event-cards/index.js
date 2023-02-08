@@ -18,7 +18,7 @@ import event17img from "./event17.png";
 import event18img from "./event18.png";
 import event19img from "./event19.png";
 import event20img from "./event20.png";
-export const images = {
+export {
 	event1img,
 	event2img,
 	event3img,

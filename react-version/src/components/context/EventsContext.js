@@ -1,6 +1,8 @@
 import React, { createContext, useState } from "react";
 const eventsData = {
 	eventsArray: null,
+	currentEvent: null,
+	currentEventNumber: null,
 };
 export const EventsContext = createContext();
 

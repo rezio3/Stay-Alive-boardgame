@@ -14,6 +14,7 @@ import { FightContext } from "../../context/FightContext";
 import { RoundsContext } from "../../context/RoundsContext";
 import { CantMovieAnimationContext } from "../../context/CantMoveAnimation";
 import Events from "./game-events/Events";
+import { difficulty } from "../functions/Difficulty";
 
 const RightContent = () => {
 	const [buttons, setButtons] = useContext(ButtonsContext);
@@ -84,10 +85,7 @@ const RightContent = () => {
 				useHexButton: true,
 			});
 		}
-		setRounds({
-			...rounds,
-			round: rounds.round + 1,
-		});
+		difficulty(rounds, setRounds);
 	};
 
 	return (

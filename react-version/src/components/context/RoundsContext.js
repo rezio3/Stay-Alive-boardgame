@@ -2,6 +2,7 @@ import React, { createContext, useState } from "react";
 
 const roundsData = {
 	round: 1,
+	difficulty: easy,
 };
 
 export const RoundsContext = createContext();

@@ -87,7 +87,17 @@ const RightContent = () => {
 		}
 		difficulty(rounds, setRounds);
 	};
-
+	// if (board.charSetOnBoard === false) {
+	// 	setButtons({
+	// 		...buttons,
+	// 		endTurnButton: false,
+	// 	});
+	// } else {
+	// 	setButtons({
+	// 		...buttons,
+	// 		endTurnButton: true,
+	// 	});
+	// }
 	return (
 		<div className="right-container">
 			<h2 className="tura">Tura</h2>

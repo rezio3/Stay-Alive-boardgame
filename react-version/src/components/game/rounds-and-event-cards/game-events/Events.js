@@ -1,51 +1,51 @@
 import React, { useContext } from "react";
 import { RoundsContext } from "../../../context/RoundsContext";
 import "../../../../style/css/Events.css";
-import event1 from "../../../../img/event-cards/event1.png";
-import event2 from "../../../../img/event-cards/event2.png";
-import event3 from "../../../../img/event-cards/event3.png";
-import event4 from "../../../../img/event-cards/event4.png";
-import event5 from "../../../../img/event-cards/event5.png";
-import event6 from "../../../../img/event-cards/event6.png";
-import event7 from "../../../../img/event-cards/event7.png";
-import event8 from "../../../../img/event-cards/event8.png";
-import event9 from "../../../../img/event-cards/event9.png";
-import event10 from "../../../../img/event-cards/event10.png";
-import event11 from "../../../../img/event-cards/event11.png";
-import event12 from "../../../../img/event-cards/event12.png";
-import event13 from "../../../../img/event-cards/event13.png";
-import event14 from "../../../../img/event-cards/event14.png";
-import event15 from "../../../../img/event-cards/event15.png";
-import event16 from "../../../../img/event-cards/event16.png";
-import event17 from "../../../../img/event-cards/event17.png";
-import event18 from "../../../../img/event-cards/event18.png";
-import event19 from "../../../../img/event-cards/event19.png";
-import event20 from "../../../../img/event-cards/event20.png";
+import event1img from "../../../../img/event-cards/event1.png";
+import event2img from "../../../../img/event-cards/event2.png";
+import event3img from "../../../../img/event-cards/event3.png";
+import event4img from "../../../../img/event-cards/event4.png";
+import event5img from "../../../../img/event-cards/event5.png";
+import event6img from "../../../../img/event-cards/event6.png";
+import event7img from "../../../../img/event-cards/event7.png";
+import event8img from "../../../../img/event-cards/event8.png";
+import event9img from "../../../../img/event-cards/event9.png";
+import event10img from "../../../../img/event-cards/event10.png";
+import event11img from "../../../../img/event-cards/event11.png";
+import event12img from "../../../../img/event-cards/event12.png";
+import event13img from "../../../../img/event-cards/event13.png";
+import event14img from "../../../../img/event-cards/event14.png";
+import event15img from "../../../../img/event-cards/event15.png";
+import event16img from "../../../../img/event-cards/event16.png";
+import event17img from "../../../../img/event-cards/event17.png";
+import event18img from "../../../../img/event-cards/event18.png";
+import event19img from "../../../../img/event-cards/event19.png";
+import event20img from "../../../../img/event-cards/event20.png";
 import { EventsContext } from "../../../context/EventsContext";
 import { arrayShuffle } from "../../functions/EventsArrayShuffle";
 
 const Events = () => {
 	const allEvents = [
-		event1,
-		event2,
-		event3,
-		event4,
-		event5,
-		event6,
-		event7,
-		event8,
-		event9,
-		event10,
-		event11,
-		event12,
-		event13,
-		event14,
-		event15,
-		event16,
-		event17,
-		event18,
-		event19,
-		event20,
+		event1img,
+		event2img,
+		event3img,
+		event4img,
+		event5img,
+		event6img,
+		event7img,
+		event8img,
+		event9img,
+		event10img,
+		event11img,
+		event12img,
+		event13img,
+		event14img,
+		event15img,
+		event16img,
+		event17img,
+		event18img,
+		event19img,
+		event20img,
 	];
 
 	const [rounds, setRounds] = useContext(RoundsContext);

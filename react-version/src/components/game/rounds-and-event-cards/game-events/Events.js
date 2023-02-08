@@ -25,11 +25,6 @@ const Events = () => {
 				currentEvent: images[`event${event.eventsArray?.[0]}img`],
 				currentEventNumber: event.eventsArray?.[0],
 			});
-		} else {
-			setEvent({
-				...event,
-				currentEvent: event.currentEvent,
-			});
 		}
 	}, [rounds.round]);
 	return (

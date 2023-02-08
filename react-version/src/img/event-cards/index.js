@@ -1,3 +1,4 @@
+import event0img from "./event20.png";
 import event1img from "./event1.png";
 import event2img from "./event2.png";
 import event3img from "./event3.png";
@@ -17,7 +18,6 @@ import event16img from "./event16.png";
 import event17img from "./event17.png";
 import event18img from "./event18.png";
 import event19img from "./event19.png";
-import event20img from "./event20.png";
 export {
 	event1img,
 	event2img,
@@ -38,5 +38,5 @@ export {
 	event17img,
 	event18img,
 	event19img,
-	event20img,
+	event0img,
 };

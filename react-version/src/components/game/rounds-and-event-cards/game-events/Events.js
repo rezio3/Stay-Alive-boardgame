@@ -6,8 +6,6 @@ import { EventsContext } from "../../../context/EventsContext";
 import { arrayShuffle } from "../../functions/EventsArrayShuffle";
 
 const Events = () => {
-	console.log(images.event1img);
-
 	const [rounds, setRounds] = useContext(RoundsContext);
 	const [event, setEvent] = useContext(EventsContext);
 
@@ -23,17 +21,16 @@ const Events = () => {
 			setEvent({
 				...event,
 				eventsArray: a,
+				currentEvent: images[`event${event.eventsArray?.[0]}img`],
+				currentEventNumber: event.eventsArray?.[0],
+			});
+		} else {
+			setEvent({
+				...event,
+				currentEvent: event.currentEvent,
 			});
 		}
 	}, [rounds.round]);
-
-	// console.log(event.eventsArray);
-	// console.log(event.eventsArray.length);
-	console.log(
-		"`event${event.eventsArray?.[0]}image`",
-		`event${event.eventsArray?.[0]}image`
-	);
-
 	return (
 		<div className="event-cards-container">
 			<div className="event-card-container">
@@ -41,17 +38,7 @@ const Events = () => {
 					className="event-card-1"
 					id="card1"
 					style={{
-						// array = [7, 19, 4, 8, 14, 17, 20, 2]
-						// images.event7img
-						// 								images.event7img
-						// ? optional chaining
-						// foo.bar.wat
-						// foo.bar = undefined => {}
-						// foo?.bar?.wat?.inner?.object => cannot read properites of underfined (reading wat)
-						//
-						backgroundImage: `url(${
-							images[`event${event.eventsArray?.[0]}img`]
-						})`,
+						backgroundImage: `url(${event.currentEvent})`,
 					}}
 				></div>
 				<div className="" id="card2"></div>

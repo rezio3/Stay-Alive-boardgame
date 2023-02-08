@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { RoundsContext } from "../../../context/RoundsContext";
 import "../../../../style/css/Events.css";
 import * as images from "../../../../img/event-cards/";
+import * as eventList from "../../functions/EventsFunctions/EventsList";
 import { EventsContext } from "../../../context/EventsContext";
 import { arrayShuffle } from "../../functions/EventsArrayShuffle";
 

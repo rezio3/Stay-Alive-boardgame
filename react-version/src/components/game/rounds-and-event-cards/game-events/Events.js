@@ -54,7 +54,17 @@ const Events = () => {
 	if (rounds.round === 2 && !event.eventsArray) {
 		arrayShuffle(event, setEvent);
 	}
-	// console.log(event.eventsArray);
+	if (rounds.round % 2 === 1 && rounds.round > 2) {
+		let a = event.eventsArray;
+		console.log(a);
+		a.shift(); // renders few times
+		// setEvent({
+		// 	...event,
+		// 	eventsArray: newEventArr,
+		// });
+	}
+	console.log(event.eventsArray);
+	// console.log(event.eventsArray.length);
 	return (
 		<div className="event-cards-container">
 			<div className="event-card-container">
@@ -62,7 +72,7 @@ const Events = () => {
 					className="event-card-1"
 					id="card1"
 					style={{
-						backgroundImage: `url(${event1})`,
+						backgroundImage: `url(${event1img})`,
 					}}
 				></div>
 				<div className="" id="card2"></div>

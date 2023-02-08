@@ -54,7 +54,7 @@ const Events = () => {
 	if (rounds.round === 2 && !event.eventsArray) {
 		arrayShuffle(event, setEvent);
 	}
-	console.log(event.eventsArray);
+	// console.log(event.eventsArray);
 	return (
 		<div className="event-cards-container">
 			<div className="event-card-container">

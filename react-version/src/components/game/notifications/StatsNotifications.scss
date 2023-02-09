@@ -1,7 +1,35 @@
 .stats-notifications-container {
 	position: absolute;
-	top: 150px;
-	width: 100px;
-	height: 100px;
-	background-color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: 200px;
+	background-color: #fff;
+	opacity: 1;
+	animation: statsNotificationAnimation 0.8s ease-out forwards;
+
+	.stats-notifications-span {
+		font-size: 30px;
+		font-weight: bold;
+		font-family: Verdana, Geneva, Tahoma, sans-serif;
+		color: rgb(37, 37, 255);
+		text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff,
+			-1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+	}
+}
+
+@keyframes statsNotificationAnimation {
+	0% {
+		top: 200px;
+		opacity: 1;
+	}
+
+	90% {
+		top: 100px;
+		opacity: 1;
+	}
+	100% {
+		top: 100px;
+		opacity: 0;
+	}
 }

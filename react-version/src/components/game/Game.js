@@ -8,6 +8,7 @@ import { BoardContext } from "../context/BoardContext";
 import { CharacterContext } from "../context/CharContext";
 import Cards from "./cards/Cards";
 import FightCards from "./FightCards/FightCards";
+import StatsNotifications from "./notifications/StatsNotifications";
 
 const Game = () => {
 	const [board, setBoard] = useContext(BoardContext);
@@ -48,6 +49,7 @@ const Game = () => {
 
 	return (
 		<div className="game">
+			<StatsNotifications />
 			<LeftContent />
 			{board.charSetOnBoard ? null : (
 				<div className="click-start-hex">

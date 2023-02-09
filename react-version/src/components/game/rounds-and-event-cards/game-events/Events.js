@@ -13,7 +13,6 @@ const Events = () => {
 	if (rounds.round === 2 && !event.eventsArray) {
 		arrayShuffle(event, setEvent);
 	}
-	console.log("runda", rounds.round);
 	useEffect(() => {
 		if (rounds.round % 2 === 1 && rounds.round > 2) {
 			const a = [...event.eventsArray];

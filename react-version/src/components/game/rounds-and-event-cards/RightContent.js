@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import "../../../style/css/RightContent.css";
 import Rounds from "./Rounds";
 import ItemList from "./ItemList";
@@ -15,6 +15,7 @@ import { RoundsContext } from "../../context/RoundsContext";
 import { CantMovieAnimationContext } from "../../context/CantMoveAnimation";
 import Events from "./game-events/Events";
 import { difficulty } from "../functions/Difficulty";
+import { StatsNotificationsContext } from "../../context/StatsNotificationsContext";
 
 const RightContent = () => {
 	const [buttons, setButtons] = useContext(ButtonsContext);
@@ -24,6 +25,7 @@ const RightContent = () => {
 	const [fight, setFight] = useContext(FightContext);
 	const [rounds, setRounds] = useContext(RoundsContext);
 	const [charAnim, setCharAnim] = useContext(CantMovieAnimationContext);
+	const [statsNote, setStatsNote] = useContext(StatsNotificationsContext);
 
 	const handleUseHexButton = () => {
 		buttonUseHex(
@@ -43,6 +45,17 @@ const RightContent = () => {
 	};
 
 	const handleEndTurn = () => {
+		setStatsNote({
+			...statsNote,
+			energy: false,
+		});
+		setTimeout(() => {
+			setStatsNote({
+				...statsNote,
+				energy: true,
+			});
+		}, 50);
+
 		const biomEffectData = biomesEffects(
 			board.biomPlayerStandsOn,
 			char,
@@ -87,6 +100,18 @@ const RightContent = () => {
 		}
 		difficulty(rounds, setRounds);
 	};
+	useEffect(() => {
+		const turnOffStatsAnimation = setTimeout(() => {
+			setStatsNote({
+				...statsNote,
+				energy: false,
+			});
+		}, 850);
+		return () => {
+			console.log("wyłączono timeout");
+			clearTimeout(turnOffStatsAnimation);
+		};
+	}, [statsNote.energy]);
 	// if (board.charSetOnBoard === false) {
 	// 	setButtons({
 	// 		...buttons,

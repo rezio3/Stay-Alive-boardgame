@@ -9,10 +9,12 @@ import { CharacterContext } from "../context/CharContext";
 import Cards from "./cards/Cards";
 import FightCards from "./FightCards/FightCards";
 import StatsNotifications from "./notifications/StatsNotifications";
+import { StatsNotificationsContext } from "../context/StatsNotificationsContext";
 
 const Game = () => {
 	const [board, setBoard] = useContext(BoardContext);
 	const [char, setChar] = useContext(CharacterContext);
+	const [statsNote, setStatsNote] = useContext(StatsNotificationsContext);
 
 	const handleArrowButton = (e) => {
 		setBoard({
@@ -49,7 +51,7 @@ const Game = () => {
 
 	return (
 		<div className="game">
-			<StatsNotifications />
+			{statsNote.energy ? <StatsNotifications /> : null}
 			<LeftContent />
 			{board.charSetOnBoard ? null : (
 				<div className="click-start-hex">

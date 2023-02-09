@@ -86,6 +86,10 @@ const RightContent = () => {
 			starvation: starvationReduce,
 			sanity: sanityReduce,
 			temperature: char.temperature + biomEffectData.temperature,
+			prevEnergy: char.energy,
+			prevStarvation: char.starvation,
+			prevSanity: char.sanity,
+			prevTemperature: char.temperature,
 			inventoryItems: {
 				...char.inventoryItems,
 				torch: torchUpdate,

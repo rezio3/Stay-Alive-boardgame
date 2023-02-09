@@ -16,7 +16,6 @@ const Temperature = () => {
 			...char,
 			temperature: 0,
 			life: char.life + overload,
-			prevLife: char.life,
 		});
 	}
 	return (

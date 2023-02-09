@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { CharacterContext } from "../../../context/CharContext";
 
 const Sanity = () => {
@@ -15,7 +15,6 @@ const Sanity = () => {
 			...char,
 			sanity: 0,
 			life: char.life + overload,
-			prevLife: char.life,
 		});
 	}
 

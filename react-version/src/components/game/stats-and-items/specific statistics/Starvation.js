@@ -15,7 +15,6 @@ const Starvation = () => {
 			...char,
 			starvation: 0,
 			life: char.life + overload,
-			prevLife: char.life,
 		});
 	}
 

@@ -1,4 +1,5 @@
 import { cantMoveAnimation } from "../CantMoveAnimation";
+import { changeCharStats } from "../Stats-changer/ChangeCharStats";
 
 export const firePlaceUse = (
 	char,
@@ -10,24 +11,23 @@ export const firePlaceUse = (
 	charAnim,
 	setCharAnim
 ) => {
-	const { energy, sanity, temperature } = char;
+	const { energy, sanity, temperature, starvation, life } = char;
 	const { flint } = char.inventoryResources;
 	const { sejmitar, fireCard } = char.inventoryItems;
 	if (flint > 0) {
 		let fireRoll = Math.floor(Math.random() * 5);
 		let addTemperature = temperature < 5 ? 1 : 0;
 		if (sejmitar === 0 && fireRoll === 0) {
-			setChar({
-				...char,
-				energy: energy + 3,
-				sanity: sanity + 1,
-				temperature: temperature + addTemperature,
-				cantMove: true,
-				inventoryResources: {
-					...char.inventoryResources,
-					flint: flint - 1,
-				},
-			});
+			changeCharStats(
+				char,
+				setChar,
+				life,
+				energy + 3,
+				starvation,
+				sanity + 1,
+				temperature + addTemperature,
+				char.inventoryResources.flint - 1
+			);
 			setAnim({
 				...anim,
 				sejmitar: true,

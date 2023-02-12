@@ -1,5 +1,4 @@
 import { cantMoveAnimation } from "../CantMoveAnimation";
-
 export const resourcesUse = (
 	char,
 	setChar,
@@ -35,6 +34,7 @@ export const resourcesUse = (
 			setChar({
 				...char,
 				energy: energy - 1,
+				prevEnergy: char.energy,
 				cantMove: true,
 				inventoryResources: {
 					...char.inventoryResources,

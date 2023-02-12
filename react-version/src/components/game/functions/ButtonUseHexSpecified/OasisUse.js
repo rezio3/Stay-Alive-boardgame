@@ -1,4 +1,5 @@
 import { cantMoveAnimation } from "../CantMoveAnimation";
+import { changeCharStats } from "../Stats-changer/ChangeCharStats";
 
 export const oasisUse = (
 	board,
@@ -20,14 +21,23 @@ export const oasisUse = (
 		} else {
 			temp = 0;
 		}
-		setChar({
-			...char,
+		changeCharStats({
+			char: char,
+			setChar: setChar,
 			energy: energy + 3,
 			sanity: sanity + 1,
 			starvation: starvation + 1,
-			temperature: temperature + temp,
-			cantMove: true,
+			temp: temperature + temp,
+			hexUsed: "oasis",
 		});
+		// setChar({
+		// 	...char,
+		// 	energy: energy + 3,
+		// 	sanity: sanity + 1,
+		// 	starvation: starvation + 1,
+		// 	temperature: temperature + temp,
+		// 	cantMove: true,
+		// });
 		setBoard({
 			...board,
 			oasisUsed: true,

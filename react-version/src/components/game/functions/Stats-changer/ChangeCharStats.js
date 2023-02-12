@@ -39,5 +39,16 @@ export const changeCharStats = ({
 					fireCard: fireCard,
 				},
 			});
+			break;
+		case "oasis":
+			console.log("oasis used");
+			setChar({
+				...char,
+				energy: energy,
+				sanity: sanity,
+				starvation: starvation,
+				temperature: temp,
+				cantMove: true,
+			});
 	}
 };

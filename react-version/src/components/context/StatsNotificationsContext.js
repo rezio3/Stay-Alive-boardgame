@@ -1,6 +1,7 @@
 import React, { createContext, useState } from "react";
 const notifications = {
 	energy: false,
+	energyText: "",
 };
 export const StatsNotificationsContext = createContext();
 

@@ -41,22 +41,13 @@ const RightContent = () => {
 			fight,
 			setFight,
 			charAnim,
-			setCharAnim
+			setCharAnim,
+			statsNote,
+			setStatsNote
 		);
 	};
 
 	const handleEndTurn = () => {
-		setStatsNote({
-			...statsNote,
-			energy: false,
-		});
-		setTimeout(() => {
-			setStatsNote({
-				...statsNote,
-				energy: true,
-			});
-		}, 50);
-
 		const biomEffectData = biomesEffects(
 			board.biomPlayerStandsOn,
 			char,
@@ -89,6 +80,8 @@ const RightContent = () => {
 			temp: char.temperature + biomEffectData.temperature,
 			torchUpdate: torchUpdate,
 			frozenCrownUpdate: frozenCrownUpdate,
+			statsNote: statsNote,
+			setStatsNote: setStatsNote,
 			event: "endTurn",
 		});
 		if (board.resourcePlayerStandsOn !== null) {
@@ -99,18 +92,7 @@ const RightContent = () => {
 		}
 		difficulty(rounds, setRounds);
 	};
-	useEffect(() => {
-		const turnOffStatsAnimation = setTimeout(() => {
-			setStatsNote({
-				...statsNote,
-				energy: false,
-			});
-		}, 850);
-		return () => {
-			console.log("wyłączono timeout");
-			clearTimeout(turnOffStatsAnimation);
-		};
-	}, [statsNote.energy]);
+
 	return (
 		<div className="right-container">
 			<h2 className="tura">Tura</h2>

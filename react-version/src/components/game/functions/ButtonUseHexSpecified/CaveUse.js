@@ -9,7 +9,9 @@ export const caveUse = (
 	buttons,
 	setButtons,
 	charAnim,
-	setCharAnim
+	setCharAnim,
+	statsNote,
+	setStatsNote
 ) => {
 	if (!board.caveUsed) {
 		changeCharStats({
@@ -17,6 +19,8 @@ export const caveUse = (
 			setChar: setChar,
 			energy: 10,
 			sanity: char.sanity + 1,
+			statsNote: statsNote,
+			setStatsNote: setStatsNote,
 			event: "cave",
 		});
 		setBoard({

@@ -9,7 +9,9 @@ export const firePlaceUse = (
 	buttons,
 	setButtons,
 	charAnim,
-	setCharAnim
+	setCharAnim,
+	statsNote,
+	setStatsNote
 ) => {
 	const { energy, sanity, temperature, starvation, life } = char;
 	const { flint } = char.inventoryResources;
@@ -27,6 +29,8 @@ export const firePlaceUse = (
 				flint: flint - 1,
 				sejmitar: 0,
 				fireCard: fireCard,
+				statsNote: statsNote,
+				setStatsNote: setStatsNote,
 				event: "firePlace",
 			});
 			setAnim({
@@ -53,6 +57,8 @@ export const firePlaceUse = (
 					flint: flint - 1,
 					sejmitar: 1,
 					fireCard: fireCard,
+					statsNote: statsNote,
+					setStatsNote: setStatsNote,
 					event: "firePlace",
 				});
 				setButtons({
@@ -75,6 +81,8 @@ export const firePlaceUse = (
 				flint: flint - 1,
 				sejmitar: sejmitar,
 				fireCard: fireCard,
+				statsNote: statsNote,
+				setStatsNote: setStatsNote,
 				event: "firePlace",
 			});
 			setButtons({
@@ -97,6 +105,8 @@ export const firePlaceUse = (
 					flint: flint - 1,
 					sejmitar: sejmitar,
 					fireCard: fireCard + 1,
+					statsNote: statsNote,
+					setStatsNote: setStatsNote,
 					event: "firePlace",
 				});
 				setButtons({

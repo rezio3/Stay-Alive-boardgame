@@ -9,7 +9,9 @@ export const oasisUse = (
 	buttons,
 	setButtons,
 	charAnim,
-	setCharAnim
+	setCharAnim,
+	statsNote,
+	setStatsNote
 ) => {
 	const { energy, starvation, sanity, temperature } = char;
 	if (board.oasisUsed === false) {
@@ -28,6 +30,8 @@ export const oasisUse = (
 			sanity: sanity + 1,
 			starvation: starvation + 1,
 			temp: temperature + temp,
+			statsNote: statsNote,
+			setStatsNote: setStatsNote,
 			event: "oasis",
 		});
 		setBoard({

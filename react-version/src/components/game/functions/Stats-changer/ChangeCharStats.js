@@ -11,6 +11,8 @@ export const changeCharStats = ({
 	fireCard,
 	torchUpdate,
 	frozenCrownUpdate,
+	grass,
+	food,
 	event,
 }) => {
 	switch (event) {
@@ -78,6 +80,39 @@ export const changeCharStats = ({
 					...char.inventoryItems,
 					torch: torchUpdate,
 					frozenCrown: frozenCrownUpdate,
+				},
+			});
+			break;
+		case "eatGrassButton":
+			setChar({
+				...char,
+				energy: energy,
+				starvation: starvation,
+				inventoryResources: {
+					...char.inventoryResources,
+					grass: grass,
+				},
+			});
+			break;
+		case "eatFoodButton":
+			setChar({
+				...char,
+				life: life,
+				starvation: starvation,
+				inventoryItems: {
+					...char.inventoryItems,
+					food: food,
+				},
+			});
+			break;
+		case "eatSasuagesOrRedbull":
+			setChar({
+				...char,
+				energy: energy,
+				starvation: starvation,
+				inventoryItems: {
+					...char.inventoryItems,
+					fireCard: fireCard,
 				},
 			});
 			break;

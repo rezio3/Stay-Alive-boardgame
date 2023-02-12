@@ -2,11 +2,13 @@ import React, { useContext } from "react";
 import "../../../style/css/LeftButtons.css";
 import { CharacterContext } from "../../context/CharContext";
 import { eatButtons } from "../functions/EatButtons";
+import { StatsNotificationsContext } from "../../context/StatsNotificationsContext";
 
 const LeftButtons = () => {
 	const [char, setChar] = useContext(CharacterContext);
+	const [statsNote, setStatsNote] = useContext(StatsNotificationsContext);
 	const handleEatButton = (e) => {
-		eatButtons(e, char, setChar);
+		eatButtons(e, char, setChar, statsNote, setStatsNote);
 	};
 	return (
 		<div className="left-buttons-container">

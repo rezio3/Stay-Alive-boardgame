@@ -27,7 +27,7 @@ export const firePlaceUse = (
 				flint: flint - 1,
 				sejmitar: 0,
 				fireCard: fireCard,
-				hexUsed: "firePlace",
+				event: "firePlace",
 			});
 			setAnim({
 				...anim,
@@ -53,7 +53,7 @@ export const firePlaceUse = (
 					flint: flint - 1,
 					sejmitar: 1,
 					fireCard: fireCard,
-					hexUsed: "firePlace",
+					event: "firePlace",
 				});
 				setButtons({
 					...buttons,
@@ -75,7 +75,7 @@ export const firePlaceUse = (
 				flint: flint - 1,
 				sejmitar: sejmitar,
 				fireCard: fireCard,
-				hexUsed: "firePlace",
+				event: "firePlace",
 			});
 			setButtons({
 				...buttons,
@@ -97,7 +97,7 @@ export const firePlaceUse = (
 					flint: flint - 1,
 					sejmitar: sejmitar,
 					fireCard: fireCard + 1,
-					hexUsed: "firePlace",
+					event: "firePlace",
 				});
 				setButtons({
 					...buttons,

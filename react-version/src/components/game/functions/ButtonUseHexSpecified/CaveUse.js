@@ -17,7 +17,7 @@ export const caveUse = (
 			setChar: setChar,
 			energy: 10,
 			sanity: char.sanity + 1,
-			hexUsed: "cave",
+			event: "cave",
 		});
 		setBoard({
 			...board,

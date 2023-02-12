@@ -28,7 +28,7 @@ export const oasisUse = (
 			sanity: sanity + 1,
 			starvation: starvation + 1,
 			temp: temperature + temp,
-			hexUsed: "oasis",
+			event: "oasis",
 		});
 		setBoard({
 			...board,

@@ -25,11 +25,6 @@ export const fightProcess = (fight, setFight, char, setChar) => {
 			life: char.life - 6,
 			event: "fight",
 		});
-		// setChar({
-		// 	...char,
-		// 	energy: char.energy - 1,
-		// 	life: char.life - 6,
-		// });
 		setTimeout(() => {
 			setFight({
 				...fight,
@@ -52,11 +47,6 @@ export const fightProcess = (fight, setFight, char, setChar) => {
 				life: char.life,
 				event: "fight",
 			});
-			// setChar({
-			// 	...char,
-			// 	energy: char.energy - 1,
-			// 	life: char.life,
-			// });
 			setTimeout(() => {
 				setFight({
 					...fight,
@@ -78,11 +68,6 @@ export const fightProcess = (fight, setFight, char, setChar) => {
 				life: char.life - 2,
 				event: "fight",
 			});
-			// setChar({
-			// 	...char,
-			// 	energy: char.energy - 1,
-			// 	life: char.life - 2,
-			// });
 			setTimeout(() => {
 				setFight({
 					...fight,

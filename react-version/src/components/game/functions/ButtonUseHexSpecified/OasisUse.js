@@ -30,14 +30,6 @@ export const oasisUse = (
 			temp: temperature + temp,
 			hexUsed: "oasis",
 		});
-		// setChar({
-		// 	...char,
-		// 	energy: energy + 3,
-		// 	sanity: sanity + 1,
-		// 	starvation: starvation + 1,
-		// 	temperature: temperature + temp,
-		// 	cantMove: true,
-		// });
 		setBoard({
 			...board,
 			oasisUsed: true,

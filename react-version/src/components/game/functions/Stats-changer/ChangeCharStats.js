@@ -13,6 +13,8 @@ export const changeCharStats = ({
 	frozenCrownUpdate,
 	grass,
 	food,
+	statsNote,
+	setStatsNote,
 	event,
 }) => {
 	switch (event) {
@@ -117,4 +119,14 @@ export const changeCharStats = ({
 			});
 			break;
 	}
+	setStatsNote({
+		...statsNote,
+		energy: false,
+	});
+	setTimeout(() => {
+		setStatsNote({
+			...statsNote,
+			energy: true,
+		});
+	}, 50);
 };

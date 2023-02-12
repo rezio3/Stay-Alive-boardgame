@@ -9,6 +9,8 @@ export const changeCharStats = ({
 	flint,
 	sejmitar,
 	fireCard,
+	torchUpdate,
+	frozenCrownUpdate,
 	event,
 }) => {
 	switch (event) {
@@ -62,6 +64,21 @@ export const changeCharStats = ({
 			setChar({
 				...char,
 				energy: energy,
+			});
+			break;
+		case "endTurn":
+			setChar({
+				...char,
+				cantMove: false,
+				energy: energy,
+				starvation: starvation,
+				sanity: sanity,
+				temperature: temp,
+				inventoryItems: {
+					...char.inventoryItems,
+					torch: torchUpdate,
+					frozenCrown: frozenCrownUpdate,
+				},
 			});
 			break;
 	}

@@ -16,6 +16,7 @@ import { CantMovieAnimationContext } from "../../context/CantMoveAnimation";
 import Events from "./game-events/Events";
 import { difficulty } from "../functions/Difficulty";
 import { StatsNotificationsContext } from "../../context/StatsNotificationsContext";
+import { changeCharStats } from "../functions/Stats-changer/ChangeCharStats";
 
 const RightContent = () => {
 	const [buttons, setButtons] = useContext(ButtonsContext);
@@ -79,20 +80,31 @@ const RightContent = () => {
 		let addEnergy;
 		char.inventoryItems.shoes === 1 ? (addEnergy = 3) : (addEnergy = 2);
 
-		setChar({
-			...char,
-			cantMove: false,
+		changeCharStats({
+			char: char,
+			setChar: setChar,
 			energy: char.energy + addEnergy,
 			starvation: starvationReduce,
 			sanity: sanityReduce,
-			temperature: char.temperature + biomEffectData.temperature,
-
-			inventoryItems: {
-				...char.inventoryItems,
-				torch: torchUpdate,
-				frozenCrown: frozenCrownUpdate,
-			},
+			temp: char.temperature + biomEffectData.temperature,
+			torchUpdate: torchUpdate,
+			frozenCrownUpdate: frozenCrownUpdate,
+			event: "endTurn",
 		});
+		// setChar({
+		// 	...char,
+		// 	cantMove: false,
+		// 	energy: char.energy + addEnergy,
+		// 	starvation: starvationReduce,
+		// 	sanity: sanityReduce,
+		// 	temperature: char.temperature + biomEffectData.temperature,
+
+		// 	inventoryItems: {
+		// 		...char.inventoryItems,
+		// 		torch: torchUpdate,
+		// 		frozenCrown: frozenCrownUpdate,
+		// 	},
+		// });
 		if (board.resourcePlayerStandsOn !== null) {
 			setButtons({
 				...buttons,
@@ -113,17 +125,6 @@ const RightContent = () => {
 			clearTimeout(turnOffStatsAnimation);
 		};
 	}, [statsNote.energy]);
-	// if (board.charSetOnBoard === false) {
-	// 	setButtons({
-	// 		...buttons,
-	// 		endTurnButton: false,
-	// 	});
-	// } else {
-	// 	setButtons({
-	// 		...buttons,
-	// 		endTurnButton: true,
-	// 	});
-	// }
 	return (
 		<div className="right-container">
 			<h2 className="tura">Tura</h2>

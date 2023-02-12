@@ -3,17 +3,21 @@ import { BoardContext } from "../context/BoardContext";
 import { CharacterContext } from "../context/CharContext";
 import { CantMovieAnimationContext } from "../context/CantMoveAnimation";
 import { changeCharStats } from "./functions/Stats-changer/ChangeCharStats";
+import { StatsNotificationsContext } from "../context/StatsNotificationsContext";
 
 const Character = () => {
 	const [char, setChar] = useContext(CharacterContext);
 	const [board, setBoard] = useContext(BoardContext);
 	const [charAnim, setCharAnim] = useContext(CantMovieAnimationContext);
+	const [statsNote, setStatsNote] = useContext(StatsNotificationsContext);
 
 	const characterMove = () => {
 		changeCharStats({
 			char: char,
 			setChar: setChar,
 			energy: char.energy - 1,
+			statsNote: statsNote,
+			setStatsNote: setStatsNote,
 			event: "move",
 		});
 	};

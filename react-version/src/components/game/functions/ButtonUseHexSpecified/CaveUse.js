@@ -1,4 +1,5 @@
 import { cantMoveAnimation } from "../CantMoveAnimation";
+import { changeCharStats } from "../Stats-changer/ChangeCharStats";
 
 export const caveUse = (
 	board,
@@ -11,10 +12,12 @@ export const caveUse = (
 	setCharAnim
 ) => {
 	if (!board.caveUsed) {
-		setChar({
-			...char,
+		changeCharStats({
+			char: char,
+			setChar: setChar,
 			energy: 10,
 			sanity: char.sanity + 1,
+			hexUsed: "cave",
 		});
 		setBoard({
 			...board,

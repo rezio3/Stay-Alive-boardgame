@@ -15,6 +15,7 @@ export const changeCharStats = ({
 	food,
 	statsNote,
 	setStatsNote,
+	resourcePlayerStandsOn,
 	event,
 }) => {
 	switch (event) {
@@ -115,6 +116,19 @@ export const changeCharStats = ({
 				inventoryItems: {
 					...char.inventoryItems,
 					fireCard: fireCard,
+				},
+			});
+			break;
+		case "pickUpResource":
+			console.log("????????????????????????????");
+			setChar({
+				...char,
+				energy: energy,
+				cantMove: true,
+				inventoryResources: {
+					...char.inventoryResources,
+					[resourcePlayerStandsOn]:
+						char.inventoryResources[resourcePlayerStandsOn] + 1,
 				},
 			});
 			break;

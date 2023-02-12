@@ -86,7 +86,9 @@ export const buttonUseHex = (
 			setButtons,
 			board,
 			charAnim,
-			setCharAnim
+			setCharAnim,
+			statsNote,
+			setStatsNote
 		);
 	}
 };

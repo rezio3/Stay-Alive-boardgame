@@ -91,20 +91,6 @@ const RightContent = () => {
 			frozenCrownUpdate: frozenCrownUpdate,
 			event: "endTurn",
 		});
-		// setChar({
-		// 	...char,
-		// 	cantMove: false,
-		// 	energy: char.energy + addEnergy,
-		// 	starvation: starvationReduce,
-		// 	sanity: sanityReduce,
-		// 	temperature: char.temperature + biomEffectData.temperature,
-
-		// 	inventoryItems: {
-		// 		...char.inventoryItems,
-		// 		torch: torchUpdate,
-		// 		frozenCrown: frozenCrownUpdate,
-		// 	},
-		// });
 		if (board.resourcePlayerStandsOn !== null) {
 			setButtons({
 				...buttons,

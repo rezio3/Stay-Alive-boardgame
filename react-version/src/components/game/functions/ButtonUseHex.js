@@ -16,7 +16,9 @@ export const buttonUseHex = (
 	fight,
 	setFight,
 	charAnim,
-	setCharAnim
+	setCharAnim,
+	statsNote,
+	setStatsNote
 ) => {
 	if (board.resourcePlayerStandsOn === "fire") {
 		firePlaceUse(
@@ -27,7 +29,9 @@ export const buttonUseHex = (
 			buttons,
 			setButtons,
 			charAnim,
-			setCharAnim
+			setCharAnim,
+			statsNote,
+			setStatsNote
 		);
 	} else if (board.resourcePlayerStandsOn === "oasis") {
 		oasisUse(
@@ -38,7 +42,9 @@ export const buttonUseHex = (
 			buttons,
 			setButtons,
 			charAnim,
-			setCharAnim
+			setCharAnim,
+			statsNote,
+			setStatsNote
 		);
 	} else if (board.resourcePlayerStandsOn === "frozenCrown") {
 		frozenCrownUse(
@@ -62,7 +68,9 @@ export const buttonUseHex = (
 			buttons,
 			setButtons,
 			charAnim,
-			setCharAnim
+			setCharAnim,
+			statsNote,
+			setStatsNote
 		);
 	} else if (
 		board.resourcePlayerStandsOn === "wood" ||

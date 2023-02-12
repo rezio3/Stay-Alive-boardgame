@@ -12,7 +12,7 @@ export const biomesEffects = (biom, char, resource) => {
 		case "outland":
 			return { starvation: 0, sanity: 0, temperature: temp };
 		case "jungle":
-			return { starvation: 0, sanity: 0, temperature: temp };
+			return { starvation: 0, sanity: 0, temperature: 0 };
 		case "desert":
 			if (resource === "oasis") {
 				return { starvation: 0, sanity: 0, temperature: 0 };

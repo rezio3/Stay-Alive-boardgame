@@ -8,6 +8,7 @@ export const changeCharStats = ({
 	temp,
 	flint,
 	sejmitar,
+	fireCard,
 	hexUsed,
 }) => {
 	switch (hexUsed) {
@@ -17,48 +18,26 @@ export const changeCharStats = ({
 				...char,
 				energy: energy,
 				sanity: sanity,
+				cantMove: true,
 			});
 			break;
+		case "firePlace":
+			console.log("fireplace used");
+			setChar({
+				...char,
+				energy: energy,
+				sanity: sanity,
+				temperature: temp,
+				cantMove: true,
+				inventoryResources: {
+					...char.inventoryResources,
+					flint: flint,
+				},
+				inventoryItems: {
+					...char.inventoryItems,
+					sejmitar: sejmitar,
+					fireCard: fireCard,
+				},
+			});
 	}
-	// if (flint === undefined && sejmitar === undefined) {
-	// 	setChar({
-	// 		...char,
-	// 		life: life,
-	// 		energy: energy,
-	// 		starvation: starvation,
-	// 		sanity: sanity,
-	// 		temperature: temp,
-	// 	});
-	// } else if (flint !== undefined && sejmitar !== undefined) {
-	// 	setChar({
-	// 		...char,
-	// 		life: life,
-	// 		energy: energy,
-	// 		starvation: starvation,
-	// 		sanity: sanity,
-	// 		temperature: temp,
-	// 		inventoryResources: {
-	// 			...char.inventoryResources,
-	// 			flint: char.flint,
-	// 		},
-	// 	});
-	// 	setTimeout(() => {
-	// 		setChar({
-	// 			...char,
-	// 			life: life,
-	// 			energy: energy,
-	// 			starvation: starvation,
-	// 			sanity: sanity,
-	// 			temperature: temp,
-	// 			inventoryResources: {
-	// 				...char.inventoryResources,
-	// 				flint: flint,
-	// 			},
-	// 			inventoryItems: {
-	// 				...char.inventoryItems,
-	// 				sejmitar: sejmitar,
-	// 			},
-	// 		});
-	// 	}, 1900);
-	// }
 };

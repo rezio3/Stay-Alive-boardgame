@@ -18,16 +18,17 @@ export const firePlaceUse = (
 		let fireRoll = Math.floor(Math.random() * 5);
 		let addTemperature = temperature < 5 ? 1 : 0;
 		if (sejmitar === 0 && fireRoll === 0) {
-			changeCharStats(
-				char,
-				setChar,
-				life,
-				energy + 3,
-				starvation,
-				sanity + 1,
-				temperature + addTemperature,
-				char.inventoryResources.flint - 1
-			);
+			changeCharStats({
+				char: char,
+				setChar: setChar,
+				energy: energy + 3,
+				sanity: sanity + 1,
+				temp: temperature + addTemperature,
+				flint: flint - 1,
+				sejmitar: 0,
+				fireCard: fireCard,
+				hexUsed: "firePlace",
+			});
 			setAnim({
 				...anim,
 				sejmitar: true,
@@ -43,20 +44,16 @@ export const firePlaceUse = (
 					...anim,
 					sejmitar: false,
 				});
-				setChar({
-					...char,
+				changeCharStats({
+					char: char,
+					setChar: setChar,
 					energy: energy + 3,
 					sanity: sanity + 1,
-					temperature: temperature + addTemperature,
-					cantMove: true,
-					inventoryResources: {
-						...char.inventoryResources,
-						flint: flint - 1,
-					},
-					inventoryItems: {
-						...char.inventoryItems,
-						sejmitar: 1,
-					},
+					temp: temperature + addTemperature,
+					flint: flint - 1,
+					sejmitar: 1,
+					fireCard: fireCard,
+					hexUsed: "firePlace",
 				});
 				setButtons({
 					...buttons,
@@ -69,17 +66,16 @@ export const firePlaceUse = (
 				...anim,
 				firePlaceCard: true,
 			});
-
-			setChar({
-				...char,
+			changeCharStats({
+				char: char,
+				setChar: setChar,
 				energy: energy + 3,
 				sanity: sanity + 1,
-				temperature: temperature + addTemperature,
-				cantMove: true,
-				inventoryResources: {
-					...char.inventoryResources,
-					flint: flint - 1,
-				},
+				temp: temperature + addTemperature,
+				flint: flint - 1,
+				sejmitar: sejmitar,
+				fireCard: fireCard,
+				hexUsed: "firePlace",
 			});
 			setButtons({
 				...buttons,
@@ -92,20 +88,16 @@ export const firePlaceUse = (
 					...anim,
 					firePlaceCard: false,
 				});
-				setChar({
-					...char,
+				changeCharStats({
+					char: char,
+					setChar: setChar,
 					energy: energy + 3,
 					sanity: sanity + 1,
-					temperature: temperature + addTemperature,
-					cantMove: true,
-					inventoryResources: {
-						...char.inventoryResources,
-						flint: flint - 1,
-					},
-					inventoryItems: {
-						...char.inventoryItems,
-						fireCard: fireCard + 1,
-					},
+					temp: temperature + addTemperature,
+					flint: flint - 1,
+					sejmitar: sejmitar,
+					fireCard: fireCard + 1,
+					hexUsed: "firePlace",
 				});
 				setButtons({
 					...buttons,

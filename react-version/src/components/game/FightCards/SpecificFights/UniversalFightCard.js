@@ -125,7 +125,7 @@ const UniversalFightCard = () => {
 							char.energy === 0 &&
 							fight.cubeRandomNumber <= swordModifierDefeat
 						) {
-							return "życie -6";
+							return "życie -6 / energia -1";
 						} else {
 							if (fight.cubeRandomNumber === "") {
 								return null;

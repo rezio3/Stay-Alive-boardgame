@@ -1,3 +1,5 @@
+import { changeCharStats } from "./Stats-changer/ChangeCharStats";
+
 export const fightProcess = (fight, setFight, char, setChar) => {
 	const number = Math.ceil(Math.random() * 6);
 	let swordModifierDefeat;
@@ -16,11 +18,18 @@ export const fightProcess = (fight, setFight, char, setChar) => {
 			fightEnd: true,
 			cubeRandomNumber: "",
 		});
-		setChar({
-			...char,
+		changeCharStats({
+			char: char,
+			setChar: setChar,
 			energy: char.energy - 1,
 			life: char.life - 6,
+			event: "fight",
 		});
+		// setChar({
+		// 	...char,
+		// 	energy: char.energy - 1,
+		// 	life: char.life - 6,
+		// });
 		setTimeout(() => {
 			setFight({
 				...fight,
@@ -36,10 +45,18 @@ export const fightProcess = (fight, setFight, char, setChar) => {
 				fightEnd: true,
 				cubeRandomNumber: "",
 			});
-			setChar({
-				...char,
+			changeCharStats({
+				char: char,
+				setChar: setChar,
 				energy: char.energy - 1,
+				life: char.life,
+				event: "fight",
 			});
+			// setChar({
+			// 	...char,
+			// 	energy: char.energy - 1,
+			// 	life: char.life,
+			// });
 			setTimeout(() => {
 				setFight({
 					...fight,
@@ -54,11 +71,18 @@ export const fightProcess = (fight, setFight, char, setChar) => {
 				fightEnd: false,
 				cubeRandomNumber: "",
 			});
-			setChar({
-				...char,
+			changeCharStats({
+				char: char,
+				setChar: setChar,
 				energy: char.energy - 1,
 				life: char.life - 2,
+				event: "fight",
 			});
+			// setChar({
+			// 	...char,
+			// 	energy: char.energy - 1,
+			// 	life: char.life - 2,
+			// });
 			setTimeout(() => {
 				setFight({
 					...fight,

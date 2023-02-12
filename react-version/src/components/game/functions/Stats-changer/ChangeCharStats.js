@@ -9,9 +9,9 @@ export const changeCharStats = ({
 	flint,
 	sejmitar,
 	fireCard,
-	hexUsed,
+	event,
 }) => {
-	switch (hexUsed) {
+	switch (event) {
 		case "cave":
 			console.log("cave used");
 			setChar({
@@ -49,6 +49,13 @@ export const changeCharStats = ({
 				starvation: starvation,
 				temperature: temp,
 				cantMove: true,
+			});
+			break;
+		case "fight":
+			setChar({
+				...char,
+				energy: energy,
+				life: life,
 			});
 	}
 };

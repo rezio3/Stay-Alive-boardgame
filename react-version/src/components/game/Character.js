@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { BoardContext } from "../context/BoardContext";
 import { CharacterContext } from "../context/CharContext";
 import { CantMovieAnimationContext } from "../context/CantMoveAnimation";
+import { changeCharStats } from "./functions/Stats-changer/ChangeCharStats";
 
 const Character = () => {
 	const [char, setChar] = useContext(CharacterContext);
@@ -9,10 +10,11 @@ const Character = () => {
 	const [charAnim, setCharAnim] = useContext(CantMovieAnimationContext);
 
 	const characterMove = () => {
-		setChar({
-			...char,
+		changeCharStats({
+			char: char,
+			setChar: setChar,
 			energy: char.energy - 1,
-			prevEnergy: char.energy,
+			event: "move",
 		});
 	};
 	useEffect(() => {

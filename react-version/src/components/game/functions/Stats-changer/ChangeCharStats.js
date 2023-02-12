@@ -57,5 +57,12 @@ export const changeCharStats = ({
 				energy: energy,
 				life: life,
 			});
+			break;
+		case "move":
+			setChar({
+				...char,
+				energy: energy,
+			});
+			break;
 	}
 };

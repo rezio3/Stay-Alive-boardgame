@@ -24,7 +24,9 @@ export const changeCharStats = ({
 			setChar({
 				...char,
 				energy: energy,
+				prevEnergy: char.energy,
 				sanity: sanity,
+				prevSanity: char.sanity,
 				cantMove: true,
 			});
 			break;
@@ -33,8 +35,11 @@ export const changeCharStats = ({
 			setChar({
 				...char,
 				energy: energy,
+				prevEnergy: char.energy,
 				sanity: sanity,
+				prevSanity: char.sanity,
 				temperature: temp,
+				prevTemperature: char.temperature,
 				cantMove: true,
 				inventoryResources: {
 					...char.inventoryResources,
@@ -52,9 +57,13 @@ export const changeCharStats = ({
 			setChar({
 				...char,
 				energy: energy,
+				prevEnergy: char.energy,
 				sanity: sanity,
+				prevSanity: char.sanity,
 				starvation: starvation,
+				prevStarvation: char.starvation,
 				temperature: temp,
+				prevTemperature: char.temperature,
 				cantMove: true,
 			});
 			break;
@@ -62,23 +71,31 @@ export const changeCharStats = ({
 			setChar({
 				...char,
 				energy: energy,
+				prevEnergy: char.energy,
 				life: life,
+				prevLife: char.life,
 			});
 			break;
 		case "move":
 			setChar({
 				...char,
 				energy: energy,
+				prevEnergy: char.energy,
 			});
 			break;
 		case "endTurn":
+			console.log("update stats after turn's end");
 			setChar({
 				...char,
 				cantMove: false,
 				energy: energy,
+				prevEnergy: char.energy,
 				starvation: starvation,
+				prevStarvation: char.starvation,
 				sanity: sanity,
+				prevSanity: char.sanity,
 				temperature: temp,
+				prevTemperature: char.temperature,
 				inventoryItems: {
 					...char.inventoryItems,
 					torch: torchUpdate,
@@ -87,10 +104,13 @@ export const changeCharStats = ({
 			});
 			break;
 		case "eatGrassButton":
+			console.log("eat grass");
 			setChar({
 				...char,
 				energy: energy,
+				prevEnergy: char.energy,
 				starvation: starvation,
+				prevStarvation: char.starvation,
 				inventoryResources: {
 					...char.inventoryResources,
 					grass: grass,
@@ -98,10 +118,13 @@ export const changeCharStats = ({
 			});
 			break;
 		case "eatFoodButton":
+			console.log("eat food");
 			setChar({
 				...char,
 				life: life,
+				prevLife: char.life,
 				starvation: starvation,
+				prevStarvation: char.starvation,
 				inventoryItems: {
 					...char.inventoryItems,
 					food: food,
@@ -109,10 +132,13 @@ export const changeCharStats = ({
 			});
 			break;
 		case "eatSasuagesOrRedbull":
+			console.log("use fire card");
 			setChar({
 				...char,
 				energy: energy,
+				prevEnergy: char.energy,
 				starvation: starvation,
+				prevStarvation: char.starvation,
 				inventoryItems: {
 					...char.inventoryItems,
 					fireCard: fireCard,
@@ -120,10 +146,11 @@ export const changeCharStats = ({
 			});
 			break;
 		case "pickUpResource":
-			console.log("????????????????????????????");
+			console.log("pick up resource");
 			setChar({
 				...char,
 				energy: energy,
+				prevEnergy: char.energy,
 				cantMove: true,
 				inventoryResources: {
 					...char.inventoryResources,

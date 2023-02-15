@@ -7,11 +7,11 @@ const player = {
 	sanity: 0,
 	temperature: 0,
 
-	prevLife: 0,
+	prevLife: 20,
 	prevEnergy: 0,
-	prevStarvation: 0,
-	prevSanity: 0,
-	prevTemperature: 0,
+	prevStarvation: 10,
+	prevSanity: 10,
+	prevTemperature: 5,
 
 	selectedChar: null,
 

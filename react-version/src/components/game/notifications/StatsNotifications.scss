@@ -1,10 +1,11 @@
 .stats-notifications-container {
 	position: absolute;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	top: 200px;
-	background-color: #fff;
+	// background-color: #fff;
 	opacity: 1;
 	animation: statsNotificationAnimation 0.8s ease-out forwards;
 
@@ -12,9 +13,29 @@
 		font-size: 30px;
 		font-weight: bold;
 		font-family: Verdana, Geneva, Tahoma, sans-serif;
-		color: rgb(37, 37, 255);
+
 		text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff,
 			-1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+	}
+
+	.life {
+		color: rgb(207, 0, 0);
+	}
+
+	.energy {
+		color: rgb(37, 37, 255);
+	}
+
+	.starvation {
+		color: rgb(211, 247, 10);
+	}
+
+	.sanity {
+		color: #00ff00;
+	}
+
+	.temp {
+		color: rgb(255, 174, 25);
 	}
 }
 

@@ -51,7 +51,13 @@ const Game = () => {
 
 	return (
 		<div className="game">
-			{statsNote.energy ? <StatsNotifications /> : null}
+			{statsNote.energy ||
+			statsNote.life ||
+			statsNote.starvation ||
+			statsNote.sanity ||
+			statsNote.temperature ? (
+				<StatsNotifications />
+			) : null}
 			<LeftContent />
 			{board.charSetOnBoard ? null : (
 				<div className="click-start-hex">

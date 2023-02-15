@@ -1,6 +1,10 @@
 import React, { createContext, useState } from "react";
 const notifications = {
+	life: false,
 	energy: false,
+	starvation: false,
+	sanity: false,
+	temperature: false,
 	energyText: "",
 };
 export const StatsNotificationsContext = createContext();

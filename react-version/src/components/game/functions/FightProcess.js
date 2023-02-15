@@ -16,7 +16,8 @@ export const fightProcess = (fight, setFight, char, setChar) => {
 		setFight({
 			...fight,
 			fightEnd: true,
-			cubeRandomNumber: "",
+			addFrozenCrownAfterFight: false,
+			cubeRandomNumber: number,
 		});
 		changeCharStats({
 			char: char,
@@ -25,20 +26,13 @@ export const fightProcess = (fight, setFight, char, setChar) => {
 			life: char.life - 6,
 			event: "fight",
 		});
-		setTimeout(() => {
-			setFight({
-				...fight,
-				fightEnd: true,
-				addFrozenCrownAfterFight: false,
-				cubeRandomNumber: number,
-			});
-		}, 100);
 	} else {
 		if (number >= swordModifierWin) {
 			setFight({
 				...fight,
 				fightEnd: true,
-				cubeRandomNumber: "",
+				addFrozenCrownAfterFight: true,
+				cubeRandomNumber: number,
 			});
 			changeCharStats({
 				char: char,
@@ -47,19 +41,11 @@ export const fightProcess = (fight, setFight, char, setChar) => {
 				life: char.life,
 				event: "fight",
 			});
-			setTimeout(() => {
-				setFight({
-					...fight,
-					fightEnd: true,
-					addFrozenCrownAfterFight: true,
-					cubeRandomNumber: number,
-				});
-			}, 100);
 		} else {
 			setFight({
 				...fight,
 				fightEnd: false,
-				cubeRandomNumber: "",
+				cubeRandomNumber: number,
 			});
 			changeCharStats({
 				char: char,
@@ -68,13 +54,6 @@ export const fightProcess = (fight, setFight, char, setChar) => {
 				life: char.life - 2,
 				event: "fight",
 			});
-			setTimeout(() => {
-				setFight({
-					...fight,
-					fightEnd: false,
-					cubeRandomNumber: number,
-				});
-			}, 100);
 		}
 	}
 };

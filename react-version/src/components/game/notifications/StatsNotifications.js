@@ -48,9 +48,6 @@ const StatsNotifications = () => {
 	} = char;
 
 	if (life !== prevLife) {
-		// lifeNote = Math.abs(life - prevLife);
-		// life > prevLife ? (lifeSign = "+") : (lifeSign = "-");
-		// lifeNote = checkStatsIfChanged(life, prevLife);
 		lifeNote = checkStatsIfChanged(life, prevLife);
 	} else if (life === prevLife) {
 		lifeNote = false;
@@ -58,30 +55,22 @@ const StatsNotifications = () => {
 	console.log(lifeNote);
 
 	if (energy !== prevEnergy) {
-		energyNote = Math.abs(energy - prevEnergy);
-		energy > prevEnergy ? (energySign = "+") : (energySign = "-");
+		energyNote = checkStatsIfChanged(energy, prevEnergy);
 	} else if (energy === prevEnergy) {
 		energyNote = false;
 	}
 	if (starvation !== prevStarvation) {
-		starvationNote = Math.abs(starvation - prevStarvation);
-		starvation > prevStarvation
-			? (starvationSign = "+")
-			: (starvationSign = "-");
+		starvationNote = checkStatsIfChanged(starvation, prevStarvation);
 	} else if (starvation === prevStarvation) {
 		starvationNote = false;
 	}
 	if (sanity !== prevSanity) {
-		sanityNote = Math.abs(sanity - prevSanity);
-		sanity > prevSanity ? (sanitySign = "+") : (sanitySign = "-");
+		sanityNote = checkStatsIfChanged(sanity, prevSanity);
 	} else if (sanity === prevSanity) {
 		sanityNote = false;
 	}
 	if (temperature !== prevTemperature) {
-		temperatureNote = Math.abs(temperature - prevTemperature);
-		temperature > prevTemperature
-			? (temperatureSign = "+")
-			: (temperatureSign = "-");
+		temperatureNote = checkStatsIfChanged(temperature, prevTemperature);
 	} else if (temperature === prevTemperature) {
 		temperatureNote = false;
 	}
@@ -101,33 +90,33 @@ const StatsNotifications = () => {
 		<div className="stats-notifications-container">
 			{statsNote.life && lifeOn ? (
 				<span className="stats-notifications-span life">
-					Życie {lifeNote.lifeSign}
-					{lifeNote.lifeValue}
+					Życie {lifeNote.statSign}
+					{lifeNote.statValue}
 				</span>
 			) : null}
 			{statsNote.energy && energyOn ? (
 				<span className="stats-notifications-span energy">
-					Energia {energySign}
-					{energyNote}
+					Energia {energyNote.statSign}
+					{energyNote.statValue}
 				</span>
 			) : null}
 
 			{statsNote.starvation && starvationOn ? (
 				<span className="stats-notifications-span starvation">
-					Głód {starvationSign}
-					{starvationNote}
+					Głód {starvationNote.statSign}
+					{starvationNote.statValue}
 				</span>
 			) : null}
 			{statsNote.sanity && sanityOn ? (
 				<span className="stats-notifications-span sanity">
-					Psychika {sanitySign}
-					{sanityNote}
+					Psychika {sanityNote.statSign}
+					{sanityNote.statValue}
 				</span>
 			) : null}
 			{statsNote.temperature && temperatureOn ? (
 				<span className="stats-notifications-span temp">
-					Temperatura {temperatureSign}
-					{temperatureNote}
+					Temperatura {temperatureNote.statSign}
+					{temperatureNote.statValue}
 				</span>
 			) : null}
 		</div>

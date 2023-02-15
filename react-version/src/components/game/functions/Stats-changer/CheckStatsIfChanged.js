@@ -1,6 +1,6 @@
 export const checkStatsIfChanged = (stat, prevStat) => {
 	return {
-		lifeValue: Math.abs(stat - prevStat),
-		lifeSign: stat > prevStat ? "+" : "-",
+		statValue: Math.abs(stat - prevStat),
+		statSign: stat > prevStat ? "+" : "-",
 	};
 };

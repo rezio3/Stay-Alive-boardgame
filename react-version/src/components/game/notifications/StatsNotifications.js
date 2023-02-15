@@ -28,11 +28,6 @@ const StatsNotifications = () => {
 	let starvationNote;
 	let sanityNote;
 	let temperatureNote;
-	let lifeSign;
-	let energySign;
-	let starvationSign;
-	let sanitySign;
-	let temperatureSign;
 
 	const {
 		life,

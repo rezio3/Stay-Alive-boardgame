@@ -15,6 +15,7 @@ const Sanity = () => {
 			...char,
 			sanity: 0,
 			life: char.life + overload,
+			prevLife: char.life,
 		});
 	}
 

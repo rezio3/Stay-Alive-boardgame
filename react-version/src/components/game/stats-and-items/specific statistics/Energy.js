@@ -3,6 +3,7 @@ import { CharacterContext } from "../../../context/CharContext";
 
 const Energy = () => {
 	const [char, setChar] = useContext(CharacterContext);
+
 	// check if statistics are over-peaked
 	if (char.energy > 10) {
 		setChar({

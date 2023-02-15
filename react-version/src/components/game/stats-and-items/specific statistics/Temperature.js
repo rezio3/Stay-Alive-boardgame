@@ -10,12 +10,14 @@ const Temperature = () => {
 			...char,
 			temperature: 10,
 			life: char.life - upperOverload,
+			prevLife: char.life,
 		});
 	} else if (char.temperature < 0) {
 		setChar({
 			...char,
 			temperature: 0,
 			life: char.life + overload,
+			prevLife: char.life,
 		});
 	}
 	return (

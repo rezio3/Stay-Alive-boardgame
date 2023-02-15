@@ -29,6 +29,19 @@ export const changeCharStats = ({
 				prevSanity: char.sanity,
 				cantMove: true,
 			});
+			setStatsNote({
+				...statsNote,
+				energy: false,
+				sanity: false,
+			});
+			setTimeout(() => {
+				setStatsNote({
+					...statsNote,
+					energy: true,
+					sanity: true,
+				});
+			}, 50);
+
 			break;
 		case "firePlace":
 			console.log("fireplace used");
@@ -51,6 +64,21 @@ export const changeCharStats = ({
 					fireCard: fireCard,
 				},
 			});
+			setStatsNote({
+				...statsNote,
+				energy: false,
+				sanity: false,
+				temperature: false,
+			});
+			setTimeout(() => {
+				setStatsNote({
+					...statsNote,
+					energy: true,
+					sanity: true,
+					temperature: true,
+				});
+			}, 50);
+
 			break;
 		case "oasis":
 			console.log("oasis used");
@@ -66,6 +94,23 @@ export const changeCharStats = ({
 				prevTemperature: char.temperature,
 				cantMove: true,
 			});
+			setStatsNote({
+				...statsNote,
+				energy: false,
+				starvation: false,
+				sanity: false,
+				temperature: false,
+			});
+			setTimeout(() => {
+				setStatsNote({
+					...statsNote,
+					energy: true,
+					starvation: true,
+					sanity: true,
+					temperature: true,
+				});
+			}, 50);
+
 			break;
 		case "fight":
 			setChar({
@@ -75,6 +120,19 @@ export const changeCharStats = ({
 				life: life,
 				prevLife: char.life,
 			});
+			setStatsNote({
+				...statsNote,
+				life: false,
+				energy: false,
+			});
+			setTimeout(() => {
+				setStatsNote({
+					...statsNote,
+					life: true,
+					energy: true,
+				});
+			}, 50);
+
 			break;
 		case "move":
 			setChar({
@@ -82,12 +140,24 @@ export const changeCharStats = ({
 				energy: energy,
 				prevEnergy: char.energy,
 			});
+			setStatsNote({
+				...statsNote,
+				energy: false,
+			});
+			setTimeout(() => {
+				setStatsNote({
+					...statsNote,
+					energy: true,
+				});
+			}, 50);
+
 			break;
 		case "endTurn":
 			console.log("update stats after turn's end");
 			setChar({
 				...char,
 				cantMove: false,
+				prevLife: char.life,
 				energy: energy,
 				prevEnergy: char.energy,
 				starvation: starvation,
@@ -102,6 +172,26 @@ export const changeCharStats = ({
 					frozenCrown: frozenCrownUpdate,
 				},
 			});
+
+			setStatsNote({
+				...statsNote,
+				life: false,
+				energy: false,
+				starvation: false,
+				sanity: false,
+				temperature: false,
+			});
+			setTimeout(() => {
+				setStatsNote({
+					...statsNote,
+					life: true,
+					energy: true,
+					starvation: true,
+					sanity: true,
+					temperature: true,
+				});
+			}, 50);
+
 			break;
 		case "eatGrassButton":
 			console.log("eat grass");
@@ -116,6 +206,19 @@ export const changeCharStats = ({
 					grass: grass,
 				},
 			});
+			setStatsNote({
+				...statsNote,
+				energy: false,
+				starvation: false,
+			});
+			setTimeout(() => {
+				setStatsNote({
+					...statsNote,
+					energy: true,
+					starvation: true,
+				});
+			}, 50);
+
 			break;
 		case "eatFoodButton":
 			console.log("eat food");
@@ -130,6 +233,19 @@ export const changeCharStats = ({
 					food: food,
 				},
 			});
+			setStatsNote({
+				...statsNote,
+				life: false,
+				starvation: false,
+			});
+			setTimeout(() => {
+				setStatsNote({
+					...statsNote,
+					life: true,
+					starvation: true,
+				});
+			}, 50);
+
 			break;
 		case "eatSasuagesOrRedbull":
 			console.log("use fire card");
@@ -144,6 +260,19 @@ export const changeCharStats = ({
 					fireCard: fireCard,
 				},
 			});
+			setStatsNote({
+				...statsNote,
+				energy: false,
+				starvation: false,
+			});
+			setTimeout(() => {
+				setStatsNote({
+					...statsNote,
+					energy: true,
+					starvation: true,
+				});
+			}, 50);
+
 			break;
 		case "pickUpResource":
 			console.log("pick up resource");
@@ -158,16 +287,17 @@ export const changeCharStats = ({
 						char.inventoryResources[resourcePlayerStandsOn] + 1,
 				},
 			});
+			setStatsNote({
+				...statsNote,
+				energy: false,
+			});
+			setTimeout(() => {
+				setStatsNote({
+					...statsNote,
+					energy: true,
+				});
+			}, 50);
+
 			break;
 	}
-	setStatsNote({
-		...statsNote,
-		energy: false,
-	});
-	setTimeout(() => {
-		setStatsNote({
-			...statsNote,
-			energy: true,
-		});
-	}, 50);
 };

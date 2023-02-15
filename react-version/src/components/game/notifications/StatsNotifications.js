@@ -52,8 +52,6 @@ const StatsNotifications = () => {
 	} else if (life === prevLife) {
 		lifeNote = false;
 	}
-	console.log(lifeNote);
-
 	if (energy !== prevEnergy) {
 		energyNote = checkStatsIfChanged(energy, prevEnergy);
 	} else if (energy === prevEnergy) {

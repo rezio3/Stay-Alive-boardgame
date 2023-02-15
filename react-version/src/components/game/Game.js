@@ -33,6 +33,7 @@ const Game = () => {
 			sanity: 10,
 			temperature: 5,
 			prevLife: char.life,
+			prevEnergy: 11,
 			prevStarvation: char.starvation,
 			prevSanity: char.sanity,
 			prevTemperature: char.temperature,

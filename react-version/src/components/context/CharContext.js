@@ -8,7 +8,7 @@ const player = {
 	temperature: 0,
 
 	prevLife: 20,
-	prevEnergy: 0,
+	prevEnergy: 10,
 	prevStarvation: 10,
 	prevSanity: 10,
 	prevTemperature: 5,

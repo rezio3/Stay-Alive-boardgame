@@ -86,7 +86,7 @@ const StatsNotifications = () => {
 	let lifeOn = true;
 	if (life === prevLife) lifeOn = false;
 	let energyOn = true;
-	if (energy === prevEnergy) energyOn = false;
+	if (energy === prevEnergy || prevEnergy === 11) energyOn = false;
 	let starvationOn = true;
 	if (starvation === prevStarvation) starvationOn = false;
 	let sanityOn = true;

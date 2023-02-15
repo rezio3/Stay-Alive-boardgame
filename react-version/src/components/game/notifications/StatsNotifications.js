@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import "../../../style/css/StatsNotifications.css";
 import { StatsNotificationsContext } from "../../context/StatsNotificationsContext";
 import { CharacterContext } from "../../context/CharContext";
-
+import { checkStatsIfChanged } from "../functions/Stats-changer/CheckStatsIfChanged.js";
 const StatsNotifications = () => {
 	const [statsNote, setStatsNote] = useContext(StatsNotificationsContext);
 	const [char, setChar] = useContext(CharacterContext);
@@ -48,11 +48,14 @@ const StatsNotifications = () => {
 	} = char;
 
 	if (life !== prevLife) {
-		lifeNote = Math.abs(life - prevLife);
-		life > prevLife ? (lifeSign = "+") : (lifeSign = "-");
+		// lifeNote = Math.abs(life - prevLife);
+		// life > prevLife ? (lifeSign = "+") : (lifeSign = "-");
+		// lifeNote = checkStatsIfChanged(life, prevLife);
+		lifeNote = checkStatsIfChanged(life, prevLife);
 	} else if (life === prevLife) {
 		lifeNote = false;
 	}
+	console.log(lifeNote);
 
 	if (energy !== prevEnergy) {
 		energyNote = Math.abs(energy - prevEnergy);
@@ -98,8 +101,8 @@ const StatsNotifications = () => {
 		<div className="stats-notifications-container">
 			{statsNote.life && lifeOn ? (
 				<span className="stats-notifications-span life">
-					Życie {lifeSign}
-					{lifeNote}
+					Życie {lifeNote.lifeSign}
+					{lifeNote.lifeValue}
 				</span>
 			) : null}
 			{statsNote.energy && energyOn ? (

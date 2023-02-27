@@ -19,7 +19,7 @@ const StatsNotifications = () => {
 			});
 		}, 850);
 		return () => {
-			console.log("wyłączono timeout");
+			// console.log("wyłączono timeout");
 			clearTimeout(turnOffStatsAnimation);
 		};
 	}, [statsNote]);

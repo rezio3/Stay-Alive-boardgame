@@ -153,7 +153,7 @@ export const changeCharStats = ({
 
 			break;
 		case "endTurn":
-			console.log("update stats after turn's end");
+			// console.log("update stats after turn's end");
 			setChar({
 				...char,
 				cantMove: false,

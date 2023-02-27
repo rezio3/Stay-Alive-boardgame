@@ -5,10 +5,14 @@ import * as images from "../../../../img/event-cards/";
 import * as eventList from "../../functions/EventsFunctions/EventsList";
 import { EventsContext } from "../../../context/EventsContext";
 import { arrayShuffle } from "../../functions/EventsArrayShuffle";
+import { CharacterContext } from "../../../context/CharContext";
+import { BoardContext } from "../../../context/BoardContext";
 
 const Events = () => {
 	const [rounds, setRounds] = useContext(RoundsContext);
 	const [event, setEvent] = useContext(EventsContext);
+	const [char, setChar] = useContext(CharacterContext);
+	const [board, setBoard] = useContext(BoardContext);
 
 	if (rounds.round === 2 && !event.eventsArray) {
 		arrayShuffle(event, setEvent);
@@ -33,9 +37,9 @@ const Events = () => {
 			// const runEvent = eventList.event1;
 			console.log(event.currentEventNumber);
 			console.log("eventsArray: ", event.eventsArray);
-			runEvent();
+			runEvent({ rounds: rounds, char: char, board: board });
 		}
-	}, [event.currentEventNumber]);
+	}, [event.currentEventNumber, rounds.round]);
 
 	// console.log("eventsArray: ", event.eventsArray);
 	// console.log("currentEvent: ", event.currentEvent);

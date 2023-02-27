@@ -17,18 +17,29 @@ const Events = () => {
 		if (rounds.round % 2 === 1 && rounds.round > 2) {
 			const a = [...event.eventsArray];
 			a.shift();
-			console.log("a", a);
+			// console.log("a", a);
 			setEvent({
 				...event,
 				eventsArray: a,
 				currentEvent: images[`event${event.eventsArray?.[0]}img`],
 				currentEventNumber: event.eventsArray?.[0],
 			});
-			// const eventName = eventList[`event${event.eventsArray[0]}`];
-			const eventName = eventList.event1;
-			eventName();
 		}
 	}, [rounds.round]);
+
+	useEffect(() => {
+		if (event.currentEventNumber || event.currentEventNumber === 0) {
+			const runEvent = eventList[`event${event.currentEventNumber}`];
+			// const runEvent = eventList.event1;
+			console.log(event.currentEventNumber);
+			console.log("eventsArray: ", event.eventsArray);
+			runEvent();
+		}
+	}, [event.currentEventNumber]);
+
+	// console.log("eventsArray: ", event.eventsArray);
+	// console.log("currentEvent: ", event.currentEvent);
+	// console.log("currentEventNumber: ", event.currentEventNumber);
 
 	return (
 		<div className="event-cards-container">

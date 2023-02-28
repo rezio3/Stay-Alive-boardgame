@@ -8,6 +8,8 @@ import { arrayShuffle } from "../../functions/EventsArrayShuffle";
 import { CharacterContext } from "../../../context/CharContext";
 import { BoardContext } from "../../../context/BoardContext";
 import { ButtonsContext } from "../../../context/ButtonsContext";
+import { FightContext } from "../../../context/FightContext";
+import { AnimationContext } from "../../../context/AnimationContext";
 
 const Events = () => {
 	const [rounds, setRounds] = useContext(RoundsContext);
@@ -15,6 +17,8 @@ const Events = () => {
 	const [char, setChar] = useContext(CharacterContext);
 	const [board, setBoard] = useContext(BoardContext);
 	const [buttons, setButtons] = useContext(ButtonsContext);
+	const [fight, setFight] = useContext(FightContext);
+	const [anim, setAnim] = useContext(AnimationContext);
 	const [eventAnim, setEventAnim] = useState({ run: false, prevCard: "" });
 
 	if (rounds.round === 2 && !event.eventsArray) {
@@ -45,13 +49,19 @@ const Events = () => {
 	useEffect(() => {
 		if (event.currentEventNumber || event.currentEventNumber === 0) {
 			const runEvent = eventList[`event${event.currentEventNumber}`];
-			console.log(event.currentEventNumber);
-			console.log("eventsArray: ", event.eventsArray);
+			// console.log(event.currentEventNumber);
+			// console.log("eventsArray: ", event.eventsArray);
 			runEvent({
 				rounds: rounds,
 				char: char,
 				setChar: setChar,
 				board: board,
+				buttons: buttons,
+				setButtons: setButtons,
+				anim: anim,
+				setAnim: setAnim,
+				fight: fight,
+				setFight: setFight,
 			});
 		}
 	}, [event.currentEventNumber, rounds.round]);

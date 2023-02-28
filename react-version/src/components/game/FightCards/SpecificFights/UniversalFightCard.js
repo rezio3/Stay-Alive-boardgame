@@ -77,6 +77,22 @@ const UniversalFightCard = () => {
 		swordModifierDefeat = 3;
 		swordModifierWin = 4;
 	}
+
+	const handleUseSejmitar = () => {
+		setFight({
+			...fight,
+			fightActive: false,
+			cubeRandomNumber: "",
+			fightEnd: false,
+		});
+		setChar({
+			...char,
+			inventoryItems: {
+				...char.inventoryItems,
+				sejmitar: 0,
+			},
+		});
+	};
 	return (
 		<div
 			className={
@@ -142,7 +158,9 @@ const UniversalFightCard = () => {
 			</div>
 			{sejmitar ? (
 				<div className="use-sejmitar-btn-container">
-					<button className="use-sejmitar-btn">Użyj Sejmitaru</button>
+					<button className="use-sejmitar-btn" onClick={handleUseSejmitar}>
+						Użyj Sejmitaru
+					</button>
 				</div>
 			) : null}
 			<button

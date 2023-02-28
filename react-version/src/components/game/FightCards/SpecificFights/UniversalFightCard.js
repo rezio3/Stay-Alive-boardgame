@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import "../../../../style/css/UniversalFightCard.css";
 import { FightContext } from "../../../context/FightContext";
 import { CharacterContext } from "../../../context/CharContext";
@@ -7,12 +7,14 @@ import cubesImg from "../../../../img/cubes.png";
 import { fightProcess } from "../../functions/FightProcess.js";
 import { AnimationContext } from "../../../context/AnimationContext";
 import { ButtonsContext } from "../../../context/ButtonsContext";
+import { BoardContext } from "../../../context/BoardContext";
 
 const UniversalFightCard = () => {
 	const [fight, setFight] = useContext(FightContext);
 	const [char, setChar] = useContext(CharacterContext);
 	const [anim, setAnim] = useContext(AnimationContext);
 	const [buttons, setButtons] = useContext(ButtonsContext);
+	const [board, setBoard] = useContext(BoardContext);
 
 	const { sejmitar } = char.inventoryItems;
 
@@ -67,6 +69,21 @@ const UniversalFightCard = () => {
 			});
 		}
 	};
+	const { fightActive } = fight;
+	useEffect(() => {
+		if (fightActive === true) {
+			setBoard({
+				...board,
+				darkBoardBg: true,
+			});
+		} else if (fightActive === false) {
+			setBoard({
+				...board,
+				darkBoardBg: false,
+			});
+		}
+	}, [fightActive]);
+
 	let swordModifierDefeat;
 	let swordModifierWin;
 	const { sword } = char.inventoryItems;

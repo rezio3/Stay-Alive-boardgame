@@ -2,7 +2,7 @@ import React, { createContext, useState } from "react";
 
 const fightData = {
 	fightActive: false,
-	monsterName: "Lodowy Golem",
+	monsterName: "",
 	cubeRandomNumber: "",
 	addFrozenCrownAfterFight: null,
 	fightEnd: false,

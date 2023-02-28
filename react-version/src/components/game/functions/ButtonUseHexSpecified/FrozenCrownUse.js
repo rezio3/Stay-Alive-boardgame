@@ -17,6 +17,7 @@ export const frozenCrownUse = (
 			setFight({
 				...fight,
 				fightActive: true,
+				monsterName: "Lodowy Golem",
 			});
 			setAnim({
 				...anim,

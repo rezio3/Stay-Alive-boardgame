@@ -37,7 +37,7 @@ const Events = () => {
 			// const runEvent = eventList.event1;
 			console.log(event.currentEventNumber);
 			console.log("eventsArray: ", event.eventsArray);
-			runEvent({ rounds: rounds, char: char, board: board });
+			runEvent({ rounds: rounds, char: char, setChar: setChar, board: board });
 		}
 	}, [event.currentEventNumber, rounds.round]);
 

@@ -5,7 +5,8 @@ export const event1 = ({ rounds, char, setChar, board }) => {
 	if (
 		rounds.round % 2 === 1 &&
 		board.biomPlayerStandsOn !== "crater" &&
-		char.inventoryItems.torch === 0
+		char.inventoryItems.torch === 0 &&
+		char.inventoryItems.frozenCrown === 0
 	) {
 		let sanitySubstractor;
 		switch (rounds.difficulty) {

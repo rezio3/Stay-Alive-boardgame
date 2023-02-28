@@ -297,7 +297,11 @@ export const changeCharStats = ({
 					energy: true,
 				});
 			}, 50);
-
 			break;
+		case "eventCard":
+			setChar({
+				...char,
+				sanity: sanity,
+			});
 	}
 };

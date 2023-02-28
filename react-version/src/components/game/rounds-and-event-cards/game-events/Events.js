@@ -7,12 +7,14 @@ import { EventsContext } from "../../../context/EventsContext";
 import { arrayShuffle } from "../../functions/EventsArrayShuffle";
 import { CharacterContext } from "../../../context/CharContext";
 import { BoardContext } from "../../../context/BoardContext";
+import { ButtonsContext } from "../../../context/ButtonsContext";
 
 const Events = () => {
 	const [rounds, setRounds] = useContext(RoundsContext);
 	const [event, setEvent] = useContext(EventsContext);
 	const [char, setChar] = useContext(CharacterContext);
 	const [board, setBoard] = useContext(BoardContext);
+	const [buttons, setButtons] = useContext(ButtonsContext);
 	const [eventAnim, setEventAnim] = useState({ run: false, prevCard: "" });
 
 	if (rounds.round === 2 && !event.eventsArray) {
@@ -32,6 +34,10 @@ const Events = () => {
 			setEventAnim({
 				...eventAnim,
 				run: true,
+			});
+			setButtons({
+				...buttons,
+				endTurnButton: false,
 			});
 		}
 	}, [rounds.round]);
@@ -64,13 +70,17 @@ const Events = () => {
 					revealedDeck: true,
 					prevCard: event.currentEvent,
 				});
+				setButtons({
+					...buttons,
+					endTurnButton: true,
+				});
 			}, 2000);
 		}
 	}, [eventAnim.run]);
 
 	// console.log(eventAnim.run);
-	console.log(eventAnim.prevCard);
-	console.log(event.currentEvent);
+	// console.log(eventAnim.prevCard);
+	// console.log(event.currentEvent);
 	return (
 		<div className="event-cards-container">
 			<div className="event-card-container">

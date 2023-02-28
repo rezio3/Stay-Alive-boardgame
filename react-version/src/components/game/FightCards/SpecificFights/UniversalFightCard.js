@@ -14,6 +14,8 @@ const UniversalFightCard = () => {
 	const [anim, setAnim] = useContext(AnimationContext);
 	const [buttons, setButtons] = useContext(ButtonsContext);
 
+	const { sejmitar } = char.inventoryItems;
+
 	const handleCubes = () => {
 		fightProcess(fight, setFight, char, setChar);
 	};
@@ -138,9 +140,11 @@ const UniversalFightCard = () => {
 					})()}
 				</span>
 			</div>
-			<div className="use-sejmitar-btn-container">
-				<button className="use-sejmitar-btn">Użyj Sejmitaru</button>
-			</div>
+			{sejmitar ? (
+				<div className="use-sejmitar-btn-container">
+					<button className="use-sejmitar-btn">Użyj Sejmitaru</button>
+				</div>
+			) : null}
 			<button
 				className={
 					fight.fightEnd

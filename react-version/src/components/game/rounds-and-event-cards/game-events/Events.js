@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { RoundsContext } from "../../../context/RoundsContext";
 import "../../../../style/css/Events.css";
 import * as images from "../../../../img/event-cards/";
@@ -13,6 +13,7 @@ const Events = () => {
 	const [event, setEvent] = useContext(EventsContext);
 	const [char, setChar] = useContext(CharacterContext);
 	const [board, setBoard] = useContext(BoardContext);
+	const [eventAnim, setEventAnim] = useState(false);
 
 	if (rounds.round === 2 && !event.eventsArray) {
 		arrayShuffle(event, setEvent);
@@ -28,6 +29,7 @@ const Events = () => {
 				currentEvent: images[`event${event.eventsArray?.[0]}img`],
 				currentEventNumber: event.eventsArray?.[0],
 			});
+			setEventAnim(true);
 		}
 	}, [rounds.round]);
 
@@ -37,7 +39,12 @@ const Events = () => {
 			// const runEvent = eventList.event1;
 			console.log(event.currentEventNumber);
 			console.log("eventsArray: ", event.eventsArray);
-			runEvent({ rounds: rounds, char: char, setChar: setChar, board: board });
+			runEvent({
+				rounds: rounds,
+				char: char,
+				setChar: setChar,
+				board: board,
+			});
 		}
 	}, [event.currentEventNumber, rounds.round]);
 
@@ -45,21 +52,41 @@ const Events = () => {
 	// console.log("currentEvent: ", event.currentEvent);
 	// console.log("currentEventNumber: ", event.currentEventNumber);
 
+	useEffect(() => {
+		if (eventAnim === true) {
+			console.log("wykonano animacje eventu");
+			setTimeout(() => {
+				setEventAnim(false);
+			}, 2000);
+		}
+	}, [eventAnim]);
+
+	console.log(eventAnim);
 	return (
 		<div className="event-cards-container">
 			<div className="event-card-container">
 				<div
-					className="event-card-1"
+					className={eventAnim ? "event-card-1" : null} //najpierw tylko card-1, przy animacji event-card-1
 					id="card1"
 					style={{
 						backgroundImage: `url(${event.currentEvent})`,
 					}}
 				></div>
-				<div className="" id="card2"></div>
+				<div
+					className={eventAnim ? "event-card-2-animation" : null}
+					id="card2"
+					style={{
+						backgroundImage: `url(${event.currentEvent})`,
+					}}
+				></div>
 			</div>
 			<div className="event-card-reverse">
 				<div
-					className="event-card-reverse-anim"
+					className={
+						eventAnim
+							? "event-card-reverse-anim card-reverse-animation"
+							: "event-card-reverse-anim"
+					}
 					id="event-card-reverse-anim"
 				></div>
 			</div>

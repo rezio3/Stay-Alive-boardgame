@@ -157,6 +157,13 @@
 				box-shadow: 0 0 10px 5px white;
 			}
 		}
+
+		.dark-board-bg {
+			position: absolute;
+			width: 682px;
+			height: 850px;
+			background-color: rgba(0, 0, 0, 0.5);
+		}
 	}
 }
 

@@ -69,6 +69,7 @@ const Game = () => {
 				<Cards />
 				<FightCards />
 				<div className="game-board" id="game-board">
+					{board.darkBoardBg ? <div className="dark-board-bg"></div> : null}
 					{board.charSetOnBoard ? null : <div className="board-bg"></div>}
 					<div className="field-rows">
 						{boardRowsArray.map((e, index) => (

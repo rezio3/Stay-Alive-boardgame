@@ -85,7 +85,7 @@ const UniversalFightCard = () => {
 			style={anim.fight === true ? { display: "flex" } : null}
 		>
 			<h1 className="monster-name">{fight.monsterName}</h1>
-			<img src={swordsImg} className="swords" />
+			<img src={swordsImg} className="swords" alt="swords" />
 			<h2>Walcz!</h2>
 			<p id="when-do-i-win-fight">
 				Wygrywasz wyrzucając 4,5 lub 6 (z mieczem 3)
@@ -96,7 +96,7 @@ const UniversalFightCard = () => {
 					disabled={fight.fightEnd}
 					onClick={handleCubes}
 				>
-					<img src={cubesImg} />
+					<img src={cubesImg} alt="cubes" />
 				</button>
 				<div className="cube-result">{fight.cubeRandomNumber}</div>
 			</div>

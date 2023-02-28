@@ -11,6 +11,7 @@ const boardData = {
 	biomPlayerStandsOn: "outland",
 	oasisUsed: false,
 	caveUsed: false,
+	darkBoardBg: false,
 };
 
 export const BoardContext = createContext();

@@ -51,18 +51,20 @@ const Events = () => {
 			const runEvent = eventList[`event${event.currentEventNumber}`];
 			// console.log(event.currentEventNumber);
 			// console.log("eventsArray: ", event.eventsArray);
-			runEvent({
-				rounds: rounds,
-				char: char,
-				setChar: setChar,
-				board: board,
-				buttons: buttons,
-				setButtons: setButtons,
-				anim: anim,
-				setAnim: setAnim,
-				fight: fight,
-				setFight: setFight,
-			});
+			if (event.currentEventNumber !== event.prevEvent) {
+				runEvent({
+					rounds: rounds,
+					char: char,
+					setChar: setChar,
+					board: board,
+					buttons: buttons,
+					setButtons: setButtons,
+					anim: anim,
+					setAnim: setAnim,
+					fight: fight,
+					setFight: setFight,
+				});
+			}
 		}
 	}, [event.currentEventNumber, rounds.round]);
 
@@ -72,7 +74,15 @@ const Events = () => {
 
 	useEffect(() => {
 		if (eventAnim.run === true) {
+			setEvent({
+				...event,
+				prevEvent: event.currentEventNumber,
+			});
 			console.log("wykonano animacje eventu");
+			let turnButton = true;
+			if (event.currentEventNumber === 2) {
+				turnButton = false;
+			}
 			setTimeout(() => {
 				setEventAnim({
 					...eventAnim,
@@ -82,7 +92,7 @@ const Events = () => {
 				});
 				setButtons({
 					...buttons,
-					endTurnButton: true,
+					endTurnButton: turnButton,
 				});
 			}, 2000);
 		}

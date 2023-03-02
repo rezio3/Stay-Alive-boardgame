@@ -24,7 +24,7 @@ export const event2 = ({
 			setFight({
 				...fight,
 				fightActive: true,
-				monsterName: "",
+				monsterName: "Harpioperze",
 			});
 			setAnim({
 				...anim,

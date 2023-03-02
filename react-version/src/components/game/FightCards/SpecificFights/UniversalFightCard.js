@@ -51,17 +51,10 @@ const UniversalFightCard = () => {
 	};
 	const { fightActive } = fight;
 	useEffect(() => {
-		if (fightActive === true) {
-			setBoard({
-				...board,
-				darkBoardBg: true,
-			});
-		} else if (fightActive === false) {
-			setBoard({
-				...board,
-				darkBoardBg: false,
-			});
-		}
+		setBoard({
+			...board,
+			darkBoardBg: !board.darkBoardBg,
+		});
 	}, [fightActive]);
 
 	let swordModifierDefeat;
@@ -81,6 +74,8 @@ const UniversalFightCard = () => {
 			fightActive: false,
 			cubeRandomNumber: "",
 			fightEnd: false,
+			addFrozenCrownAfterFight: false,
+			monsterName: "",
 		});
 		setChar({
 			...char,

@@ -47,6 +47,10 @@ const UniversalFightCard = () => {
 				endTurnButton: true,
 				useHexButton: true,
 			});
+			setChar({
+				...char,
+				cantMove: false,
+			});
 		}
 	};
 	const { fightActive } = fight;

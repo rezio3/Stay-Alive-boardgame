@@ -80,7 +80,7 @@ const Events = () => {
 				prevEvent: event.currentEventNumber,
 			});
 			console.log("wykonano animacje eventu");
-			let turnButton = event.currentEventNumber === 2 ? true : false;
+			let turnButton = event.currentEventNumber === 2 ? false : true;
 			// will be more event fights
 
 			setTimeout(() => {

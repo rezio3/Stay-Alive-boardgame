@@ -42,10 +42,11 @@ const UniversalFightCard = () => {
 				addFrozenCrownAfterFight: false,
 				monsterName: "",
 			});
+			const activeUseHexButton = board.resourcePlayerStandsOn ? true : false;
 			setButtons({
 				...buttons,
 				endTurnButton: true,
-				useHexButton: true,
+				useHexButton: activeUseHexButton,
 			});
 			setChar({
 				...char,

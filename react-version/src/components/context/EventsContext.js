@@ -3,6 +3,7 @@ const eventsData = {
 	eventsArray: null,
 	currentEvent: null,
 	currentEventNumber: null,
+	prevEvent: null,
 };
 export const EventsContext = createContext();
 

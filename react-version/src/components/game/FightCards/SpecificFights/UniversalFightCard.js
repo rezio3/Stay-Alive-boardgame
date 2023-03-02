@@ -8,6 +8,7 @@ import { fightProcess } from "../../functions/FightProcess.js";
 import { AnimationContext } from "../../../context/AnimationContext";
 import { ButtonsContext } from "../../../context/ButtonsContext";
 import { BoardContext } from "../../../context/BoardContext";
+import { addCrownAfterFight } from "./AddCrownAfterFight";
 
 const UniversalFightCard = () => {
 	const [fight, setFight] = useContext(FightContext);
@@ -28,40 +29,18 @@ const UniversalFightCard = () => {
 				fightActive: false,
 				cubeRandomNumber: "",
 				fightEnd: false,
+				addFrozenCrownAfterFight: false,
+				monsterName: "",
 			});
-
-			setTimeout(() => {
-				setAnim({
-					...anim,
-					fight: false,
-					frozenCrown: true,
-				});
-			}, 500);
-
-			setTimeout(() => {
-				setChar({
-					...char,
-					inventoryItems: {
-						...char.inventoryItems,
-						frozenCrown: 1,
-					},
-				});
-				setAnim({
-					...anim,
-					fight: false,
-					frozenCrown: false,
-				});
-				setButtons({
-					...buttons,
-					endTurnButton: true,
-				});
-			}, 2600);
+			addCrownAfterFight(anim, setAnim, char, setChar, buttons, setButtons);
 		} else {
 			setFight({
 				...fight,
 				fightActive: false,
 				cubeRandomNumber: "",
 				fightEnd: false,
+				addFrozenCrownAfterFight: false,
+				monsterName: "",
 			});
 			setButtons({
 				...buttons,

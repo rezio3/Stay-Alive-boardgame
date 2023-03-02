@@ -1,6 +1,7 @@
 import { changeCharStats } from "./Stats-changer/ChangeCharStats";
 
 export const fightProcess = (fight, setFight, char, setChar) => {
+	let frozenCrown = fight.monsterName === "Lodowy Golem" ? true : false;
 	const number = Math.ceil(Math.random() * 6);
 	let swordModifierDefeat;
 	let swordModifierWin;
@@ -31,7 +32,7 @@ export const fightProcess = (fight, setFight, char, setChar) => {
 			setFight({
 				...fight,
 				fightEnd: true,
-				addFrozenCrownAfterFight: true,
+				addFrozenCrownAfterFight: frozenCrown,
 				cubeRandomNumber: number,
 			});
 			changeCharStats({

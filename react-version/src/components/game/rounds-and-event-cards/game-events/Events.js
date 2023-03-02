@@ -80,11 +80,9 @@ const Events = () => {
 				prevEvent: event.currentEventNumber,
 			});
 			console.log("wykonano animacje eventu");
-			let turnButton = true;
-			if (event.currentEventNumber === 2) {
-				// MORE FIGHT EVENTS !!!
-				turnButton = false;
-			}
+			let turnButton = event.currentEventNumber === 2 ? true : false;
+			// will be more event fights
+
 			setTimeout(() => {
 				setEventAnim({
 					...eventAnim,
@@ -95,7 +93,6 @@ const Events = () => {
 				setButtons({
 					...buttons,
 					endTurnButton: turnButton,
-					useHexButton: turnButton,
 				});
 			}, 2000);
 		}

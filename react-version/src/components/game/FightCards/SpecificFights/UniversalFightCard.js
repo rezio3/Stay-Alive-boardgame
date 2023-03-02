@@ -45,6 +45,7 @@ const UniversalFightCard = () => {
 			setButtons({
 				...buttons,
 				endTurnButton: true,
+				useHexButton: true,
 			});
 		}
 	};

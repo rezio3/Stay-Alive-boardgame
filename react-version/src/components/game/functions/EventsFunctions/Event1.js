@@ -22,12 +22,13 @@ export const event1 = ({ rounds, char, setChar, board }) => {
 			default:
 				sanitySubstractor = 1;
 		}
-
-		changeCharStats({
-			char: char,
-			setChar: setChar,
-			sanity: char.sanity - sanitySubstractor,
-			event: "eventCard",
-		});
+		setTimeout(() => {
+			changeCharStats({
+				char: char,
+				setChar: setChar,
+				sanity: char.sanity - sanitySubstractor,
+				event: "eventCard",
+			});
+		}, 1800);
 	}
 };

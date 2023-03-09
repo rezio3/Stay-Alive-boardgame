@@ -1,3 +1,1 @@
-export const event3 = () => {
-	console.log("event3 function");
-};
+export const event3 = ({ char, setChar, board }) => {};

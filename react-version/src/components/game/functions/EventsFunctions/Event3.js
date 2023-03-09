@@ -1,3 +1,5 @@
+import { changeCharStats } from "../Stats-changer/ChangeCharStats";
+
 export const event3 = ({ char, setChar, board, rounds }) => {
 	const { resourcePlayerStandsOn, biomPlayerStandsOn } = board;
 	if (

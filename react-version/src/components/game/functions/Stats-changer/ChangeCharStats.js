@@ -299,9 +299,30 @@ export const changeCharStats = ({
 			}, 50);
 			break;
 		case "eventCard":
+			let starvationChange =
+				starvation !== undefined ? starvation : char.starvation;
+			let sanityChange = sanity !== undefined ? sanity : char.sanity;
+			let temperatureChange = temp !== undefined ? temp : char.temperature;
 			setChar({
 				...char,
-				sanity: sanity,
+				starvation: starvationChange,
+				sanity: sanityChange,
+				temperature: temperatureChange,
 			});
+
+			setStatsNote({
+				...statsNote,
+				energy: false,
+				sanity: false,
+				temperature: false,
+			});
+			setTimeout(() => {
+				setStatsNote({
+					...statsNote,
+					energy: true,
+					sanity: true,
+					temperature: true,
+				});
+			}, 50);
 	}
 };

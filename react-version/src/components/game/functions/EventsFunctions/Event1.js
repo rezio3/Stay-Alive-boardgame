@@ -1,6 +1,13 @@
 import { changeCharStats } from "../Stats-changer/ChangeCharStats";
 
-export const event1 = ({ rounds, char, setChar, board }) => {
+export const event1 = ({
+	rounds,
+	char,
+	setChar,
+	board,
+	statsNote,
+	setStatsNote,
+}) => {
 	console.log("event1 - złowroga ciemność");
 	if (
 		rounds.round % 2 === 1 &&
@@ -27,6 +34,8 @@ export const event1 = ({ rounds, char, setChar, board }) => {
 				char: char,
 				setChar: setChar,
 				sanity: char.sanity - sanitySubstractor,
+				statsNote: statsNote,
+				setStatsNote: setStatsNote,
 				event: "eventCard",
 			});
 		}, 1800);

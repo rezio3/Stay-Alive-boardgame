@@ -1,6 +1,13 @@
 import { changeCharStats } from "../Stats-changer/ChangeCharStats";
 
-export const event3 = ({ char, setChar, board, rounds }) => {
+export const event3 = ({
+	char,
+	setChar,
+	board,
+	rounds,
+	statsNote,
+	setStatsNote,
+}) => {
 	const { resourcePlayerStandsOn, biomPlayerStandsOn } = board;
 	if (
 		resourcePlayerStandsOn !== "tent" &&
@@ -27,6 +34,8 @@ export const event3 = ({ char, setChar, board, rounds }) => {
 				char: char,
 				setChar: setChar,
 				temperature: char.temperature - temperatureSubstractor,
+				statsNote: statsNote,
+				setStatsNote: setStatsNote,
 				event: "eventCard",
 			});
 		}, 1800);

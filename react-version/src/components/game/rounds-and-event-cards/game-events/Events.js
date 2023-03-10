@@ -21,7 +21,11 @@ const Events = () => {
 	const [fight, setFight] = useContext(FightContext);
 	const [anim, setAnim] = useContext(AnimationContext);
 	const [statsNote, setStatsNote] = useContext(StatsNotificationsContext);
-	const [eventAnim, setEventAnim] = useState({ run: false, prevCard: "" });
+	const [eventAnim, setEventAnim] = useState({
+		run: false,
+		revealedDeck: false,
+		prevCard: "",
+	});
 
 	if (rounds.round === 2 && !event.eventsArray) {
 		arrayShuffle(event, setEvent);
@@ -54,7 +58,8 @@ const Events = () => {
 			const runEvent = eventList[`event${event.currentEventNumber}`];
 			// console.log(event.currentEventNumber);
 			// console.log("eventsArray: ", event.eventsArray);
-			if (event.currentEventNumber !== event.prevEvent) {
+			const forceRun = rounds.round % 2 === 0 ? true : false;
+			if (event.currentEventNumber !== event.prevEvent || forceRun) {
 				runEvent({
 					rounds: rounds,
 					char: char,
@@ -83,7 +88,6 @@ const Events = () => {
 				...event,
 				prevEvent: event.currentEventNumber,
 			});
-			console.log("wykonano animacje eventu");
 			let turnButton = event.currentEventNumber === 2 ? false : true;
 			// will be more event fights
 

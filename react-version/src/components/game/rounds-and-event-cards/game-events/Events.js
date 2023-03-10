@@ -10,6 +10,7 @@ import { BoardContext } from "../../../context/BoardContext";
 import { ButtonsContext } from "../../../context/ButtonsContext";
 import { FightContext } from "../../../context/FightContext";
 import { AnimationContext } from "../../../context/AnimationContext";
+import { StatsNotificationsContext } from "../../../context/StatsNotificationsContext";
 
 const Events = () => {
 	const [rounds, setRounds] = useContext(RoundsContext);
@@ -19,6 +20,7 @@ const Events = () => {
 	const [buttons, setButtons] = useContext(ButtonsContext);
 	const [fight, setFight] = useContext(FightContext);
 	const [anim, setAnim] = useContext(AnimationContext);
+	const [statsNote, setStatsNote] = useContext(StatsNotificationsContext);
 	const [eventAnim, setEventAnim] = useState({ run: false, prevCard: "" });
 
 	if (rounds.round === 2 && !event.eventsArray) {
@@ -64,6 +66,8 @@ const Events = () => {
 					setAnim: setAnim,
 					fight: fight,
 					setFight: setFight,
+					statsNote: statsNote,
+					setStatsNote: setStatsNote,
 				});
 			}
 		}

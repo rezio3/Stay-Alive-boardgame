@@ -33,7 +33,7 @@ export const event3 = ({
 			changeCharStats({
 				char: char,
 				setChar: setChar,
-				temperature: char.temperature - temperatureSubstractor,
+				temp: char.temperature - temperatureSubstractor,
 				statsNote: statsNote,
 				setStatsNote: setStatsNote,
 				event: "eventCard",

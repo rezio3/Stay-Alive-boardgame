@@ -23,11 +23,6 @@ const StatsNotifications = () => {
 			clearTimeout(turnOffStatsAnimation);
 		};
 	}, [statsNote]);
-	let lifeNote;
-	let energyNote;
-	let starvationNote;
-	let sanityNote;
-	let temperatureNote;
 
 	const {
 		life,
@@ -42,42 +37,27 @@ const StatsNotifications = () => {
 		prevTemperature,
 	} = char;
 
-	if (life !== prevLife) {
-		lifeNote = checkStatsIfChanged(life, prevLife);
-	} else if (life === prevLife) {
-		lifeNote = false;
-	}
-	if (energy !== prevEnergy) {
-		energyNote = checkStatsIfChanged(energy, prevEnergy);
-	} else if (energy === prevEnergy) {
-		energyNote = false;
-	}
-	if (starvation !== prevStarvation) {
-		starvationNote = checkStatsIfChanged(starvation, prevStarvation);
-	} else if (starvation === prevStarvation) {
-		starvationNote = false;
-	}
-	if (sanity !== prevSanity) {
-		sanityNote = checkStatsIfChanged(sanity, prevSanity);
-	} else if (sanity === prevSanity) {
-		sanityNote = false;
-	}
-	if (temperature !== prevTemperature) {
-		temperatureNote = checkStatsIfChanged(temperature, prevTemperature);
-	} else if (temperature === prevTemperature) {
-		temperatureNote = false;
-	}
+	let lifeNote =
+		life !== prevLife ? checkStatsIfChanged(life, prevLife) : false;
+	let energyNote =
+		energy !== prevEnergy ? checkStatsIfChanged(energy, prevEnergy) : false;
+	let starvationNote =
+		starvation !== prevStarvation
+			? checkStatsIfChanged(starvation, prevStarvation)
+			: false;
+	let sanityNote =
+		sanity !== prevSanity ? checkStatsIfChanged(sanity, prevSanity) : false;
+	let temperatureNote =
+		temperature !== prevTemperature
+			? checkStatsIfChanged(temperature, prevTemperature)
+			: false;
 
-	let lifeOn = true;
-	if (life === prevLife) lifeOn = false;
+	let lifeOn = life !== prevLife;
 	let energyOn = true;
 	if (energy === prevEnergy || prevEnergy === 11) energyOn = false;
-	let starvationOn = true;
-	if (starvation === prevStarvation) starvationOn = false;
-	let sanityOn = true;
-	if (sanity === prevSanity) sanityOn = false;
-	let temperatureOn = true;
-	if (temperature === prevTemperature) temperatureOn = false;
+	let starvationOn = starvation !== prevStarvation;
+	let sanityOn = sanity !== prevSanity;
+	let temperatureOn = temperature !== prevTemperature;
 
 	return (
 		<div className="stats-notifications-container">

@@ -88,7 +88,7 @@ const Events = () => {
 				...event,
 				prevEvent: event.currentEventNumber,
 			});
-			let turnButton = event.currentEventNumber === 2 ? false : true;
+			let battleButtonsModifier = event.currentEventNumber === 2 ? false : true;
 			// will be more event fights
 
 			setTimeout(() => {
@@ -98,10 +98,13 @@ const Events = () => {
 					revealedDeck: true,
 					prevCard: event.currentEvent,
 				});
-				let useHexButtonChecker = board.resourcePlayerStandsOn !== null;
+				let useHexButtonChecker =
+					board.resourcePlayerStandsOn !== null && battleButtonsModifier
+						? true
+						: false;
 				setButtons({
 					...buttons,
-					endTurnButton: turnButton,
+					endTurnButton: battleButtonsModifier,
 					useHexButton: useHexButtonChecker,
 				});
 			}, 2000);

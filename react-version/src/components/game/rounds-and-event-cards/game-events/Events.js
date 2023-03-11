@@ -98,9 +98,11 @@ const Events = () => {
 					revealedDeck: true,
 					prevCard: event.currentEvent,
 				});
+				let useHexButtonChecker = board.resourcePlayerStandsOn !== null;
 				setButtons({
 					...buttons,
 					endTurnButton: turnButton,
+					useHexButton: useHexButtonChecker,
 				});
 			}, 2000);
 		}

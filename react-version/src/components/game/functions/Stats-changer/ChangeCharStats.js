@@ -303,11 +303,17 @@ export const changeCharStats = ({
 				starvation !== undefined ? starvation : char.starvation;
 			let sanityChange = sanity !== undefined ? sanity : char.sanity;
 			let temperatureChange = temp !== undefined ? temp : char.temperature;
+			console.log(starvationChange);
+			console.log(sanityChange);
+			console.log(temperatureChange);
 			setChar({
 				...char,
 				starvation: starvationChange,
+				prevStarvation: char.starvation,
 				sanity: sanityChange,
+				prevSanity: char.sanity,
 				temperature: temperatureChange,
+				prevTemperature: char.temperature,
 			});
 
 			setStatsNote({

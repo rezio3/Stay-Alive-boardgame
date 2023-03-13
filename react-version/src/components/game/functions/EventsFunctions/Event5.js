@@ -1,3 +1,3 @@
 export const event5 = () => {
-	console.log("event5 function");
+	console.log("event5 - upiorognom");
 };

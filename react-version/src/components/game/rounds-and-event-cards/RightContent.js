@@ -84,12 +84,14 @@ const RightContent = () => {
 			setStatsNote: setStatsNote,
 			event: "endTurn",
 		});
-		if (board.resourcePlayerStandsOn !== null) {
-			setButtons({
-				...buttons,
-				useHexButton: true,
-			});
-		}
+		let useHexButton = board.resourcePlayerStandsOn !== null;
+		let endTurnButton = rounds.round > 2 ? false : true;
+		setButtons({
+			...buttons,
+			useHexButton: useHexButton,
+			endTurnButton: endTurnButton,
+		});
+
 		difficulty(rounds, setRounds);
 	};
 

@@ -7,8 +7,11 @@ export const event1 = ({
 	board,
 	statsNote,
 	setStatsNote,
+	buttons,
+	setButtons,
 }) => {
 	// console.log("event1 - złowroga ciemność");
+	let time = rounds.round % 2 === 0 ? 500 : 1800;
 	if (
 		rounds.round % 2 === 1 &&
 		board.biomPlayerStandsOn !== "crater" &&
@@ -29,6 +32,7 @@ export const event1 = ({
 			default:
 				sanitySubstractor = 1;
 		}
+
 		setTimeout(() => {
 			changeCharStats({
 				char: char,
@@ -38,6 +42,17 @@ export const event1 = ({
 				setStatsNote: setStatsNote,
 				event: "eventCard",
 			});
-		}, 1800);
+			setButtons({
+				...buttons,
+				endTurnButton: true,
+			});
+		}, time);
+	} else {
+		setTimeout(() => {
+			setButtons({
+				...buttons,
+				endTurnButton: true,
+			});
+		}, time);
 	}
 };

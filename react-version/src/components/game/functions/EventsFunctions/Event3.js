@@ -7,9 +7,12 @@ export const event3 = ({
 	rounds,
 	statsNote,
 	setStatsNote,
+	buttons,
+	setButtons,
 }) => {
 	// console.log("event 3 - zamieć");
 	const { resourcePlayerStandsOn, biomPlayerStandsOn } = board;
+	let time = rounds.round % 2 === 0 ? 500 : 1800;
 	if (
 		resourcePlayerStandsOn !== "tent" &&
 		resourcePlayerStandsOn !== "cave" &&
@@ -30,7 +33,7 @@ export const event3 = ({
 			default:
 				temperatureSubstractor = 1;
 		}
-		let time = rounds.round % 2 === 0 ? 500 : 1800;
+
 		setTimeout(() => {
 			changeCharStats({
 				char: char,
@@ -39,6 +42,17 @@ export const event3 = ({
 				statsNote: statsNote,
 				setStatsNote: setStatsNote,
 				event: "eventCard",
+			});
+			setButtons({
+				...buttons,
+				endTurnButton: true,
+			});
+		}, time);
+	} else {
+		setTimeout(() => {
+			setButtons({
+				...buttons,
+				endTurnButton: true,
 			});
 		}, time);
 	}

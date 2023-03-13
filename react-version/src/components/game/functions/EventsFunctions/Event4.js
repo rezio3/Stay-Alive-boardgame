@@ -1,8 +1,17 @@
 import { changeCharStats } from "../Stats-changer/ChangeCharStats";
 
-export const event4 = ({ char, setChar, rounds, statsNote, setStatsNote }) => {
+export const event4 = ({
+	char,
+	setChar,
+	rounds,
+	statsNote,
+	setStatsNote,
+	buttons,
+	setButtons,
+}) => {
 	// console.log("event4 - trujące powietrze");
 	let lifeSubstractor;
+	let time = rounds.round % 2 === 0 ? 500 : 1800;
 	switch (rounds.difficulty) {
 		case "easy":
 			lifeSubstractor = 2;
@@ -16,6 +25,7 @@ export const event4 = ({ char, setChar, rounds, statsNote, setStatsNote }) => {
 		default:
 			lifeSubstractor = 2;
 	}
+
 	setTimeout(() => {
 		changeCharStats({
 			char: char,
@@ -25,5 +35,9 @@ export const event4 = ({ char, setChar, rounds, statsNote, setStatsNote }) => {
 			setStatsNote: setStatsNote,
 			event: "eventCard",
 		});
-	}, 1800);
+		setButtons({
+			...buttons,
+			endTurnButton: true,
+		});
+	}, time);
 };

@@ -31,5 +31,10 @@ export const event2 = ({
 				fight: true,
 			});
 		}, 1500);
+	} else {
+		setButtons({
+			...buttons,
+			endTurnButton: true,
+		});
 	}
 };

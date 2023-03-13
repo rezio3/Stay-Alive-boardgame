@@ -73,6 +73,8 @@ const Events = () => {
 					setFight: setFight,
 					statsNote: statsNote,
 					setStatsNote: setStatsNote,
+					event: event,
+					setEvent: setEvent,
 				});
 			}
 		}

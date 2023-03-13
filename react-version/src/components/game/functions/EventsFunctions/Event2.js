@@ -9,7 +9,7 @@ export const event2 = ({
 	fight,
 	setFight,
 }) => {
-	console.log("event2 function");
+	// console.log("event2 - Harpioperze");
 	if (rounds.round % 2 === 1) {
 		setButtons({
 			...buttons,

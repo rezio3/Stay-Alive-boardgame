@@ -8,7 +8,7 @@ export const event1 = ({
 	statsNote,
 	setStatsNote,
 }) => {
-	console.log("event1 - złowroga ciemność");
+	// console.log("event1 - złowroga ciemność");
 	if (
 		rounds.round % 2 === 1 &&
 		board.biomPlayerStandsOn !== "crater" &&

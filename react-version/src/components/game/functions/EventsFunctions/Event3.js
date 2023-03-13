@@ -8,6 +8,7 @@ export const event3 = ({
 	statsNote,
 	setStatsNote,
 }) => {
+	// console.log("event 3 - zamieć");
 	const { resourcePlayerStandsOn, biomPlayerStandsOn } = board;
 	if (
 		resourcePlayerStandsOn !== "tent" &&

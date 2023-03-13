@@ -1,15 +1,17 @@
-export const event5 = (
+export const event5 = ({
 	char,
 	setChar,
 	rounds,
 	setRounds,
+	anim,
+	setAnim,
 	fight,
 	setFight,
 	buttons,
 	setButtons,
 	statsNote,
-	setStatsNote
-) => {
+	setStatsNote,
+}) => {
 	// console.log("event5 - upiorognom");
 	let time = rounds.round % 2 === 0 ? 500 : 1800;
 	if (rounds.round % 2 === 1) {
@@ -26,7 +28,7 @@ export const event5 = (
 			setFight({
 				...fight,
 				fightActive: true,
-				monsterName: "Wielkie Harpioperze",
+				monsterName: "Upiorognom",
 			});
 			setAnim({
 				...anim,

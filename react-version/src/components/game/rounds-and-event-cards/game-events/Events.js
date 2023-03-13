@@ -100,7 +100,7 @@ const Events = () => {
 					prevCard: event.currentEvent,
 				});
 				let useHexButtonChecker =
-					board.resourcePlayerStandsOn !== null && battleButtonsModifier
+					board.resourcePlayerStandsOn !== null && endTurnButtonsModifier
 						? true
 						: false;
 				setButtons({

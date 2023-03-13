@@ -318,14 +318,14 @@ export const changeCharStats = ({
 
 			setStatsNote({
 				...statsNote,
-				energy: false,
+				starvation: false,
 				sanity: false,
 				temperature: false,
 			});
 			setTimeout(() => {
 				setStatsNote({
 					...statsNote,
-					energy: true,
+					starvation: true,
 					sanity: true,
 					temperature: true,
 				});

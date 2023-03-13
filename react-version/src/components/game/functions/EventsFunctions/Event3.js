@@ -30,6 +30,7 @@ export const event3 = ({
 			default:
 				temperatureSubstractor = 1;
 		}
+		let time = rounds.round % 2 === 0 ? 500 : 1800;
 		setTimeout(() => {
 			changeCharStats({
 				char: char,
@@ -39,6 +40,6 @@ export const event3 = ({
 				setStatsNote: setStatsNote,
 				event: "eventCard",
 			});
-		}, 1800);
+		}, time);
 	}
 };

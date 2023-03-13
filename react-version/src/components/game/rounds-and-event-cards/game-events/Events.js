@@ -88,7 +88,8 @@ const Events = () => {
 				...event,
 				prevEvent: event.currentEventNumber,
 			});
-			let battleButtonsModifier = event.currentEventNumber === 2 ? false : true;
+			let endTurnButtonsModifier =
+				event.currentEventNumber === 2 ? false : true;
 			// will be more event fights
 
 			setTimeout(() => {
@@ -104,7 +105,7 @@ const Events = () => {
 						: false;
 				setButtons({
 					...buttons,
-					endTurnButton: battleButtonsModifier,
+					endTurnButton: endTurnButtonsModifier,
 					useHexButton: useHexButtonChecker,
 				});
 			}, 2000);

@@ -58,7 +58,7 @@ const Events = () => {
 			const runEvent = eventList[`event${event.currentEventNumber}`];
 			// console.log(event.currentEventNumber);
 			// console.log("eventsArray: ", event.eventsArray);
-			const forceRun = rounds.round % 2 === 0 ? true : false;
+			const forceRun = rounds.round % 2 === 0;
 			if (event.currentEventNumber !== event.prevEvent || forceRun) {
 				runEvent({
 					rounds: rounds,

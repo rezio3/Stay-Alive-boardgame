@@ -6,6 +6,10 @@ const fightData = {
 	cubeRandomNumber: "",
 	addFrozenCrownAfterFight: null,
 	fightEnd: false,
+	gnomEvent: {
+		gnomActive: false,
+		gnomDefeated: false,
+	},
 };
 
 export const FightContext = createContext();

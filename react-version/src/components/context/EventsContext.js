@@ -4,11 +4,6 @@ const eventsData = {
 	currentEvent: null,
 	currentEventNumber: null,
 	prevEvent: null,
-
-	gnomEvent: {
-		gnomActive: false,
-		gnomDefeated: false,
-	},
 };
 export const EventsContext = createContext();
 

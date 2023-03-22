@@ -1,3 +1,5 @@
+import { changeCharStats } from "../Stats-changer/ChangeCharStats";
+
 export const event5 = ({
 	char,
 	setChar,
@@ -11,30 +13,72 @@ export const event5 = ({
 	setButtons,
 	statsNote,
 	setStatsNote,
+	event,
+	setEvent,
+	board,
 }) => {
 	// console.log("event5 - upiorognom");
 	let time = rounds.round % 2 === 0 ? 500 : 1800;
 	if (rounds.round % 2 === 1) {
-		setButtons({
-			...buttons,
-			useHexButton: false,
-			endTurnButton: false,
-		});
-		setChar({
-			...char,
-			cantMove: true,
+		let sanitySubstractor;
+		switch (rounds.difficulty) {
+			case "easy":
+				sanitySubstractor = -1;
+				break;
+			case "medium":
+				sanitySubstractor = -2;
+				break;
+			case "hard":
+				sanitySubstractor = -3;
+				break;
+			default:
+				sanitySubstractor = -1;
+		}
+
+		setEvent({
+			...event,
+			gnomEvent: {
+				...event.gnomEvent,
+				gnomActive: true,
+			},
 		});
 		setTimeout(() => {
-			setFight({
-				...fight,
-				fightActive: true,
-				monsterName: "Upiorognom",
+			changeCharStats({
+				char: char,
+				setChar: setChar,
+				sanity: char.sanity + sanitySubstractor,
+				statsNote: statsNote,
+				setStatsNote: setStatsNote,
+				event: "eventCard",
 			});
-			setAnim({
-				...anim,
-				fight: true,
+			setButtons({
+				...buttons,
+				endTurnButton: true,
 			});
-		}, 1500);
+		}, time);
+
+		if (board.resourcePlayerStandsOn === "cave") {
+			setButtons({
+				...buttons,
+				useHexButton: false,
+				endTurnButton: false,
+			});
+			setChar({
+				...char,
+				cantMove: true,
+			});
+			setTimeout(() => {
+				setFight({
+					...fight,
+					fightActive: true,
+					monsterName: "Upiorognom",
+				});
+				setAnim({
+					...anim,
+					fight: true,
+				});
+			}, 1500);
+		}
 	} else {
 		setTimeout(() => {
 			setButtons({

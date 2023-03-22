@@ -34,8 +34,8 @@ export const event5 = ({
 			sanitySubstractor = -1;
 	}
 	if (rounds.round % 2 === 1) {
-		setEvent({
-			...event,
+		setFight({
+			...fight,
 			gnomEvent: {
 				...event.gnomEvent,
 				gnomActive: true,
@@ -79,7 +79,7 @@ export const event5 = ({
 			}, time);
 		}
 	} else {
-		if (event.gnomEvent.gnomActive) {
+		if (fight.gnomEvent.gnomActive) {
 			setTimeout(() => {
 				changeCharStats({
 					char: char,

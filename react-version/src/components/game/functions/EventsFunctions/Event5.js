@@ -19,22 +19,21 @@ export const event5 = ({
 }) => {
 	// console.log("event5 - upiorognom");
 	let time = rounds.round % 2 === 0 ? 500 : 1800;
+	let sanitySubstractor;
+	switch (rounds.difficulty) {
+		case "easy":
+			sanitySubstractor = -1;
+			break;
+		case "medium":
+			sanitySubstractor = -2;
+			break;
+		case "hard":
+			sanitySubstractor = -3;
+			break;
+		default:
+			sanitySubstractor = -1;
+	}
 	if (rounds.round % 2 === 1) {
-		let sanitySubstractor;
-		switch (rounds.difficulty) {
-			case "easy":
-				sanitySubstractor = -1;
-				break;
-			case "medium":
-				sanitySubstractor = -2;
-				break;
-			case "hard":
-				sanitySubstractor = -3;
-				break;
-			default:
-				sanitySubstractor = -1;
-		}
-
 		setEvent({
 			...event,
 			gnomEvent: {
@@ -77,14 +76,24 @@ export const event5 = ({
 					...anim,
 					fight: true,
 				});
-			}, 1500);
+			}, time);
 		}
 	} else {
-		setTimeout(() => {
-			setButtons({
-				...buttons,
-				endTurnButton: true,
-			});
-		}, time);
+		if (event.gnomEvent.gnomActive) {
+			setTimeout(() => {
+				changeCharStats({
+					char: char,
+					setChar: setChar,
+					sanity: char.sanity + sanitySubstractor,
+					statsNote: statsNote,
+					setStatsNote: setStatsNote,
+					event: "eventCard",
+				});
+				setButtons({
+					...buttons,
+					endTurnButton: true,
+				});
+			}, time);
+		}
 	}
 };

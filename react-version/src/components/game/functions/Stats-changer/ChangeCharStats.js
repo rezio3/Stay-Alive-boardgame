@@ -304,9 +304,7 @@ export const changeCharStats = ({
 			let sanityChange = sanity !== undefined ? sanity : char.sanity;
 			let temperatureChange = temp !== undefined ? temp : char.temperature;
 			let lifeChange = life !== undefined ? life : char.life;
-			// console.log(starvationChange);
-			// console.log(sanityChange);
-			// console.log(temperatureChange);
+
 			setChar({
 				...char,
 				life: lifeChange,

@@ -56,8 +56,6 @@ const Events = () => {
 	useEffect(() => {
 		if (event.currentEventNumber || event.currentEventNumber === 0) {
 			const runEvent = eventList[`event${event.currentEventNumber}`];
-			// console.log(event.currentEventNumber);
-			// console.log("eventsArray: ", event.eventsArray);
 			const forceRun = rounds.round % 2 === 0;
 			if (event.currentEventNumber !== event.prevEvent || forceRun) {
 				runEvent({
@@ -79,10 +77,6 @@ const Events = () => {
 			}
 		}
 	}, [event.currentEventNumber, rounds.round]);
-
-	// console.log("eventsArray: ", event.eventsArray);
-	// console.log("currentEvent: ", event.currentEvent);
-	// console.log("currentEventNumber: ", event.currentEventNumber);
 
 	useEffect(() => {
 		if (eventAnim.run === true) {

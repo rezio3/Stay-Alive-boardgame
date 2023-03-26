@@ -8,7 +8,6 @@ const fightData = {
 	fightEnd: false,
 	gnomEvent: {
 		gnomActive: false,
-		gnomDefeated: false,
 	},
 };
 

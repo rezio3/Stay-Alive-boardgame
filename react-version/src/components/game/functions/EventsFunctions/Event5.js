@@ -37,7 +37,6 @@ export const event5 = ({
 		setFight({
 			...fight,
 			gnomEvent: {
-				...event.gnomEvent,
 				gnomActive: true,
 			},
 		});
@@ -67,6 +66,15 @@ export const event5 = ({
 				cantMove: true,
 			});
 			setTimeout(() => {
+				setButtons({
+					...buttons,
+					useHexButton: false,
+					endTurnButton: false,
+				});
+				setChar({
+					...char,
+					cantMove: true,
+				});
 				setFight({
 					...fight,
 					fightActive: true,
@@ -97,3 +105,9 @@ export const event5 = ({
 		}
 	}
 };
+
+// make fight with UG, when stands on hex,
+// when go onto the hex and make lose
+// and win fight. Distingue day and night
+// mechanincs after fight
+// make assets that provide additional statistics

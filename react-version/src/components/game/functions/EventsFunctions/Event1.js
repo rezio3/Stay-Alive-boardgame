@@ -32,7 +32,10 @@ export const event1 = ({
 			default:
 				sanitySubstractor = 1;
 		}
-
+		setButtons({
+			...buttons,
+			useHexButton: false,
+		});
 		setTimeout(() => {
 			changeCharStats({
 				char: char,
@@ -48,6 +51,10 @@ export const event1 = ({
 			});
 		}, time);
 	} else {
+		setButtons({
+			...buttons,
+			useHexButton: false,
+		});
 		setTimeout(() => {
 			setButtons({
 				...buttons,

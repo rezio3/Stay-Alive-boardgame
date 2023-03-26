@@ -25,7 +25,10 @@ export const event4 = ({
 		default:
 			lifeSubstractor = 2;
 	}
-
+	setButtons({
+		...buttons,
+		useHexButton: false,
+	});
 	setTimeout(() => {
 		changeCharStats({
 			char: char,

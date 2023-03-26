@@ -33,7 +33,10 @@ export const event3 = ({
 			default:
 				temperatureSubstractor = 1;
 		}
-
+		setButtons({
+			...buttons,
+			useHexButton: false,
+		});
 		setTimeout(() => {
 			changeCharStats({
 				char: char,
@@ -43,13 +46,6 @@ export const event3 = ({
 				setStatsNote: setStatsNote,
 				event: "eventCard",
 			});
-			setButtons({
-				...buttons,
-				endTurnButton: true,
-			});
-		}, time);
-	} else {
-		setTimeout(() => {
 			setButtons({
 				...buttons,
 				endTurnButton: true,

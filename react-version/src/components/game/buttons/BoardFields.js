@@ -7,14 +7,40 @@ import { ButtonsContext } from "../../context/ButtonsContext";
 import { cantMoveAnimation } from "../functions/CantMoveAnimation";
 import { CantMovieAnimationContext } from "../../context/CantMoveAnimation";
 import { buttonsUseHexHighlighted } from "../functions/ButtonUseHexSpecified/ButtonUseHexHighlighted";
+import { FightContext } from "../../context/FightContext";
+import { AnimationContext } from "../../context/AnimationContext";
 
 const BoardFields = (props) => {
 	const [board, setBoard] = useContext(BoardContext);
 	const [char, setChar] = useContext(CharacterContext);
 	const [buttons, setButtons] = useContext(ButtonsContext);
 	const [charAnim, setCharAnim] = useContext(CantMovieAnimationContext);
+	const [fight, setFight] = useContext(FightContext);
+	const [anim, setAnim] = useContext(AnimationContext);
 
 	const handleFieldClick = (e) => {
+		if (fight.gnomEvent.gnomActive && board.resourcePlayerStandsOn === "cave") {
+			setButtons({
+				...buttons,
+				useHexButton: false,
+				endTurnButton: false,
+			});
+			setChar({
+				...char,
+				cantMove: true,
+			});
+			setTimeout(() => {
+				setFight({
+					...fight,
+					fightActive: true,
+					monsterName: "Upiorognom",
+				});
+				setAnim({
+					...anim,
+					fight: true,
+				});
+			}, 500);
+		}
 		const moveApproved = checkDistance(e, board, char);
 		if (moveApproved.approved) {
 			buttonsUseHexHighlighted(e, buttons, setButtons, board, setBoard);

@@ -108,6 +108,18 @@ const Events = () => {
 		}
 	}, [eventAnim.run]);
 
+	// set gnomActive back to false if event is not 5
+	useEffect(() => {
+		if (event.currentEventNumber !== 5) {
+			setFight({
+				...fight,
+				gnomEvent: {
+					gnomActive: false,
+				},
+			});
+		}
+	}, [event.currentEventNumber]);
+
 	// console.log(eventAnim.run);
 	// console.log(eventAnim.prevCard);
 	// console.log(event.currentEvent);

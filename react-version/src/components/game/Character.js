@@ -1,14 +1,14 @@
 import React, { useContext, useEffect } from "react";
 import { BoardContext } from "../context/BoardContext";
 import { CharacterContext } from "../context/CharContext";
-import { CantMovieAnimationContext } from "../context/CantMoveAnimation";
+import { CantMoveAnimationContext } from "../context/CantMoveAnimation";
 import { changeCharStats } from "./functions/Stats-changer/ChangeCharStats";
 import { StatsNotificationsContext } from "../context/StatsNotificationsContext";
 
 const Character = () => {
 	const [char, setChar] = useContext(CharacterContext);
 	const [board, setBoard] = useContext(BoardContext);
-	const [charAnim, setCharAnim] = useContext(CantMovieAnimationContext);
+	const [charAnim, setCharAnim] = useContext(CantMoveAnimationContext);
 	const [statsNote, setStatsNote] = useContext(StatsNotificationsContext);
 
 	const characterMove = () => {

@@ -12,7 +12,7 @@ import { frozenCrownLosing } from "../functions/losingItems/FrozenCrownLosing";
 import { buttonUseHex } from "../functions/ButtonUseHex";
 import { FightContext } from "../../context/FightContext";
 import { RoundsContext } from "../../context/RoundsContext";
-import { CantMovieAnimationContext } from "../../context/CantMoveAnimation";
+import { CantMoveAnimationContext } from "../../context/CantMoveAnimation";
 import Events from "./game-events/Events";
 import { difficulty } from "../functions/Difficulty";
 import { StatsNotificationsContext } from "../../context/StatsNotificationsContext";
@@ -25,7 +25,7 @@ const RightContent = () => {
 	const [anim, setAnim] = useContext(AnimationContext);
 	const [fight, setFight] = useContext(FightContext);
 	const [rounds, setRounds] = useContext(RoundsContext);
-	const [charAnim, setCharAnim] = useContext(CantMovieAnimationContext);
+	const [charAnim, setCharAnim] = useContext(CantMoveAnimationContext);
 	const [statsNote, setStatsNote] = useContext(StatsNotificationsContext);
 
 	const handleUseHexButton = () => {

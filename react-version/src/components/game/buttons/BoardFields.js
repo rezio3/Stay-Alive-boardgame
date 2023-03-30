@@ -5,7 +5,7 @@ import Character from "../Character";
 import { checkDistance } from "../functions/Character-movement";
 import { ButtonsContext } from "../../context/ButtonsContext";
 import { cantMoveAnimation } from "../functions/CantMoveAnimation";
-import { CantMovieAnimationContext } from "../../context/CantMoveAnimation";
+import { CantMoveAnimationContext } from "../../context/CantMoveAnimation";
 import { buttonsUseHexHighlighted } from "../functions/ButtonUseHexSpecified/ButtonUseHexHighlighted";
 import { FightContext } from "../../context/FightContext";
 import { AnimationContext } from "../../context/AnimationContext";
@@ -14,7 +14,7 @@ const BoardFields = (props) => {
 	const [board, setBoard] = useContext(BoardContext);
 	const [char, setChar] = useContext(CharacterContext);
 	const [buttons, setButtons] = useContext(ButtonsContext);
-	const [charAnim, setCharAnim] = useContext(CantMovieAnimationContext);
+	const [charAnim, setCharAnim] = useContext(CantMoveAnimationContext);
 	const [fight, setFight] = useContext(FightContext);
 	const [anim, setAnim] = useContext(AnimationContext);
 

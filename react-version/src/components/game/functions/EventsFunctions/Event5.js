@@ -16,8 +16,11 @@ export const event5 = ({
 	event,
 	setEvent,
 	board,
+	charAnim,
+	setCharAnim,
 }) => {
 	// console.log("event5 - upiorognom");
+	setCharAnim(true);
 	let time = rounds.round % 2 === 0 ? 500 : 1800;
 	let sanitySubstractor;
 	switch (rounds.difficulty) {

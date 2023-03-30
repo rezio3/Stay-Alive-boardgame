@@ -9,8 +9,11 @@ export const event3 = ({
 	setStatsNote,
 	buttons,
 	setButtons,
+	charAnim,
+	setCharAnim,
 }) => {
 	// console.log("event 3 - zamieć");
+	setCharAnim(true);
 	const { resourcePlayerStandsOn, biomPlayerStandsOn } = board;
 	let time = rounds.round % 2 === 0 ? 500 : 1800;
 	if (

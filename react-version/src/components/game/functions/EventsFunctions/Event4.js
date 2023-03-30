@@ -8,8 +8,11 @@ export const event4 = ({
 	setStatsNote,
 	buttons,
 	setButtons,
+	charAnim,
+	setCharAnim,
 }) => {
 	// console.log("event4 - trujące powietrze");
+	setCharAnim(true);
 	let lifeSubstractor;
 	let time = rounds.round % 2 === 0 ? 500 : 1800;
 	switch (rounds.difficulty) {

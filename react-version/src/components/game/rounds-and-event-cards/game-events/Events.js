@@ -11,6 +11,7 @@ import { ButtonsContext } from "../../../context/ButtonsContext";
 import { FightContext } from "../../../context/FightContext";
 import { AnimationContext } from "../../../context/AnimationContext";
 import { StatsNotificationsContext } from "../../../context/StatsNotificationsContext";
+import { CantMoveAnimationContext } from "../../../context/CantMoveAnimation";
 
 const Events = () => {
 	const [rounds, setRounds] = useContext(RoundsContext);
@@ -21,6 +22,7 @@ const Events = () => {
 	const [fight, setFight] = useContext(FightContext);
 	const [anim, setAnim] = useContext(AnimationContext);
 	const [statsNote, setStatsNote] = useContext(StatsNotificationsContext);
+	const [charAnim, setCharAnim] = useContext(CantMoveAnimationContext);
 	const [eventAnim, setEventAnim] = useState({
 		run: false,
 		revealedDeck: false,
@@ -73,6 +75,8 @@ const Events = () => {
 					setStatsNote: setStatsNote,
 					event: event,
 					setEvent: setEvent,
+					charAnim: charAnim,
+					setCharAnim: setCharAnim,
 				});
 			}
 		}

@@ -102,6 +102,11 @@ export const event5 = ({
 					endTurnButton: true,
 				});
 			}, time);
+		} else {
+			setButtons({
+				...buttons,
+				endTurnButton: true,
+			});
 		}
 	}
 };
@@ -111,3 +116,5 @@ export const event5 = ({
 // and win fight. Distingue day and night
 // mechanincs after fight
 // make assets that provide additional statistics
+
+// end turn button is off after second round of gnome when fight is done

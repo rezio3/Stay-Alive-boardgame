@@ -9,11 +9,8 @@ export const event1 = ({
 	setStatsNote,
 	buttons,
 	setButtons,
-	charAnim,
-	setCharAnim,
 }) => {
 	// console.log("event1 - złowroga ciemność");
-	setCharAnim(true);
 	let time = rounds.round % 2 === 0 ? 500 : 1800;
 	if (
 		rounds.round % 2 === 1 &&

@@ -23,6 +23,6 @@ export const arrayShuffle = (event, setEvent) => {
 	// }
 	setEvent({
 		...event,
-		eventsArray: [1, 5, 3, 3, 4],
+		eventsArray: [3, 5, 5, 3, 4],
 	});
 };

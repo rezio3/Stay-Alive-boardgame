@@ -1,0 +1,91 @@
+.rounds-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 540px;
+  height: 200px;
+  margin-bottom: 20px;
+}
+.rounds-container .sun-moon-icons-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 50px;
+  height: 200px;
+  margin-right: 10px;
+}
+.rounds-container .sun-moon-icons-container .sun-icon {
+  background-image: url(../../img/sun1.png);
+  background-size: cover;
+  background-color: rgb(172, 155, 101);
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 0 10px black;
+  border-radius: 50%;
+}
+.rounds-container .sun-moon-icons-container .sun-icon:hover {
+  background-color: rgb(211, 191, 121);
+}
+.rounds-container .sun-moon-icons-container .moon-icon {
+  background-image: url(../../img/moon1.png);
+  background-size: cover;
+  background-color: rgb(172, 155, 101);
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 0 10px black;
+  border-radius: 50%;
+}
+.rounds-container .sun-moon-icons-container .moon-icon:hover {
+  background-color: rgb(211, 191, 121);
+}
+.rounds-container .rounds-table {
+  border-spacing: 0;
+  width: 440px;
+  height: 180px;
+  border: 2px solid black;
+}
+.rounds-container .rounds-table tbody {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.rounds-container .rounds-table tbody .diff-easy {
+  background-color: rgba(0, 0, 0, 0);
+}
+.rounds-container .rounds-table tbody .diff-mid {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.rounds-container .rounds-table tbody .diff-hard {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.rounds-container .rounds-table tbody .table-row-day {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(255, 220, 104);
+}
+.rounds-container .rounds-table tbody .table-row-night {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(95, 118, 136);
+}
+.rounds-container .rounds-table tbody td {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 90px;
+  border: 2px solid black;
+  text-align: center;
+}
+.rounds-container .rounds-table tbody td span {
+  font-size: 15px;
+  font-weight: bold;
+  padding: 30px 10px;
+}
+
+.round-highlight {
+  background-color: rgb(255, 241, 212) !important;
+  box-shadow: 0 0 5px 5px rgb(255, 255, 255);
+  border: 2px solid rgb(255, 241, 212) !important;
+  z-index: 3;
+}

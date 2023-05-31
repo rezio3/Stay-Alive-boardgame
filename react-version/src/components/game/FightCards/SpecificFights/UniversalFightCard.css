@@ -1,0 +1,182 @@
+.monster-fight-card {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 350px;
+  height: 500px;
+  background-color: rgb(255, 227, 136);
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 3px solid black;
+  border-radius: 20px;
+  z-index: 1;
+  font-family: "Creepster", cursive;
+  letter-spacing: 3px;
+  overflow: hidden;
+}
+.monster-fight-card h1 {
+  text-align: center;
+  font-size: 30px;
+  margin: 0px 10px 0px 10px;
+}
+.monster-fight-card .swords {
+  width: 80px;
+}
+.monster-fight-card h2 {
+  font-size: 30px;
+  margin: 0;
+}
+.monster-fight-card p {
+  letter-spacing: 0px;
+  font-family: "Signika Negative", sans-serif;
+  font-size: 15px;
+  margin: 0;
+}
+.monster-fight-card .cube-container {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.monster-fight-card .cube-container .cube-result {
+  font-family: "Signika Negative", sans-serif;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 73px;
+  height: 70px;
+  border: 3px solid black;
+  border-radius: 15px;
+  font-size: 40px;
+}
+.monster-fight-card .fight-sum-span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+}
+.monster-fight-card .fight-sum-span p {
+  text-align: center;
+  margin: 0 5px 0 5px;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: "Signika Negative", sans-serif;
+}
+.monster-fight-card .fight-sum-span span {
+  letter-spacing: 0px;
+  font-size: 15px;
+  font-family: "Signika Negative", sans-serif;
+}
+.monster-fight-card .use-sejmitar-btn-container {
+  width: 160px;
+  height: 40px;
+}
+.monster-fight-card .use-sejmitar-btn-container .use-sejmitar-btn {
+  width: 160px;
+  height: 40px;
+  background-color: rgb(184, 165, 102);
+  font-weight: bold;
+  border: 3px solid black;
+  border-radius: 10px;
+  margin: 2px;
+  text-transform: uppercase;
+  padding: 3px;
+  cursor: pointer;
+}
+.monster-fight-card .use-sejmitar-btn-container .use-sejmitar-btn:hover {
+  background-color: rgb(255, 241, 194);
+}
+
+.block-whole-background {
+  position: absolute;
+  height: 850px;
+  width: 682px;
+  background-image: none;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.fight-animation-in {
+  animation: fightAnimationIn 0.5s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.fight-animation-out {
+  animation: fightAnimationOut 0.5s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.end-loose-fight {
+  width: 100px;
+  height: 30px;
+  background-color: rgb(156, 156, 156);
+  font-weight: bold;
+  border: 3px solid black;
+  border-radius: 10px;
+  margin: 5px;
+  text-transform: uppercase;
+  padding: 5px;
+}
+
+.end-loose-fight-active {
+  background-color: rgb(184, 165, 102);
+  cursor: pointer;
+}
+
+.end-loose-fight-active:hover {
+  background-color: rgb(255, 241, 194);
+}
+
+.cubes {
+  width: 80px;
+  height: 73px;
+  margin-right: 20px;
+  background-color: rgb(156, 156, 156);
+  border: 3px solid black;
+  border-radius: 15px;
+  margin: 5px;
+  text-transform: uppercase;
+  padding: 5px;
+}
+.cubes img {
+  width: 65px;
+}
+
+.cubes-active {
+  cursor: pointer;
+  background-color: rgb(184, 165, 102);
+}
+
+.cubes-active:hover {
+  background-color: rgb(255, 241, 194);
+}
+
+@keyframes fightAnimationIn {
+  from {
+    opacity: 0%;
+    width: 0;
+    height: 0;
+  }
+  to {
+    opacity: 100%;
+    width: 350px;
+    height: 500px;
+  }
+}
+@keyframes fightAnimationOut {
+  from {
+    opacity: 100%;
+    width: 350px;
+    height: 500px;
+  }
+  to {
+    opacity: 0%;
+    width: 0;
+    height: 0;
+  }
+}

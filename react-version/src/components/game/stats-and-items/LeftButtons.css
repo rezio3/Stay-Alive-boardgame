@@ -1,0 +1,128 @@
+.left-buttons-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 150px;
+}
+.left-buttons-container .left-buttons-container-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 70px;
+}
+.left-buttons-container .left-buttons-container-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 500px;
+  height: 90px;
+  margin-top: 5px;
+}
+.left-buttons-container .btn-eat-food,
+.left-buttons-container .btn-eat-1-grass,
+.left-buttons-container .btn-eat-2-grass,
+.left-buttons-container .btn-drink-red-bull,
+.left-buttons-container .btn-eat-sasuage {
+  height: 50px;
+  width: 150px;
+  background-color: rgb(156, 156, 156);
+  border: 3px solid black;
+  border-radius: 15px;
+  margin: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.left-buttons-container .btn-eat-1-grass div {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+.left-buttons-container .btn-eat-2-grass div {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+.left-buttons-container .btn-drink-red-bull div {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+.left-buttons-container .btn-eat-sasuage div {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+.left-buttons-container .btn-eat-1-grass,
+.left-buttons-container .btn-eat-2-grass,
+.left-buttons-container .btn-drink-red-bull,
+.left-buttons-container .btn-eat-sasuage {
+  font-size: 13px;
+  padding: 3px;
+  margin: 0px 20px;
+}
+.left-buttons-container .fire-place-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100% px;
+  height: 100%;
+}
+.left-buttons-container .fire-place-container .fire-place-icon-false {
+  background-image: url(../../img/ogniskofalse.png);
+  background-size: cover;
+  width: 31px;
+  height: 45px;
+}
+.left-buttons-container .fire-place-container .fire-place-icon-true {
+  background-image: url(../../img/ognisko.png);
+  background-size: cover;
+  width: 31px;
+  height: 45px;
+}
+.left-buttons-container .fire-place-container .fire-place-span {
+  font-weight: bold;
+  font-size: 20px;
+}
+.left-buttons-container .btn-eat-food-active,
+.left-buttons-container .btn-eat-1-grass-active,
+.left-buttons-container .btn-eat-2-grass-active,
+.left-buttons-container .btn-drink-red-bull-active,
+.left-buttons-container .btn-eat-sasuage-active {
+  background-color: rgb(184, 165, 102);
+  cursor: pointer;
+}
+.left-buttons-container .btn-eat-1-grass-active:hover div,
+.left-buttons-container .btn-eat-2-grass-active:hover div,
+.left-buttons-container .btn-eat-sasuage-active:hover div,
+.left-buttons-container .btn-drink-red-bull-active:hover div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 30px;
+  margin-top: 19px;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+.left-buttons-container .btn-drink-red-bull-active:hover div {
+  margin-top: 12px;
+}
+.left-buttons-container .btn-eat-2-grass-active:hover div {
+  height: 40px;
+}
+.left-buttons-container .btn-eat-food-active:hover,
+.left-buttons-container .btn-eat-1-grass-active:hover,
+.left-buttons-container .btn-eat-2-grass-active:hover,
+.left-buttons-container .btn-drink-red-bull-active:hover,
+.left-buttons-container .btn-eat-sasuage-active:hover {
+  background-color: rgb(255, 234, 166);
+}

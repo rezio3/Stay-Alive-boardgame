@@ -93,3 +93,7 @@ export default Game;
 
 // popover - do pop-upów
 // popper.js
+
+// CO DO ZROBIENIA
+// za drugim razem przy zamieci event zabiera temperature ale pokazuje że zabiera psychike. Problem w notyfikacjach
+// useHexButton po wylosowaniu każdego eventu
